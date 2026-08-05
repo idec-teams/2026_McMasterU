@@ -1,9 +1,9 @@
-import { CTASection } from "@/components/wiki/CTASection";
-import { HeroSection } from "@/components/wiki/HeroSection";
-import { ProblemSection } from "@/components/wiki/ProblemSection";
-import { ProceduresSection } from "@/components/wiki/ProceduresSection";
-import { ScienceSection } from "@/components/wiki/ScienceSection";
-import { SolutionSection } from "@/components/wiki/SolutionSection";
+import { CTASection } from "@/components/wiki/main/CTASection";
+import { HeroSection } from "@/components/wiki/main/HeroSection";
+import { ProblemSection } from "@/components/wiki/main/ProblemSection";
+import { ProceduresSection } from "@/components/wiki/main/ProceduresSection";
+import { PromoVideoSection } from "@/components/wiki/main/PromoVideoSection";
+import { SolutionSection } from "@/components/wiki/main/SolutionSection";
 
 export default function HomePage() {
   return (
@@ -12,7 +12,7 @@ export default function HomePage() {
       <ProblemSection />
       <SolutionSection />
       <ProceduresSection />
-      <ScienceSection />
+      <PromoVideoSection />
       <CTASection />
     </>
   );

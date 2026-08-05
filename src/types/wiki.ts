@@ -1,10 +1,9 @@
-import type { ElementType } from "react";
+import type { ElementType, ReactNode } from "react";
 
 export type ColorKey = "blue" | "green" | "yellow";
 
 export type ProblemCardColors = {
   border: string;
-  glow: string;
   stat: string;
   icon: string;
 };
@@ -48,4 +47,24 @@ export type PathwayEntry = {
   name: string;
   nameTone: "accent" | "danger" | "success";
   comment: string;
+};
+
+export type WikiReference = {
+  id: string;
+  authors?: string;
+  title: string;
+  source?: string;
+  year?: string | number;
+  url?: string;
+};
+
+export type WikiSectionProps = {
+  id: string;
+  title: string;
+  children?: ReactNode;
+};
+
+export type TocItem = {
+  id: string;
+  title: string;
 };

@@ -29,9 +29,9 @@ export function CellViz({ burst = false }: { burst?: boolean }) {
             : { duration: 4, repeat: Infinity, ease: "easeInOut" }
         }
         style={{
-          border: "1.5px solid rgba(0,212,255,0.45)",
+          border: "1.5px solid rgb(var(--teal-rgb) / 0.45)",
           boxShadow:
-            "0 0 40px rgba(0,212,255,0.12), inset 0 0 60px rgba(0,212,255,0.04)",
+            "0 0 40px rgb(var(--teal-rgb) / 0.12), inset 0 0 60px rgb(var(--teal-rgb) / 0.04)",
         }}
       />
 
@@ -44,7 +44,7 @@ export function CellViz({ burst = false }: { burst?: boolean }) {
           ease: "easeInOut",
           delay: 0.5,
         }}
-        style={{ border: "1px solid rgba(0,212,255,0.18)" }}
+        style={{ border: "1px solid rgb(var(--teal-rgb) / 0.18)" }}
       />
 
       <div
@@ -52,9 +52,9 @@ export function CellViz({ burst = false }: { burst?: boolean }) {
         style={{
           inset: "35%",
           background:
-            "radial-gradient(circle at 40% 40%, rgba(0,212,255,0.18), rgba(0,212,255,0.04))",
-          border: "1px solid rgba(0,212,255,0.25)",
-          boxShadow: "0 0 16px rgba(0,212,255,0.15)",
+            "radial-gradient(circle at 40% 40%, rgb(var(--teal-rgb) / 0.18), rgb(var(--teal-rgb) / 0.04))",
+          border: "1px solid rgb(var(--teal-rgb) / 0.25)",
+          boxShadow: "0 0 16px rgb(var(--teal-rgb) / 0.15)",
         }}
       />
 
@@ -67,8 +67,8 @@ export function CellViz({ burst = false }: { burst?: boolean }) {
             left: dot.left,
             width: dot.size,
             height: dot.size,
-            background: "radial-gradient(circle at 30% 30%, #d4ff20, #7aae00)",
-            boxShadow: "0 0 8px rgba(196,255,0,0.45)",
+            background: "radial-gradient(circle at 30% 30%, #00d4b4, #007a68)",
+            boxShadow: "0 0 8px rgb(var(--teal-rgb) / 0.45)",
           }}
           animate={
             burst

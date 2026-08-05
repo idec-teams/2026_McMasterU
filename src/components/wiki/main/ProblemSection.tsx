@@ -1,9 +1,9 @@
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
-import { ProblemGrid } from "./ProblemGrid";
+import { ProblemGrid } from "@/components/wiki/ProblemGrid";
 
 export function ProblemSection() {
   return (
-    <section id="problem" className="py-28 bg-card relative">
+    <section id="problem" className="py-28 bg-section relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16 max-w-3xl">
           <SectionEyebrow>The Problem</SectionEyebrow>

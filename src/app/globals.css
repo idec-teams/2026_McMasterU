@@ -1,34 +1,74 @@
 @import "tailwindcss";
 
+/*
+ * ============================================================================
+ * MEYcell color system — single source of truth.
+ * Change a value here and it propagates everywhere via Tailwind utilities.
+ *   raw palette (hex)  ->  semantic roles (@theme)  ->  utility tokens
+ * Do NOT hardcode colors in components; use the token utilities below.
+ * ============================================================================
+ */
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --card: #111111;
-  --border: #1f1f1f;
-  --muted-foreground: #8a8a8a;
-  --primary: #00d4ff;
-  --primary-foreground: #001018;
-  --accent: #c4ff00;
-  --accent-foreground: #101a00;
+  /* ---- Brand: teal ---------------------------------------------------- */
+  --teal: #00d4b4; /* primary accent */
+  --teal-dark: #00b89a;
+  --teal-darkest: #007a68;
+  --teal-rgb: 0 212 180; /* channels for translucent glow/border effects */
+
+  /* ---- Backgrounds & surfaces ---------------------------------------- */
+  --bg-page: #071a2e; /* page background */
+  --bg-section: #060f1e; /* section banding */
+  --bg-card: #070e1c; /* card background */
+  --surface: #0c2540; /* raised card surface */
+  --bg-footer: #040b14; /* footer */
+  --surface-secondary: #0d2d4a; /* secondary surfaces */
+  --border: #0d2d4a; /* structural hairlines */
+  --on-brand: #04121f; /* text/icons on a teal fill */
+
+  /* ---- Text ramp (light → faint) ------------------------------------- */
+  --text-primary: #d8eef8; /* primary foreground */
+  --text-body: #9ac8e0; /* body / subtext */
+  --text-muted: #6ba8c4; /* muted text */
+  --text-dim: #5d8faa; /* dim labels */
+  --text-faint: #3d6a80; /* very dim */
+  --text-decorative: #2a4a5c; /* faint / decorative */
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
+  /* Backgrounds & surfaces */
+  --color-background: var(--bg-page);
+  --color-section: var(--bg-section);
+  --color-card: var(--bg-card);
+  --color-surface: var(--surface);
+  --color-footer: var(--bg-footer);
+  --color-secondary: var(--surface-secondary);
   --color-border: var(--border);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
+
+  /* Brand */
+  --color-primary: var(--teal);
+  --color-primary-foreground: var(--on-brand);
+  --color-accent: var(--teal-dark);
+  --color-accent-foreground: var(--on-brand);
+  --color-brand: var(--teal);
+  --color-brand-dark: var(--teal-dark);
+  --color-brand-darkest: var(--teal-darkest);
+
+  /* Text ramp */
+  --color-foreground: var(--text-primary);
+  --color-body: var(--text-body);
+  --color-muted-foreground: var(--text-muted);
+  --color-dim: var(--text-dim);
+  --color-faint: var(--text-faint);
+  --color-decorative: var(--text-decorative);
+
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-geist-sans);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg-page);
+  color: var(--text-primary);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }

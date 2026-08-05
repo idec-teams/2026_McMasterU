@@ -1,21 +1,21 @@
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
-import { SOLUTION_STATS } from "@/lib/wiki/content";
-import { CellViz } from "./CellViz";
+import { CellViz } from "@/components/wiki/CellViz";
+import type { SolutionStat } from "@/types/wiki";
+
+const SOLUTION_STATS: SolutionStat[] = [
+  { label: "Lipid yield per cell", value: "~8×", sub: "vs. wild-type yeast" },
+  { label: "Burst temperature", value: "72 °C", sub: "tunable ±5 °C" },
+  { label: "Fat composition", value: "Identical", sub: "to animal fat" },
+  { label: "Production scale", value: "Bioreactor", sub: "fully scalable" },
+];
 
 export function SolutionSection() {
   return (
-    <section id="solution" className="py-28 relative overflow-hidden">
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at 85% 50%, rgba(0,212,255,0.04) 0%, transparent 55%)",
-        }}
-      />
-      <div className="max-w-7xl mx-auto px-6 relative">
+    <section id="solution" className="py-28">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           <div>
-            <SectionEyebrow tone="cyan">Our Solution</SectionEyebrow>
+            <SectionEyebrow tone="brand">Our Solution</SectionEyebrow>
             <h2 className="font-display text-4xl lg:text-5xl text-foreground leading-tight mb-8">
               Fat in a cell.
               <br />
@@ -60,58 +60,15 @@ export function SolutionSection() {
             <div className="font-mono text-[9px] text-muted-foreground/40 tracking-widest uppercase mb-3 text-right">
               Cross-section — MEYcell at 71 °C
             </div>
-            <div
-              className="relative aspect-square max-w-sm ml-auto bg-card border border-border/40 flex items-center justify-center overflow-hidden"
-              style={{ boxShadow: "0 0 80px rgba(0,212,255,0.06)" }}
-            >
+            <div className="relative aspect-square max-w-sm ml-auto bg-card border border-border/40 flex items-center justify-center overflow-hidden">
               <CellViz />
-
-              <Readout position="top-4 right-4" tone="cyan">
-                T: 71.2 °C
-              </Readout>
-              <Readout position="top-4 left-4" tone="muted">
-                RH: 98%
-              </Readout>
-              <Readout position="bottom-4 left-4" tone="yellow">
-                Status: INTACT
-              </Readout>
-              <Readout position="bottom-4 right-4" tone="accent">
-                Lipid: 62% DCW
-              </Readout>
             </div>
             <div className="mt-2 font-mono text-[9px] text-muted-foreground/35 text-right">
-              ↑ Lipid droplets visible — awaiting thermal trigger at 72 °C
+              Lipid droplets visible — awaiting thermal trigger at 72 °C
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-type ReadoutTone = "cyan" | "muted" | "yellow" | "accent";
-
-const READOUT_TONES: Record<ReadoutTone, string> = {
-  cyan: "text-cyan-400 border-cyan-400/20",
-  muted: "text-muted-foreground/50 border-border",
-  yellow: "text-yellow-300 border-yellow-300/20",
-  accent: "text-accent border-accent/20",
-};
-
-function Readout({
-  position,
-  tone,
-  children,
-}: {
-  position: string;
-  tone: ReadoutTone;
-  children: React.ReactNode;
-}) {
-  return (
-    <div
-      className={`absolute ${position} font-mono text-[10px] px-2 py-1 bg-background/60 border ${READOUT_TONES[tone]}`}
-    >
-      {children}
-    </div>
   );
 }

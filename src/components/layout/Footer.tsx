@@ -1,9 +1,16 @@
 import Link from "next/link";
-import { FOOTER_PROJECT_LINKS, FOOTER_TEAM_LINKS } from "@/lib/wiki/content";
+
+const FOOTER_PROJECT_LINKS = [
+  "Project",
+  "Engineering",
+  "Documentation",
+  "Entrepreneurship",
+];
+const FOOTER_TEAM_LINKS = ["Team", "Community"];
 
 export function Footer() {
   return (
-    <footer className="border-t border-border py-12">
+    <footer className="bg-footer border-t border-border py-12">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           <div className="md:col-span-2">
@@ -19,11 +26,7 @@ export function Footer() {
           </div>
 
           <FooterLinks title="Project" items={FOOTER_PROJECT_LINKS} />
-          <FooterLinks
-            title="Team"
-            items={FOOTER_TEAM_LINKS}
-            hrefFor={() => "#"}
-          />
+          <FooterLinks title="Team" items={FOOTER_TEAM_LINKS} />
         </div>
 
         <div className="border-t border-border pt-6 flex flex-col md:flex-row justify-between items-center gap-2">

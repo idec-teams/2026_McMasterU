@@ -3,9 +3,9 @@ import type { NavLink } from "@/types/wiki";
 export const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Team", href: "/team" },
-  { label: "Procedures", href: "/procedures" },
-  { label: "Models", href: "/models" },
-  { label: "Parts", href: "/parts" },
-  { label: "Notebook", href: "/notebook" },
+  { label: "Project", href: "/project" },
+  { label: "Engineering", href: "/engineering" },
+  { label: "Documentation", href: "/documentation" },
   { label: "Community", href: "/community" },
+  { label: "Entrepreneurship", href: "/entrepreneurship" },
 ];

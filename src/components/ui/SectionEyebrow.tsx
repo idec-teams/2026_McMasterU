@@ -1,4 +1,4 @@
-type Tone = "muted" | "cyan";
+type Tone = "muted" | "brand";
 
 export function SectionEyebrow({
   children,
@@ -7,8 +7,8 @@ export function SectionEyebrow({
   children: React.ReactNode;
   tone?: Tone;
 }) {
-  const color = tone === "cyan" ? "text-cyan-400" : "text-muted-foreground";
-  const line = tone === "cyan" ? "bg-cyan-400" : "bg-muted-foreground/40";
+  const color = tone === "brand" ? "text-primary" : "text-muted-foreground";
+  const line = tone === "brand" ? "bg-primary" : "bg-muted-foreground/40";
 
   return (
     <div

@@ -12,7 +12,7 @@ export function PagePlaceholder({
   return (
     <section className="min-h-[70vh] pt-40 pb-28">
       <div className="max-w-3xl mx-auto px-6">
-        <SectionEyebrow tone="cyan">{eyebrow}</SectionEyebrow>
+        <SectionEyebrow tone="brand">{eyebrow}</SectionEyebrow>
         <h1 className="font-display text-5xl lg:text-6xl text-foreground leading-tight mb-6">
           {title}
         </h1>

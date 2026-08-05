@@ -1,6 +1,86 @@
+// DEPRECATED — replaced by PromoVideoSection.
+// Kept for reference only; intentionally not exported or imported anywhere.
+// Its data (SCIENCE_FACTS, PATHWAY_ENTRIES) was colocated here when
+// lib/wiki/content.ts was removed. Delete this file if it is no longer needed.
+
+/*
+import { Dna, Droplets, FlaskConical, Thermometer, Zap } from "lucide-react";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
-import { PATHWAY_ENTRIES, SCIENCE_FACTS } from "@/lib/wiki/content";
-import type { PathwayEntry } from "@/types/wiki";
+import type { PathwayEntry, ScienceFact } from "@/types/wiki";
+
+const SCIENCE_FACTS: ScienceFact[] = [
+  {
+    icon: Dna,
+    label: "Host Organism",
+    value: "S. cerevisiae",
+    color: "text-primary",
+  },
+  {
+    icon: Thermometer,
+    label: "Burst Threshold",
+    value: "72 °C ± 3 °C",
+    color: "text-primary",
+  },
+  {
+    icon: Droplets,
+    label: "Max Lipid Content",
+    value: ">60% DCW",
+    color: "text-primary",
+  },
+  {
+    icon: Zap,
+    label: "Key Pathway",
+    value: "de novo FA synthesis",
+    color: "text-primary",
+  },
+  {
+    icon: FlaskConical,
+    label: "Production Mode",
+    value: "Fed-batch bioreactor",
+    color: "text-primary",
+  },
+];
+
+const PATHWAY_ENTRIES: PathwayEntry[] = [
+  {
+    op: "GENE",
+    name: "FAS1-OE",
+    nameTone: "accent",
+    comment: "Fatty acid synthase overexpression — lipid chain initiation",
+  },
+  {
+    op: "GENE",
+    name: "ACC1-S659A",
+    nameTone: "accent",
+    comment:
+      "Acetyl-CoA carboxylase point mutation — removes feedback inhibition",
+  },
+  {
+    op: "GENE",
+    name: "DGA1-OE",
+    nameTone: "accent",
+    comment: "Diacylglycerol acyltransferase — triglyceride storage in LDs",
+  },
+  {
+    op: "DELETE",
+    name: "TGL3, TGL4, TGL5",
+    nameTone: "danger",
+    comment: "Lipase triple knockout — prevents intracellular fat degradation",
+  },
+  {
+    op: "MODIFY",
+    name: "MEMBRANE_COMP",
+    nameTone: "success",
+    comment:
+      "Adjusted phospholipid bilayer — engineered thermal burst at 72 °C",
+  },
+  {
+    op: "PROMOTE",
+    name: "GPD1-prom",
+    nameTone: "accent",
+    comment: "Strong constitutive promoter driving all lipogenic genes",
+  },
+];
 
 export function ScienceSection() {
   return (
@@ -36,7 +116,7 @@ export function ScienceSection() {
 
             <div
               className="mt-2 border border-accent/30 bg-card p-5"
-              style={{ boxShadow: "0 0 30px rgba(196,255,0,0.06)" }}
+              style={{ boxShadow: "0 0 30px rgb(var(--teal-rgb) / 0.06)" }}
             >
               <div className="font-mono text-[9px] tracking-widest uppercase text-accent mb-2">
                 iGEM 2026
@@ -58,21 +138,21 @@ export function ScienceSection() {
 }
 
 const NAME_TONE_CLASS: Record<PathwayEntry["nameTone"], string> = {
-  accent: "text-accent",
-  danger: "text-red-400/80",
-  success: "text-emerald-400",
+  accent: "text-primary",
+  danger: "text-dim",
+  success: "text-accent",
 };
 
 function PathwayTerminal() {
   return (
     <div
-      className="lg:col-span-2 bg-card border border-cyan-400/15 p-6 font-mono text-sm"
-      style={{ boxShadow: "0 0 40px rgba(0,212,255,0.04)" }}
+      className="lg:col-span-2 bg-card border border-primary/15 p-6 font-mono text-sm"
+      style={{ boxShadow: "0 0 40px rgb(var(--teal-rgb) / 0.04)" }}
     >
       <div className="flex items-center gap-2 mb-5 pb-4 border-b border-border">
-        <div className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
-        <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
-        <div className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
+        <div className="w-2.5 h-2.5 rounded-full bg-primary/70" />
+        <div className="w-2.5 h-2.5 rounded-full bg-primary/45" />
+        <div className="w-2.5 h-2.5 rounded-full bg-primary/25" />
         <span className="text-[10px] text-muted-foreground ml-2 tracking-wider">
           meycell_pathway.gb — iGEM Part Registry 2026
         </span>
@@ -103,9 +183,12 @@ function PathwayTerminal() {
 function TerminalLine({ entry }: { entry: PathwayEntry }) {
   return (
     <div>
-      <span className="text-cyan-400">{entry.op}</span>{" "}
+      <span className="text-primary">{entry.op}</span>{" "}
       <span className={NAME_TONE_CLASS[entry.nameTone]}>{entry.name}</span>{" "}
       <span className="text-muted-foreground/60">{`// ${entry.comment}`}</span>
     </div>
   );
 }
+*/
+
+export {};
