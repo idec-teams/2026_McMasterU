@@ -49,6 +49,17 @@ export type PathwayEntry = {
   comment: string;
 };
 
+export type TeamMember = {
+  name: string;
+  role: string;
+  program: string;
+  /** Year of study, e.g. "Year 3" or "MSc 1". */
+  year: string;
+  /** Path to a photo in /public/team, e.g. "/team/jane-doe.jpg". */
+  photo?: string;
+  linkedin?: string;
+};
+
 export type WikiReference = {
   id: string;
   authors?: string;
