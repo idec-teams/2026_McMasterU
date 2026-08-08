@@ -1,9 +1,14 @@
+import { Banner } from "@/components/wiki/Banner";
 import { ReferencesSection } from "@/components/wiki/ReferencesSection";
 import { WikiPage } from "@/components/wiki/WikiPage";
 import { WikiSection } from "@/components/wiki/WikiSection";
 import { createCitations } from "@/lib/wiki/citations";
 
-const { Cite, references } = createCitations([
+export const metadata = {
+  title: "Community — MEYcell",
+};
+
+const { references } = createCitations([
   {
     id: "koch2019",
     authors: "Koch, B. et al.",
@@ -26,40 +31,44 @@ const { Cite, references } = createCitations([
 
 export default function CommunityPage() {
   return (
-    <WikiPage
-      eyebrow="Community"
-      title="Human Practices & Outreach"
-      intro="How MEYcell engages with communities, stakeholders, and the public."
-    >
-      <WikiSection id="overview" title="Overview">
-        <p>COMING SOON</p>
-      </WikiSection>
+    <>
+      <Banner eyebrow="Community" title="Human Practices & Outreach">
+        <p>
+          How MEYcell engages with communities, stakeholders, and the public.
+        </p>
+      </Banner>
 
-      <WikiSection id="stakeholders" title="Stakeholders">
-        <p>COMING SOON</p>
-      </WikiSection>
+      <WikiPage>
+        <WikiSection id="overview" title="Overview">
+          <p>COMING SOON</p>
+        </WikiSection>
 
-      <WikiSection id="industry" title="Industry">
-        <p>COMING SOON</p>
-      </WikiSection>
+        <WikiSection id="stakeholders" title="Stakeholders">
+          <p>COMING SOON</p>
+        </WikiSection>
 
-      <WikiSection id="contact" title="Contact">
-        <p>COMING SOON</p>
-      </WikiSection>
+        <WikiSection id="industry" title="Industry">
+          <p>COMING SOON</p>
+        </WikiSection>
 
-      <WikiSection id="initiatives" title="Initiatives">
-        <p>COMING SOON</p>
-      </WikiSection>
+        <WikiSection id="contact" title="Contact">
+          <p>COMING SOON</p>
+        </WikiSection>
 
-      <WikiSection id="surveys" title="Surveys">
-        <p>COMING SOON</p>
-      </WikiSection>
+        <WikiSection id="initiatives" title="Initiatives">
+          <p>COMING SOON</p>
+        </WikiSection>
 
-      <ReferencesSection
-        id="references"
-        title="References"
-        references={references}
-      />
-    </WikiPage>
+        <WikiSection id="surveys" title="Surveys">
+          <p>COMING SOON</p>
+        </WikiSection>
+
+        <ReferencesSection
+          id="references"
+          title="References"
+          references={references}
+        />
+      </WikiPage>
+    </>
   );
 }

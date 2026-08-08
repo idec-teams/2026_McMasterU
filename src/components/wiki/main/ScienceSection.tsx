@@ -119,7 +119,7 @@ export function ScienceSection() {
               style={{ boxShadow: "0 0 30px rgb(var(--teal-rgb) / 0.06)" }}
             >
               <div className="font-mono text-[9px] tracking-widest uppercase text-accent mb-2">
-                iGEM 2026
+                IDEC 2026
               </div>
               <div className="font-display text-lg text-foreground mb-1">
                 McMaster SynBio
@@ -154,7 +154,7 @@ function PathwayTerminal() {
         <div className="w-2.5 h-2.5 rounded-full bg-primary/45" />
         <div className="w-2.5 h-2.5 rounded-full bg-primary/25" />
         <span className="text-[10px] text-muted-foreground ml-2 tracking-wider">
-          meycell_pathway.gb — iGEM Part Registry 2026
+          meycell_pathway.gb — IDEC Part Registry 2026
         </span>
       </div>
 

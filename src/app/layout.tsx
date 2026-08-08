@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MEYcell — McMaster iGEM 2026",
+  title: "MEYcell — McMaster IDEC 2026",
   description:
-    "McMaster University iGEM 2026 project wiki: engineering yeast that bursts fat at cooking temperature.",
+    "McMaster University IDEC 2026 project wiki: engineering yeast that bursts fat at cooking temperature.",
 };
 
 export default function RootLayout({

@@ -19,7 +19,7 @@ export function Footer() {
               <span className="text-accent">cell</span>
             </div>
             <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
-              McMaster University iGEM 2026. Engineering yeast to solve the fat
+              McMaster University IDEC 2026. Engineering yeast to solve the fat
               problem in alternative protein — and put flavor back into
               sustainable food.
             </p>
@@ -31,10 +31,10 @@ export function Footer() {
 
         <div className="border-t border-border pt-6 flex flex-col md:flex-row justify-between items-center gap-2">
           <div className="font-mono text-[10px] text-muted-foreground/60">
-            © 2026 McMaster University iGEM Team. All rights reserved.
+            © 2026 McMaster University IDEC Team. All rights reserved.
           </div>
           <div className="font-mono text-[10px] text-muted-foreground/35">
-            MEYcell — S. cerevisiae MEY-26 — iGEM Foundation
+            MEYcell — S. cerevisiae MEY-26 — IDEC Foundation
           </div>
         </div>
       </div>

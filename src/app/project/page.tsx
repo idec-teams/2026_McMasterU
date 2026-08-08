@@ -1,3 +1,4 @@
+import { Banner } from "@/components/wiki/Banner";
 import { ReferencesSection } from "@/components/wiki/ReferencesSection";
 import { WikiPage } from "@/components/wiki/WikiPage";
 import { WikiSection } from "@/components/wiki/WikiSection";
@@ -31,41 +32,47 @@ const { Cite, references } = createCitations([
 
 export default function ProjectPage() {
   return (
-    <WikiPage
-      eyebrow="Project"
-      title="The MEYcell Project"
-      intro="Background, design rationale, and results for MEYcell — an engineered yeast that delivers animal-identical fat to the next generation of alternative protein."
-    >
-      <WikiSection id="overview" title="Overview">
+    <>
+      <Banner eyebrow="Project" title="The MEYcell Project">
         <p>
-          MEYcell is an engineered strain of <em>Saccharomyces cerevisiae</em>{" "}
-          that accumulates intracellular triglycerides identical to animal fat
-          <Cite id="koch2019" />, then releases them at cooking temperature to
-          restore the marbling that alternative proteins lack.
+          Background, design rationale, and results for MEYcell — an engineered
+          yeast that delivers animal-identical fat to the next generation of
+          alternative protein.
         </p>
-      </WikiSection>
+      </Banner>
 
-      <WikiSection id="background" title="Background">
-        <p>
-          Cultivated and plant-based meats still taste lean because they carry
-          almost no intramuscular fat, the main driver of flavor and juiciness
-          <Cite id="post2020" />. MEYcell targets that gap directly. Full
-          content coming soon.
-        </p>
-      </WikiSection>
+      <WikiPage>
+        <WikiSection id="overview" title="Overview">
+          <p>
+            MEYcell is an engineered strain of <em>Saccharomyces cerevisiae</em>{" "}
+            that accumulates intracellular triglycerides identical to animal fat
+            <Cite id="koch2019" />, then releases them at cooking temperature to
+            restore the marbling that alternative proteins lack.
+          </p>
+        </WikiSection>
 
-      <WikiSection id="results" title="Results">
-        <p>
-          Experimental results and characterization for the MEYcell strain.
-          Content coming soon.
-        </p>
-      </WikiSection>
+        <WikiSection id="background" title="Background">
+          <p>
+            Cultivated and plant-based meats still taste lean because they carry
+            almost no intramuscular fat, the main driver of flavor and juiciness
+            <Cite id="post2020" />. MEYcell targets that gap directly. Full
+            content coming soon.
+          </p>
+        </WikiSection>
 
-      <ReferencesSection
-        id="references"
-        title="References"
-        references={references}
-      />
-    </WikiPage>
+        <WikiSection id="results" title="Results">
+          <p>
+            Experimental results and characterization for the MEYcell strain.
+            Content coming soon.
+          </p>
+        </WikiSection>
+
+        <ReferencesSection
+          id="references"
+          title="References"
+          references={references}
+        />
+      </WikiPage>
+    </>
   );
 }

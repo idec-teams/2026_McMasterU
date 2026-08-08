@@ -1,11 +1,12 @@
 import Image from "next/image";
 import type { TeamMember } from "@/types/wiki";
+import { TrackPills } from "./TrackPill";
 
-// One team member: photo, name, role, program + year, optional LinkedIn.
-// Photos live in /public/team — set `photo: "/team/<file>.jpg"`. Until a photo
+// One team member: photo, name, track pills, optional program/year/LinkedIn.
+// Photos live in /public/team — set `photo: "/team/<file>.JPG"`. Until a photo
 // exists the card falls back to the member's initials so the grid stays even.
 export function MemberCard({ member }: { member: TeamMember }) {
-  const { name, role, program, year, photo, linkedin } = member;
+  const { name, tracks, program, year, photo, linkedin } = member;
 
   return (
     <article className="group flex flex-col border border-border bg-card transition-colors duration-200 hover:border-primary/40">
@@ -23,25 +24,28 @@ export function MemberCard({ member }: { member: TeamMember }) {
         )}
       </div>
 
-      <div className="flex flex-1 flex-col gap-1 p-5">
+      <div className="flex flex-1 flex-col gap-3 p-5">
         <h3 className="font-display text-lg leading-tight text-foreground">
           {name}
         </h3>
-        <p className="font-mono text-[10px] uppercase tracking-widest text-primary">
-          {role}
-        </p>
 
-        <p className="mt-3 text-sm leading-snug text-body">{program}</p>
-        <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          {year}
-        </p>
+        <TrackPills tracks={tracks} />
+
+        {program ? (
+          <p className="text-sm leading-snug text-body">{program}</p>
+        ) : null}
+        {year ? (
+          <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+            {year}
+          </p>
+        ) : null}
 
         {linkedin ? (
           <a
             href={linkedin}
             target="_blank"
             rel="noreferrer noopener"
-            className="mt-4 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
+            className="mt-auto inline-flex items-center gap-2 pt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
           >
             <LinkedInMark />
             LinkedIn

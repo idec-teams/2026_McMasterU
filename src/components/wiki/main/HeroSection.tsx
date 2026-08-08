@@ -20,7 +20,7 @@ export function HeroSection() {
           <div>
             <div className="font-mono text-[10px] tracking-widest text-primary uppercase mb-6 flex items-center gap-3">
               <span className="inline-block w-6 h-px bg-primary" />
-              McMaster iGEM 2026 — Project Wiki
+              McMaster IDEC 2026 — Project Wiki
             </div>
 
             <h1

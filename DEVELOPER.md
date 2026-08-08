@@ -1,6 +1,6 @@
 # DEVELOPER.md
 
-Quick orientation for the **MEYcell** wiki (McMaster iGEM 2026).
+Quick orientation for the **MEYcell** wiki (McMaster IDEC 2026).
 Goal of this doc: get you writing page content in ~5 minutes.
 
 ---
@@ -58,10 +58,11 @@ renders them.
 
 ## 3. Writing a page (the important part)
 
-Every content page is the same three-part shape: a `WikiPage` wrapper, some
-`WikiSection` blocks, and an optional `ReferencesSection`.
+Every content page is the same shape: a `Banner` (the page header), a `WikiPage`
+wrapper, some `WikiSection` blocks, and an optional `ReferencesSection`.
 
 ```tsx
+import { Banner } from "@/components/wiki/Banner";
 import { ReferencesSection } from "@/components/wiki/ReferencesSection";
 import { WikiPage } from "@/components/wiki/WikiPage";
 import { WikiSection } from "@/components/wiki/WikiSection";
@@ -77,20 +78,29 @@ const { Cite, references } = createCitations([
 
 export default function ProjectPage() {
   return (
-    <WikiPage eyebrow="Project" title="The MEYcell Project" intro="One-line summary.">
-      <WikiSection id="overview" title="Overview">
-        <p>Any JSX you like<Cite id="koch2019" />.</p>
-      </WikiSection>
+    <>
+      <Banner eyebrow="Project" title="The MEYcell Project">
+        <p>One-line summary.</p>
+      </Banner>
 
-      <WikiSection id="results" title="Results">
-        <p>…</p>
-      </WikiSection>
+      <WikiPage>
+        <WikiSection id="overview" title="Overview">
+          <p>Any JSX you like<Cite id="koch2019" />.</p>
+        </WikiSection>
 
-      <ReferencesSection id="references" title="References" references={references} />
-    </WikiPage>
+        <WikiSection id="results" title="Results">
+          <p>…</p>
+        </WikiSection>
+
+        <ReferencesSection id="references" title="References" references={references} />
+      </WikiPage>
+    </>
   );
 }
 ```
+
+The page title lives in **one** place: the `Banner`. `WikiPage` owns only the
+table of contents and content column.
 
 **To add content, add a `<WikiSection>`. That's it** — the sidebar table of
 contents builds itself from the sections you write.
@@ -99,7 +109,7 @@ contents builds itself from the sections you write.
 
 | Component | Props | What it does |
 |---|---|---|
-| `WikiPage` | `eyebrow`, `title`, `intro?`, `children` | Page shell. Auto-builds the TOC sidebar from its section children. |
+| `WikiPage` | `children` | Content shell. Auto-builds the TOC sidebar from its section children. No title — use `Banner` above it. |
 | `WikiSection` | `id`, `title`, `children` | One content block → `<h2>` + your JSX. `id` is its anchor. |
 | `ReferencesSection` | `id`, `title`, `references` | A `WikiSection` specialization. Place it manually (usually last); still appears in the TOC. |
 | `createCitations(refs)` | array of `WikiReference` | Returns `{ Cite, references }`. |

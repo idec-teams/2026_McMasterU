@@ -50,12 +50,19 @@ export type PathwayEntry = {
 };
 
 export type TeamMember = {
+  /** Unique, stable key for this member (e.g. "jane-doe"). */
+  id: string;
   name: string;
-  role: string;
-  program: string;
+  /**
+   * One entry per track, each rendered as a pill. Commas belong to the track
+   * name ("Human Practices, Community Outreach"); separate tracks are separate
+   * array entries. In _data.json a single "A | B" string is also accepted.
+   */
+  tracks: string[];
+  program?: string;
   /** Year of study, e.g. "Year 3" or "MSc 1". */
-  year: string;
-  /** Path to a photo in /public/team, e.g. "/team/jane-doe.jpg". */
+  year?: string;
+  /** Path to a photo in /public/team, e.g. "/team/Jane.JPG". */
   photo?: string;
   linkedin?: string;
 };
