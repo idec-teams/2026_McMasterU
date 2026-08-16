@@ -76,6 +76,15 @@ export type WikiReference = {
   url?: string;
 };
 
+export type EngineeringWidget = {
+  id: string;
+  title: string;
+  /** Route the widget links to, e.g. "/engineering/rnat-model". */
+  href: string;
+  /** Path to a background image in /public. Until set, the card falls back to a plain scrim. */
+  image?: string;
+};
+
 export type WikiSectionProps = {
   id: string;
   title: string;
