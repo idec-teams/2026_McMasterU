@@ -6,7 +6,7 @@ import { TrackPills } from "./TrackPill";
 // Photos live in /public/team — set `photo: "/team/<file>.JPG"`. Until a photo
 // exists the card falls back to the member's initials so the grid stays even.
 export function MemberCard({ member }: { member: TeamMember }) {
-  const { name, tracks, program, year, photo, linkedin } = member;
+  const { name, tracks, program, year, photo, linkedin, funFact } = member;
 
   return (
     <article className="group flex flex-col border border-border bg-card transition-colors duration-200 hover:border-primary/40">
@@ -24,7 +24,7 @@ export function MemberCard({ member }: { member: TeamMember }) {
         )}
       </div>
 
-      <div className="flex flex-1 flex-col gap-3 p-5">
+      <div className="flex flex-1 flex-col gap-3 p-3">
         <h3 className="font-display text-lg leading-tight text-foreground">
           {name}
         </h3>
@@ -37,6 +37,12 @@ export function MemberCard({ member }: { member: TeamMember }) {
         {year ? (
           <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
             {year}
+          </p>
+        ) : null}
+
+        {funFact ? (
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Fun fact: {funFact}
           </p>
         ) : null}
 

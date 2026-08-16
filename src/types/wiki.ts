@@ -65,6 +65,8 @@ export type TeamMember = {
   /** Path to a photo in /public/team, e.g. "/team/Jane.JPG". */
   photo?: string;
   linkedin?: string;
+  /** A fun fact about the team member. */
+  funFact?: string;
 };
 
 export type WikiReference = {
