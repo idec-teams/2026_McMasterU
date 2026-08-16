@@ -1,15 +1,9 @@
-import { PagePlaceholder } from "@/components/wiki/PagePlaceholder";
+import { ModelPage } from "@/components/wiki/engineering/ModelPage";
 
 export const metadata = {
   title: "Financial Model — MEYcell",
 };
 
 export default function FinancialModelPage() {
-  return (
-    <PagePlaceholder
-      eyebrow="Engineering"
-      title="Financial Model"
-      description="Content coming soon."
-    />
-  );
+  return <ModelPage title="Financial Model" />;
 }

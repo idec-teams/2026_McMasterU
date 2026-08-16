@@ -85,6 +85,11 @@ export type EngineeringWidget = {
   image?: string;
 };
 
+export type SummaryPoint = {
+  title: string;
+  body: string;
+};
+
 export type WikiSectionProps = {
   id: string;
   title: string;
