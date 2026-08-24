@@ -9,7 +9,7 @@ export const metadata = {
 export default function DocumentationPage() {
   return (
     <>
-      <Banner eyebrow="Documentation" title="MEYcell Documentation">
+      <Banner title="Documentation">
         <p>Our parts, constructs and lab notebook compiled together.</p>
       </Banner>
 

@@ -119,7 +119,7 @@ function ThermalDrift() {
 
       {/* Cursor-chasing hot spot — the most visible thermal layer. The teal
           field above keeps drifting on its own clock, independent of this. */}
-      <HotZone />
+      {/* <HotZone /> */}
 
       <div className="hero-dots absolute inset-0 opacity-40" />
       <div className="hero-grain absolute inset-0 opacity-[0.035] mix-blend-overlay" />

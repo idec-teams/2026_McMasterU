@@ -32,7 +32,7 @@ const { references } = createCitations([
 export default function CommunityPage() {
   return (
     <>
-      <Banner eyebrow="Community" title="Human Practices & Outreach">
+      <Banner title="Community">
         <p>
           How MEYcell engages with communities, stakeholders, and the public.
         </p>
