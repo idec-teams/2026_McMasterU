@@ -58,6 +58,36 @@ export default function ProjectPage() {
             <Cite id="post2020" />. MEYcell targets that gap directly. Full
             content coming soon.
           </p>
+
+          <h4 className="mt-4 font-medium">Key pathways & mechanisms</h4>
+          <p className="text-sm text-muted-foreground">
+            Describe the metabolic pathways targeted for triglyceride
+            accumulation (e.g., acetyl-CoA flux, fatty acid synthase regulation,
+            TAG assembly enzymes). Include pathway diagrams or references as
+            needed.
+          </p>
+
+          <h4 className="mt-4 font-medium">RNA technology background</h4>
+          <p className="text-sm text-muted-foreground">
+            Summarize RNAt background: types considered, stability strategies,
+            and design constraints.
+          </p>
+        </WikiSection>
+
+        <WikiSection id="mutagenesis" title="How we did mutagenesis">
+          <p>
+            Describe the mutagenesis strategy: type of mutagenesis
+            (site-directed, error-prone PCR, saturation), screening, and
+            verification (sequencing strategy, criteria for selecting clones).
+          </p>
+        </WikiSection>
+
+        <WikiSection id="rnat-choice" title="Our choice of RNAt">
+          <p>
+            Explain the approach to selecting the RNAt, rationale, and how the
+            design was optimized for our project. (e.g. theromodynamic
+            modelling, codon optimization, part selection)
+          </p>
         </WikiSection>
 
         <WikiSection id="results" title="Results">

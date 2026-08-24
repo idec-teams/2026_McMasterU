@@ -2,96 +2,117 @@
   {
     "name": "Bogdana Borysova",
     "tracks": ["Co-President"],
-    "photo": "/team/Bogdana.JPG"
+    "photo": "/team/Bogdana.JPG",
+    "linkedin": "https://www.linkedin.com/in/bogdana-borysova/",
+    "funFact": "Favourite Post-Lab Snack: Chocolate Chip Cookies"
   },
   {
     "name": "Mrudula Arali",
     "tracks": ["Co-President"],
-    "photo": "/team/Mrudula.JPG"
+    "photo": "/team/Mrudula.JPG",
+    "funFact": "If My Life In The Lab Were A Movie, It Would Be: The Plorax"
   },
   {
     "name": "Faruk Efe Yencilek",
     "tracks": ["Vice-President"],
-    "photo": "/team/Efe.JPG"
+    "photo": "/team/Efe.JPG",
+    "linkedin": "https://www.linkedin.com/in/efeyencilek/",
+    "funFact": "3 Songs in My Go-To Lab Playlist: Too Long - Daft Punk, Endors Toi - Tame Impala, Decks Dark - Radiohead"
   },
   {
     "name": "Aditi Chhetri",
     "tracks": ["Dry-Lab Design"],
-    "photo": "/team/Aditi.JPG"
+    "photo": "/team/Aditi.JPG",
+    "linkedin": "https://www.linkedin.com/in/aditi-chhetri-9116683a8/"
   },
   {
     "name": "Amber Chen",
     "tracks": ["Dry-Lab Design"],
-    "photo": "/team/Amber.JPG"
+    "photo": "/team/Amber.JPG",
+    "linkedin": "https://www.linkedin.com/in/amber-chen227/"
   },
   {
     "name": "Anurit Deol",
     "tracks": ["Human Practices, Entrepreneurship & Commercialization"],
-    "photo": "/team/Anurit.JPG"
+    "photo": "/team/Anurit.JPG",
+    "linkedin": "https://www.linkedin.com/in/anurit-deol/"
   },
   {
     "name": "Anvi Babbar",
     "tracks": ["Human Practices, Entrepreneurship & Commercialization"],
-    "photo": "/team/Anvi.JPG"
+    "photo": "/team/Anvi.JPG",
+    "linkedin": "https://www.linkedin.com/in/anvibabbar/"
   },
   {
     "name": "Camila Gonzales",
     "tracks": ["Dry-Lab Design"],
-    "photo": "/team/Camila.JPG"
+    "photo": "/team/Camila.JPG",
+    "linkedin": "https://www.linkedin.com/in/camila-gonzalez-161a5a317/"
   },
   {
     "name": "Chloe Lim",
     "tracks": ["Dry-Lab Design"],
-    "photo": "/team/Chloe.JPG"
+    "photo": "/team/Chloe.JPG",
+    "linkedin": "https://www.linkedin.com/in/chloe-lim-71b918233/"
   },
   {
     "name": "Eryn Bantugon",
     "tracks": ["Human Practices, Community Outreach"],
-    "photo": "/team/Eryn.JPG"
+    "photo": "/team/Eryn.JPG",
+    "linkedin": "https://www.linkedin.com/in/eryn-adrielle-bantugon/"
   },
   {
     "name": "Faith Lin",
     "tracks": ["Human Practices, Entrepreneurship & Commercialization"],
-    "photo": "/team/Faith.JPG"
+    "photo": "/team/Faith.JPG",
+    "linkedin": "https://www.linkedin.com/in/faith-lin-857699319/"
   },
   {
     "name": "Jacky Wang",
     "tracks": ["Dry-Lab Design"],
-    "photo": "/team/Jacky.JPG"
+    "photo": "/team/Jacky.JPG",
+    "linkedin": "https://www.linkedin.com/in/jackywang0/"
   },
   {
     "name": "Jacob Hum",
     "tracks": ["Finance", "Wet-Lab"],
-    "photo": "/team/Jacob.JPG"
+    "photo": "/team/Jacob.JPG",
+    "linkedin": "https://www.linkedin.com/in/jacob-hum-875101318/"
   },
   {
     "name": "James Maves",
     "tracks": ["Dry-Lab Modelling"],
-    "photo": "/team/James.JPG"
+    "photo": "/team/James.JPG",
+    "linkedin": "https://www.linkedin.com/in/james-maves-22938a33a/"
   },
   {
     "name": "Jenica Wong",
     "tracks": ["Dry-Lab Modelling"],
-    "photo": "/team/Jenica.JPG"
+    "photo": "/team/Jenica.JPG",
+    "linkedin": "https://www.linkedin.com/in/jenica-wong-a4b113345/"
   },
   {
     "name": "Kevin Li",
     "tracks": ["Human Practices, Entrepreneurship & Commercialization"],
-    "photo": "/team/Kevin.JPG"
+    "photo": "/team/Kevin.JPG",
+    "linkedin": "https://www.linkedin.com/in/kevin-li-ontario/"
   },
   {
     "name": "Maia Mureseanu",
     "tracks": ["Science Communication"],
-    "photo": "/team/Maia.JPG"
+    "photo": "/team/Maia.JPG",
+    "linkedin": "https://www.linkedin.com/in/maia-mureseanu/"
   },
   {
     "name": "Rachel Ou",
     "tracks": ["Wet-Lab"],
-    "photo": "/team/Rachel.JPG"
+    "photo": "/team/Rachel.JPG",
+    "linkedin": "https://www.linkedin.com/in/rachel-ou-ro/"
   },
   {
     "name": "Via Iseppon",
     "tracks": ["Dry-Lab Modelling"],
-    "photo": "/team/Via.JPG"
+    "photo": "/team/Via.JPG",
+    "linkedin": "https://www.linkedin.com/in/via-iseppon-831500280/"
   }
 ]
