@@ -1,18 +1,27 @@
 import type { ColorKey, ProblemCardColors } from "@/types/wiki";
 
-// The palette is monochrome teal, so every problem card shares one brand
-// treatment. The ColorKey map is kept so the data model stays open to
-// re-introducing per-card accents later without touching components.
-const TEAL_CARD: ProblemCardColors = {
-  border: "border-border",
-  stat: "text-primary",
-  icon: "text-primary",
-};
-
+// Per-topic accents from the bounded set in globals.css. Same tint recipe for
+// every hue (full-strength icon/stat, /25 border, /50 hover) so the cards read
+// as one system despite carrying different colors.
 export const PROBLEM_CARD_COLORS: Record<ColorKey, ProblemCardColors> = {
-  blue: TEAL_CARD,
-  green: TEAL_CARD,
-  yellow: TEAL_CARD,
+  sky: {
+    border: "border-sky/25",
+    hover: "hover:border-sky/60",
+    stat: "text-sky",
+    icon: "text-sky",
+  },
+  rose: {
+    border: "border-rose/25",
+    hover: "hover:border-rose/60",
+    stat: "text-rose",
+    icon: "text-rose",
+  },
+  gold: {
+    border: "border-gold/25",
+    hover: "hover:border-gold/60",
+    stat: "text-gold",
+    icon: "text-gold",
+  },
 };
 
 export type TrackColor = { border: string; bg: string; text: string };

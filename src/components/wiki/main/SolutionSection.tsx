@@ -1,5 +1,5 @@
-import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
-import { CellViz } from "@/components/wiki/CellViz";
+// Re-enable alongside the commented-out visualization block below.
+// import { CellViz } from "@/components/wiki/CellViz";
 import type { SolutionStat } from "@/types/wiki";
 
 const SOLUTION_STATS: SolutionStat[] = [
@@ -11,11 +11,12 @@ const SOLUTION_STATS: SolutionStat[] = [
 
 export function SolutionSection() {
   return (
-    <section id="solution" className="py-28">
+    <section id="solution" className="pt-16 pb-28 bg-raised">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-          <div>
-            <SectionEyebrow tone="brand">Our Solution</SectionEyebrow>
+        {/* Single column while the visualization is hidden; restore
+            `lg:grid-cols-2` when the block below is uncommented. */}
+        <div className="grid grid-cols-1 gap-20 items-start">
+          <div className="max-w-3xl">
             <h2 className="font-display text-4xl lg:text-5xl text-foreground leading-tight mb-8">
               Fat in a cell.
               <br />
@@ -56,6 +57,8 @@ export function SolutionSection() {
             </div>
           </div>
 
+          {/* Cell visualization — hidden for now. CellViz stays in the library
+              (still used by the hero banner); uncomment to bring this back.
           <div>
             <div className="font-mono text-[9px] text-muted-foreground/40 tracking-widest uppercase mb-3 text-right">
               Cross-section — MEYcell at 71 °C
@@ -67,6 +70,7 @@ export function SolutionSection() {
               Lipid droplets visible — awaiting thermal trigger at 72 °C
             </div>
           </div>
+          */}
         </div>
       </div>
     </section>
