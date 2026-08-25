@@ -95,6 +95,8 @@ export type SummaryPoint = {
 export type WikiSectionProps = {
   id: string;
   title: string;
+  /** Keep `title` as the section's id/TOC reference but don't render it visibly (e.g. a section with its own custom heading). */
+  hideTitle?: boolean;
   children?: ReactNode;
 };
 
