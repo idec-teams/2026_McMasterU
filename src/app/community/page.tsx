@@ -8,7 +8,6 @@ export const metadata = {
   title: "Community — MEYcell",
 };
 
-
 const stakeholderGroups = [
   {
     id: "industry",
@@ -39,7 +38,6 @@ const stakeholderGroups = [
   },
 ] as const;
 
-
 function PersonCard({ label, href }: { label: string; href: string }) {
   return (
     <a
@@ -51,7 +49,6 @@ function PersonCard({ label, href }: { label: string; href: string }) {
     </a>
   );
 }
-
 
 function DetailBlock({
   id,
@@ -65,7 +62,10 @@ function DetailBlock({
   outcome: string;
 }) {
   return (
-    <div id={id} className="space-y-3 rounded-xl border border-border bg-card/80 p-4">
+    <div
+      id={id}
+      className="space-y-3 rounded-xl border border-border bg-card/80 p-4"
+    >
       <div className="flex min-h-[120px] items-center justify-center rounded-md border border-dashed border-border bg-surface/30 text-sm text-body">
         [image]
       </div>
@@ -74,10 +74,12 @@ function DetailBlock({
       </p>
       <div className="space-y-2 text-sm leading-relaxed text-body">
         <p>
-          <span className="font-medium text-foreground">Description:</span> {description}
+          <span className="font-medium text-foreground">Description:</span>{" "}
+          {description}
         </p>
         <p>
-          <span className="font-medium text-foreground">Outcome:</span> {outcome}
+          <span className="font-medium text-foreground">Outcome:</span>{" "}
+          {outcome}
         </p>
       </div>
     </div>
@@ -150,7 +152,7 @@ export default function CommunityPage() {
             </div>
           </div>
         </WikiSection>
-{/* make into subsections */}
+        {/* make into subsections */}
         <WikiSection id="industry" title="Industry">
           <div className="space-y-4">
             <DetailBlock
@@ -229,7 +231,7 @@ export default function CommunityPage() {
         </WikiSection>
 
         <WikiSection id="surveys" title="Surveys">
-              <p>COMING SOON</p>
+          <p>COMING SOON</p>
         </WikiSection>
 
         <ReferencesSection
