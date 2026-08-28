@@ -26,6 +26,7 @@ type RawMember = {
   year?: string;
   photo?: string;
   linkedin?: string;
+  funFact?: string;
 };
 
 function slugify(name: string): string {

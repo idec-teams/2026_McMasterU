@@ -3,13 +3,11 @@ import type { Problem } from "@/types/wiki";
 
 export function ProblemCard({ problem }: { problem: Problem }) {
   const c = PROBLEM_CARD_COLORS[problem.color];
-  const Icon = problem.icon;
 
   return (
     <div
-      className={`flex flex-col gap-4 border ${c.border} bg-card p-8 transition-colors duration-200 hover:border-primary/40`}
+      className={`flex flex-col gap-4 border ${c.border} bg-surface p-8 transition-colors duration-200 ${c.hover}`}
     >
-      <Icon className={`w-7 h-7 ${c.icon}`} />
       <div className={`font-display text-5xl font-bold leading-none ${c.stat}`}>
         {problem.stat}
       </div>

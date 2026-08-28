@@ -9,7 +9,7 @@ export const metadata = {
 export default function EntrepreneurshipPage() {
   return (
     <>
-      <Banner eyebrow="Entrepreneurship" title="From Bioreactor to Market">
+      <Banner title="Entrepreneurship">
         <p>
           The business model, market analysis, and commercialization path for
           MEYcell.

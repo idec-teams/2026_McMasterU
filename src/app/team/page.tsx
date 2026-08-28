@@ -13,7 +13,7 @@ export default function TeamPage() {
 
   return (
     <>
-      <Banner eyebrow="Team" title="The people behind MEYcell.">
+      <Banner title="Meet Our Team">
         <p>Meet the McMaster IDEC 2026 team.</p>
       </Banner>
 

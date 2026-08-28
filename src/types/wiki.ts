@@ -1,9 +1,10 @@
 import type { ElementType, ReactNode } from "react";
 
-export type ColorKey = "blue" | "green" | "yellow";
+export type ColorKey = "sky" | "rose" | "gold";
 
 export type ProblemCardColors = {
   border: string;
+  hover: string;
   stat: string;
   icon: string;
 };
@@ -14,7 +15,6 @@ export type NavLink = {
 };
 
 export type Problem = {
-  icon: ElementType;
   title: string;
   stat: string;
   statLabel: string;
@@ -22,11 +22,21 @@ export type Problem = {
   color: ColorKey;
 };
 
+/** Per-step accent classes — literal strings so Tailwind can see them. */
+export type StepTone = {
+  icon: string;
+  label: string;
+  divider: string;
+  /** CSS color for the oversized step numeral. */
+  num: string;
+};
+
 export type Step = {
   num: string;
   title: string;
   icon: ElementType;
   body: string;
+  tone: StepTone;
 };
 
 export type ScienceFact = {
@@ -65,6 +75,8 @@ export type TeamMember = {
   /** Path to a photo in /public/team, e.g. "/team/Jane.JPG". */
   photo?: string;
   linkedin?: string;
+  /** A fun fact about the team member. */
+  funFact?: string;
 };
 
 export type WikiReference = {
@@ -74,6 +86,20 @@ export type WikiReference = {
   source?: string;
   year?: string | number;
   url?: string;
+};
+
+export type EngineeringWidget = {
+  id: string;
+  title: string;
+  /** Route the widget links to, e.g. "/engineering/rnat-model". */
+  href: string;
+  /** Path to a background image in /public. Until set, the card falls back to a plain scrim. */
+  image?: string;
+};
+
+export type SummaryPoint = {
+  title: string;
+  body: string;
 };
 
 export type WikiSectionProps = {
