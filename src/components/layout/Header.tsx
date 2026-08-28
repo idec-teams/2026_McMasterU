@@ -32,9 +32,6 @@ export function Header() {
             <span className="font-display text-sm font-bold tracking-widest text-foreground">
               McMasterU
             </span>
-            <span className="font-mono text-xs text-muted-foreground ml-2">
-              / SynBio
-            </span>
           </div>
         </Link>
 

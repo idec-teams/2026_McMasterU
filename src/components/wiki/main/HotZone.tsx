@@ -26,7 +26,7 @@ export function HotZone() {
       const x = e.clientX - rect.left - SIZE / 2;
       const y = e.clientY - rect.top - SIZE / 2;
       el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-      el.style.opacity = "1";
+      el.style.opacity = "0.55";
     };
     const onLeave = () => {
       el.style.opacity = "0";

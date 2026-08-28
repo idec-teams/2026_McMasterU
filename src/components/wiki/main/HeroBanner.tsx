@@ -81,7 +81,7 @@ function ThermalDrift() {
     >
       {/* Teal core */}
       <div
-        className="absolute -inset-1/4 animate-[hero-drift-a_61s_ease-in-out_infinite] motion-reduce:animate-none"
+        className="absolute -inset-1/4 animate-[hero-drift-a_45s_ease-in-out_infinite] motion-reduce:animate-none"
         style={{
           background:
             "radial-gradient(ellipse 60% 55% at 50% 45%, rgb(var(--teal-rgb) / 0.22), transparent 70%)",
@@ -89,7 +89,7 @@ function ThermalDrift() {
       />
       {/* Cooler counter-drift, keeps the field from feeling like one blob */}
       <div
-        className="absolute -inset-1/4 animate-[hero-drift-b_79s_ease-in-out_infinite] motion-reduce:animate-none"
+        className="absolute -inset-1/4 animate-[hero-drift-b_55s_ease-in-out_infinite] motion-reduce:animate-none"
         style={{
           background:
             "radial-gradient(ellipse 50% 60% at 24% 72%, rgb(var(--teal-rgb) / 0.13), transparent 65%)",
@@ -97,7 +97,7 @@ function ThermalDrift() {
       />
       {/* Thermal peak — the warm note, deliberately faint */}
       <div
-        className="absolute -inset-1/4 animate-[hero-ember_53s_ease-in-out_infinite] motion-reduce:animate-none"
+        className="absolute -inset-1/4 animate-[hero-ember_38s_ease-in-out_infinite] motion-reduce:animate-none"
         style={{
           background:
             "radial-gradient(ellipse 45% 40% at 66% 34%, rgb(var(--ember-rgb) / 0.5), transparent 62%)",
@@ -107,19 +107,19 @@ function ThermalDrift() {
       {/* Free-roaming warm spots — dimmer than the cursor zone, wandering on
           their own long cycles so the field is never completely still. */}
       <RoamingZone
-        className="animate-[hero-roam-a_97s_ease-in-out_infinite]"
+        className="animate-[hero-roam-a_62s_ease-in-out_infinite]"
         size={340}
         alpha={0.1}
       />
       <RoamingZone
-        className="animate-[hero-roam-b_127s_ease-in-out_infinite]"
+        className="animate-[hero-roam-b_57s_ease-in-out_infinite]"
         size={260}
         alpha={0.07}
       />
 
       {/* Cursor-chasing hot spot — the most visible thermal layer. The teal
           field above keeps drifting on its own clock, independent of this. */}
-      {/* <HotZone /> */}
+      <HotZone />
 
       <div className="hero-dots absolute inset-0 opacity-40" />
       <div className="hero-grain absolute inset-0 opacity-[0.035] mix-blend-overlay" />
