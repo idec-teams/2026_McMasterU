@@ -10,30 +10,20 @@ export const metadata = {
 
 const stakeholderGroups = [
   {
+    id: "academia",
+    title: "Academia",
+    people: [
+      { id: "academia-person-a", label: "Dr. Josh Milburn" },
+      { id: "academia-person-b", label: "Dr. Sarah Louise-Ruder" },
+    ],
+  },
+  {
     id: "industry",
     title: "Industry",
     people: [
       { id: "industry-person-a", label: "Person A" },
       { id: "industry-person-b", label: "Person B" },
       { id: "industry-person-c", label: "Person C" },
-    ],
-  },
-  {
-    id: "academia",
-    title: "Academia",
-    people: [
-      { id: "academia-person-a", label: "Person A" },
-      { id: "academia-person-b", label: "Person B" },
-      { id: "academia-person-c", label: "Person C" },
-    ],
-  },
-  {
-    id: "farms",
-    title: "Farms",
-    people: [
-      { id: "farms-person-a", label: "Person A" },
-      { id: "farms-person-b", label: "Person B" },
-      { id: "farms-person-c", label: "Person C" },
     ],
   },
 ] as const;
@@ -153,30 +143,25 @@ export default function CommunityPage() {
           </div>
         </WikiSection>
         {/* make into subsections */}
-        <WikiSection id="industry" title="Industry">
+
+        <WikiSection id="academia" title="Academia">
           <div className="space-y-4">
             <DetailBlock
               id={stakeholderGroups[0].people[0].id}
-              label="Person A"
+              label="Dr. Josh Milburn"
               description="[coming soon]"
               outcome="[coming soon]"
             />
             <DetailBlock
               id={stakeholderGroups[0].people[1].id}
-              label="Person B"
-              description="[coming soon]"
-              outcome="[coming soon]"
-            />
-            <DetailBlock
-              id={stakeholderGroups[0].people[2].id}
-              label="Person C"
+              label="Dr. Sarah Louise-Ruder"
               description="[coming soon]"
               outcome="[coming soon]"
             />
           </div>
         </WikiSection>
 
-        <WikiSection id="academia" title="Academia">
+        <WikiSection id="industry" title="Industry">
           <div className="space-y-4">
             <DetailBlock
               id={stakeholderGroups[1].people[0].id}
@@ -192,29 +177,6 @@ export default function CommunityPage() {
             />
             <DetailBlock
               id={stakeholderGroups[1].people[2].id}
-              label="Person C"
-              description="[coming soon]"
-              outcome="[coming soon]"
-            />
-          </div>
-        </WikiSection>
-
-        <WikiSection id="farms" title="Farms">
-          <div className="space-y-4">
-            <DetailBlock
-              id={stakeholderGroups[2].people[0].id}
-              label="Person A"
-              description="[coming soon]"
-              outcome="[coming soon]"
-            />
-            <DetailBlock
-              id={stakeholderGroups[2].people[1].id}
-              label="Person B"
-              description="[coming soon]"
-              outcome="[coming soon]"
-            />
-            <DetailBlock
-              id={stakeholderGroups[2].people[2].id}
               label="Person C"
               description="[coming soon]"
               outcome="[coming soon]"
