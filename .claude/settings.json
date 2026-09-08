@@ -3,7 +3,9 @@
     "allow": [
       "Bash(git fetch *)",
       "Bash(git rev-list *)",
-      "Bash(awk '{print \"behind main: \"$1\" ahead of main: \"$2}')"
+      "Bash(awk '{print \"behind main: \"$1\" ahead of main: \"$2}')",
+      "Bash(sed -i '' '/^        eyebrow=\"Entrepreneurship\"$/d' src/components/wiki/entrepreneurship/EntrepreneurshipLanding.tsx)",
+      "Bash(sed -i '' 's|<Banner eyebrow=\"Entrepreneurship\" title=\"Entrepreneurship in Depth\">|<Banner title=\"Entrepreneurship in Depth\">|' src/components/wiki/entrepreneurship/EntrepreneurshipDetails.tsx)"
     ]
   }
 }

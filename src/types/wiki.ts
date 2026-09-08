@@ -12,6 +12,8 @@ export type ProblemCardColors = {
 export type NavLink = {
   label: string;
   href: string;
+  /** Sub-pages under this route. Rendered as a dropdown when present. */
+  children?: { label: string; href: string }[];
 };
 
 export type Problem = {

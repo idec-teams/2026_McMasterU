@@ -62,7 +62,10 @@ const TEASERS: Record<string, ReactNode> = {
 export function EntrepreneurshipLanding() {
   return (
     <>
-      <Banner eyebrow="Entrepreneurship" title="From Bioreactor to Market" src="/banners/entrepreneurship.png">
+      <Banner
+        title="From Bioreactor to Market"
+        src="/banners/entrepreneurship.png"
+      >
         <p>
           The business model, market analysis, and commercialization path for
           MEYcell.

@@ -11,7 +11,7 @@ import { ENTREPRENEURSHIP_SECTIONS } from "./sections";
 export function EntrepreneurshipDetails() {
   return (
     <>
-      <Banner eyebrow="Entrepreneurship" title="Entrepreneurship in Depth">
+      <Banner title="Entrepreneurship in Depth">
         <p>
           The full business case behind MEYcell — market need, business model,
           competitive position, and commercialization plan.
