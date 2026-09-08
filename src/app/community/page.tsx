@@ -100,7 +100,7 @@ const { references } = createCitations([
 export default function CommunityPage() {
   return (
     <>
-      <Banner title="Community">
+      <Banner title="Community" src="/banners/community.png">
         <p>
           How MEYcell engages with communities, stakeholders, and the public.
         </p>

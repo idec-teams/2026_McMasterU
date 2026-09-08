@@ -33,7 +33,7 @@ const { Cite, references } = createCitations([
 export default function ProjectPage() {
   return (
     <>
-      <Banner title="Project">
+      <Banner title="Project" src="/banners/project.png">
         <p>
           Background, design rationale, and results for MEYcell — an engineered
           yeast that delivers animal-identical fat to the next generation of

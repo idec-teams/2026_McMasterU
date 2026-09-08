@@ -41,7 +41,7 @@ export function Banner({
       ) : null}
 
       {/* Scrim: keeps text legible over any image, and gives the fallback depth. */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/30" />
       {/* Subtle brand tint so photos join the teal/navy palette. */}
       <div className="absolute inset-0 bg-primary/5" />
 
