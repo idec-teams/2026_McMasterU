@@ -25,9 +25,9 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <div className="w-8 h-8 flex items-center justify-center bg-primary">
+          {/* <div className="w-8 h-8 flex items-center justify-center bg-primary">
             <FlaskConical className="w-4 h-4 text-primary-foreground" />
-          </div>
+          </div> */}
           <div className="leading-tight">
             <span className="font-display text-sm font-bold tracking-widest text-foreground">
               McMasterU
