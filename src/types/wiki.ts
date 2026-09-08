@@ -1,9 +1,10 @@
 import type { ElementType, ReactNode } from "react";
 
-export type ColorKey = "blue" | "green" | "yellow";
+export type ColorKey = "sky" | "rose" | "gold";
 
 export type ProblemCardColors = {
   border: string;
+  hover: string;
   stat: string;
   icon: string;
 };
@@ -14,7 +15,6 @@ export type NavLink = {
 };
 
 export type Problem = {
-  icon: ElementType;
   title: string;
   stat: string;
   statLabel: string;
@@ -22,11 +22,21 @@ export type Problem = {
   color: ColorKey;
 };
 
+/** Per-step accent classes — literal strings so Tailwind can see them. */
+export type StepTone = {
+  icon: string;
+  label: string;
+  divider: string;
+  /** CSS color for the oversized step numeral. */
+  num: string;
+};
+
 export type Step = {
   num: string;
   title: string;
   icon: ElementType;
   body: string;
+  tone: StepTone;
 };
 
 export type ScienceFact = {

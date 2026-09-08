@@ -1,11 +1,10 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 
-// Reusable page banner. Pass the structured bits (eyebrow / title / image) as
-// props; put any optional extra content (description, CTA, breadcrumb) in
-// children. Leave `src` empty to render the treated navy fallback until a real
-// image exists — swapping in a photo later is a one-line `src` change.
+// Reusable page banner. Pass the structured bits (title / image) as props; put
+// any optional extra content (description, CTA, breadcrumb) in children. Leave
+// `src` empty to render the treated navy fallback until a real image exists —
+// swapping in a photo later is a one-line `src` change.
 //
 // Images are desaturated + scrimmed + brand-tinted so any source (a team photo
 // or a microscopy macro) reads as part of the teal/navy system. For remote URLs
@@ -14,13 +13,11 @@ import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 export function Banner({
   src,
   alt = "",
-  eyebrow,
   title,
   children,
 }: {
   src?: string;
   alt?: string;
-  eyebrow?: string;
   title: string;
   children?: ReactNode;
 }) {
@@ -49,9 +46,6 @@ export function Banner({
       <div className="absolute inset-0 bg-primary/5" />
 
       <div className="relative mx-auto w-full max-w-7xl px-6 pt-28 pb-14">
-        {eyebrow ? (
-          <SectionEyebrow tone="brand">{eyebrow}</SectionEyebrow>
-        ) : null}
         <h1 className="font-display text-4xl leading-tight text-foreground md:text-6xl">
           {title}
         </h1>

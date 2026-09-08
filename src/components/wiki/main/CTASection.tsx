@@ -5,7 +5,7 @@ const CTA_LINKS = NAV_LINKS.filter((link) => link.href !== "/");
 
 export function CTASection() {
   return (
-    <section className="py-20 bg-section border-t border-border">
+    <section className="py-20 bg-deep border-t border-border">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <div className="font-mono text-[10px] tracking-widest text-muted-foreground uppercase mb-4">
           Ready to dig deeper?

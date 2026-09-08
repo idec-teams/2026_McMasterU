@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch *)",
+      "Bash(git rev-list *)",
+      "Bash(awk '{print \"behind main: \"$1\" ahead of main: \"$2}')"
+    ]
+  }
+}

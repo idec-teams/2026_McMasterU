@@ -19,7 +19,7 @@ const SUMMARY_POINTS: SummaryPoint[] = [
 export function ModelPage({ title }: { title: string }) {
   return (
     <>
-      <Banner eyebrow="Engineering" title={title}>
+      <Banner title={title}>
         <p>{LOREM_PARAGRAPH}</p>
       </Banner>
 

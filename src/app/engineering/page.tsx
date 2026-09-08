@@ -8,7 +8,7 @@ export const metadata = {
 export default function EngineeringPage() {
   return (
     <>
-      <Banner eyebrow="Engineering" title="Our Engineering Cycle">
+      <Banner title="Engineering">
         <p>The design–build–test–learn iterations behind the MEYcell strain.</p>
       </Banner>
 
