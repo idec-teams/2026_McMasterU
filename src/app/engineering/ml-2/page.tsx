@@ -5,5 +5,5 @@ export const metadata = {
 };
 
 export default function Ml2Page() {
-  return <ModelPage title="ML2" />;
+  return <ModelPage title="ML2" src="/banners/engineering.png" />;
 }

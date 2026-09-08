@@ -5,5 +5,5 @@ export const metadata = {
 };
 
 export default function RNAtModelPage() {
-  return <ModelPage title="RNAt Model" />;
+  return <ModelPage title="RNAt Model" src="/banners/engineering.png" />;
 }

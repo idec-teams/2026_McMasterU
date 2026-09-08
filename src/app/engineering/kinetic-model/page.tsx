@@ -5,5 +5,5 @@ export const metadata = {
 };
 
 export default function KineticModelPage() {
-  return <ModelPage title="Kinetic Model" />;
+  return <ModelPage title="Kinetic Model" src="/banners/engineering.png" />;
 }

@@ -16,10 +16,10 @@ const SUMMARY_POINTS: SummaryPoint[] = [
 // Financial). Every section below is placeholder copy — once a model's real
 // write-up exists, replace the body text at its usage site; the structure
 // itself (sections, TOC, image slots) stays the same.
-export function ModelPage({ title }: { title: string }) {
+export function ModelPage({ title, src }: { title: string, src: string }) {
   return (
     <>
-      <Banner title={title}>
+      <Banner title={title} src={src}>
         <p>{LOREM_PARAGRAPH}</p>
       </Banner>
 

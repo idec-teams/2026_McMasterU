@@ -5,5 +5,5 @@ export const metadata = {
 };
 
 export default function EntrepreneurshipDetailsPage() {
-  return <EntrepreneurshipDetails />;
+  return <EntrepreneurshipDetails title="Entrepreneurship in Depth" src="/banners/entrepreneurship.png" />;
 }

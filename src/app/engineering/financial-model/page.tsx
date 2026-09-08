@@ -5,5 +5,5 @@ export const metadata = {
 };
 
 export default function FinancialModelPage() {
-  return <ModelPage title="Financial Model" />;
+  return <ModelPage title="Financial Model" src="/banners/engineering.png" />;
 }

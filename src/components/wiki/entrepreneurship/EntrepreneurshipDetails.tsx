@@ -8,10 +8,10 @@ import { ENTREPRENEURSHIP_SECTIONS } from "./sections";
 // More" links on the landing page. Body copy is placeholder text until the
 // real write-up for each section exists; the section list/order lives in
 // lib/wiki/entrepreneurship.ts and stays in sync with the landing page.
-export function EntrepreneurshipDetails() {
+export function EntrepreneurshipDetails({ title, src }: { title: string, src: string}) {
   return (
     <>
-      <Banner title="Entrepreneurship in Depth">
+      <Banner title={title} src={src}>
         <p>
           The full business case behind MEYcell — market need, business model,
           competitive position, and commercialization plan.
