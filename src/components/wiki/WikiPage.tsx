@@ -4,10 +4,10 @@ import {
   type ReactElement,
   type ReactNode,
 } from "react";
+import { ReferencesSection } from "@/components/wiki/ReferencesSection";
+import { WikiSection } from "@/components/wiki/WikiSection";
+import { WikiTOC } from "@/components/wiki/WikiTOC";
 import type { TocItem, WikiSectionProps } from "@/types/wiki";
-import { ReferencesSection } from "./ReferencesSection";
-import { WikiSection } from "./WikiSection";
-import { WikiTOC } from "./WikiTOC";
 
 // Section components WikiPage recognizes when building the table of contents.
 // Register new WikiSection specializations here so they appear in the sidebar.

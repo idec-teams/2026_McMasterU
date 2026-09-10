@@ -1,10 +1,10 @@
 import { Banner } from "@/components/wiki/Banner";
+import { ModelImagePlaceholder } from "@/components/wiki/engineering/ModelImagePlaceholder";
+import { SummaryBoxes } from "@/components/wiki/engineering/SummaryBoxes";
 import { WikiPage } from "@/components/wiki/WikiPage";
 import { WikiSection } from "@/components/wiki/WikiSection";
 import { LOREM_PARAGRAPH, LOREM_SENTENCE } from "@/lib/wiki/placeholders";
 import type { SummaryPoint } from "@/types/wiki";
-import { ModelImagePlaceholder } from "./ModelImagePlaceholder";
-import { SummaryBoxes } from "./SummaryBoxes";
 
 const SUMMARY_POINTS: SummaryPoint[] = [
   { title: "Experimental Design", body: LOREM_SENTENCE },
@@ -16,7 +16,7 @@ const SUMMARY_POINTS: SummaryPoint[] = [
 // Financial). Every section below is placeholder copy — once a model's real
 // write-up exists, replace the body text at its usage site; the structure
 // itself (sections, TOC, image slots) stays the same.
-export function ModelPage({ title, src }: { title: string, src: string }) {
+export function ModelPage({ title, src }: { title: string; src: string }) {
   return (
     <>
       <Banner title={title} src={src}>

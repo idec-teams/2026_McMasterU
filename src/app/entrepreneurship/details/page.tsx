@@ -5,5 +5,10 @@ export const metadata = {
 };
 
 export default function EntrepreneurshipDetailsPage() {
-  return <EntrepreneurshipDetails title="Entrepreneurship in Depth" src="/banners/entrepreneurship.png" />;
+  return (
+    <EntrepreneurshipDetails
+      title="Entrepreneurship in Depth"
+      src="/banners/entrepreneurship.png"
+    />
+  );
 }

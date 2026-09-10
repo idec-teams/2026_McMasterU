@@ -1,6 +1,6 @@
 "use client";
 
-import { useCountUpProgress } from "./useCountUpProgress";
+import { useCountUpProgress } from "@/components/ui/useCountUpProgress";
 
 // Animates from 0 up to `target` once the number scrolls into view.
 // `decimals` > 0 switches from a comma-grouped integer (e.g. "50,000") to a

@@ -1,0 +1,97 @@
+/**
+ * Geometry for the MEYcell mark, recovered from the original animated GIF so
+ * the logo can be drawn instead of shipped as a raster.
+ *
+ * The wordmark is a marching-squares trace of the artwork's static layer. The
+ * halftone field turned out to be 21 discs on fixed centres whose radii follow
+ * a single plane wave — see `MARK_WAVE`. Every coordinate below is in the
+ * source artwork's 500x491 space.
+ */
+
+export const MARK_VIEWBOX = "0 0 500 491";
+
+/** Traced outline of "MEY". */
+export const WORDMARK_MEY_PATH =
+  "M67.6 105.0L69.0 104.5L92.0 104.5L93.5 105.0L94.4 106.0L94.6 109.0L95.4 110.0L95.6 113.0L96.4 114.0L96.6 117.0L97.4 118.0L97.6 121.0L98.4 122.0L98.6 125.0L99.4 126.0L99.6 129.0L100.4 130.0L100.6 133.0L101.4 134.0L101.6 138.0L103.0 138.4L103.4 138.0L103.6 135.0L104.4 134.0L104.6 131.0L105.4 130.0L105.6 126.0L106.4 125.0L106.6 122.0L107.4 121.0L107.6 118.0L108.4 117.0L108.6 114.0L109.4 113.0L109.6 110.0L110.4 109.0L110.6 106.0L111.5 105.0L113.0 104.5L137.0 104.6L137.5 106.0L137.4 164.0L136.0 164.5L123.0 164.5L121.6 164.0L121.5 126.0L121.0 122.7L120.5 125.0L119.6 126.0L119.4 129.0L118.6 130.0L118.4 133.0L117.6 134.0L117.4 136.0L116.6 137.0L116.4 140.0L115.6 141.0L115.4 143.0L114.6 144.0L114.4 147.0L113.6 148.0L113.4 151.0L112.6 152.0L112.4 154.0L111.6 155.0L111.4 158.0L110.6 159.0L110.4 161.0L109.6 162.0L109.4 164.0L108.0 164.5L96.0 164.4L95.6 164.0L95.4 162.0L94.6 161.0L94.4 158.0L93.6 157.0L93.4 155.0L92.6 154.0L92.4 151.0L91.6 150.0L91.4 147.0L90.6 146.0L90.4 144.0L89.6 143.0L89.4 140.0L88.6 139.0L88.4 136.0L87.6 135.0L87.4 133.0L86.6 132.0L86.4 129.0L85.6 128.0L85.4 125.0L84.5 124.0L84.0 121.7L83.5 125.0L83.4 164.0L82.0 164.5L69.0 164.4L67.7 163.0L68.5 161.0L68.5 121.0L67.5 118.0L67.5 106.0ZM155.6 105.0L157.0 104.5L201.0 104.5L202.4 105.0L202.5 118.0L202.0 119.4L174.0 119.5L173.0 119.6L172.5 121.0L172.5 126.0L173.0 127.4L200.0 127.6L200.5 129.0L200.4 140.0L199.0 141.4L198.0 141.5L173.0 141.6L172.5 143.0L172.5 148.0L173.0 149.4L174.0 149.5L202.0 149.6L202.5 151.0L202.5 163.0L202.0 164.4L201.0 164.5L157.0 164.5L155.6 164.0L155.5 106.0ZM214.6 105.0L216.0 104.5L233.0 104.6L234.6 108.0L236.4 110.0L238.6 115.0L240.4 117.0L242.6 122.0L244.5 124.0L245.0 125.3L247.6 120.0L249.4 118.0L252.6 111.0L254.4 109.0L255.6 106.0L257.0 104.6L273.0 104.5L274.4 105.0L274.4 106.0L272.6 108.0L271.4 111.0L269.6 113.0L268.4 116.0L266.6 118.0L264.4 123.0L262.6 125.0L261.4 128.0L259.6 130.0L258.4 133.0L256.6 135.0L255.4 138.0L253.6 140.0L253.5 163.0L253.0 164.4L252.0 164.5L238.0 164.5L236.6 164.0L236.4 142.0L234.4 138.0L232.6 136.0L231.4 133.0L229.6 131.0L228.4 128.0L226.6 126.0L225.4 123.0L223.6 121.0L222.4 118.0L220.6 116.0L219.4 113.0L217.6 111.0L216.4 108.0L214.6 106.0Z";
+
+/**
+ * Traced outline of "cell". Needs the even-odd fill rule so the counters of
+ * the "c" and "e" punch through.
+ *
+ * The artwork sets this word as "Cell"; the lowercase "c" here is the original
+ * cap scaled to the x-height taken from the "e". That is not a liberty — in
+ * this face the round lowercase letters are the caps at that same ratio, so
+ * the scaled "C" lands within a pixel of the "e" bowl's stroke weight. "ell"
+ * is nudged left to close up the narrower letter and keep the word centred
+ * under "MEY".
+ */
+export const WORDMARK_CELL_PATH =
+  "M104.2 195.9L105.3 195.5L115.3 195.5L116.0 195.6L116.7 196.1L118.8 196.3L123.5 198.7L128.1 203.3L128.5 204.4L129.8 205.8L130.0 207.3L130.5 208.0L130.7 209.4L131.2 210.1L131.2 211.5L131.0 211.8L119.6 211.8L117.4 208.3L116.7 207.7L116.0 207.5L114.6 206.3L113.1 206.1L112.4 205.5L109.6 205.5L108.9 205.5L108.2 206.1L106.0 206.3L102.9 209.4L101.5 212.2L101.3 215.1L100.7 215.8L100.7 216.5L100.7 219.4L101.3 220.1L101.5 222.9L102.0 223.7L102.2 225.1L106.0 228.9L107.4 229.1L108.2 229.6L111.7 229.7L112.4 229.6L113.1 229.1L114.6 228.9L116.0 228.2L118.4 225.8L119.6 222.7L130.2 222.6L131.2 222.9L131.2 225.1L130.7 225.8L130.5 227.2L128.4 231.5L123.1 236.8L118.8 238.9L117.4 239.0L116.7 239.6L112.4 239.8L111.7 240.3L111.0 240.4L109.6 240.3L108.9 239.8L104.6 239.6L103.9 239.0L101.7 238.9L97.5 236.8L92.5 231.8L92.0 230.8L90.8 229.4L90.6 227.9L89.3 225.8L89.2 223.7L88.6 222.9L88.6 222.2L88.6 212.2L89.2 211.5L89.3 209.4L89.9 208.7L90.1 207.3L91.5 204.4L97.5 198.4L100.3 197.0L101.7 196.9L102.5 196.3L103.9 196.1ZM206.4 180.0L207.8 179.5L219.8 179.5L221.2 180.0L221.3 238.0L220.8 239.4L219.8 239.5L207.8 239.5L206.4 239.0L206.3 181.0ZM237.4 180.0L238.8 179.5L251.8 179.5L253.2 180.0L253.3 238.0L252.8 239.4L251.8 239.5L238.8 239.5L237.4 239.0L237.3 181.0ZM160.3 196.0L161.8 195.5L173.8 195.5L174.8 195.6L175.8 196.4L177.8 196.6L183.3 200.0L186.2 203.0L186.4 204.0L188.2 206.0L189.2 208.0L189.4 210.0L190.2 211.0L190.4 214.0L191.2 215.0L191.3 221.0L190.8 222.4L160.8 222.5L159.4 223.0L159.4 224.0L161.3 227.0L162.8 228.4L165.8 229.5L171.8 229.4L176.8 225.6L188.8 225.6L190.1 227.0L188.2 231.0L181.8 237.4L179.8 238.4L177.8 238.6L176.8 239.4L174.8 239.6L173.8 240.4L161.8 240.4L160.8 239.6L158.8 239.4L157.8 238.6L155.8 238.4L153.8 236.6L152.3 236.0L148.4 232.0L145.4 226.0L145.2 223.0L144.4 222.0L144.4 213.0L145.2 212.0L145.4 210.0L146.2 209.0L146.4 207.0L147.8 204.5L153.8 198.6L157.8 196.6L159.8 196.4ZM163.8 206.6L160.4 210.0L160.2 211.0L159.4 212.0L159.8 213.4L173.8 213.5L174.8 213.4L176.1 212.0L175.2 210.0L171.8 206.6L164.8 206.5Z";
+
+/** A disc in the halftone field: `[x, y, baseRadius]`. Centres never move. */
+export type MarkDot = readonly [x: number, y: number, r: number];
+
+export const MARK_DOTS: readonly MarkDot[] = [
+  [309.68, 221.06, 14.89],
+  [367.99, 222.95, 14.84],
+  [426.32, 223.06, 14.86],
+
+  [248.67, 271.99, 7.46],
+  [306.54, 272.28, 9.86],
+  [367.35, 276.07, 9.9],
+  [426.28, 274.82, 14.83],
+
+  [167.45, 323.2, 3.79],
+  [208.85, 321.97, 3.79],
+  [248.13, 320.08, 7.48],
+  [305.27, 322.8, 6.78],
+  [365.27, 322.18, 9.86],
+  [425.03, 328.69, 14.8],
+
+  [165.58, 367.02, 3.79],
+  [207.17, 368.78, 3.78],
+  [247.93, 367.86, 7.37],
+  [304.65, 368.69, 6.75],
+  [362.2, 368.71, 6.81],
+
+  [164, 410.91, 3.71],
+  [207.68, 412.77, 3.71],
+  [249.92, 414.87, 3.73],
+];
+
+/**
+ * Every disc pulses as
+ *
+ *     r(t) = base * (1 + swing * cos(2*PI * (t - delay) / frames))
+ *
+ * and `delay` is linear in `(y - x)`, which makes the whole field one plane
+ * wave whose crest sweeps diagonally toward the upper right. Fitting the
+ * source frames recovers this to within 0.02 frames, so nothing here is
+ * approximated by eye.
+ *
+ * `swing` is consumed by CSS (via the `--mey-swing` custom property) rather
+ * than by this module, so the keyframes and this description stay in step.
+ */
+export const MARK_WAVE = {
+  frames: 24,
+  frameMs: 70,
+  swing: 0.49,
+  phase: 19.16,
+  slope: -0.0532,
+} as const;
+
+export const MARK_PERIOD_MS = MARK_WAVE.frames * MARK_WAVE.frameMs;
+
+function mod(value: number, n: number): number {
+  return ((value % n) + n) % n;
+}
+
+/**
+ * A disc's offset into the shared pulse cycle, as a negative CSS
+ * `animation-delay` so it starts already part-way through rather than waiting.
+ */
+export function dotDelayMs([x, y]: MarkDot): number {
+  const { frames, frameMs, phase, slope } = MARK_WAVE;
+  const offset = mod(phase + slope * (y - x), frames);
+  return -Math.round((frames - offset) * frameMs);
+}

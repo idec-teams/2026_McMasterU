@@ -1,5 +1,5 @@
+import { WidgetCard } from "@/components/wiki/engineering/WidgetCard";
 import type { EngineeringWidget } from "@/types/wiki";
-import { WidgetCard } from "./WidgetCard";
 
 // Background images aren't ready yet — add `image: "/engineering/<file>"`
 // to a widget once one exists; WidgetCard falls back gracefully until then.

@@ -1,18 +1,18 @@
 import type { ReactNode } from "react";
 import { Banner } from "@/components/wiki/Banner";
+import { CompetitiveLandscapeChart } from "@/components/wiki/entrepreneurship/CompetitiveLandscapeChart";
+import { CooperathonSection } from "@/components/wiki/entrepreneurship/CooperathonSection";
+import { FeatureComparisonTable } from "@/components/wiki/entrepreneurship/FeatureComparisonTable";
+import { MarketOpportunityCircles } from "@/components/wiki/entrepreneurship/MarketOpportunityCircles";
+import { RoadmapCarousel } from "@/components/wiki/entrepreneurship/RoadmapCarousel";
+import {
+  ENTREPRENEURSHIP_DETAILS_HREF,
+  ENTREPRENEURSHIP_SECTIONS,
+} from "@/components/wiki/entrepreneurship/sections";
 import { FadeSection } from "@/components/wiki/FadeSection";
 import { ReadMoreLink } from "@/components/wiki/ReadMoreLink";
 import { WikiPage } from "@/components/wiki/WikiPage";
 import { WikiSection } from "@/components/wiki/WikiSection";
-import { CompetitiveLandscapeChart } from "./CompetitiveLandscapeChart";
-import { CooperathonSection } from "./CooperathonSection";
-import { FeatureComparisonTable } from "./FeatureComparisonTable";
-import { MarketOpportunityCircles } from "./MarketOpportunityCircles";
-import { RoadmapCarousel } from "./RoadmapCarousel";
-import {
-  ENTREPRENEURSHIP_DETAILS_HREF,
-  ENTREPRENEURSHIP_SECTIONS,
-} from "./sections";
 
 const MARKET_OPPORTUNITY_SECTION_ID = "market-opportunity";
 const COMPETITIVE_ADVANTAGE_SECTION_ID = "competitive-advantage";

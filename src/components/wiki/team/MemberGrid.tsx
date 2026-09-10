@@ -1,5 +1,5 @@
+import { MemberCard } from "@/components/wiki/team/MemberCard";
 import type { TeamMember } from "@/types/wiki";
-import { MemberCard } from "./MemberCard";
 
 export function MemberGrid({ members }: { members: TeamMember[] }) {
   return (

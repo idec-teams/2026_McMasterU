@@ -1,6 +1,6 @@
 import Image from "next/image";
+import { TrackPills } from "@/components/wiki/team/TrackPill";
 import type { TeamMember } from "@/types/wiki";
-import { TrackPills } from "./TrackPill";
 
 // One team member: photo, name, track pills, optional program/year/LinkedIn.
 // Photos live in /public/team — set `photo: "/team/<file>.JPG"`. Until a photo

@@ -17,6 +17,7 @@ export const NAV_LINKS: NavLink[] = [
   },
   { label: "Documentation", href: "/documentation" },
   { label: "Community", href: "/community" },
+  { label: "Outreach", href: "/outreach" },
   {
     label: "Entrepreneurship",
     href: "/entrepreneurship",

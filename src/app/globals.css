@@ -23,6 +23,11 @@
      gold: fat, lipids, yield
      Use at the same tint recipes as teal: full for icon/stat, /30 borders,
      /10 fills. Body text never takes an accent. */
+  /* The logo's own warm ink, sampled from the original MEYcell artwork. The
+     mark currently draws in --text-primary instead; kept so it can be put
+     back with one class. Not part of the text ramp. */
+  --cream: #fffbc1;
+
   --sky: #5cb8ff;
   --sky-rgb: 92 184 255;
   --rose: #ff6b8a;
@@ -71,6 +76,7 @@
   --color-brand-dark: var(--teal-dark);
   --color-brand-darkest: var(--teal-darkest);
   --color-ember: var(--ember);
+  --color-cream: var(--cream);
   --color-sky: var(--sky);
   --color-rose: var(--rose);
   --color-gold: var(--gold);
@@ -194,5 +200,35 @@ body {
   }
   100% {
     transform: translate3d(72vw, 60vh, 0) scale(1.1);
+  }
+}
+
+/* MEY Cell mark — the halftone field's radius wave.
+   Each disc is scaled about its own centre rather than having its SVG `r`
+   animated: `r` is not a compositable property, `transform` is.
+   Duration and per-disc delay are set inline by MeyCellMark so the wave
+   constants stay in mey-cell-mark.ts. */
+.mey-dot {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation-name: mey-pulse;
+  /* easeInOutSine — reproduces the source's cosine to well under a percent. */
+  animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+  animation-iteration-count: infinite;
+}
+
+@keyframes mey-pulse {
+  0%,
+  100% {
+    transform: scale(calc(1 + var(--mey-swing)));
+  }
+  50% {
+    transform: scale(calc(1 - var(--mey-swing)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mey-dot {
+    animation: none;
   }
 }

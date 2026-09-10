@@ -1,6 +1,6 @@
+import { ReferenceItem } from "@/components/wiki/ReferenceItem";
+import { WikiSection } from "@/components/wiki/WikiSection";
 import type { WikiReference } from "@/types/wiki";
-import { ReferenceItem } from "./ReferenceItem";
-import { WikiSection } from "./WikiSection";
 
 // A WikiSection specialization for references. Placed manually by the page so
 // its position is explicit, but still recognized by WikiPage's TOC. Numbering

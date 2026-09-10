@@ -1,12 +1,16 @@
-import { CellViz } from "@/components/wiki/CellViz";
-import { HotZone } from "./HotZone";
+import { HotZone } from "@/components/wiki/main/HotZone";
+import { MeyCellMark } from "@/components/wiki/main/MeyCellMark";
 
 // Inset hero panel with a slow "thermal drift" background: three soft gradient
 // layers that drift on co-prime cycles while a faint warm layer breathes at the
 // peak — a nod to the 72 °C burst threshold.
 //
 // Pure CSS (keyframes in globals.css), so this stays a server component and the
-// ambient motion costs no JavaScript. CellViz is the only client island.
+// ambient motion costs no JavaScript. HotZone is the only client island.
+
+/** Logo width in px — the one knob for the mark's size. Height follows. */
+const MARK_WIDTH = 200;
+const MARK_WHITE = false;
 
 const EYEBROW = "MCMASTERU";
 const TAGLINE = "Meating the future using directed evolution.";
@@ -21,26 +25,46 @@ export function HeroBanner() {
       >
         <ThermalDrift />
 
-        {/* Logo owns the flexible middle — dead-center both axes. The title is
-            anchored at the bottom with the meta row, so the gap between logo
-            and title grows with the viewport. */}
+        {/* The mark owns the flexible middle and carries the title itself; size
+            it with MARK_WIDTH above. The meta row stays anchored at the bottom,
+            so the gap between them grows with the viewport. */}
         <div className="relative flex flex-1 items-center justify-center px-6 py-16">
           {/* translate-y nudges the logo slightly below true center */}
-          <div className="relative h-[150px] w-[150px] translate-y-8">
+          <h1 className="relative translate-y-4">
+            {/* Two earlier marks, kept for easy swapping. Restore the matching
+                import if you bring one back.
+
+                1. Abstract placeholder cell:
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.58]">
               <CellViz />
             </div>
-          </div>
+
+                2. The original raster. `unoptimized` is required — next/image
+                otherwise collapses an animated gif/webp to a single frame:
+            <Image
+              src="/logo/mey_cell_wave_white_soft.webp"
+              alt=""
+              width={500}
+              height={491}
+              unoptimized
+              priority
+              className="h-full w-full object-contain"
+            /> */}
+
+            <MeyCellMark width={MARK_WIDTH} white={MARK_WHITE} />
+          </h1>
         </div>
 
         <div className="relative px-6 pb-10 text-center sm:px-10">
+          {/* The mark above sets "MEYcell" itself, so the plain type title is
+              retired. Restore this block if the logo ever shrinks back down:
           <h1
             className="font-display mb-6 font-bold leading-[0.92] tracking-tight"
             style={{ fontSize: "clamp(2.75rem, 8vw, 6rem)" }}
           >
             <span className="text-foreground">MEY</span>
             <span className="text-primary">cell</span>
-          </h1>
+          </h1> */}
 
           <div className="h-px w-full bg-gradient-to-r from-transparent via-foreground/15 to-transparent" />
           {/* The tagline is absolutely centered on the panel so it stays on the

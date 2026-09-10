@@ -1,5 +1,5 @@
+import { ProblemCard } from "@/components/wiki/ProblemCard";
 import type { Problem } from "@/types/wiki";
-import { ProblemCard } from "./ProblemCard";
 
 const PROBLEMS: Problem[] = [
   {

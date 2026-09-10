@@ -3,8 +3,8 @@
 import { ChevronDown, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { NavDropdown } from "@/components/layout/NavDropdown";
 import { NAV_LINKS } from "@/lib/wiki/nav";
-import { NavDropdown } from "./NavDropdown";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
