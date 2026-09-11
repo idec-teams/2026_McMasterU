@@ -27,19 +27,19 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-16 gap-8 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           {/* <div className="w-8 h-8 flex items-center justify-center bg-primary">
             <FlaskConical className="w-4 h-4 text-primary-foreground" />
           </div> */}
           <div className="leading-tight">
-            <span className="font-display text-sm font-bold tracking-widest text-foreground">
+            <span className="font-display text-sm font-bold tracking-widest text-cream">
               McMasterU
             </span>
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden nav:flex items-center gap-8">
           {NAV_LINKS.map((link) =>
             link.children?.length ? (
               <NavDropdown key={link.href} link={link} />
@@ -57,7 +57,7 @@ export function Header() {
 
         <button
           type="button"
-          className="md:hidden text-muted-foreground hover:text-foreground transition-colors"
+          className="nav:hidden text-muted-foreground hover:text-foreground transition-colors"
           onClick={() => setMenuOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -66,7 +66,7 @@ export function Header() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-background border-b border-border px-6 py-6 flex flex-col gap-5">
+        <div className="nav:hidden bg-background border-b border-border px-6 py-6 flex flex-col gap-5">
           {NAV_LINKS.map((link) => (
             <div key={link.href} className="group flex flex-col gap-3">
               <div className="flex items-center gap-1.5">
