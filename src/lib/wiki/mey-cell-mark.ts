@@ -75,7 +75,7 @@ export const MARK_DOTS: readonly MarkDot[] = [
 export const MARK_WAVE = {
   frames: 24,
   frameMs: 70,
-  swing: 0.49,
+  swing: 0.25,
   phase: 19.16,
   slope: -0.0532,
 } as const;
