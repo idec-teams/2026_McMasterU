@@ -193,30 +193,12 @@ export default function CommunityPage() {
             <div className="flex min-h-[180px] items-center justify-center rounded-xl border border-border bg-card/80 p-5 text-center text-sm text-body">
               stakeholder analysis image
             </div>
-
-            <div className="space-y-5">
-              {stakeholderGroups.map((group) => (
-                <div key={group.id} className="space-y-3">
-                  <h3 className="text-sm font-medium uppercase tracking-[0.18em] text-body">
-                    {group.title}
-                  </h3>
-                  <div className="grid gap-3 sm:grid-cols-3">
-                    {group.people.map((person) => (
-                      <PersonCard
-                        key={person.id}
-                        label={person.label}
-                        href={`#${person.id}`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </WikiSection>
         {/* make into subsections */}
 
-        <WikiSection id="academia" title="Academia">
+        <div id="academia" className="space-y-4">
+          <h2 className="text-lg font-medium text-foreground">Academia</h2>
           <div className="space-y-4">
             <DetailBlock
               id={stakeholderGroups[0].people[0].id}
@@ -231,9 +213,10 @@ export default function CommunityPage() {
               outcome="[coming soon]"
             />
           </div>
-        </WikiSection>
+        </div>
 
-        <WikiSection id="industry" title="Industry">
+        <div id="industry" className="mt-10 space-y-4">
+          <h2 className="text-lg font-medium text-foreground">Industry</h2>
           <div className="space-y-4">
             <DetailBlock
               id={stakeholderGroups[1].people[0].id}
@@ -254,7 +237,7 @@ export default function CommunityPage() {
               outcome="[coming soon]"
             />
           </div>
-        </WikiSection>
+        </div>
 
         <WikiSection id="initiatives" title="Initiatives">
           <InitiativesCarousel initiatives={initiatives} />
