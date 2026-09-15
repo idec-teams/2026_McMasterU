@@ -104,6 +104,34 @@ export type SummaryPoint = {
   body: string;
 };
 
+/** One piece of content within a Model Construction subsection, rendered in order. */
+export type ModelContentBlock =
+  | { type: "paragraph"; text: string }
+  | { type: "figure"; caption: string }
+  | { type: "table"; caption: string; headers: string[]; rows: string[][] }
+  | { type: "list"; items: string[] };
+
+/** One block of a Model Construction write-up. Untitled subsections render as plain content; titled ones get their own boxed subheading. */
+export type ModelSubsection = {
+  title?: string;
+  blocks: ModelContentBlock[];
+};
+
+export type ModelPageContent = {
+  summaryPoints: SummaryPoint[];
+  /** Section bodies. Separate paragraphs with a blank line. */
+  problemStatement: string;
+  background: string;
+  modelConstruction: ModelSubsection[];
+  results: string;
+  /** Figure captions shown as image placeholders under Results. */
+  resultsFigures: string[];
+  discussion: string;
+  validation: string;
+  limitationsNextSteps: string;
+  references: WikiReference[];
+};
+
 export type WikiSectionProps = {
   id: string;
   title: string;
