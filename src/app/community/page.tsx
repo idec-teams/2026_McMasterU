@@ -9,59 +9,6 @@ export const metadata = {
   title: "Community — MEYcell",
 };
 
-const stakeholderGroups = [
-  {
-    id: "academia",
-    title: "Academia",
-    people: [
-      { id: "academia-person-a", label: "Dr. Josh Milburn" },
-      { id: "academia-person-b", label: "Dr. Sarah Louise-Ruder" },
-    ],
-  },
-  {
-    id: "industry",
-    title: "Industry",
-    people: [
-      { id: "industry-person-a", label: "Person A" },
-      { id: "industry-person-b", label: "Person B" },
-      { id: "industry-person-c", label: "Person C" },
-    ],
-  },
-] as const;
-
-const initiatives = [
-  {
-    id: "initiative-a",
-    title: "[coming soon]",
-    description: "[coming soon]",
-    outcome: "[coming soon]",
-  },
-  {
-    id: "initiative-b",
-    title: "[coming soon]",
-    description: "[coming soon]",
-    outcome: "[coming soon]",
-  },
-  {
-    id: "initiative-c",
-    title: "[coming soon]",
-    description: "[coming soon]",
-    outcome: "[coming soon]",
-  },
-];
-
-function PersonCard({ label, href }: { label: string; href: string }) {
-  return (
-    <a
-      href={href}
-      className="rounded-xl border border-border bg-card/80 p-3 text-center transition-colors hover:border-primary/60"
-    >
-      <div className="mx-auto mb-2 h-12 w-12 rounded-md border border-border bg-surface/60" />
-      <p className="text-sm font-medium text-foreground">{label}</p>
-    </a>
-  );
-}
-
 function DetailBlock({
   id,
   label,
@@ -74,23 +21,22 @@ function DetailBlock({
   outcome: string;
 }) {
   return (
-    <div
-      id={id}
-      className="space-y-3 rounded-xl border border-border bg-card/80 p-4"
-    >
-      <div className="flex min-h-[120px] items-center justify-center rounded-md border border-dashed border-border bg-surface/30 text-sm text-body">
-        [image]
+    <div id={id} className="space-y-3 border border-border bg-card/80 p-4">
+      <div className="relative min-h-[200px] bg-surface/30">
+        <span className="absolute bottom-4 left-4 text-sm text-body">
+          [image]
+        </span>
       </div>
       <p className="text-sm font-medium uppercase tracking-[0.16em] text-body">
         {label}
       </p>
       <div className="space-y-2 text-sm leading-relaxed text-body">
         <p>
-          <span className="font-medium text-foreground">Description:</span>{" "}
+          <span className="font-medium text-foreground">Inquire:</span>{" "}
           {description}
         </p>
         <p>
-          <span className="font-medium text-foreground">Outcome:</span>{" "}
+          <span className="font-medium text-foreground">Reach Out:</span>{" "}
           {outcome}
         </p>
       </div>
@@ -190,24 +136,26 @@ export default function CommunityPage() {
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-body">
               [overview]
             </p>
-            <div className="flex min-h-[180px] items-center justify-center rounded-xl border border-border bg-card/80 p-5 text-center text-sm text-body">
-              stakeholder analysis image
-            </div>
+            <figure>
+              <div className="min-h-[180px] border border-border bg-card/80"></div>
+              <figcaption className="mt-2 text-sm text-body">
+                Stakeholder analysis image
+              </figcaption>
+            </figure>
           </div>
         </WikiSection>
-        {/* make into subsections */}
 
         <div id="academia" className="space-y-4">
           <h2 className="text-lg font-medium text-foreground">Academia</h2>
           <div className="space-y-4">
             <DetailBlock
-              id={stakeholderGroups[0].people[0].id}
+              id="dr_milburn"
               label="Dr. Josh Milburn"
               description="[coming soon]"
               outcome="[coming soon]"
             />
             <DetailBlock
-              id={stakeholderGroups[0].people[1].id}
+              id="dr_ruder"
               label="Dr. Sarah Louise-Ruder"
               description="[coming soon]"
               outcome="[coming soon]"
@@ -219,19 +167,19 @@ export default function CommunityPage() {
           <h2 className="text-lg font-medium text-foreground">Industry</h2>
           <div className="space-y-4">
             <DetailBlock
-              id={stakeholderGroups[1].people[0].id}
+              id="person_a"
               label="Person A"
               description="[coming soon]"
               outcome="[coming soon]"
             />
             <DetailBlock
-              id={stakeholderGroups[1].people[1].id}
+              id="person_b"
               label="Person B"
               description="[coming soon]"
               outcome="[coming soon]"
             />
             <DetailBlock
-              id={stakeholderGroups[1].people[2].id}
+              id="person_c"
               label="Person C"
               description="[coming soon]"
               outcome="[coming soon]"
@@ -240,7 +188,28 @@ export default function CommunityPage() {
         </div>
 
         <WikiSection id="initiatives" title="Initiatives">
-          <InitiativesCarousel initiatives={initiatives} />
+          <InitiativesCarousel
+            initiatives={[
+              {
+                id: "initiative-a",
+                title: "[coming soon]",
+                description: "[coming soon]",
+                outcome: "[coming soon]",
+              },
+              {
+                id: "initiative-b",
+                title: "[coming soon]",
+                description: "[coming soon]",
+                outcome: "[coming soon]",
+              },
+              {
+                id: "initiative-c",
+                title: "[coming soon]",
+                description: "[coming soon]",
+                outcome: "[coming soon]",
+              },
+            ]}
+          />
         </WikiSection>
 
         <WikiSection id="surveys" title="Surveys">

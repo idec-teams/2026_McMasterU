@@ -1,5 +1,6 @@
 "use client";
 
+// from embla carousel
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 
@@ -7,7 +8,7 @@ export type Initiative = {
   id: string;
   title: string;
   description: string;
-  outcome?: string;
+  outcome: string;
 };
 
 export function InitiativesCarousel({
@@ -76,8 +77,8 @@ export function InitiativesCarousel({
                   aria-label={`Go to ${item.title}`}
                   className={
                     i === selectedIndex
-                      ? "flex aspect-video w-full cursor-default items-center justify-center rounded-xl border border-border bg-surface/30 text-sm text-body transition-all"
-                      : "flex aspect-video w-full cursor-pointer items-center justify-center rounded-md border border-dashed border-border bg-surface/20 text-xs text-body opacity-50 transition-all hover:opacity-80"
+                      ? "flex aspect-video w-full cursor-default items-center justify-center border border-border bg-surface/30 text-sm text-body transition-all"
+                      : "flex aspect-video w-full cursor-pointer items-center justify-center border border-dashed border-border bg-surface/20 text-xs text-body opacity-50 transition-all hover:opacity-80"
                   }
                 >
                   {i === selectedIndex ? "[image]" : ""}
