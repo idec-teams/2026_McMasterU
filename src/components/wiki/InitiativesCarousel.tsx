@@ -9,6 +9,13 @@ export type Initiative = {
   title: string;
   description: string;
   outcome: string;
+  images: string[];
+};
+
+type Slide = {
+  key: string;
+  src: string;
+  initiative: Initiative;
 };
 
 export function InitiativesCarousel({
@@ -16,6 +23,14 @@ export function InitiativesCarousel({
 }: {
   initiatives: Initiative[];
 }) {
+  const slides: Slide[] = initiatives.flatMap((initiative) =>
+    initiative.images.map((src, i) => ({
+      key: `${initiative.id}-${i}`,
+      src,
+      initiative,
+    })),
+  );
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: "center",
@@ -46,7 +61,8 @@ export function InitiativesCarousel({
     emblaApi.on("reInit", onSelect);
   }, [emblaApi, onSelect]);
 
-  const active = initiatives[selectedIndex];
+  const activeSlide = slides[selectedIndex];
+  const activeInitiative = activeSlide?.initiative ?? initiatives[0];
 
   return (
     <div className="space-y-5">
@@ -66,22 +82,28 @@ export function InitiativesCarousel({
 
         <div className="min-w-0 flex-1 overflow-hidden" ref={emblaRef}>
           <div className="flex">
-            {initiatives.map((item, i) => (
+            {slides.map((slide, i) => (
               <div
-                key={item.id}
+                key={slide.key}
                 className="min-w-0 shrink-0 grow-0 basis-full px-2 sm:basis-4/5"
               >
                 <button
                   type="button"
                   onClick={() => scrollTo(i)}
-                  aria-label={`Go to ${item.title}`}
+                  aria-label={`Go to image ${i + 1}`}
                   className={
                     i === selectedIndex
-                      ? "flex aspect-video w-full cursor-default items-center justify-center border border-border bg-surface/30 text-sm text-body transition-all"
-                      : "flex aspect-video w-full cursor-pointer items-center justify-center border border-dashed border-border bg-surface/20 text-xs text-body opacity-50 transition-all hover:opacity-80"
+                      ? "flex w-full cursor-default items-center justify-center transition-all"
+                      : "flex w-full cursor-pointer items-center justify-center opacity-50 transition-all hover:opacity-80"
                   }
                 >
-                  {i === selectedIndex ? "[image]" : ""}
+                  <div className="border border-border bg-surface/30 p-2">
+                    <img
+                      src={slide.src}
+                      alt={slide.initiative.title}
+                      className="block h-[400px] w-auto object-cover"
+                    />
+                  </div>
                 </button>
               </div>
             ))}
@@ -102,29 +124,13 @@ export function InitiativesCarousel({
         )}
       </div>
 
-      <div className="space-y-2 text-center">
-        <p className="text-sm font-medium uppercase tracking-[0.16em] text-body">
-          {active.title}
-        </p>
-        <p className="mx-auto max-w-md text-sm leading-relaxed text-body">
-          <span className="font-medium text-foreground">Description:</span>{" "}
-          {active.description}
-        </p>
-        {active.outcome ? (
-          <p className="mx-auto max-w-md text-sm leading-relaxed text-body">
-            <span className="font-medium text-foreground">Outcome:</span>{" "}
-            {active.outcome}
-          </p>
-        ) : null}
-      </div>
-
       <div className="flex items-center justify-center gap-1.5">
-        {initiatives.map((item, i) => (
+        {slides.map((slide, i) => (
           <button
-            key={item.id}
+            key={slide.key}
             type="button"
             onClick={() => scrollTo(i)}
-            aria-label={`Go to ${item.title}`}
+            aria-label={`Go to image ${i + 1}`}
             className={
               i === selectedIndex
                 ? "h-1.5 w-1.5 rounded-full bg-primary transition-all"
@@ -132,6 +138,22 @@ export function InitiativesCarousel({
             }
           />
         ))}
+      </div>
+
+      <div className="space-y-2 text-center">
+        <p className="text-sm font-medium uppercase tracking-[0.16em] text-body">
+          {activeInitiative.title}
+        </p>
+        <p className="mx-auto max-w-md text-sm leading-relaxed text-body">
+          <span className="font-medium text-foreground">Description:</span>{" "}
+          {activeInitiative.description}
+        </p>
+        {activeInitiative.outcome ? (
+          <p className="mx-auto max-w-md text-sm leading-relaxed text-body">
+            <span className="font-medium text-foreground">Outcome:</span>{" "}
+            {activeInitiative.outcome}
+          </p>
+        ) : null}
       </div>
     </div>
   );
