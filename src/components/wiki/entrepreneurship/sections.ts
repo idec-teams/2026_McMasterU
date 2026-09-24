@@ -12,7 +12,6 @@ export const ENTREPRENEURSHIP_SECTIONS: EntrepreneurshipSection[] = [
   { id: "commercialization-roadmap", title: "Commercialization Roadmap" },
   { id: "intellectual-property", title: "Intellectual Property" },
   { id: "validation-traction", title: "Validation & Traction" },
-  { id: "cooperathon", title: "Cooperathon" },
 ];
 
 export const ENTREPRENEURSHIP_DETAILS_HREF = "/entrepreneurship/details";

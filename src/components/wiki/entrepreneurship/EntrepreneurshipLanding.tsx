@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import { Banner } from "@/components/wiki/Banner";
 import { CompetitiveLandscapeChart } from "@/components/wiki/entrepreneurship/CompetitiveLandscapeChart";
-import { CooperathonSection } from "@/components/wiki/entrepreneurship/CooperathonSection";
 import { FeatureComparisonTable } from "@/components/wiki/entrepreneurship/FeatureComparisonTable";
 import { MarketOpportunityCircles } from "@/components/wiki/entrepreneurship/MarketOpportunityCircles";
 import { RoadmapCarousel } from "@/components/wiki/entrepreneurship/RoadmapCarousel";
@@ -17,7 +16,6 @@ import { WikiSection } from "@/components/wiki/WikiSection";
 const MARKET_OPPORTUNITY_SECTION_ID = "market-opportunity";
 const COMPETITIVE_ADVANTAGE_SECTION_ID = "competitive-advantage";
 const ROADMAP_SECTION_ID = "commercialization-roadmap";
-const COOPERATHON_SECTION_ID = "cooperathon";
 
 // The Market Opportunity section keeps "Market Opportunity" as its id/TOC
 // reference in code, but shows this instead as its on-page heading.
@@ -27,11 +25,11 @@ const MARKET_OPPORTUNITY_DISPLAY_TITLE = "Targeted Focus in a Massive Market";
 // section on the details page via ReadMoreLink. Swap this copy for real
 // content when it's ready — the section list/order lives in
 // components/wiki/entrepreneurship/sections.ts and stays in sync with the
-// details page. The market-opportunity, competitive-advantage, roadmap, and
-// cooperathon sections render their own custom content instead of a teaser
-// (see MarketOpportunityCircles / FeatureComparisonTable +
-// CompetitiveLandscapeChart / RoadmapCarousel / CooperathonSection), so none
-// of them has an entry here.
+// details page. The market-opportunity, competitive-advantage, and roadmap
+// sections render their own custom content instead of a teaser (see
+// MarketOpportunityCircles / FeatureComparisonTable +
+// CompetitiveLandscapeChart / RoadmapCarousel), so none of them has an entry
+// here.
 const TEASERS: Record<string, ReactNode> = {
   "market-need": (
     <p>
@@ -83,11 +81,7 @@ export function EntrepreneurshipLanding() {
 
           return (
             <FadeSection key={section.id}>
-              <WikiSection
-                id={section.id}
-                title={displayTitle}
-                hideTitle={section.id === COOPERATHON_SECTION_ID}
-              >
+              <WikiSection id={section.id} title={displayTitle}>
                 {section.id === MARKET_OPPORTUNITY_SECTION_ID ? (
                   <>
                     <MarketOpportunityCircles />
@@ -104,8 +98,6 @@ export function EntrepreneurshipLanding() {
                   </>
                 ) : section.id === ROADMAP_SECTION_ID ? (
                   <RoadmapCarousel readMoreHref={readMoreHref} />
-                ) : section.id === COOPERATHON_SECTION_ID ? (
-                  <CooperathonSection readMoreHref={readMoreHref} />
                 ) : (
                   <>
                     {TEASERS[section.id]}
