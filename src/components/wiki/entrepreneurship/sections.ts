@@ -5,7 +5,7 @@ export type EntrepreneurshipSection = { id: string; title: string };
 // section ids/titles can never drift apart — a mismatch would silently break
 // the Read More anchors and the details page's table of contents.
 export const ENTREPRENEURSHIP_SECTIONS: EntrepreneurshipSection[] = [
-  { id: "market-need", title: "Market Need" },
+  { id: "market-need", title: "The Problem" },
   { id: "market-opportunity", title: "Market Opportunity" },
   { id: "business-model", title: "Business Model" },
   { id: "competitive-advantage", title: "Competitive Advantage" },

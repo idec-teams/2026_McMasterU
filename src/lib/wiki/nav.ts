@@ -12,7 +12,6 @@ export const NAV_LINKS: NavLink[] = [
       { label: "Kinetic Model", href: "/engineering/kinetic-model" },
       { label: "ML1", href: "/engineering/ml-1" },
       { label: "ML2", href: "/engineering/ml-2" },
-      { label: "Financial Model", href: "/engineering/financial-model" },
     ],
   },
   { label: "Documentation", href: "/documentation" },

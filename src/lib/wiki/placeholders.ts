@@ -26,7 +26,7 @@ export const PLACEHOLDER_MODEL_CONTENT: ModelPageContent = {
     },
   ],
   results: LOREM_PARAGRAPH,
-  resultsFigures: ["Results figure"],
+  resultsFigures: [{ caption: "Results figure" }],
   discussion: LOREM_PARAGRAPH,
   validation: LOREM_PARAGRAPH,
   limitationsNextSteps: LOREM_PARAGRAPH,

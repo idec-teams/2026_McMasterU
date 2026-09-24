@@ -29,6 +29,9 @@ export const content: ModelPageContent = {
           type: "figure",
           caption:
             "Figure 1: Schematic diagram of the fatty acid synthesis pathway within S. cerevisiae.",
+          src: "/engineering/kinetic_construction.png",
+          width: 2020,
+          height: 1054,
         },
         {
           type: "table",
@@ -173,23 +176,57 @@ export const content: ModelPageContent = {
 
   results: "",
   resultsFigures: [
-    "Figure 2: Triacylglycerol (TAG) accumulation modelled in Saccharomyces cerevisiae cell over time",
-    "Figure 3: Acyl-CoA concentration in Saccharomyces cerevisiae cell modelled over time",
-    "Figure 4: Concentrations of all metabolites involved in the TAG synthesis pathway in Saccharomyces cerevisiae cell modelled over time",
+    {
+      caption:
+        "Figure 2: Triacylglycerol (TAG) accumulation modelled in Saccharomyces cerevisiae cell over time",
+      src: "/engineering/kinetic_TAG.png",
+      width: 1270,
+      height: 761,
+    },
+    {
+      caption:
+        "Figure 3: Acyl-CoA concentration in Saccharomyces cerevisiae cell modelled over time",
+      src: "/engineering/kinetic_acylCoA.png",
+      width: 1275,
+      height: 783,
+    },
+    {
+      caption:
+        "Figure 4: Concentrations of all metabolites involved in the TAG synthesis pathway in Saccharomyces cerevisiae cell modelled over time",
+      src: "/engineering/kinetic_misc_metabolites.png",
+      width: 1251,
+      height: 774,
+    },
   ],
 
   discussion:
-    'Overexpressing key enzymes in this metabolic pathway successfully drives triacylglycerol (TAG) production by eliminating internal bottlenecks. As shown by the steady upward trend of the purple curve representing TAG. The simulation shows a prolonged phase of constant linear accumulation up to 3300 seconds, and a final plateau where total TAG concentration caps out at approximately 560 mM.\n\nThis plateau reveals a bottleneck in the current model setup. TAG synthesis stops increasing around 55 minutes not because of enzyme performance limits, but because the primary starting substrates are exhausted. Ultimately, these results show that while overexpressing these genes maximizes catalytic throughput, total TAG yield becomes limited by precursor substrates. In a living yeast cell, achieving this high theoretical storage capacity would depend on a continuous feed of starting nutrients, sufficient energy and storage capacity.\n\nThe overall trend predicted by the kinetic model is supported by experimental studies in S. cerevisiae. In particular, Ferreira et al. engineered S. cerevisiae using a "push-and-pull" strategy that increased precursor formation through a deregulated ACC1 while increasing conversion toward TAG through DGA1 and PAH1 overexpression. This combination produced approximately 129 mg TAG/g cell dry weight, representing more than a ten-fold increase compared with the reference strain [ref1].\n\nExperimental evidence also supports the individual importance of DGA1. Kamisaka et al. found that DGA1 overexpression significantly increased lipid accumulation in S. cerevisiae, with TAG becoming the most abundant lipid under the tested engineered conditions. A later study similarly identified increased Acc1 activity and Dga1 overexpression as important modifications for achieving high TAG accumulation in engineered S. cerevisiae [ref2].\n\nTogether, these studies support the main behaviour observed in our simulation: increasing activity at the beginning of fatty-acid synthesis through ACC1 and increasing the final conversion of DAG to TAG through DGA1 can redirect metabolism toward greater TAG accumulation. However, the literature only validates the direction of the model prediction. The predicted concentration of approximately 560 mM and the time required to reach the plateau were not directly validated against experimental measurements.',
+    "Overexpressing key enzymes in this metabolic pathway successfully drives triacylglycerol (TAG) production by eliminating internal bottlenecks. As shown by the steady upward trend of the purple curve representing TAG. The simulation shows a prolonged phase of constant linear accumulation up to 3300 seconds, and a final plateau where total TAG concentration caps out at approximately 560 mM.\n\nThis plateau reveals a bottleneck in the current model setup. TAG synthesis stops increasing around 55 minutes not because of enzyme performance limits, but because the primary starting substrates are exhausted. Ultimately, these results show that while overexpressing these genes maximizes catalytic throughput, total TAG yield becomes limited by precursor substrates. In a living yeast cell, achieving this high theoretical storage capacity would depend on a continuous feed of starting nutrients, sufficient energy and storage capacity.",
 
-  validation: "",
+  validation:
+    'The overall trend predicted by the kinetic model is supported by experimental studies in S. cerevisiae. In particular, Ferreira et al. engineered S. cerevisiae using a "push-and-pull" strategy that increased precursor formation through a deregulated ACC1 while increasing conversion toward TAG through DGA1 and PAH1 overexpression. This combination produced approximately 129 mg TAG/g cell dry weight, representing more than a ten-fold increase compared with the reference strain [ref1].\n\nExperimental evidence also supports the individual importance of DGA1. Kamisaka et al. found that DGA1 overexpression significantly increased lipid accumulation in S. cerevisiae, with TAG becoming the most abundant lipid under the tested engineered conditions. A later study similarly identified increased Acc1 activity and Dga1 overexpression as important modifications for achieving high TAG accumulation in engineered S. cerevisiae [ref2].\n\nTogether, these studies support the main behaviour observed in our simulation: increasing activity at the beginning of fatty-acid synthesis through ACC1 and increasing the final conversion of DAG to TAG through DGA1 can redirect metabolism toward greater TAG accumulation. However, the literature only validates the direction of the model prediction. The predicted concentration of approximately 560 mM and the time required to reach the plateau were not directly validated against experimental measurements.',
 
   limitationsNextSteps:
     "A major limitation is the lack of S. cerevisiae-specific kinetic parameters. As mentioned under Model Assumptions, several values were taken from other organisms. The model also simplifies reactions using irreversible Michaelis-Menten kinetics and does not fully account for feedback regulation, competing pathways, cell growth, or continuous nutrient uptake.\n\nAnother limitation is that the current model focuses only on the kinetics of the selected TAG synthesis pathway and does not account for metabolic flux across the broader yeast metabolic network. Future work could incorporate Flux Balance Analysis (FBA) to identify how gene overexpression affects flux distribution through competing pathways and determine whether sufficient precursor flux is available for TAG synthesis. Combining FBA with the kinetic model could provide a more complete picture of both pathway-level flux and metabolite concentration changes over time.\n\nFuture work should replace cross-species parameters with yeast-specific values and perform sensitivity analysis to determine which parameters most strongly affect TAG production. The kinetic and FBA models could also be integrated so that FBA-derived flux constraints inform reaction rates in the kinetic model. Finally, experimental TAG measurements from engineered yeast could be compared with both models to calibrate their predictions and improve their biological accuracy.",
 
-  // Placeholder entries so the [ref1]/[ref2] markers above have somewhere to
-  // link. Swap in the real citation details when they're provided.
   references: [
-    { id: "ref1", title: "Reference 1 - coming soon" },
-    { id: "ref2", title: "Reference 2 - coming soon" },
+    {
+      id: "ref1",
+      authors:
+        "Ferreira, R., Teixeira, P. G., Gossing, M., David, F., Siewers, V., & Nielsen, J.",
+      year: 2018,
+      title:
+        "Metabolic engineering of saccharomyces cerevisiae for overproduction of triacylglycerols",
+      source: "Metabolic Engineering Communications, 6, 22–27",
+      url: "https://doi.org/10.1016/j.meteno.2018.01.002",
+    },
+    {
+      id: "ref2",
+      authors: "Kamisaka, Y., Tomita, N., Kimura, K., Kainou, K., & Uemura, H.",
+      year: 2007,
+      title:
+        "DGA1 (diacylglycerol acyltransferase gene) overexpression and leucine biosynthesis significantly increase lipid accumulation in the Δsnf2 disruptant of Saccharomyces cerevisiae",
+      source: "Biochemical Journal, 408(1), 61–68",
+      url: "https://doi.org/10.1042/bj20070449",
+    },
   ],
 };

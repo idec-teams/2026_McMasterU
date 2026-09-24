@@ -29,6 +29,9 @@ export const content: ModelPageContent = {
           type: "figure",
           caption:
             "Figure 1: Overview of the machine learning model for RNA thermometer optimization. The model evaluates a library of single and double mutants derived from a parent sequence against a trained thermodynamic dataset, outputting a ranked list of candidate variants to identify the most reliable sequence engineered to melt at 37°C.",
+          src: "/engineering/ml1_abstract.png",
+          width: 2048,
+          height: 1229,
         },
         {
           type: "paragraph",
@@ -41,9 +44,24 @@ export const content: ModelPageContent = {
   results:
     "The plots below display the accuracy of the model's predictions for MFE at 29.0°C and 37.0°C, as well as the melting temperatures for each augmented sequence. In these plots, the dashed red line represents the true parameter calculated using ViennaRNA, while blue points represent the model's predictions. From these plots, it is evident that the model can predict MFEs of novel RNAt sequences relatively well at both 29.0°C and 37.0°C, with root mean squared error (RMSE) of 1.03 and 0.93 respectively. The model is less fit for predicting melting temperatures, with a RMSE of 10.20 for its predictions, a high RMSE relative to the error associated with delta G predictions.\n\nBased on the initial RNAt sequence input, the variant sequence with the highest fitness score, and thus closest-to-optimal melting temperature, is AUGCAGGCCUGC with a fitness score of 0.00996, followed by AUGCAUGCCUGG, AUGCGUGCCUGC, AUGCAAGCCUGC, and AUGCAUGCCUAU, with fitness scores of 0.00989, 0.00943, 0.00938, and 0.00937 respectively.",
   resultsFigures: [
-    "Figure 2: Predicted vs. true MFE at 29.0°C",
-    "Figure 3: Predicted vs. true MFE at 37.0°C",
-    "Figure 4: Predicted vs. true melting temperature (Tm)",
+    {
+      caption: "Figure 2: Predicted vs. true MFE at 29.0°C",
+      src: "/engineering/ml1_mfe28.png",
+      width: 568,
+      height: 567,
+    },
+    {
+      caption: "Figure 3: Predicted vs. true MFE at 37.0°C",
+      src: "/engineering/ml1_mfe37.png",
+      width: 588,
+      height: 569,
+    },
+    {
+      caption: "Figure 4: Predicted vs. true melting temperature (Tm)",
+      src: "/engineering/ml1_melting_temp.png",
+      width: 582,
+      height: 560,
+    },
   ],
 
   discussion:
@@ -55,13 +73,50 @@ export const content: ModelPageContent = {
   limitationsNextSteps:
     "The current model is limited by a small training dataset and relying on ViennaRNA as its ground truth. All training variants were single and double variants derived from four parent sequences, which likely led the model to learn patterns specific to those sequences, instead of developing a generalizable sequence-function relationship. All training sequences were less than 100nts in length; overall, this means that longer sequences, as well as sequences with unique structural features, would be difficult to predict.\n\nAdditionally, the model was only trained on computationally generated data from ViennaRNA. This means that the model has learned to predict ViennaRNA's outputs, instead of true in vivo thermosensor activity. We found there was a systematic discrepancy between ViennaRNA's Tm calculations and the experimental Tms reported in the literature (often incorrect by 20°C-30°C), limiting the model's ability to predict melting temperature accurately. ViennaRNA also predicts structure under simplified conditions, and does not account for in vivo protein interactions or ionic activity (i.e. Mg2+). As a result, the model predicts and ranks structural switching potential instead of true functional activity.\n\nTo mitigate these issues, next steps include using experimental labels instead of generated computational labels, similar to Romero et al. (2012); whether by generating experimental training data, or validating computational predictions with wet lab results. Amplifying the training dataset with more RNAt sequences and including a wider variety of structural features would help make the model more robust. Finally, with more time, incorporating other tools and features such as NUPACK (i.e. RBS accessibility) could help uncover more relationships between RNAt sequences and their in vivo activity.",
 
-  // Placeholder entries so the [ref1]-[ref5] markers above have somewhere to
-  // link. Swap in the real citation details when they're provided.
   references: [
-    { id: "ref1", title: "Reference 1 - coming soon" },
-    { id: "ref2", title: "Reference 2 - coming soon" },
-    { id: "ref3", title: "Reference 3 - coming soon" },
-    { id: "ref4", title: "Reference 4 - coming soon" },
-    { id: "ref5", title: "Reference 5 - coming soon" },
+    {
+      id: "ref1",
+      authors: "Sen, S., Apurva, D., Satija, R., Siegal, D., & Murray, R. M.",
+      year: 2017,
+      title: "Design of a toolbox of RNA thermometers",
+      source: "ACS Synthetic Biology, 6(8), 1461–1470",
+      url: "https://doi.org/10.1021/acssynbio.6b00301",
+    },
+    {
+      id: "ref2",
+      authors: "Romero, P. A., Krause, A., & Arnold, F. H.",
+      year: 2012,
+      title: "Navigating the protein fitness landscape with Gaussian Processes",
+      source:
+        "Proceedings of the National Academy of Sciences, 110(3), 193–201",
+      url: "https://doi.org/10.1073/pnas.1215251110",
+    },
+    {
+      id: "ref3",
+      authors: "Lorenz, R., Bernhart, S. H., Höner zu Siederdissen, C., et al.",
+      year: 2011,
+      title: "ViennaRNA Package 2.0",
+      source: "Algorithms for Molecular Biology, 6, 26",
+      url: "https://doi.org/10.1186/1748-7188-6-26",
+    },
+    {
+      id: "ref4",
+      authors:
+        "Tong, A. Y., Caudill, E. E., Jones, A. R., F M Passalacqua, L., & Abdelsayed, M. M.",
+      year: 2023,
+      title:
+        "Characterization of a FourU RNA thermometer in the 5' untranslated region of autolysin gene blyA in the Bacillus subtilis 168 prophage SPβ",
+      source: "Biochemistry, 62(20), 2902–2907",
+      url: "https://doi.org/10.1021/acs.biochem.3c00368",
+    },
+    {
+      id: "ref5",
+      authors: "Meyer, S., Carlson, P. D., & Lucks, J. B.",
+      year: 2017,
+      title:
+        "Characterizing the structure-function relationship of a naturally occurring RNA thermometer",
+      source: "Biochemistry, 56(51), 6629–6638",
+      url: "https://doi.org/10.1021/acs.biochem.7b01170",
+    },
   ],
 };

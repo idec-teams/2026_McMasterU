@@ -104,10 +104,23 @@ export type SummaryPoint = {
   body: string;
 };
 
+/**
+ * A figure's caption plus an optional path to its image in /public. Renders
+ * as a placeholder until `src` is set. `width`/`height` are the image's real
+ * pixel dimensions, used so the figure frame matches its aspect ratio
+ * instead of letterboxing inside a fixed one.
+ */
+export type ModelFigureContent = {
+  caption: string;
+  src?: string;
+  width?: number;
+  height?: number;
+};
+
 /** One piece of content within a Model Construction subsection, rendered in order. */
 export type ModelContentBlock =
   | { type: "paragraph"; text: string }
-  | { type: "figure"; caption: string }
+  | ({ type: "figure" } & ModelFigureContent)
   | { type: "table"; caption: string; headers: string[]; rows: string[][] }
   | { type: "list"; items: string[] };
 
@@ -124,8 +137,8 @@ export type ModelPageContent = {
   background: string;
   modelConstruction: ModelSubsection[];
   results: string;
-  /** Figure captions shown as image placeholders under Results. */
-  resultsFigures: string[];
+  /** Figures shown under Results, each an image placeholder until `src` is set. */
+  resultsFigures: ModelFigureContent[];
   discussion: string;
   validation: string;
   limitationsNextSteps: string;

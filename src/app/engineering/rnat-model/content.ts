@@ -63,10 +63,30 @@ export const content: ModelPageContent = {
 
   results: "",
   resultsFigures: [
-    "Figure 1: mRNA Concentration During Hairpin Transition",
-    "Figure 2: Active Ribosome-mRNA Complexes",
-    "Figure 3: BGL2 Protein Accumulation",
-    "Figure 4: Cell Wall Integrity (%)",
+    {
+      caption: "Figure 1: mRNA Concentration During Hairpin Transition",
+      src: "/engineering/rnat_mrna.png",
+      width: 1074,
+      height: 730,
+    },
+    {
+      caption: "Figure 2: Active Ribosome-mRNA Complexes",
+      src: "/engineering/rnat_ribosomes.png",
+      width: 1060,
+      height: 733,
+    },
+    {
+      caption: "Figure 3: BGL2 Protein Accumulation",
+      src: "/engineering/rnat_bgl2.png",
+      width: 659,
+      height: 433,
+    },
+    {
+      caption: "Figure 4: Cell Wall Integrity (%)",
+      src: "/engineering/rnat_cell_wall.png",
+      width: 1030,
+      height: 683,
+    },
   ],
 
   discussion:
@@ -78,13 +98,49 @@ export const content: ModelPageContent = {
   limitationsNextSteps:
     "This is a preliminary model and a fairly new design framework. The wall-degradation term is phenomenological, so it captures the expected trend but not the full biochemistry of cell-wall remodelling, and the model is best treated as a useful first approximation rather than a final predictive system. It is strong for showing feasibility and timing, but it still needs reporter-based and kinetic experimental validation to become fully predictive.",
 
-  // Placeholder entries so the [ref1]-[ref5] markers above have somewhere to
-  // link. Swap in the real citation details when they're provided.
   references: [
-    { id: "ref1", title: "Reference 1 - coming soon" },
-    { id: "ref2", title: "Reference 2 - coming soon" },
-    { id: "ref3", title: "Reference 3 - coming soon" },
-    { id: "ref4", title: "Reference 4 - coming soon" },
-    { id: "ref5", title: "Reference 5 - coming soon" },
+    {
+      id: "ref1",
+      year: "2014, April 3",
+      title: "BGL2 / YGR282C Overview",
+      source: "Yeast Genome Database",
+      url: "https://www.yeastgenome.org/locus/YGR282C",
+    },
+    {
+      id: "ref2",
+      authors: "Shah, P., Ding, Y., Niemczyk, M., Kudla, G., & Plotkin, J. B.",
+      year: 2013,
+      title: "Rate-limiting steps in yeast protein translation",
+      source: "Cell, 153(7), 1589–1601",
+      url: "https://doi.org/10.1016/j.cell.2013.05.049",
+    },
+    {
+      id: "ref3",
+      authors:
+        "Chu, D., Kazana, E., Bellanger, N., Singh, T., Tuite, M. F., & von der Haar, T.",
+      year: 2013,
+      title:
+        "Translation elongation can control translation initiation on eukaryotic mRNAs",
+      source: "The EMBO Journal, 33(1), 21–34",
+      url: "https://doi.org/10.1002/embj.201385651",
+    },
+    {
+      id: "ref4",
+      authors:
+        "Lahtvee, P.-J., Sánchez, B. J., Smialowska, A., Kasvandik, S., Elsemman, I. E., Gatto, F., & Nielsen, J.",
+      year: 2017,
+      title:
+        "Absolute quantification of protein and mRNA abundances demonstrate variability in gene-specific translation efficiency in yeast",
+      source: "Cell Systems, 4(5), 495–504",
+      url: "https://doi.org/10.1016/j.cels.2017.03.003",
+    },
+    {
+      id: "ref5",
+      authors: "Milo, R.",
+      year: "n.d.",
+      title: "Median mRNA half life",
+      source: "Bionumbers",
+      url: "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=100205",
+    },
   ],
 };

@@ -1,21 +1,34 @@
 import { WidgetCard } from "@/components/wiki/engineering/WidgetCard";
 import type { EngineeringWidget } from "@/types/wiki";
 
-// Background images aren't ready yet — add `image: "/engineering/<file>"`
-// to a widget once one exists; WidgetCard falls back gracefully until then.
+// All four share the engineering banner image until each model gets its own
+// background; WidgetCard falls back gracefully if `image` is ever removed.
+const WIDGET_IMAGE = "/banners/engineering.png";
+
 const WIDGETS: EngineeringWidget[] = [
-  { id: "rnat-model", title: "RNAt Model", href: "/engineering/rnat-model" },
-  { id: "ml-1", title: "ML1", href: "/engineering/ml-1" },
-  { id: "ml-2", title: "ML2", href: "/engineering/ml-2" },
+  {
+    id: "rnat-model",
+    title: "RNAt Model",
+    href: "/engineering/rnat-model",
+    image: WIDGET_IMAGE,
+  },
   {
     id: "kinetic-model",
     title: "Kinetic Model",
     href: "/engineering/kinetic-model",
+    image: WIDGET_IMAGE,
   },
   {
-    id: "financial-model",
-    title: "Financial Model",
-    href: "/engineering/financial-model",
+    id: "ml-1",
+    title: "ML1",
+    href: "/engineering/ml-1",
+    image: WIDGET_IMAGE,
+  },
+  {
+    id: "ml-2",
+    title: "ML2",
+    href: "/engineering/ml-2",
+    image: WIDGET_IMAGE,
   },
 ];
 
