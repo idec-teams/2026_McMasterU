@@ -60,57 +60,99 @@ export const protocols = [
   },
 
   {
-    id: "media preparation",
-    title: "Media Preparation",
+    id: "cell culturing",
+    title: "Cell Culturing",
     description: "These protocols ____",
     pdfUrl: "coming soon",
   },
 
   {
-    id: "media preparation",
-    title: "Media Preparation",
+    id: "passaging cells",
+    title: "Passaging Cells",
     description: "These protocols ____",
     pdfUrl: "coming soon",
   },
 
   {
-    id: "media preparation",
-    title: "Media Preparation",
+    id: "competent cell preparation",
+    title: "Competent Cell Preparation",
     description: "These protocols ____",
     pdfUrl: "coming soon",
   },
 
   {
-    id: "media preparation",
-    title: "Media Preparation",
+    id: "transformation",
+    title: "Transformation",
     description: "These protocols ____",
     pdfUrl: "coming soon",
   },
 
   {
-    id: "media preparation",
-    title: "Media Preparation",
+    id: "bacteria miniprep",
+    title: "Bacteria Miniprep",
     description: "These protocols ____",
     pdfUrl: "coming soon",
   },
 
   {
-    id: "media preparation",
-    title: "Media Preparation",
+    id: "nanoquanting",
+    title: "Nanoquanting",
     description: "These protocols ____",
     pdfUrl: "coming soon",
   },
 
   {
-    id: "media preparation",
-    title: "Media Preparation",
+    id: "gel electrophoresis",
+    title: "Gel Electrophoresis",
     description: "These protocols ____",
     pdfUrl: "coming soon",
   },
 
   {
-    id: "media preparation",
-    title: "Media Preparation",
+    id: "gel extraction",
+    title: "Gel Extraction",
+    description: "These protocols ____",
+    pdfUrl: "coming soon",
+  },
+
+  {
+    id: "dsdna synthesis",
+    title: "dsDNA Synthesis",
+    description: "These protocols ____",
+    pdfUrl: "coming soon",
+  },
+
+  {
+    id: "re digests",
+    title: "RE Digests",
+    description: "These protocols ____",
+    pdfUrl: "coming soon",
+  },
+
+  {
+    id: "ligation",
+    title: "Ligation",
+    description: "These protocols ____",
+    pdfUrl: "coming soon",
+  },
+
+  {
+    id: "pcr mutagenesis",
+    title: "PCR Mutagenesis",
+    description: "These protocols ____",
+    pdfUrl: "coming soon",
+  },
+
+  {
+    id: "golden gate assembly",
+    title: "Golden Gate Assembly",
+    description: "These protocols ____",
+    pdfUrl: "coming soon",
+  },
+
+  {
+    id: "dna assembly",
+    title: "DNA Assembly",
     description: "These protocols ____",
     pdfUrl: "coming soon",
   },
