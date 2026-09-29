@@ -21,6 +21,11 @@ const ROADMAP_SECTION_ID = "commercialization-roadmap";
 // reference in code, but shows this instead as its on-page heading.
 const MARKET_OPPORTUNITY_DISPLAY_TITLE = "Targeted Focus in a Massive Market";
 
+// Same treatment for Commercialization Roadmap.
+const ROADMAP_DISPLAY_TITLE = "From the Lab to the Market";
+const ROADMAP_INTRO =
+  "MEYcell's roadmap outlines the technical, regulatory, and manufacturing milestones required to transition from laboratory validation to commercial ingredient production through scalable fermentation and strategic industry partnerships.";
+
 // Short teaser copy per section, keyed by id. Each links out to the matching
 // section on the details page via ReadMoreLink. Swap this copy for real
 // content when it's ready — the section list/order lives in
@@ -49,12 +54,6 @@ const TEASERS: Record<string, ReactNode> = {
       production process. Content coming soon.
     </p>
   ),
-  "validation-traction": (
-    <p>
-      Early validation, partnerships, and momentum behind MEYcell so far.
-      Content coming soon.
-    </p>
-  ),
 };
 
 export function EntrepreneurshipLanding() {
@@ -77,7 +76,9 @@ export function EntrepreneurshipLanding() {
           const displayTitle =
             section.id === MARKET_OPPORTUNITY_SECTION_ID
               ? MARKET_OPPORTUNITY_DISPLAY_TITLE
-              : section.title;
+              : section.id === ROADMAP_SECTION_ID
+                ? ROADMAP_DISPLAY_TITLE
+                : section.title;
 
           return (
             <FadeSection key={section.id}>
@@ -97,7 +98,10 @@ export function EntrepreneurshipLanding() {
                     <ReadMoreLink href={readMoreHref} />
                   </>
                 ) : section.id === ROADMAP_SECTION_ID ? (
-                  <RoadmapCarousel readMoreHref={readMoreHref} />
+                  <>
+                    <p>{ROADMAP_INTRO}</p>
+                    <RoadmapCarousel readMoreHref={readMoreHref} />
+                  </>
                 ) : (
                   <>
                     {TEASERS[section.id]}

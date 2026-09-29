@@ -16,8 +16,11 @@ import type {
 
 // Renders a Model Construction subsection's content blocks in order —
 // paragraphs, embedded figures, data tables, and bullet lists all draw from
-// the same source-of-truth list so they interleave freely.
-function ModelBlocks({
+// the same source-of-truth list so they interleave freely. Exported for
+// reuse by other wiki pages whose write-up needs the same mixed
+// paragraph/table/list shape (e.g. the entrepreneurship Market Opportunity
+// section's TAM/SAM/SOM table).
+export function ModelBlocks({
   blocks,
   references,
 }: {

@@ -59,6 +59,7 @@ const ITALIC_TERMS = [
   "E. coli",
   "B. subtilis",
   "S. enterica",
+  "Y. lipolytica",
 ];
 const ITALIC_PATTERN = new RegExp(
   `(?:${ITALIC_TERMS.map((term) => term.replace(/\./g, "\\.")).join("|")})`,

@@ -8,10 +8,9 @@ export const ENTREPRENEURSHIP_SECTIONS: EntrepreneurshipSection[] = [
   { id: "market-need", title: "The Problem" },
   { id: "market-opportunity", title: "Market Opportunity" },
   { id: "business-model", title: "Business Model" },
-  { id: "competitive-advantage", title: "Competitive Advantage" },
   { id: "commercialization-roadmap", title: "Commercialization Roadmap" },
+  { id: "competitive-advantage", title: "Competitive Advantage" },
   { id: "intellectual-property", title: "Intellectual Property" },
-  { id: "validation-traction", title: "Validation & Traction" },
 ];
 
 export const ENTREPRENEURSHIP_DETAILS_HREF = "/entrepreneurship/details";
