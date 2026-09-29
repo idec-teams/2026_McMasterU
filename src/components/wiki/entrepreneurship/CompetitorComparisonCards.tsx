@@ -53,9 +53,13 @@ const COMPANIES: CompanyColumn[] = [
 
 // Side-by-side competitor comparison: one bordered box per company, each
 // listing the same 4 features (icon in a circle, label, value) in the same
-// order so the three columns compare directly. Every row is centered as a
-// unit (icon + text) rather than left-aligned, so short values don't leave
-// a lopsided gap on one side of the box. The row stays a horizontally
+// order so the three columns compare directly. Every row keeps its circle
+// flush against the same left edge (`items-center` only, no `justify-center`
+// on the row itself) so the circles form a constant column regardless of
+// value length; the label/value text then fills the remaining width and is
+// centered within that space (`flex-1 text-center`), rather than the whole
+// icon+text group centering as one unit and shifting the circle around row
+// to row. The row stays a horizontally
 // scrollable flex row rather than a grid that stacks to 1-per-row on
 // narrow screens — the whole point is comparing the 3 companies at a
 // glance, which breaks once they're stacked full-width instead of
@@ -86,10 +90,7 @@ export function CompetitorComparisonCards() {
             {FEATURES.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <div
-                  key={feature.label}
-                  className="flex items-center justify-center gap-3 text-center"
-                >
+                <div key={feature.label} className="flex items-center gap-3">
                   <span
                     className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border ${
                       company.highlight ? "border-emerald-400" : "border-border"
@@ -101,7 +102,7 @@ export function CompetitorComparisonCards() {
                       }`}
                     />
                   </span>
-                  <div>
+                  <div className="flex-1 text-center">
                     <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
                       {feature.label}
                     </div>

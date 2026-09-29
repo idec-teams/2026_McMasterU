@@ -167,10 +167,6 @@ export const INTELLECTUAL_PROPERTY_SECTIONS: ModelSubsection[] = [
       },
       {
         type: "paragraph",
-        text: "Core Platform Patent → Platform Improvements → Formulation-Specific Protection → Application Specific Protection → International Protection in Commercially Relevant Markets",
-      },
-      {
-        type: "paragraph",
         text: "The long term objective is to create an evolving IP portfolio in which patent protection is constantly iterated and covers the central platform and commercial applications, while trade secrets preserve proprietary process knowledge that contributes to manufacturing performance.",
       },
     ],

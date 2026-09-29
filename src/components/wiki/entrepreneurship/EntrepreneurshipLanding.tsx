@@ -1,8 +1,8 @@
 import {
+  ArrowDown,
   BarChart3,
   Box,
   Calendar,
-  Check,
   Droplet,
   Factory,
   FileText,
@@ -219,10 +219,15 @@ const INTELLECTUAL_PROPERTY_DISPLAY_TITLE = (
 );
 const INTELLECTUAL_PROPERTY_INTRO =
   "The IP strategy combines patent protection for the core platform and for future applications, with trade secret protection for the process. MEYcell plans to begin with a U.S. provisional patent and expand the portfolio as the technology and its applications develop. A formal freedom-to-operate analysis remains a planned step before commercialization.";
-const INTELLECTUAL_PROPERTY_CHECKLIST = [
-  "Provisional patent filed for engineered yeast strain and lipid release system",
-  "Pectin hydrogel formulation and application",
-  "Trade secrets around process optimization and yields",
+
+// The filing-strategy progression, shown as a plain vertical flow (no
+// bordered box) — each stage centered with a downward arrow to the next.
+const FILING_STRATEGY_STAGES = [
+  "Core Platform Patent",
+  "Platform Improvements",
+  "Formulation-Specific Protection",
+  "Application Specific Protection",
+  "International Protection in Commercially Relevant Markets",
 ];
 
 export function EntrepreneurshipLanding() {
@@ -320,19 +325,22 @@ export function EntrepreneurshipLanding() {
                 ) : section.id === INTELLECTUAL_PROPERTY_SECTION_ID ? (
                   <>
                     <p>{INTELLECTUAL_PROPERTY_INTRO}</p>
-                    <div className="border border-border bg-card p-6 md:p-8">
-                      <ul className="flex flex-col gap-4">
-                        {INTELLECTUAL_PROPERTY_CHECKLIST.map((item) => (
-                          <li key={item} className="flex items-start gap-3">
-                            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-emerald-400 bg-emerald-400/10">
-                              <Check className="h-3.5 w-3.5 text-emerald-400" />
-                            </span>
-                            <span className="text-sm leading-relaxed text-body">
-                              {item}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="flex flex-col items-center gap-2">
+                      {FILING_STRATEGY_STAGES.map((stage, index) => (
+                        <div
+                          key={stage}
+                          className="flex flex-col items-center gap-2"
+                        >
+                          {index > 0 ? (
+                            <ArrowDown className="h-4 w-4 text-muted-foreground" />
+                          ) : null}
+                          <div className="rounded-full border border-accent/40 bg-accent/10 px-5 py-2 text-center">
+                            <p className="text-sm font-semibold text-accent">
+                              {stage}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                     <ReadMoreLink href={readMoreHref} />
                   </>
