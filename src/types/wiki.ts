@@ -147,7 +147,8 @@ export type ModelPageContent = {
 
 export type WikiSectionProps = {
   id: string;
-  title: string;
+  /** Usually a string; a ReactNode is allowed so a heading can highlight part of itself (e.g. an accent-colored span). */
+  title: ReactNode;
   /** Keep `title` as the section's id/TOC reference but don't render it visibly (e.g. a section with its own custom heading). */
   hideTitle?: boolean;
   children?: ReactNode;
@@ -155,5 +156,5 @@ export type WikiSectionProps = {
 
 export type TocItem = {
   id: string;
-  title: string;
+  title: ReactNode;
 };
