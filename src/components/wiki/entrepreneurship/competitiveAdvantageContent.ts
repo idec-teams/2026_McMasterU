@@ -6,17 +6,14 @@ import type { WikiReference } from "@/types/wiki";
 // Plain title+text subsections (no tables/lists needed here), the same
 // shape as PROBLEM_SUBSECTIONS/BUSINESS_MODEL_SUBSECTIONS.
 //
-// Four in-text claims about Beyond Meat (its plant-derived process, its
-// product/branding lineup, its cost struggles, and a restaurant-partnership
-// expansion) were cited in the source write-up but had no matching entry in
-// the reference list supplied alongside it — the list jumped straight from
-// "Aviv, T." to "Impossible Foods", skipping where "Beyond Meat" sources
-// would alphabetically sit, so this looks like an accidental gap in what
-// was copied rather than an intentional omission. ref28-31 below are
-// "coming soon" placeholders that keep the citation title identifiable
-// (the exact wording used as the in-text citation key) without inventing a
-// URL or publish date — replace their `source`/`year` once the real
-// bibliographic details are available.
+// ref28-31 cover four in-text claims about Beyond Meat (its plant-derived
+// process, its product/branding lineup, its cost struggles, and a
+// restaurant-partnership expansion) that were missing from the reference
+// list originally supplied alongside this write-up — the list jumped
+// straight from "Aviv, T." to "Impossible Foods", skipping where "Beyond
+// Meat" sources would alphabetically sit. They were filled in as "coming
+// soon" placeholders and have since been completed with the real
+// bibliographic details.
 export const COMPETITIVE_ADVANTAGE_SUBSECTIONS: ProblemSubsection[] = [
   {
     title: "Competitor Positioning",
@@ -126,22 +123,30 @@ export const COMPETITIVE_ADVANTAGE_REFERENCES: WikiReference[] = [
   {
     id: "ref28",
     title: "Our Clean Protein Ingredients Made From Plants | Beyond",
-    source: "Coming soon",
+    source: "Beyond Meat",
+    year: "n.d.",
+    url: "https://www.beyondmeat.com/en-US/about/our-ingredients",
   },
   {
     id: "ref29",
     title: "Beyond The Plant Protein Company",
-    source: "Coming soon",
+    source: "Beyond Meat",
+    year: "n.d.",
+    url: "https://www.beyondmeat.com/en-US",
   },
   {
     id: "ref30",
     title: "Beyond Meat Cutting to the Bone",
-    source: "Coming soon",
+    source: "Food Business News",
+    year: "2025, February 26",
+    url: "https://www.foodbusinessnews.net/articles/27803-beyond-meat-cutting-to-the-bone",
   },
   {
     id: "ref31",
     title:
       "Beyond Meat Partners with Hard Rock Cafe and BrewDog to Bring Beyond Burger to More Diners",
-    source: "Coming soon",
+    source: "Vegconomist",
+    year: "n.d.",
+    url: "https://vegconomist.com/gastronomy-food-service/food-service/beyond-meat-partners-hard-rock-cafe-brewdog-bring-beyond-burger-diners/",
   },
 ];
