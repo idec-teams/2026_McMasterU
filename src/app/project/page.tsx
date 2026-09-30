@@ -11,24 +11,6 @@ export const metadata = {
 // Example references — replace with real sources as the content is written.
 const { Cite, references } = createCitations([
   {
-    id: "koch2019",
-    authors: "Koch, B. et al.",
-    title:
-      "Metabolic engineering of Saccharomyces cerevisiae for lipid overproduction",
-    source: "Metabolic Engineering",
-    year: 2019,
-    url: "https://example.org/koch-2019",
-  },
-  {
-    id: "post2020",
-    authors: "Post, M. J. et al.",
-    title:
-      "Scientific, sustainability and regulatory challenges of cultured meat",
-    source: "Nature Food",
-    year: 2020,
-    url: "https://example.org/post-2020",
-  },
-  {
     id: "gaikwad2021",
     authors: "Gaikwad, S. et al.",
     title:
@@ -344,8 +326,85 @@ const { Cite, references } = createCitations([
     authors: "Zhang, W and Chen, S",
     title: "RNA hairpin-folding kinetics",
     source: "PNAS",
-    year: "2001",
+    year: 2001,
     url: "https://www.pnas.org/doi/10.1073/pnas.032443099",
+  },
+
+  {
+    id: "SGD",
+    authors: "NA",
+    title: "BGL2 | SGD",
+    source: "Saccharomyces Genome Database",
+    year: "n.d.",
+    url: "https://www.yeastgenome.org/locus/S000003514",
+  },
+
+  {
+    id: "SGD1",
+    authors: "NA",
+    title: "BGL2 | SGD",
+    source: "Saccharomyces cerevisiae Pathway: oleate biosynthesis",
+    year: "n.d.",
+    url: "https://pathway.yeastgenome.org/YEAST/NEW-IMAGE?type=PATHWAY&object=PWY3O-5268",
+  },
+
+  {
+    id: "wang2020",
+    authors: "Wang et al.",
+    title:
+      "Metabolic engineering for increased lipid accumulation in Yarrowia lipolytica – A Review",
+    source: "Bioresource Technology",
+    year: 2020,
+    url: "https://www.sciencedirect.com/science/article/abs/pii/S0960852420309792",
+  },
+
+  {
+    id: "fakas2017",
+    authors: "Fakas et al.",
+    title:
+      "Lipid biosynthesis in yeasts: A comparison of the lipid biosynthetic pathway between the model nonoleaginous yeast Saccharomyces cerevisiae and the model oleaginous yeast Yarrowia lipolytica",
+    source: "Engineering in Life Sciences",
+    year: 2016,
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6999201/",
+  },
+
+  {
+    id: "wong2017",
+    authors: "Wong et al.",
+    title:
+      "YaliBricks, a versatile genetic toolkit for streamlined and rapid pathway engineering in Yarrowia lipolytica",
+    source: "Metabolic Engineering Communications",
+    year: 2017,
+    url: "https://www.sciencedirect.com/science/article/pii/S2214030117300238",
+  },
+
+  {
+    id: "parapouli2020",
+    authors: "Parapouli et al.",
+    title: " Saccharomyces cerevisiae and its industrial applications",
+    source: "AIMS Microbiology",
+    year: 2020,
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7099199/",
+  },
+
+  {
+    id: "prates2025",
+    authors: "Prates, J.",
+    title:
+      "The Role of Meat Lipids in Nutrition and Health: Balancing Benefits and Risks",
+    source: "Nutrients",
+    year: 2025,
+    url: "https://www.mdpi.com/2072-6643/17/2/350",
+  },
+
+  {
+    id: "lindberg2013",
+    authors: "Lindberg et al.",
+    title:
+      "Lipidomic Profiling of Saccharomyces cerevisiae and Zygosaccharomyces bailii Reveals Critical Changes in Lipid Composition in Response to Acetic Acid Stress",
+    source: "PLOS One",
+    year: 2013,
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3762712/",
   },
 ]);
 
@@ -371,11 +430,163 @@ export default function ProjectPage() {
         </WikiSection>
 
         <WikiSection id="background" title="Background">
+          <h4 className="mt-4 text-lg text-foreground font-medium">
+            Chassis Selection
+          </h4>
+
           <p>
-            Cultivated and plant-based meats still taste lean because they carry
-            almost no intramuscular fat, the main driver of flavor and juiciness
-            <Cite id="post2020" />. MEYcell targets that gap directly. Full
-            content coming soon.
+            Chassis selection is one of the most important engineering decisions
+            in any synthetic biology project. Because our goal is to engineer a
+            microorganism that overproduces lipids for applications in
+            cultivated meat, selecting a chassis that is well-characterized,
+            food-safe, and capable of lipid biosynthesis was essential. We
+            evaluated candidate organisms based on five criteria:
+          </p>
+
+          <ol className="mt-2 ml-6 list-decimal space-y-1">
+            <li>Food safety</li>
+            <li>Lipid production potential</li>
+            <li>Availability of genetic engineering tools</li>
+            <li>Genome characterization</li>
+            <li>Ease of laboratory cultivation</li>
+          </ol>
+
+          <p>
+            With our criteria in mind, we presented our project to various
+            synthetic biology professionals and experts in yeast biology. Here
+            is what some of them had to say:
+          </p>
+
+          <ol className="mt-2 ml-6 list-decimal space-y-4">
+            <li>
+              <strong>Dr. Alejandro Marangoni</strong>
+              <ol className="mt-1 ml-6 list-decimal space-y-1">
+                <li>Has not seen anyone encapsulate lipids within yeast.</li>
+                <li>This is a novel area of research.</li>
+              </ol>
+            </li>
+
+            <li>
+              <strong>Dr. Richard Rachubinski</strong>
+              <ol className="mt-1 ml-6 list-decimal space-y-1">
+                <li>
+                  Suggested BY4741 as a potential chassis.
+                  <ol className="mt-1 ml-6 list-decimal"></ol>
+                </li>
+                <li>BY4741 has an associated knockout library.</li>
+              </ol>
+            </li>
+
+            <li>
+              <strong>Dr. Cinzia Klemm</strong>
+              <ol className="mt-1 ml-6 list-decimal space-y-1">
+                <li>
+                  <em>S. cerevisiae</em> is suitable for proof-of-concept
+                  studies.
+                </li>
+                <li>
+                  <em>S. cerevisiae</em> is the easiest for cell wall removal.
+                </li>
+              </ol>
+            </li>
+
+            <li>
+              <strong>Dr. Victoria Haritos</strong>
+              <ol className="mt-1 ml-6 list-decimal space-y-1">
+                <li>
+                  Yeast transcription is fast, especially with strong promoters.
+                </li>
+                <li>BY4741 is a predictable and robust strain.</li>
+                <li>Yeast and bacteria survive at differing pH levels.</li>
+              </ol>
+            </li>
+          </ol>
+
+          <p>
+            Applying these criteria, we narrowed our candidates to two species
+            of yeast suitable for our project, <em>Yarrowia lipolytica</em> and{" "}
+            <em>Saccharomyces cerevisiae</em>. Both species have established
+            applications in the food and biotechnology industries and are
+            generally regarded as safe (GRAS), satisfying our criterion for food
+            safety <Cite id="wang2020" />. We therefore focused our comparison
+            on their lipid production potential, availability of genetic
+            engineering tools, genome characterization, and ease of laboratory
+            cultivation.
+          </p>
+
+          <p>
+            <em>Y. lipolytica</em> is a naturally oil-producing yeast well known
+            for its high capacity to store lipids <Cite id="wang2020" />. It
+            also possesses an extensively annotated genome, with numerous
+            studies having successfully demonstrated strategies to enhance lipid
+            production, including the overexpression of fatty acid synthesis
+            genes and disruption of beta-oxidation pathways. Although these
+            characteristics make <em>Y. lipolytica</em> a strong candidate for
+            lipid overproduction, our project prioritized engineering
+            flexibility and the availability of well-characterized genetic tools
+            over maximizing lipid accumulation alone. Consequently,{" "}
+            <em>Saccharomyces cerevisiae</em> was chosen as the chassis for the
+            project, as it is a well-characterized model organism with a fully
+            sequenced genome, extensive experimental and computational data, and
+            an expansive synthetic biology toolkit <Cite id="fakas2016" />.
+            Although modular toolkits such as YaliBricks have been developed for{" "}
+            <em>Y. lipolytica</em>, they remain limited in scope compared to the
+            extensive library of promoters, plasmids, and other genome
+            engineering tools available for <em>S. cerevisiae</em>{" "}
+            <Cite id="wong2017" />. Additionally, <em>S. cerevisiae</em> is easy
+            to cultivate and has a high growth rate under laboratory conditions,
+            making it a highly optimal organism. Furthermore,{" "}
+            <em>S. cerevisiae</em> has the ability to integrate foreign genes
+            via homologous recombination with great stability{" "}
+            <Cite id="parapouli2020" />, and its lipid metabolism has been
+            extensively studied, providing a strong foundation for engineering
+            fatty acid synthesis and triacylglycerol (TAG) accumulation{" "}
+            <Cite id="ferreira2018" />.
+          </p>
+
+          <p>
+            Overall, while <em>Y. lipolytica</em> demonstrates greater native
+            lipid accumulation, the extensive engineering toolkit,
+            well-characterized genome, and robust engineering capabilities of{" "}
+            <em>S. cerevisiae</em> make it the most optimal chassis for
+            achieving the objectives of our project.
+          </p>
+
+          <p>
+            Following the selection of <em>S. cerevisiae</em> as our chassis, we
+            then considered the most appropriate strain for our project. Based
+            on consultations with experts, we selected BY4741 as our primary
+            strain. Dr. Richard Rachubinsk recommended BY4741 due to the
+            availability of an extensive knockout library, allowing us to access
+            well-characterized strains with relevant gene deletions. Dr.
+            Victoria Haritos also described BY4741 as a predictable and robust
+            strain, making it suitable for genetic engineering. We specifically
+            selected 𝛽-oxidation knockout strains, including POX1, PXA1, and the
+            combined POX1/PXA1 knockout, to support our project, as deletion of
+            these genes prevents breakdown of native fatty acid stores for
+            energy.
+          </p>
+
+          <p>
+            Our choice of <em>S. cerevisiae</em> as our chassis was further
+            supported by our comparison of its lipid profile to that of
+            traditional red meat. In traditional red meat, the primary fatty
+            acids include palmitic acid, stearic acid, and oleic acid, with
+            40-50% of lipids consisting of monounsaturated fatty acids (MUFAs),
+            of which oleic acid is the most common <Cite id="prates2025" />.
+            Oleic acid is also associated with beneficial effects on
+            cardiovascular health and improved lipid profile. In comparison,
+            there are three primary lipid types naturally present in{" "}
+            <em>S. cerevisiae</em>: glycerophospholipids, sphingolipids, and
+            sterols <Cite id="lindberg2013" />. However, via the lipid
+            biosynthesis pathway involving conversion of acetyl-CoA into
+            malonyl-CoA through acetyl-CoA carboxylase (ACC1), MUFAs are
+            produced, including palmitoleic acid (C16:1) and oleic acid (C18:1).
+            The major fatty acids synthesized by <em>S. cerevisiae</em>. While
+            the ratio of unsaturated fatty acids to saturated fatty acids
+            differs between traditional red meat and <em>S. cerevisiae</em>,
+            both share a very similar fatty acid profile of palmitic acid,
+            stearic acid, and oleic acid.
           </p>
 
           <h4 className="mt-4 text-lg text-foreground font-medium">
@@ -389,8 +600,8 @@ export default function ProjectPage() {
           </p>
 
           <p>
-            S. cerevisiae produces and stores triacylglycerols (TAGs) through
-            the native de novo fatty acid biosynthesis pathway{" "}
+            <em>S. cerevisiae</em> produces and stores triacylglycerols (TAGs)
+            through the native de novo fatty acid biosynthesis pathway{" "}
             <Cite id="tang2015" />. This pathway begins with the conversion of
             acetyl-CoA into malonyl-CoA by acetyl-CoA carboxylase{" "}
             <Cite id="ferreira2018" />. This is the rate-limiting step for fatty
@@ -461,17 +672,17 @@ export default function ProjectPage() {
             Fatty Acid De Novo Biosynthesis
           </h5>
           <p>
-            Saccharomyces cerevisiae synthesizes fatty acids through the de novo
-            fatty acid biosynthesis pathway, which converts acetyl-CoA into
-            fatty acids that can then be incorporated into cellular and storage
-            lipids <Cite id="jiang2021" />. The pathway starts with the
-            conversion of acetyl-CoA to malonyl-CoA by acetyl-CoA carboxylase
-            (ACC1) <Cite id="tang2015" />. Malonyl-CoA is the primary building
-            block for fatty acid synthesis, making ACC1 an important regulatory
-            point for controlling metabolic flux through the pathway. In S.
-            cerevisiae, ACC1 is normally regulated by the Snf1 protein kinase,
-            which limits ACC1 activity and maintains relatively low malonyl-CoA
-            levels under standard conditions.
+            <em>Saccharomyces cerevisiae</em> synthesizes fatty acids through
+            the de novo fatty acid biosynthesis pathway, which converts
+            acetyl-CoA into fatty acids that can then be incorporated into
+            cellular and storage lipids <Cite id="jiang2021" />. The pathway
+            starts with the conversion of acetyl-CoA to malonyl-CoA by
+            acetyl-CoA carboxylase (ACC1) <Cite id="tang2015" />. Malonyl-CoA is
+            the primary building block for fatty acid synthesis, making ACC1 an
+            important regulatory point for controlling metabolic flux through
+            the pathway. In <em>S. cerevisiae</em>, ACC1 is normally regulated
+            by the Snf1 protein kinase, which limits ACC1 activity and maintains
+            relatively low malonyl-CoA levels under standard conditions.
           </p>
 
           <p>
@@ -491,7 +702,8 @@ export default function ProjectPage() {
             desaturation <Cite id="campanella2025" />. OLE1 encodes a Δ9 fatty
             acid desaturase located in the endoplasmic reticulum membrane. It
             introduces a double bond into saturated fatty acyl-CoA molecules,
-            producing monounsaturated fatty acids such as oleate. S. cerevisiae
+            producing monounsaturated fatty acids such as oleate.{" "}
+            <em>S. cerevisiae</em> {""}
             naturally produces predominantly monounsaturated fatty acids, with
             oleic acid (C18:1) and palmitoleic acid (C16:1) being its major
             fatty acids.
@@ -514,12 +726,13 @@ export default function ProjectPage() {
           <p>
             Fatty acids stored within the cell can also be broken down through
             β-oxidation, a pathway that degrades fatty acids to generate
-            acetyl-CoA and energy <Cite id="wang2024" />. In S. cerevisiae,
-            fatty acid transport and oxidation involve proteins including Pxa1
-            and Pox1, while additional enzymes participate in fatty acid
-            mobilization. Preventing this pathway reduces the consumption of
-            newly synthesized fatty acids and allows more of them to remain
-            available for storage as TAGs <Cite id="tang2015" />.
+            acetyl-CoA and energy <Cite id="wang2024" />. In{" "}
+            <em> S. cerevisiae</em>, fatty acid transport and oxidation involve
+            proteins including Pxa1 and Pox1, while additional enzymes
+            participate in fatty acid mobilization. Preventing this pathway
+            reduces the consumption of newly synthesized fatty acids and allows
+            more of them to remain available for storage as TAGs{" "}
+            <Cite id="tang2015" />.
           </p>
 
           <p>
@@ -550,7 +763,7 @@ export default function ProjectPage() {
             Together, these pathways determine how carbon is distributed between
             fatty acid synthesis, lipid storage, competing metabolic processes,
             and cellular maintenance. Understanding this balance provides the
-            basis for engineering S. cerevisiae toward increased TAG
+            basis for engineering <em>S. cerevisiae</em> toward increased TAG
             accumulation and controlled lipid storage.
           </p>
 
@@ -590,28 +803,29 @@ export default function ProjectPage() {
           </p>
 
           <p>
-            Since S. cerevisiae is a eukaryote, translation initiation differs
-            from bacterial systems. Yeast ribosomes bind to the mRNA's 5′ cap
-            and scan along the 5′ UTR until they reach the start codon, where
-            the surrounding Kozak sequence influences translation efficiency{" "}
-            <Cite id="gaikwad2021" />. Although the bacterial RNAt systems
-            described above rely on masking the Shine-Dalgarno ribosome-binding
-            site, the underlying principle of using temperature-dependent RNA
-            folding to regulate accessibility of the translation initiation
-            region can potentially be adapted to yeast.
+            Since <em>S. cerevisiae</em> is a eukaryote, translation initiation
+            differs from bacterial systems. Yeast ribosomes bind to the mRNA's
+            5′ cap and scan along the 5′ UTR until they reach the start codon,
+            where the surrounding Kozak sequence influences translation
+            efficiency <Cite id="gaikwad2021" />. Although the bacterial RNAt
+            systems described above rely on masking the Shine-Dalgarno
+            ribosome-binding site, the underlying principle of using
+            temperature-dependent RNA folding to regulate accessibility of the
+            translation initiation region can potentially be adapted to yeast.
           </p>
 
           <p>
             To our knowledge, synthetic RNAt systems of this type have not
             previously been demonstrated for temperature-controlled translation
-            in S. cerevisiae. However, the temperature-dependent folding
-            mechanism does not inherently require a bacterial-specific
+            in <em>S. cerevisiae</em>. However, the temperature-dependent
+            folding mechanism does not inherently require a bacterial-specific
             regulatory protein; it relies on the physical properties of RNA
             structure. This provides a rationale for testing whether an
             appropriately designed 5′ UTR can similarly regulate translation in
             yeast. Our wet-lab experiments will therefore be important for
             validating whether the predicted temperature response translates
-            into functional protein expression in the S. cerevisiae system.
+            into functional protein expression in the <em>S. cerevisiae</em>{" "}
+            system.
           </p>
 
           <p>
@@ -627,9 +841,9 @@ export default function ProjectPage() {
 
           <p>
             To evaluate ribosome binding to mRNA and the formation of a
-            translational initiation complex in S. cerevisiae, trends in Kozak
-            sequences were analyzed for the level of expression of a gene.
-            Protein synthesis in eukaryotes begin when the mRNA 5’ cap is
+            translational initiation complex in <em>S. cerevisiae</em>, trends
+            in Kozak sequences were analyzed for the level of expression of a
+            gene. Protein synthesis in eukaryotes begin when the mRNA 5’ cap is
             recognized by the ribosome, scanning the strand along the 5’
             untranslated region (UTR) in the 5’ to 3’ direction until it detects
             the AUG start codon. In bacteria, the RBS region is a Shine Dalgarno
@@ -644,9 +858,9 @@ export default function ProjectPage() {
           </p>
 
           <p>
-            An optimal Kozak sequence was determined for S. cerevisiae and is
-            further validated through similar position occupancies at highly
-            expressed genes (Hamilton et al., 1987). The sequence is
+            An optimal Kozak sequence was determined for <em>S. cerevisiae</em>{" "}
+            and is further validated through similar position occupancies at
+            highly expressed genes (Hamilton et al., 1987). The sequence is
             (A/T)A(A/C)A(A/C)A𝐀𝐓𝐆TC(T/C). Studies analyzing modifications of
             this sequence for optimization have been carried out, with relevant
             point mutations at position -5 for a guanine substituted from the
@@ -655,9 +869,9 @@ export default function ProjectPage() {
             <Cite id="li2017" />. Particular modified Kozak sequences with
             higher reported expressions were later used in the design of our
             gene cassettes. Using a template of AAAAAAAAAAAAAAA with higher
-            expression than the initial optimal Kozak sequence for S.
-            cerevisiae, a guanine substituted for an adenine at position -13
-            resulted in an expression increase of 15%.
+            expression than the initial optimal Kozak sequence for{" "}
+            <em>S. cerevisiae</em>, a guanine substituted for an adenine at
+            position -13 resulted in an expression increase of 15%.
           </p>
 
           <h5 className="mt-4 font-medium text-foreground">
@@ -703,9 +917,10 @@ export default function ProjectPage() {
 
         <WikiSection id="gene selection" title="Gene Selection">
           <p>
-            To optimize the production and storage of TAGs in S. cerevisiae, we
-            needed to increase flux through this pathway. After looking at
-            potential targets, we chose several key genes to upregulate.
+            To optimize the production and storage of TAGs in{" "}
+            <em>S. cerevisiae</em>, we needed to increase flux through this
+            pathway. After looking at potential targets, we chose several key
+            genes to upregulate.
           </p>
 
           <p>
@@ -724,7 +939,7 @@ export default function ProjectPage() {
           <p>
             Following the production and storage of lipids, we also needed a way
             to release TAGs from the cell. For this, we overexpressed BGL2,
-            which encodes an endo-beta-1,3-glucanase (BGL2 | SGD, n.d.). This
+            which encodes an endo-beta-1,3-glucanase <Cite id="SGD" />. This
             enzyme causes defects in the cell wall and renders it unable to
             withstand internal hydrostatic pressure, resulting in cell lysis and
             the release of accumulated lipids <Cite id="shimizu1994" />.
@@ -746,7 +961,7 @@ export default function ProjectPage() {
             <Cite id="zhao2025" />. OLE1 encodes Δ9 fatty acid desaturase, which
             introduces a carbon-carbon double bond at the Δ9 position,
             converting saturated fatty acyl-CoA into monounsaturated fatty acids
-            (Saccharomyces Cerevisiae Oleate Biosynthesis, n.d.).
+            <Cite id="SGD1" />.
           </p>
 
           <p>
@@ -772,20 +987,22 @@ export default function ProjectPage() {
           </h5>
 
           <p>
-            Escherichia coli DH5α cells and Saccharomyces cerevisiae BY4741
-            cells were used as the bacterial cloning host and yeast chassis,
-            respectively. Both cultures were kept under their appropriate growth
-            conditions for use throughout the plasmid construction,
-            transformation, and characterization workflow.
+            <em>Escherichia coli</em> DH5α cells and{" "}
+            <em>Saccharomyces cerevisiae</em> BY4741 cells were used as the
+            bacterial cloning host and yeast chassis, respectively. Both
+            cultures were kept under their appropriate growth conditions for use
+            throughout the plasmid construction, transformation, and
+            characterization workflow.
           </p>
 
           <p>
             E. coli DH5α was primarily used for plasmid propagation and
             recovery. DH5α was selected due to its high transformation
             efficiency among E. coli K-12 strains and its commercial
-            availability. S. cerevisiae BY4741 and the corresponding knockout
-            strains were used to evaluate RNAt-regulated transgene expression
-            and the effects of metabolic engineering on lipid production.
+            availability. <em>S. cerevisiae</em> BY4741 and the corresponding
+            knockout strains were used to evaluate RNAt-regulated transgene
+            expression and the effects of metabolic engineering on lipid
+            production.
           </p>
 
           <p>
@@ -799,6 +1016,152 @@ export default function ProjectPage() {
           </p>
 
           <h5 className="mt-4 text-lg text-foreground font-medium">
+            Plasmid Constructs
+          </h5>
+
+          <p>
+            Plasmid construction and selection are essential to consider in the
+            design process of optimizing the lipid synthesis pathway of{" "}
+            <em>Saccharomyces cerevisiae</em>. When selecting a suitable
+            plasmid, several considerations were kept in mind, such as{" "}
+            <em>S. cerevisiae</em>
+            {""} and <em>E. coli</em>
+            {""} compatibility, copy number, and plasmid types.
+          </p>
+
+          <p>
+            To ensure our optimized pathway is compatible in both{" "}
+            <em>S. cerevisiae</em> and <em>E.coli</em>, we selected pRS shuttle
+            vectors, which were well-validated. The purpose of utilizing a
+            shuttle vector was to allow for replication between multiple host
+            organisms. Additionally, the origin of replication needed to be
+            compatible with <em>E. coli </em>. However, a more complex
+            replication system within <em>S. cerevisiae</em> needed to be
+            considered, such as Autonomously Replicating Systems (ARS) causing
+            independent replication, and centromere (CEN) sequences allowing for
+            low-copy chromosome division. These factors of yeast replication are
+            species-dependent, and were taken into consideration when selecting
+            the plasmid.
+          </p>
+
+          <p>
+            Moreover, selectable marker sequences are needed to be compatible in
+            both host organisms, especially when working with both bacteria and
+            eukaryotes. For <em>E. Coli</em>, the ampicillin resistance gene was
+            incorporated into the plasmid. For auxotrophic selection within{" "}
+            <em>S. cerevisiae</em>, a URA3 marker was integrated into the
+            plasmid construct.
+          </p>
+
+          <p>
+            To integrate our plasmid construct into the host organisms,
+            homologous recombination was initially considered. However, nuclear
+            genome integration was opted for instead to avoid potential
+            competition between multiple plasmids for the same gene inserts.
+            Ultimately, the centromeric pAN316a was selected due to its
+            stability in regards to transformation, as well as its relatively
+            inexpensive price. Although the pRS shuttle vectors were initially
+            what was in mind, the pAN316a was chosen as it was sourced locally
+            from a professor, contained similar characteristics to the pRS
+            series, and shared the same restriction enzyme orientation. Sharing
+            the same orientation, in this regard, was especially important as it
+            ensures the predicted direction of expression and further
+            verification steps for cloning.
+          </p>
+
+          <p>
+            Parts from the open yeast collection (OYC) are constructed into a
+            Level 1 transcription unit to be inserted into the plasmid vector.
+            This transcription unit features the genes specific to optimizing
+            the lipid synthesis pathway. However, all promoters sourced from the
+            OYC contained 5’ untranslated regions (UTRs), posing an issue when
+            later assembled alongside the RNAt, which contains an innate 5’ UTR
+            of its own. Having two 5’ UTRs would cause interference between
+            ribosomal binding sites, and risks improper translation efficiency.
+            To combat this problem, promoters were ordered lacking their
+            respective 5’ UTRs, such that the one of the RNAt remains the only
+            functioning ribosomal binding site (RBS).
+          </p>
+
+          <p>
+            Furthermore, the removal of the native 5’ UTRs of the OYC promoters
+            required the selection of a core promoter to maintain the necessary
+            host transcriptional machinery. This core promoter sequence,
+            condensed to 69 base pairs, optimized transcriptional activity while
+            avoiding downstream translational interferences by lacking a native
+            5’ UTR.
+          </p>
+
+          <h5 className="mt-4 text-medium text-foreground font-medium">
+            Level 0 Parts
+          </h5>
+
+          <p>
+            The Level 0 parts consist of compatible sequences flanked by BsmBI
+            and digested to form a Level 1 transcription unit. These sequences
+            consist of the promoter, 5’ UTR, CDS, and 3’UTR/terminator.
+          </p>
+
+          <h5 className="mt-4 text-medium text-foreground font-medium">
+            Level 1 Parts
+          </h5>
+
+          <p>
+            The Level 1 parts are joined together by flanking each end with BsaI
+            overhangs, then digesting to form a Level 2 transcription unit. The
+            Level 1 parts differ by their own unique promoter-terminator pair
+            and coding sequences (CDS). As suggested to us by Dr. Cinzia Klemm,
+            incorporating unique promoter-terminator pairs within each part
+            allows for the prevention of accidental homologous recombination.
+            Homologous recombination can occur between repetitive sequences in
+            the yeast, and risks unwanted deletions in the final construct. The
+            CDS of each part features ACC1, DGA1, OLE1, TPS1, and the RNAt
+            within the 5’ UTR of the BGL2. The RNAt is embedded within the 5’
+            UTR of the BGL2 to ensure its lysis-facilitating properties
+            selectively occur at RNAt-specific temperatures.
+          </p>
+
+          <h5 className="mt-4 text-medium text-foreground font-medium">
+            Level 2 Parts
+          </h5>
+
+          <p>
+            The Level 2 transcription unit is flanked by BsmBI sites and
+            integrated into the plasmid vector, pAN316a, through digestion and
+            ligation with EcoRI and SpeI enzymes.
+          </p>
+
+          <p>
+            The final plasmid was constructed in silico to confirm the correct
+            orientation of the Level 1 transcriptional units and to prevent any
+            incompatibilities before being done in lab and is shown below.
+          </p>
+
+          <p>
+            The final construct is composed of the Level 1 transcription units
+            for ACC1, DGA1, OLE1, TPS1, and BGL2, with the RNAt in the 5' UTR of
+            BGL2, as shown below.
+          </p>
+
+          <h5 className="mt-4 text-medium text-foreground font-medium">
+            Genes
+          </h5>
+
+          <p>
+            The genes were domesticated using a codon usage table to optimize
+            amino acid sequences that were the most used by{" "}
+            <em>S. cerevisiae</em> and remove internal restriction enzyme sites.
+            This way, the final protein coded by the yeast wasn’t changed but
+            allowed to perform Golden Gate assemblies and other enzyme-dependent
+            reactions. The CDS genes were ordered from Twist Biosciences as
+            dsDNA with the enzyme recognition sites and overhangs already added,
+            while the RNAt, core promoter sequence, and primers were all ordered
+            through Genscript. The acceptor plasmid for Level 1 as well as the
+            other promoters, terminators, and connectors were from the iGEM 2025
+            distribution kit.
+          </p>
+
+          <h5 className="mt-4 text-lg text-foreground font-medium">
             Promoter Strengths
           </h5>
 
@@ -808,7 +1171,7 @@ export default function ProjectPage() {
             promoters and terminators for each coding sequence, we consulted Dr.
             Cinzia Klemm. She emphasized the importance of using different
             promoter-terminator pairs for coding sequences in multigene
-            constructs. Since S. cerevisiae is very good at homologous
+            constructs. Since <em>S. cerevisiae</em> is very good at homologous
             recombination, reusing the same promoter or terminator sequence
             across multiple TUs risks one of these genes, typically the most
             burdensome, being recombined out over time <Cite id="tiannd" />. To
@@ -942,8 +1305,8 @@ export default function ProjectPage() {
 
           <p>
             The YTK-assembled RNAt-GFP reporter plasmids were transformed into
-            S. cerevisiae BY4741 via lithium acetate transformation and plating
-            on solid YPD. Transformants will be selected by auxotrophic
+            <em>S. cerevisiae</em> BY4741 via lithium acetate transformation and
+            plating on solid YPD. Transformants will be selected by auxotrophic
             resistance and cultured at 30°C for optimal growth and recovery.
           </p>
 
@@ -1020,10 +1383,10 @@ export default function ProjectPage() {
             The assembled Level 2 construct was designed for integration into
             the pAN316a plasmid vector through BsmBI digestion and ligation
             using EcoRI and SpeI enzymes. The genes were optimized using a codon
-            usage table for S. cerevisiae and domesticated to remove internal
-            restriction sites required for Golden Gate assembly. The final
-            protein coded by the yeast was not changed, while allowing Golden
-            Gate assembly and other enzyme-dependent reactions.
+            usage table for <em>S. cerevisiae</em> and domesticated to remove
+            internal restriction sites required for Golden Gate assembly. The
+            final protein coded by the yeast was not changed, while allowing
+            Golden Gate assembly and other enzyme-dependent reactions.
           </p>
 
           <h5 className="mt-4 text-lg text-foreground font-medium">
@@ -1036,10 +1399,10 @@ export default function ProjectPage() {
             cell, several competing pathways must be downregulated or deleted.
             To investigate whether reducing the β-oxidation pathway could
             enhance lipid accumulation through preventing the yeast from
-            breaking down its own fatty acid stores for energy, cultures of S.
-            cerevisiae BY4741 POX1 knockout, BY4741 PXA1 knockout, and BY4741
-            POX1 and PXA1 double-knockout cells were established using strains
-            obtained from [insert].
+            breaking down its own fatty acid stores for energy, cultures of{" "}
+            <em>S. cerevisiae</em> BY4741 POX1 knockout, BY4741 PXA1 knockout,
+            and BY4741 POX1 and PXA1 double-knockout cells were established
+            using strains obtained from [insert].
           </p>
 
           <p>
@@ -1052,7 +1415,8 @@ export default function ProjectPage() {
 
           <p>
             The pRS416 shuttle vector will then be used for yeast transformation
-            because it supports propagation in both E. coli and S. cerevisiae
+            because it supports propagation in both <em>E. coli</em> and{" "}
+            <em>S. cerevisiae</em>
             (Sikorski & Hieter, 1989). The vector’s CEN/ARS elements allow
             low-copy plasmid maintenance in yeast, while the URA3 marker enables
             auxotrophic selection on uracil-dropout synthetic medium (Sikorski &
@@ -1070,7 +1434,8 @@ export default function ProjectPage() {
           </h5>
 
           <p>
-            The assembled RNAt-Lipid plasmid was transformed into S. cerevisiae
+            The assembled RNAt-Lipid plasmid was transformed into{" "}
+            <em>S. cerevisiae</em> {""}
             BY4741, BY4741 POX1 knockout, BY4741 PXA1 knockout, and BY4741 POX1
             and PXA1 knockout cells using lithium acetate transformation.
             Following transformation, cells were recovered and cultured under
@@ -1151,28 +1516,28 @@ export default function ProjectPage() {
           <p>
             The final construct was not able to be successfully assembled due to
             logistical errors. While the pAN316a plasmid was successfully
-            transformed into S. cerevisiae BY4741 and validated the URA3
-            selection system, there was no successful growth following assembly
-            with the RNAt components, and the subsequent error-prone PCR was not
-            attempted. There were also issues with the OYC-dropout-suGFP
-            sequence that interfered with transformation, preventing the
-            assembly of the final construct. Additional troubleshooting will be
-            required to validate the proposed construct in the lab, though
-            in-silico results are promising.
+            transformed into <em>S. cerevisiae</em> BY4741 and validated the
+            URA3 selection system, there was no successful growth following
+            assembly with the RNAt components, and the subsequent error-prone
+            PCR was not attempted. There were also issues with the
+            OYC-dropout-suGFP sequence that interfered with transformation,
+            preventing the assembly of the final construct. Additional
+            troubleshooting will be required to validate the proposed construct
+            in the lab, though in-silico results are promising.
           </p>
           <p>
-            S. cerevisiae BY4741 and S. cerevisiae PXA1 cells were prepared
-            according to the Nile Red staining protocol adapted from Rostron and
-            Lawrence <Cite id="rostron_lawrence_2017" />, with final OD 595nm
-            readings of 1.030 and 0.988 respectively. The resulting absorbance
-            values at 485 nm excitation and 535 nm emission are shown in Table
-            1.
+            <em>S. cerevisiae</em> BY4741 and <em>S. cerevisiae</em> PXA1 cells
+            were prepared according to the Nile Red staining protocol adapted
+            from Rostron and Lawrence <Cite id="rostron_lawrence_2017" />, with
+            final OD 595nm readings of 1.030 and 0.988 respectively. The
+            resulting absorbance values at 485 nm excitation and 535 nm emission
+            are shown in Table 1.
           </p>
           {/* insert table of results here */}
           <p>
-            From Table 2, it can be concluded that the average RFU of S.
-            cerevisiae PXA1 is 31.2% higher than the average RFU of S.
-            cerevisiae BY4741.
+            From Table 2, it can be concluded that the average RFU of{" "}
+            <em>S. cerevisiae</em> PXA1 is 31.2% higher than the average RFU of{" "}
+            <em>S. cerevisiae</em> BY4741.
           </p>
         </WikiSection>
 
@@ -1216,28 +1581,29 @@ export default function ProjectPage() {
             quantified total lipid extraction <Cite id="sitepu2012" />. This was
             not possible due to time and equipment constraints so the lipid to
             dry cell weight of these strains could not be accurately determined,
-            however, it can be clearly seen that S. cerevisiae PXA1 emitted
-            greater fluorescence, thus contained more neutral lipid, than S.
-            cerevisiae BY4741. Since S. cerevisiae BY4741 is a well documented
-            model organism and the relationship between RFU and lipid content is
-            linear <Cite id="genicot2005" />, the lipid to dry cell weight of S.
-            cerevisiae PXA1 can be estimated to be 31.2% higher than BY4741,
-            which is usually around 70mg per gram cell of dry weight when grown
-            in YPD conditions <Cite id="kamisaka2007" />. From this reasoning,
-            it can be concluded that S. cerevisiae PXA1 would have around
-            91.84mg of neutral lipid per gram of cell dry weight.
+            however, it can be clearly seen that <em>S. cerevisiae</em> PXA1
+            emitted greater fluorescence, thus contained more neutral lipid,
+            than <em>S. cerevisiae</em> BY4741. Since <em>S. cerevisiae</em>{" "}
+            BY4741 is a well documented model organism and the relationship
+            between RFU and lipid content is linear <Cite id="genicot2005" />,
+            the lipid to dry cell weight of <em>S. cerevisiae</em> PXA1 can be
+            estimated to be 31.2% higher than BY4741, which is usually around
+            70mg per gram cell of dry weight when grown in YPD conditions{" "}
+            <Cite id="kamisaka2007" />. From this reasoning, it can be concluded
+            that <em>S. cerevisiae</em> PXA1 would have around 91.84mg of
+            neutral lipid per gram of cell dry weight.
           </p>
 
           <p>
-            This alone does not suggest S. cerevisiae PXA1 is a particularly
-            oleaginous yeast strain, since oleaginous yeasts and fungi tend to
-            have anywhere from 300 to 500mg of neutral lipid per gram cell of
-            dry weight <Cite id="kamisaka2007" />. However, literature supports
-            the efficacy of ACC1** <Cite id="shi2014" /> and upregulating DGA1{" "}
-            <Cite id="kamisaka2007" /> for enhanced lipid production in S.
-            cerevisiae, so future experiments might seek to compare further
-            engineered S. cerevisiae PXA1 to the baseline discussed in this
-            project.
+            This alone does not suggest <em>S. cerevisiae</em> PXA1 is a
+            particularly oleaginous yeast strain, since oleaginous yeasts and
+            fungi tend to have anywhere from 300 to 500mg of neutral lipid per
+            gram cell of dry weight <Cite id="kamisaka2007" />. However,
+            literature supports the efficacy of ACC1** <Cite id="shi2014" /> and
+            upregulating DGA1 <Cite id="kamisaka2007" /> for enhanced lipid
+            production in <em>S. cerevisiae</em>, so future experiments might
+            seek to compare further engineered <em>S. cerevisiae</em> PXA1 to
+            the baseline discussed in this project.
           </p>
 
           <p>
