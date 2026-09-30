@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Banner } from "@/components/wiki/Banner";
 import { ReferencesSection } from "@/components/wiki/ReferencesSection";
 import { WikiPage } from "@/components/wiki/WikiPage";
@@ -402,9 +403,103 @@ const { Cite, references } = createCitations([
     authors: "Lindberg et al.",
     title:
       "Lipidomic Profiling of Saccharomyces cerevisiae and Zygosaccharomyces bailii Reveals Critical Changes in Lipid Composition in Response to Acetic Acid Stress",
-    source: "PLOS One",
+    source: "PLOS ONE",
     year: 2013,
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3762712/",
+  },
+
+  {
+    id: "yang2011",
+    authors: "Yang et al.",
+    title:
+      "Conserved PCR primer set designing for closely-related bacterial species",
+    source: "PLOS ONE",
+    year: 2011,
+    url: "https://pubmed.ncbi.nlm.nih.gov/21445268/",
+  },
+
+  {
+    id: "cadwell1992",
+    authors: "Cadwell, R. C. & Joyce, G. F.",
+    title: "Randomization of genes by PCR mutagenesis",
+    source: "PCR Methods and Applications",
+    year: 1992,
+    url: "https://pubmed.ncbi.nlm.nih.gov/1490172/",
+  },
+
+  {
+    id: "wilson2001",
+    authors: "Wilson, D. S. & Keefe, A. D.",
+    title: "Random mutagenesis by PCR",
+    source: "Current Protocols in Molecular Biology",
+    url: "https://pubmed.ncbi.nlm.nih.gov/18265275/",
+  },
+
+  {
+    id: "lee2015",
+    authors: "Lee at al.",
+    title:
+      "A Highly Characterized Yeast Toolkit for Modular, Multipart Assembly",
+    source: "ACS Synthetic Biology",
+    year: 2015,
+    url: "https://pubs.acs.org/doi/10.1021/sb500366v",
+  },
+
+  {
+    id: "hemsely1989",
+    authors: "Hemsley et al.",
+    title:
+      "A simple method for site-directed mutagenesis using the polymerase chain reaction.",
+    source: "Nucleic Acids Research",
+    year: 1989,
+    url: "https://doi.org/10.1093/nar/17.16.6545",
+  },
+
+  {
+    id: "mignon2015",
+    authors: "Mignon et al.",
+    title: "Antibiotic-Free Selection in Biotherapeutics: Now and Forever",
+    source: "pathogens",
+    year: 2015,
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4493468/#sec5",
+  },
+
+  {
+    id: "shanks2010",
+    authors: "Shanks et al.",
+    title: "New yeast rocombineering tools for bacteria",
+    source: "Plasmid",
+    year: 2010,
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2737453/",
+  },
+
+  {
+    id: "kintek2026",
+    authors: "Tech Team . Kintek Solution",
+    title:
+      "What are some important factors to monitor in a bioreactor? Essential Parameters for Optimal Bioprocess Control",
+    source: "Kintek",
+    year: 2026,
+    url: "https://kindle-tech.com/faqs/what-are-some-important-factors-to-monitor-in-a-bioreactor?srsltid=AU7gw4W3BfHKW9TksMXoyFDqnQlAVMgZpCeAwuxSGkts36m9too3-z83",
+  },
+
+  {
+    id: "salari2017",
+    authors: "Salari, R. & Salari, R.",
+    title:
+      "Investigation of the Best Saccharomyces cerevisiae Growth Condition",
+    source: "Electronic Physician",
+    year: 2017,
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5308499/#sec6",
+  },
+
+  {
+    id: "oyc",
+    authors: "Open Yeast Collection",
+    title: "Open Yeast Collection",
+    source: "",
+    year: "",
+    url: "https://openbiofoundry.org/",
   },
 ]);
 
@@ -791,15 +886,15 @@ export default function ProjectPage() {
 
           <p>
             The ability of synthetic RNAt to regulate translation has been
-            experimentally demonstrated in Escherichia coli. Researchers
-            designed small synthetic RNA thermometers within the 5′ UTR of a
-            reporter gene and demonstrated temperature-dependent gene expression{" "}
-            <Cite id="waldminghaus2008" />. Their thermometers functioned
-            through the melting of a stem-loop structure that initially masked
-            the ribosome-binding site, with increased temperature allowing
-            translation to occur. This demonstrated that a relatively small RNA
-            structure can act as a temperature-responsive genetic switch without
-            requiring an additional regulatory protein.
+            experimentally demonstrated in <em>Escherichia coli</em>.
+            Researchers designed small synthetic RNA thermometers within the 5′
+            UTR of a reporter gene and demonstrated temperature-dependent gene
+            expression <Cite id="waldminghaus2008" />. Their thermometers
+            functioned through the melting of a stem-loop structure that
+            initially masked the ribosome-binding site, with increased
+            temperature allowing translation to occur. This demonstrated that a
+            relatively small RNA structure can act as a temperature-responsive
+            genetic switch without requiring an additional regulatory protein.
           </p>
 
           <p>
@@ -976,12 +1071,6 @@ export default function ProjectPage() {
         </WikiSection>
 
         <WikiSection id="mutagenesis" title="Mutagenesis Strategy">
-          <p>
-            Describe the mutagenesis strategy: type of mutagenesis
-            (site-directed, error-prone PCR, saturation), screening, and
-            verification (sequencing strategy, criteria for selecting clones).
-          </p>
-
           <h5 className="mt-4 text-lg text-foreground font-medium">
             Culture and Preparation of Host Organisms
           </h5>
@@ -996,9 +1085,9 @@ export default function ProjectPage() {
           </p>
 
           <p>
-            E. coli DH5α was primarily used for plasmid propagation and
+            <em>E. coli</em> DH5α was primarily used for plasmid propagation and
             recovery. DH5α was selected due to its high transformation
-            efficiency among E. coli K-12 strains and its commercial
+            efficiency among <em>E. coli</em> K-12 strains and its commercial
             availability. <em>S. cerevisiae</em> BY4741 and the corresponding
             knockout strains were used to evaluate RNAt-regulated transgene
             expression and the effects of metabolic engineering on lipid
@@ -1006,10 +1095,10 @@ export default function ProjectPage() {
           </p>
 
           <p>
-            The required backbone plasmids were transformed into competent E.
-            coli DH5α cells using heat-shock transformation. Following
-            transformation, plasmid-containing colonies were selected and
-            cultured. The resulting cultures were used to generate glycerol
+            The required backbone plasmids were transformed into competent{" "}
+            <em>E. coli</em> DH5α cells using heat-shock transformation.
+            Following transformation, plasmid-containing colonies were selected
+            and cultured. The resulting cultures were used to generate glycerol
             stocks for preservation of the required backbone plasmids, while
             plasmid DNA was isolated by miniprep for use in subsequent cloning
             and assembly procedures.
@@ -1159,6 +1248,173 @@ export default function ProjectPage() {
             through Genscript. The acceptor plasmid for Level 1 as well as the
             other promoters, terminators, and connectors were from the iGEM 2025
             distribution kit.
+          </p>
+
+          <h5 className="mt-4 text-lg text-foreground font-medium">
+            Primer Design
+          </h5>
+
+          <p>
+            Primers are short, single stranded DNA oligonucleotides annealing to
+            complementary regions in a DNA template and provide a starting point
+            for DNA polymerase to synthesize a new strand. During polymerase
+            chain reaction (PCR), primers define the region of DNA that will be
+            amplified by providing a free 3’ end on which DNA polymerase can
+            extend. Primer characteristics such as sequence specificity, melting
+            temperature, length, GC content, and secondary structure all have
+            the capability in influencing the efficiency and specificity of DNA
+            amplification <Cite id="yang2011" />. Primer design can also be
+            adapted depending on the application downstream. In addition to
+            amplifying a particular DNA region, primers can be used to introduce
+            additional sequences into PCR products, such as restriction enzyme
+            recognition sites or overhangs required for subsequent cloning. For
+            our project, primers were required at multiple stages of the RNA
+            thermometer (RNAt) construction workflow, including the formation of
+            double-stranded RNAt DNA, generation of RNAt variants through
+            error-prone PCR (epPCR), and preparation of DNA parts for future
+            Golden Gate assemblies.
+          </p>
+
+          <figure className="my-1 flex flex-col items-center">
+            <div className="w-full max-w-2xl">
+              <Image
+                src="/figures/PCR.png"
+                alt="PCR"
+                width={800}
+                height={450}
+                className="rounded border"
+              />
+            </div>
+            <figcaption className="text-sm text-muted-foreground mt-2">
+              Figure 1 — PCR Protocol.
+            </figcaption>
+          </figure>
+
+          <figure className="my-10 flex flex-col items-center">
+            <div className="w-full max-w-2xl">
+              <Image
+                src="/figures/epPCR.png"
+                alt="Error Prone PCR"
+                width={800}
+                height={450}
+                className="rounded border"
+              />
+            </div>
+            <figcaption className="text-sm text-muted-foreground mt-2">
+              Figure 2 — Error Prone PCR Protocol.
+            </figcaption>
+          </figure>
+
+          <h5 className="mt-4 text-medium text-foreground font-medium">
+            Reverse Primers for dsDNA Synthesis
+          </h5>
+
+          <p>
+            The initial RNAt sequences used in our project were synthesized as
+            single-stranded DNA. To generate double-stranded DNA for downstream
+            amplification and cloning, reverse primers were designed for the
+            RNAt sequences. These primers anneal to the single-stranded DNA
+            template and allow DNA polymerase to synthesize the complementary
+            strand, producing a double-stranded RNAt product. This dsDNA
+            formation step was necessary before the RNAt sequences could undergo
+            further PCR amplification and subsequently be incorporated into the
+            downstream assembly workflow. The resulting RNAt DNA also needed to
+            retain the sequence features required for the final construct,
+            including the RNAt itself and the accessory sequences used for its
+            placement upstream of the coding sequence. In our overall design, we
+            placed the RNAt within the 5’ UTR of the downstream gene. We ordered
+            a TEF1 promoter sequence lacking its 5’ UTR. and the RNAt was
+            manually assembled downstream of the promoter and immediately
+            upstream of the coding sequence. The RNAt construct also contained
+            the overhangs and other sequences required for subsequent assembly.
+          </p>
+
+          <h5 className="mt-4 text-medium text-foreground font-medium">
+            Error-Prone PCR Primers
+          </h5>
+
+          <p>
+            Following the creation of the RNAt sequences, error-prone PCR
+            (epPCR) was used to create additional RNAt copies. epPCR is a form
+            of PCR in which the fidelity of DNA replication is reduced thus
+            increasing the occurrence of nucleotide substitutions during
+            subsequent amplifications. As such, single starting sequences can
+            then be converted into a heterogeneous library of variants that can
+            be screened for differences in function <Cite id="cadwell1992" />.
+            The region subjected to mutagenesis in epPCR can be controlled
+            through primer placement. By selecting primers that flank a given
+            sequence, mutations can be introduced into either a small
+            part/region, or the entire gene <Cite id="wilson2001" />. For our
+            project, epPCR was incorporated into our experimental workflow to
+            generate RNAt mutants from the originally designed sequences. Rather
+            than designing every possible RNAt sequence individually, the
+            aforementioned approach allowed us to create a library of RNAt
+            variants that could eventually be tested for temperature-dependent
+            behaviours. To increase the mutation during epPCR, imbalanced dNTP
+            concentrations were used. Final concentrations of 1.0 mM dCTP and
+            dTTP and 0.2 mM dATP and dGTP were used. Furthermore, the reaction
+            contained elevated MgCl2 and MnCl2. These conditions aided in
+            reducing the fidelity of Taq polymerase and also increased
+            misincorporation of nucleotides.
+          </p>
+
+          <p>
+            The primers also had to account for the downstream cloning strategy.
+            Our project used the Open Yeast Collection (OYC), which utilizes
+            Type IIS restriction enzymes and defined overhangs thus allowing
+            directional Golden Gate assembly of multiple genetic parts. The YTK
+            provides a framework in which promoters, coding sequences,
+            terminators, and other components can be assembled into larger
+            transcriptional units <Cite id="lee2015" />. Within the project
+            workflow, the chosen RNAt and other required coding sequences were
+            amplified by using PCR primers that contained the appropriate Bsal
+            recognition sites and flanking overhang sequences. These such
+            features allowed the PCR-derived sequences to then be incorporated
+            into level 1 transcriptional units used in the YTK system. The
+            resulting RNAt copies could then be incorporated into an RNAt-GFP
+            reporter construct for screening in S. cerevisiae. Variants that
+            displayed the desired temperature dependent expression could later
+            be recovered, amplified in <em>E. coli</em>, and analyzed by
+            restriction digest, gel purification, and sanger sequencing to fully
+            determine the RNAt sequence.
+          </p>
+
+          <h5 className="mt-4 text-medium text-foreground font-medium">
+            mScarlet3
+          </h5>
+
+          <p>
+            The mScarlet3 plasmid required modification before it could be fully
+            implemented into our workflow as the original plasmid contained an
+            EcoRI restriction site that must be removed. In order to accomplish
+            this, PCR mutagenesis primers were designed to introduce a specific
+            nucleotide substitution within the EcoRI recognition sequence. This
+            was done while still maintaining the remainder of the mScarlet3
+            plasmid sequence. Unlike the epPCR primers described previously,
+            which were intended to generate random sequence variations, the
+            mScarlet3 primers on the contrary, were made for targeted
+            site-directed mutagenesis.
+          </p>
+
+          <p>
+            mScarlet3 PCR mutagenesis primers were designed to introduce a
+            specific nucleotide change into the parental plasmid. In PCR
+            site-directed mutagenesis, the desired sequence change is
+            incorporated within the mutagenic primer, while the surrounding
+            complementary nucleotides allow the primer to anneal to the plasmid
+            template. During amplification, the primer and its introduced
+            mutation become incorporated into the newly synthesised DNA{" "}
+            <Cite id="hemsley1989" />. Because incomplete Dpnl digestion will
+            result in colonies containing the original parental plasmid, the
+            recovered plasmid required additional screening to confirm
+            successful mutagenesis. Accordingly, plasmids were isolated and
+            digested with EcoRI, followed by agarose gel electrophoresis and
+            comparison with the original mScarlet3 plasmid. In the parental
+            plasmid, the intact EcoRI recognition site produces 2 similar DNA
+            fragments following digestion. Successful disruption of this
+            restriction site prevents EcoRI cleavage at the position, causing
+            these 2 fragments to appear as a larger fragment within the
+            mutagenized plasmid.
           </p>
 
           <h5 className="mt-4 text-lg text-foreground font-medium">
@@ -1330,20 +1586,21 @@ export default function ProjectPage() {
             recovery and sequence verification. Yeast plasmids were isolated
             from the selected transformants using a Zymolyase-based yeast
             miniprep procedure. The recovered plasmids were subsequently
-            transformed into E. coli using heat-shock transformation due to its
-            well-characterized nature as well as its reliability, as
-            demonstrated by workflows that commonly utilize E. coli
+            transformed into <em>E. coli</em> using heat-shock transformation
+            due to its well-characterized nature as well as its reliability, as
+            demonstrated by workflows that commonly utilize <em>E. coli</em>{" "}
+            {""}
             transformants in their design <Cite id="rahimzadeh2016" />.
           </p>
 
           <p>
-            Plasmids were isolated from the resulting E. coli cultures by
-            miniprep and subjected to restriction enzyme digestion to linearize
-            the plasmids and facilitate isolation of the RNAt-containing region.
-            The RNAt insert was then amplified by PCR and analyzed using agarose
-            gel electrophoresis. DNA fragments corresponding to the expected
-            RNAt insert were identified and excised from the gel, followed by
-            gel purification.
+            Plasmids were isolated from the resulting <em>E. coli</em> cultures
+            by miniprep and subjected to restriction enzyme digestion to
+            linearize the plasmids and facilitate isolation of the
+            RNAt-containing region. The RNAt insert was then amplified by PCR
+            and analyzed using agarose gel electrophoresis. DNA fragments
+            corresponding to the expected RNAt insert were identified and
+            excised from the gel, followed by gel purification.
           </p>
 
           <p>
@@ -1389,6 +1646,21 @@ export default function ProjectPage() {
             Golden Gate assembly and other enzyme-dependent reactions.
           </p>
 
+          <figure className="my-1 flex flex-col items-center">
+            <div className="w-full max-w-2xl">
+              <Image
+                src="/figures/RNAtExperimentalConstructs.png"
+                alt="RNAt Constructs"
+                width={800}
+                height={450}
+                className="rounded border"
+              />
+            </div>
+            <figcaption className="text-sm text-muted-foreground mt-2">
+              Figure 3 — RNAt Experimental Constructs.
+            </figcaption>
+          </figure>
+
           <h5 className="mt-4 text-lg text-foreground font-medium">
             {" "}
             Preparation of Yeast Knockout Strains
@@ -1414,9 +1686,9 @@ export default function ProjectPage() {
           </p>
 
           <p>
-            The pRS416 shuttle vector will then be used for yeast transformation
-            because it supports propagation in both <em>E. coli</em> and{" "}
-            <em>S. cerevisiae</em>
+            The pAN316a shuttle vector will then be used for yeast
+            transformation because it supports propagation in both{" "}
+            <em>E. coli</em> and <em>S. cerevisiae</em> {""}
             (Sikorski & Hieter, 1989). The vector’s CEN/ARS elements allow
             low-copy plasmid maintenance in yeast, while the URA3 marker enables
             auxotrophic selection on uracil-dropout synthetic medium (Sikorski &
@@ -1466,6 +1738,36 @@ export default function ProjectPage() {
             of lipid production, transgene expression, and growth.
           </p>
 
+          <figure className="my-1 flex flex-col items-center">
+            <div className="w-full max-w-2xl">
+              <Image
+                src="/figures/RNAtValidation.png"
+                alt="RNAt Validation"
+                width={800}
+                height={450}
+                className="rounded border"
+              />
+            </div>
+            <figcaption className="text-sm text-muted-foreground mt-2">
+              Figure 4 — RNAt Validation.
+            </figcaption>
+          </figure>
+
+          <figure className="my-10 flex flex-col items-center">
+            <div className="w-full max-w-2xl">
+              <Image
+                src="/figures/FinalConstruct.png"
+                alt="Final Construct"
+                width={800}
+                height={450}
+                className="rounded border"
+              />
+            </div>
+            <figcaption className="text-sm text-muted-foreground mt-2">
+              Figure 5 — Final RNAt Construct.
+            </figcaption>
+          </figure>
+
           <h5 className="mt-4 text-lg text-foreground font-medium">
             Next Steps: Evaluation of Lipid Production, Gene Expression, and
             Growth
@@ -1504,14 +1806,6 @@ export default function ProjectPage() {
           </p>
         </WikiSection>
 
-        <WikiSection id="rnat-choice" title="RNAt Selection">
-          <p>
-            Explain the approach to selecting the RNAt, rationale, and how the
-            design was optimized for our project. (e.g. theromodynamic
-            modelling, codon optimization, part selection)
-          </p>
-        </WikiSection>
-
         <WikiSection id="results" title="Results">
           <p>
             The final construct was not able to be successfully assembled due to
@@ -1533,7 +1827,121 @@ export default function ProjectPage() {
             resulting absorbance values at 485 nm excitation and 535 nm emission
             are shown in Table 1.
           </p>
-          {/* insert table of results here */}
+
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full text-sm">
+              <caption className="text-sm text-muted-foreground mb-2">
+                Table 1 — Raw absorption values of the Nile Red stain of{" "}
+                <em>S. cerevisiae</em> strains BY4741 and PXA1 compared against
+                a PBS blank.
+              </caption>
+              <thead className="text-xs uppercase text-muted-foreground">
+                <tr>
+                  <th className="px-3 py-2 text-left">Trial</th>
+                  <th className="px-3 py-2 text-left">Blank</th>
+                  <th className="px-3 py-2 text-left">BY4741</th>
+                  <th className="px-3 py-2 text-left">PXA1</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <td className="px-3 py-2">1</td>
+                  <td className="px-3 py-2">15581</td>
+                  <td className="px-3 py-2">36246</td>
+                  <td className="px-3 py-2">42503</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2">2</td>
+                  <td className="px-3 py-2">15200</td>
+                  <td className="px-3 py-2">35279</td>
+                  <td className="px-3 py-2">39660</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2">3</td>
+                  <td className="px-3 py-2">15722</td>
+                  <td className="px-3 py-2">35325</td>
+                  <td className="px-3 py-2">38881</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2">4</td>
+                  <td className="px-3 py-2">15702</td>
+                  <td className="px-3 py-2">35536</td>
+                  <td className="px-3 py-2">45478</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2">5</td>
+                  <td className="px-3 py-2">14953</td>
+                  <td className="px-3 py-2">34660</td>
+                  <td className="px-3 py-2">45328</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2">6</td>
+                  <td className="px-3 py-2">18247</td>
+                  <td className="px-3 py-2">38966</td>
+                  <td className="px-3 py-2">41755</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p className="my-10 text-center">
+            Figure 6: <em> Corrected RFU</em> = <em>Sample RFU</em> -{" "}
+            <em> Avg. Blank RFU</em>
+          </p>
+
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full text-sm">
+              <caption className="text-sm text-muted-foreground mb-2">
+                Table 2 — Calculated RFU of <em>S. cerevisiae</em> strains
+                BY4741 and PXA1 from Table 2 using the formula in Figure 6.
+              </caption>
+              <thead className="text-xs uppercase text-muted-foreground">
+                <tr>
+                  <th className="px-3 py-2 text-left">Trial</th>
+                  <th className="px-3 py-2 text-left">BY4741</th>
+                  <th className="px-3 py-2 text-left">PXA1</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <td className="px-3 py-2">1</td>
+                  <td className="px-3 py-2">20345</td>
+                  <td className="px-3 py-2">26602</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2">2</td>
+                  <td className="px-3 py-2">19378</td>
+                  <td className="px-3 py-2">23759</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2">3</td>
+                  <td className="px-3 py-2">19424</td>
+                  <td className="px-3 py-2">22980</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2">4</td>
+                  <td className="px-3 py-2">19635</td>
+                  <td className="px-3 py-2">29577</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2">5</td>
+                  <td className="px-3 py-2">18759</td>
+                  <td className="px-3 py-2">29427</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2">6</td>
+                  <td className="px-3 py-2">23065</td>
+                  <td className="px-3 py-2">25854</td>
+                </tr>
+                <tr className="border-t">
+                  <td className="px-3 py-2">Average</td>
+                  <td className="px-3 py-2">20101</td>
+                  <td className="px-3 py-2">26367</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
           <p>
             From Table 2, it can be concluded that the average RFU of{" "}
             <em>S. cerevisiae</em> PXA1 is 31.2% higher than the average RFU of{" "}
@@ -1550,15 +1958,26 @@ export default function ProjectPage() {
             The assembly of the final construct required using the
             OYC-dropout-suGF plasmid to separately assemble the gene cassettes,
             so a large portion of the cycle was spent troubleshooting the
-            transformation of OYC-dropout-suGF into E. coli DH5α. Considering
-            that there were no issues with the transformation of other parts,
-            such as pAN316a, and the overall acceptance of heat shock as a
-            reliable transformation method for E. coli <Cite id="froger2007" />,
-            it is unlikely that the transformation protocol was at fault. There
-            has been some evidence suggesting that there are sequence
-            discrepancies within this part <Cite id="igem" />, but it is
-            difficult to say for sure what exactly prevented its successful
-            transformation
+            transformation of OYC-dropout-suGF into <em>E. coli</em> DH5α.
+            Considering that there were no issues with the transformation of
+            other parts, such as pAN316a, and the overall acceptance of heat
+            shock as a reliable transformation method for <em>E. coli</em>{" "}
+            <Cite id="froger2007" />, it is unlikely that the transformation
+            protocol was at fault. There has been some evidence suggesting that
+            there are sequence discrepancies within this part <Cite id="igem" />
+            , but it is difficult to say for sure what exactly prevented its
+            successful transformation
+          </p>
+
+          <p>
+            Since the issue appears to just be with the OYC-dropout-suGF
+            plasmid, an alternative yeast toolkit, such as MoClo-YTK could be
+            considered <Cite id="lee2015" />. In fact, the YTK was originally
+            planned to be used in place of OYC, but was switched in favour of
+            perceived availability of the OYC kit. Fundamentally, both yeast
+            toolkits operate under the same mechanism for assembly, just
+            differing in restriction enzyme sites and overall parts{" "}
+            <Cite id="oyc" />.
           </p>
 
           <p>
@@ -1618,6 +2037,34 @@ export default function ProjectPage() {
             sample <Cite id="sitepu2012" />. This was not possible due to time
             and equipment constraints, but can be considered for future
             experiments.
+          </p>
+        </WikiSection>
+
+        <WikiSection id="futurework" title="Additional Future Work">
+          <p>
+            To manufacture at a larger scale, the engineered yeast will need to
+            be tested in bioreactors to determine its optimal growth conditions
+            at larger volumes <Cite id="salari2017" />. This will include
+            monitoring the yeast’s environment by monitoring its pH,
+            temperature, and agitation speed <Cite id="kintek2026" />, It is
+            important to ensure that conditions are optimized, so that the
+            small-scale experimental results can be replicated at a larger
+            scale.
+          </p>
+
+          <p>
+            Safety considerations were also taken into consideration when
+            planning this project. This project did not rely on antibiotics for
+            selection pressure and instead used nutrient depletion, which can be
+            leveraged when applying for FDA approval. By removing the bacterial
+            machinery and antibiotic resistance through homologous recombination{" "}
+            <Cite id="shanks2010" />, the final product bypasses the risks
+            around antibiotic resistance in a commercialized production system{" "}
+            <Cite id="mignon2015" />. Other safety considerations include
+            ensuring the yeast and final products will be packaged and stored in
+            a safe manner. Testing should be done to assess yeast viability and
+            product performance over time as well. Overall, these considerations
+            allow this product to go from the lab bench into the real market.
           </p>
         </WikiSection>
 
