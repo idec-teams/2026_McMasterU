@@ -3,6 +3,7 @@ import { Banner } from "@/components/wiki/Banner";
 import { ReferencesSection } from "@/components/wiki/ReferencesSection";
 import { WikiPage } from "@/components/wiki/WikiPage";
 import { WikiSection } from "@/components/wiki/WikiSection";
+import { asset } from "@/lib/wiki/asset";
 import { createCitations } from "@/lib/wiki/citations";
 
 export const metadata = {
@@ -1278,7 +1279,7 @@ export default function ProjectPage() {
           <figure className="my-1 flex flex-col items-center">
             <div className="w-full max-w-2xl">
               <Image
-                src="/figures/PCR.png"
+                src={asset("/figures/PCR.png")}
                 alt="PCR"
                 width={800}
                 height={450}
@@ -1293,7 +1294,7 @@ export default function ProjectPage() {
           <figure className="my-10 flex flex-col items-center">
             <div className="w-full max-w-2xl">
               <Image
-                src="/figures/epPCR.png"
+                src={asset("/figures/epPCR.png")}
                 alt="Error Prone PCR"
                 width={800}
                 height={450}
@@ -1649,7 +1650,7 @@ export default function ProjectPage() {
           <figure className="my-1 flex flex-col items-center">
             <div className="w-full max-w-2xl">
               <Image
-                src="/figures/RNAtExperimentalConstructs.png"
+                src={asset("/figures/RNAtExperimentalConstructs.png")}
                 alt="RNAt Constructs"
                 width={800}
                 height={450}
@@ -1741,7 +1742,7 @@ export default function ProjectPage() {
           <figure className="my-1 flex flex-col items-center">
             <div className="w-full max-w-2xl">
               <Image
-                src="/figures/RNAtValidation.png"
+                src={asset("/figures/RNAtValidation.png")}
                 alt="RNAt Validation"
                 width={800}
                 height={450}
@@ -1756,7 +1757,7 @@ export default function ProjectPage() {
           <figure className="my-10 flex flex-col items-center">
             <div className="w-full max-w-2xl">
               <Image
-                src="/figures/FinalConstruct.png"
+                src={asset("/figures/FinalConstruct.png")}
                 alt="Final Construct"
                 width={800}
                 height={450}

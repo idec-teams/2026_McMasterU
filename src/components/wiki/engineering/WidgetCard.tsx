@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { asset } from "@/lib/wiki/asset";
 import type { EngineeringWidget } from "@/types/wiki";
 
 // One clickable widget: a background image (once one exists) with the title
@@ -15,7 +16,7 @@ export function WidgetCard({ widget }: { widget: EngineeringWidget }) {
     >
       {image ? (
         <Image
-          src={image}
+          src={asset(image)}
           alt=""
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"

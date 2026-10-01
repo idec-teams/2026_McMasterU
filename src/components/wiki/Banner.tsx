@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { asset } from "@/lib/wiki/asset";
 
 // Reusable page banner. Pass the structured bits (title / image) as props; put
 // any optional extra content (description, CTA, breadcrumb) in children. Leave
@@ -34,7 +35,7 @@ export function Banner({
     >
       {src ? (
         <Image
-          src={src}
+          src={asset(src)}
           alt={alt}
           fill
           priority

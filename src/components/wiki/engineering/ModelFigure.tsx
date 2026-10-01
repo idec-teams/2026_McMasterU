@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ModelImagePlaceholder } from "@/components/wiki/engineering/ModelImagePlaceholder";
+import { asset } from "@/lib/wiki/asset";
 
 // A single Results figure: a real image once `src` is set, otherwise a
 // placeholder, with its caption below, left-aligned. Stack multiple in a
@@ -30,7 +31,7 @@ export function ModelFigure({
           }
         >
           <Image
-            src={src}
+            src={asset(src)}
             alt={caption}
             fill
             sizes="(min-width: 1024px) 800px, 100vw"

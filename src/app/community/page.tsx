@@ -4,6 +4,7 @@ import { InitiativesCarousel } from "@/components/wiki/InitiativesCarousel";
 import { ReferencesSection } from "@/components/wiki/ReferencesSection";
 import { WikiPage } from "@/components/wiki/WikiPage";
 import { WikiSection } from "@/components/wiki/WikiSection";
+import { asset } from "@/lib/wiki/asset";
 import { createCitations } from "@/lib/wiki/citations";
 
 export const metadata = {
@@ -29,7 +30,7 @@ function DetailBlock({
         {image ? (
           <div className="inline-block border border-border bg-surface/30 p-2">
             <img
-              src={image}
+              src={asset(image)}
               alt={label}
               className="block h-[260px] w-auto object-cover object-top"
             />
