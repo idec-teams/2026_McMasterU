@@ -17,7 +17,7 @@ export const content: ModelPageContent = {
   ],
 
   problemStatement:
-    "Despite the use of RNA thermometers in synthetic biology, existing literature lacks characterized RNAt sequences with a precise melting temperature of 37°C. Furthermore, standard computational biology toolsets rely on single-sequence kinetic simulations that scale poorly across large candidate libraries. There is a lack of predictive tools capable of screening landscapes that consist of single and double mutant libraries to isolate optimal sequence variants. To bridge this gap, we developed [Model Name], a hybrid Deep Learning and Gaussian Process model. By mapping nucleotide sequences directly to thermodynamic properties, [Model Name] rapidly screens thousands of candidates in silico, efficiently identifying novel RNAt variants optimized for 37°C activation.",
+    "Despite the use of RNA thermometers in synthetic biology, existing literature lacks characterized RNAt sequences with a precise melting temperature of 37°C. Furthermore, standard computational biology toolsets rely on single-sequence kinetic simulations that scale poorly across large candidate libraries. There is a lack of predictive tools capable of screening landscapes that consist of single and double mutant libraries to isolate optimal sequence variants. To bridge this gap, we developed ThermoRank, a hybrid Deep Learning and Gaussian Process model. By mapping nucleotide sequences directly to thermodynamic properties, ThermoRank rapidly screens thousands of candidates in silico, efficiently identifying novel RNAt variants optimized for 37°C activation.",
 
   background:
     'Currently, the design of RNAts with specific thermodynamic properties is challenging. The relationship between sequence, secondary structure, and function is complex; even small sequence changes can have larger functional effects. Sen et al. [ref1] demonstrated this by building a library of RNAts by changing sequences one base-pair at a time, finding a wide range of responses in the 29°C-37°C temperature range and fold changes varying over 3-fold from the starting RNAt. They found that systems-level computational predictions matched experimental trends, but could not correlate computational predictions with individual sequence-activity measurements; this highlights a gap in a computational-only approach to RNAt design.\n\nMachine learning presents an opportunity to close this gap; by training a surrogate model on a fitness landscape of sequence variants, it can be possible to quickly rank candidate sequences based on their thermoswitching efficiency, without needing slower, experimental characterization. A surrogate model design strategy has been previously applied to protein engineering, where a Gaussian Process (GP) was used to predict a relationship between protein sequence and thermostability [ref2]. Their GP-guided search produced enzymes that were more stable towards their use case than any other directed evolution strategies. We have adapted this approach to propose a proof-of-concept tool for RNAt design.\n\nTo generate the training fitness landscape, we used ViennaRNA, a widely used library that calculates RNA structure [ref3], to compute thermodynamic properties: minimum free energy (MFE) at 28°C and 37°C, partition function, and melting temperature. These calculations were applied to all single and double-mutant variants of already-characterized RNAt sequences from the literature. This fitness landscape was used as training data for a GP surrogate model, which was selected for its strong performance in low-data environments, its ability to provide uncertainty predictions for its estimates, and its relatively simpler interpretability compared to "black box" neural network approaches.',
@@ -41,22 +41,31 @@ export const content: ModelPageContent = {
     },
   ],
 
-  results:
-    "The plots below display the accuracy of the model's predictions for MFE at 29.0°C and 37.0°C, as well as the melting temperatures for each augmented sequence. In these plots, the dashed red line represents the true parameter calculated using ViennaRNA, while blue points represent the model's predictions. From these plots, it is evident that the model can predict MFEs of novel RNAt sequences relatively well at both 29.0°C and 37.0°C, with root mean squared error (RMSE) of 1.03 and 0.93 respectively. The model is less fit for predicting melting temperatures, with a RMSE of 10.20 for its predictions, a high RMSE relative to the error associated with delta G predictions.\n\nBased on the initial RNAt sequence input, the variant sequence with the highest fitness score, and thus closest-to-optimal melting temperature, is AUGCAGGCCUGC with a fitness score of 0.00996, followed by AUGCAUGCCUGG, AUGCGUGCCUGC, AUGCAAGCCUGC, and AUGCAUGCCUAU, with fitness scores of 0.00989, 0.00943, 0.00938, and 0.00937 respectively.",
-  resultsFigures: [
+  results: [
     {
+      type: "paragraph",
+      text: "The plots below display the accuracy of the model's predictions for MFE at 29.0°C and 37.0°C, as well as the melting temperatures for each augmented sequence. In these plots, the dashed red line represents the true parameter calculated using ViennaRNA, while blue points represent the model's predictions. From these plots, it is evident that the model can predict MFEs of novel RNAt sequences relatively well at both 29.0°C and 37.0°C, with root mean squared error (RMSE) of 1.03 and 0.93 respectively. The model is less fit for predicting melting temperatures, with a RMSE of 10.20 for its predictions, a high RMSE relative to the error associated with delta G predictions.",
+    },
+    {
+      type: "paragraph",
+      text: "Based on the initial RNAt sequence input, the variant sequence with the highest fitness score, and thus closest-to-optimal melting temperature, is AUGCAGGCCUGC with a fitness score of 0.00996, followed by AUGCAUGCCUGG, AUGCGUGCCUGC, AUGCAAGCCUGC, and AUGCAUGCCUAU, with fitness scores of 0.00989, 0.00943, 0.00938, and 0.00937 respectively.",
+    },
+    {
+      type: "figure",
       caption: "Figure 2: Predicted vs. true MFE at 29.0°C",
       src: "/engineering/ml1_mfe28.png",
       width: 568,
       height: 567,
     },
     {
+      type: "figure",
       caption: "Figure 3: Predicted vs. true MFE at 37.0°C",
       src: "/engineering/ml1_mfe37.png",
       width: 588,
       height: 569,
     },
     {
+      type: "figure",
       caption: "Figure 4: Predicted vs. true melting temperature (Tm)",
       src: "/engineering/ml1_melting_temp.png",
       width: 582,

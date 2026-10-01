@@ -20,13 +20,13 @@ const WIDGETS: EngineeringWidget[] = [
   },
   {
     id: "ml-1",
-    title: "ML1",
+    title: "ML1 - ThermoRank",
     href: "/engineering/ml-1",
     image: WIDGET_IMAGE,
   },
   {
     id: "ml-2",
-    title: "ML2",
+    title: "ML2 - ThermoCast",
     href: "/engineering/ml-2",
     image: WIDGET_IMAGE,
   },

@@ -147,26 +147,20 @@ export function ModelPage({
         </WikiSection>
 
         <WikiSection id="results" title="Results">
-          <Paragraphs text={content.results} references={content.references} />
-          <div className="flex flex-col gap-10">
-            {content.resultsFigures.map((figure) => (
-              <ModelFigure
-                key={figure.caption}
-                caption={figure.caption}
-                src={figure.src}
-                width={figure.width}
-                height={figure.height}
-              />
-            ))}
-          </div>
-        </WikiSection>
-
-        <WikiSection id="discussion" title="Discussion">
-          <Paragraphs
-            text={content.discussion}
+          <ModelBlocks
+            blocks={content.results}
             references={content.references}
           />
         </WikiSection>
+
+        {content.discussion.trim() ? (
+          <WikiSection id="discussion" title="Discussion">
+            <Paragraphs
+              text={content.discussion}
+              references={content.references}
+            />
+          </WikiSection>
+        ) : null}
 
         {content.validation.trim() ? (
           <WikiSection id="validation" title="Validation">

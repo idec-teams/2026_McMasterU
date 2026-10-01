@@ -174,9 +174,9 @@ export const content: ModelPageContent = {
     },
   ],
 
-  results: "",
-  resultsFigures: [
+  results: [
     {
+      type: "figure",
       caption:
         "Figure 2: Triacylglycerol (TAG) accumulation modelled in Saccharomyces cerevisiae cell over time",
       src: "/engineering/kinetic_TAG.png",
@@ -184,6 +184,7 @@ export const content: ModelPageContent = {
       height: 761,
     },
     {
+      type: "figure",
       caption:
         "Figure 3: Acyl-CoA concentration in Saccharomyces cerevisiae cell modelled over time",
       src: "/engineering/kinetic_acylCoA.png",
@@ -191,6 +192,7 @@ export const content: ModelPageContent = {
       height: 783,
     },
     {
+      type: "figure",
       caption:
         "Figure 4: Concentrations of all metabolites involved in the TAG synthesis pathway in Saccharomyces cerevisiae cell modelled over time",
       src: "/engineering/kinetic_misc_metabolites.png",

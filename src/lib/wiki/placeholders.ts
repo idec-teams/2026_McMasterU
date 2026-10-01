@@ -25,8 +25,10 @@ export const PLACEHOLDER_MODEL_CONTENT: ModelPageContent = {
       blocks: [{ type: "paragraph", text: LOREM_PARAGRAPH }],
     },
   ],
-  results: LOREM_PARAGRAPH,
-  resultsFigures: [{ caption: "Results figure" }],
+  results: [
+    { type: "paragraph", text: LOREM_PARAGRAPH },
+    { type: "figure", caption: "Results figure" },
+  ],
   discussion: LOREM_PARAGRAPH,
   validation: LOREM_PARAGRAPH,
   limitationsNextSteps: LOREM_PARAGRAPH,

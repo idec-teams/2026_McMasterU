@@ -61,27 +61,30 @@ export const content: ModelPageContent = {
     },
   ],
 
-  results: "",
-  resultsFigures: [
+  results: [
     {
+      type: "figure",
       caption: "Figure 1: mRNA Concentration During Hairpin Transition",
       src: "/engineering/rnat_mrna.png",
       width: 1074,
       height: 730,
     },
     {
+      type: "figure",
       caption: "Figure 2: Active Ribosome-mRNA Complexes",
       src: "/engineering/rnat_ribosomes.png",
       width: 1060,
       height: 733,
     },
     {
+      type: "figure",
       caption: "Figure 3: BGL2 Protein Accumulation",
       src: "/engineering/rnat_bgl2.png",
       width: 659,
       height: 433,
     },
     {
+      type: "figure",
       caption: "Figure 4: Cell Wall Integrity (%)",
       src: "/engineering/rnat_cell_wall.png",
       width: 1030,

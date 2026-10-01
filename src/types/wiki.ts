@@ -136,9 +136,13 @@ export type ModelPageContent = {
   problemStatement: string;
   background: string;
   modelConstruction: ModelSubsection[];
-  results: string;
-  /** Figures shown under Results, each an image placeholder until `src` is set. */
-  resultsFigures: ModelFigureContent[];
+  /**
+   * Results write-up as the same interleaved paragraph/figure/table/list
+   * blocks as a Model Construction subsection — a summary table can sit
+   * between two paragraphs, or a figure right where the text calls for it,
+   * instead of all figures being forced below all the text.
+   */
+  results: ModelContentBlock[];
   discussion: string;
   validation: string;
   limitationsNextSteps: string;
