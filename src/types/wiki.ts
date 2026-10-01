@@ -104,9 +104,55 @@ export type SummaryPoint = {
   body: string;
 };
 
+/**
+ * A figure's caption plus an optional path to its image in /public. Renders
+ * as a placeholder until `src` is set. `width`/`height` are the image's real
+ * pixel dimensions, used so the figure frame matches its aspect ratio
+ * instead of letterboxing inside a fixed one.
+ */
+export type ModelFigureContent = {
+  caption: string;
+  src?: string;
+  width?: number;
+  height?: number;
+};
+
+/** One piece of content within a Model Construction subsection, rendered in order. */
+export type ModelContentBlock =
+  | { type: "paragraph"; text: string }
+  | ({ type: "figure" } & ModelFigureContent)
+  | { type: "table"; caption: string; headers: string[]; rows: string[][] }
+  | { type: "list"; items: string[] };
+
+/** One block of a Model Construction write-up. Untitled subsections render as plain content; titled ones get their own boxed subheading. */
+export type ModelSubsection = {
+  title?: string;
+  blocks: ModelContentBlock[];
+};
+
+export type ModelPageContent = {
+  summaryPoints: SummaryPoint[];
+  /** Section bodies. Separate paragraphs with a blank line. */
+  problemStatement: string;
+  background: string;
+  modelConstruction: ModelSubsection[];
+  /**
+   * Results write-up as the same interleaved paragraph/figure/table/list
+   * blocks as a Model Construction subsection — a summary table can sit
+   * between two paragraphs, or a figure right where the text calls for it,
+   * instead of all figures being forced below all the text.
+   */
+  results: ModelContentBlock[];
+  discussion: string;
+  validation: string;
+  limitationsNextSteps: string;
+  references: WikiReference[];
+};
+
 export type WikiSectionProps = {
   id: string;
-  title: string;
+  /** Usually a string; a ReactNode is allowed so a heading can highlight part of itself (e.g. an accent-colored span). */
+  title: ReactNode;
   /** Keep `title` as the section's id/TOC reference but don't render it visibly (e.g. a section with its own custom heading). */
   hideTitle?: boolean;
   children?: ReactNode;
@@ -114,5 +160,5 @@ export type WikiSectionProps = {
 
 export type TocItem = {
   id: string;
-  title: string;
+  title: ReactNode;
 };

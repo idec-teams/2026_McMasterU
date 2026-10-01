@@ -2,60 +2,39 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { ReadMoreLink } from "@/components/wiki/ReadMoreLink";
 
-type RoadmapPane = { title: string; lines: string[] };
+type RoadmapPane = { year: string; title: string; description: string };
 
-// Placeholder copy — swap each pane's title/lines for the real roadmap
-// write-up when it's ready.
 const ROADMAP_PANES: RoadmapPane[] = [
   {
+    year: "2026",
     title: "Prototype",
-    lines: [
-      "Lorem ipsum dolor sit amet.",
-      "Consectetur adipiscing elit.",
-      "Sed do eiusmod tempor.",
-    ],
+    description: "Refine and validate technology.",
   },
   {
-    title: "Lab Validation",
-    lines: [
-      "Incididunt ut labore dolore.",
-      "Magna aliqua enim ad minim.",
-      "Veniam quis nostrud exercitation.",
-    ],
-  },
-  {
+    year: "2027",
     title: "Pilot Fermentation",
-    lines: [
-      "Ullamco laboris nisi aliquip.",
-      "Ex ea commodo consequat.",
-      "Duis aute irure dolor.",
-    ],
+    description: "Pilot-scale production and optimization.",
   },
   {
-    title: "Partner Testing",
-    lines: [
-      "Reprehenderit in voluptate velit.",
-      "Esse cillum dolore eu fugiat.",
-      "Nulla pariatur excepteur sint.",
-    ],
+    year: "2028",
+    title: "Customer Trials",
+    description: "Partner testing and product validation.",
   },
   {
-    title: "Scale-Up",
-    lines: [
-      "Occaecat cupidatat non proident.",
-      "Sunt in culpa qui officia.",
-      "Deserunt mollit anim id est.",
-    ],
+    year: "2029",
+    title: "Regulatory",
+    description: "Submit and obtain regulatory approval.",
   },
   {
-    title: "Product Launch",
-    lines: [
-      "Laborum et dolore magna aliqua.",
-      "Ut enim ad minim veniam.",
-      "Quis nostrud exercitation ullamco.",
-    ],
+    year: "2030",
+    title: "Commercial Launch",
+    description: "First commercial production and sales.",
+  },
+  {
+    year: "2032+",
+    title: "Global Scale",
+    description: "Expand manufacturing and market reach.",
   },
 ];
 
@@ -65,7 +44,7 @@ const PANE_GAP_PX = 16;
 
 // Horizontal, non-looping roadmap carousel: side arrows step one pane at a
 // time and disable at each end instead of wrapping back to the start.
-export function RoadmapCarousel({ readMoreHref }: { readMoreHref: string }) {
+export function RoadmapCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(true);
@@ -101,53 +80,48 @@ export function RoadmapCarousel({ readMoreHref }: { readMoreHref: string }) {
   };
 
   return (
-    <div>
-      <div className="relative">
-        <button
-          type="button"
-          onClick={() => scrollByPane(-1)}
-          disabled={!canScrollPrev}
-          aria-label="Previous roadmap step"
-          className="absolute left-0 top-1/2 z-10 flex h-9 w-9 -translate-x-4 -translate-y-1/2 items-center justify-center border border-accent bg-card text-accent transition-opacity hover:bg-accent/10 disabled:pointer-events-none disabled:opacity-30"
-        >
-          <ChevronLeft className="h-4 w-4" />
-        </button>
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() => scrollByPane(-1)}
+        disabled={!canScrollPrev}
+        aria-label="Previous roadmap step"
+        className="absolute left-0 top-1/2 z-10 flex h-9 w-9 -translate-x-4 -translate-y-1/2 items-center justify-center border border-accent bg-card text-accent transition-opacity hover:bg-accent/10 disabled:pointer-events-none disabled:opacity-30"
+      >
+        <ChevronLeft className="h-4 w-4" />
+      </button>
 
-        <div
-          ref={trackRef}
-          className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-1 py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        >
-          {ROADMAP_PANES.map((pane) => (
-            <div
-              key={pane.title}
-              className="flex w-64 shrink-0 snap-start flex-col items-center border border-border bg-accent/5 p-6 text-center transition-colors duration-200 hover:border-accent"
-            >
-              <h3 className="font-display text-lg text-foreground mb-3">
-                {pane.title}
-              </h3>
-              <div className="space-y-1 text-sm leading-relaxed text-body">
-                {pane.lines.map((line) => (
-                  <p key={line}>{line}</p>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <button
-          type="button"
-          onClick={() => scrollByPane(1)}
-          disabled={!canScrollNext}
-          aria-label="Next roadmap step"
-          className="absolute right-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 translate-x-4 items-center justify-center border border-accent bg-card text-accent transition-opacity hover:bg-accent/10 disabled:pointer-events-none disabled:opacity-30"
-        >
-          <ChevronRight className="h-4 w-4" />
-        </button>
+      <div
+        ref={trackRef}
+        className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-1 py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {ROADMAP_PANES.map((pane) => (
+          <div
+            key={pane.title}
+            className="flex w-64 shrink-0 snap-start flex-col items-center border border-border bg-accent/5 p-6 text-center transition-colors duration-200 hover:border-accent"
+          >
+            <span className="font-mono text-[10px] uppercase tracking-widest text-accent mb-1">
+              {pane.year}
+            </span>
+            <h3 className="font-display text-lg text-foreground mb-3">
+              {pane.title}
+            </h3>
+            <p className="text-sm leading-relaxed text-body">
+              {pane.description}
+            </p>
+          </div>
+        ))}
       </div>
 
-      <div className="mt-6 flex justify-center">
-        <ReadMoreLink href={readMoreHref} />
-      </div>
+      <button
+        type="button"
+        onClick={() => scrollByPane(1)}
+        disabled={!canScrollNext}
+        aria-label="Next roadmap step"
+        className="absolute right-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 translate-x-4 items-center justify-center border border-accent bg-card text-accent transition-opacity hover:bg-accent/10 disabled:pointer-events-none disabled:opacity-30"
+      >
+        <ChevronRight className="h-4 w-4" />
+      </button>
     </div>
   );
 }
