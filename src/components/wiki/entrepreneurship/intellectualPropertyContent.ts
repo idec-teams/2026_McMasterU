@@ -37,37 +37,6 @@ export const INTELLECTUAL_PROPERTY_SECTIONS: ModelSubsection[] = [
     ],
   },
   {
-    title: "Core Patent Protection",
-    blocks: [
-      {
-        type: "paragraph",
-        text: "The initial patent strategy focuses on MEYcell's integrated platform. The current design uses an engineered S. cerevisiae strain in which pathways including ACC1 and DGA1 overexpression are used to redirect cellular metabolism towards increased triacylglycerol accumulation. ACC1 increases the supply of malonyl-CoA for fatty-acid synthesis, while DGA1 promotes the conversion of fatty acyl-CoAs into triacylglycerols for intracellular storage.",
-      },
-      {
-        type: "paragraph",
-        text: "This lipid production system is combined with an engineered temperature-responsive mechanism. During cooking, heat activates the RNA thermometer, initiating the cellular response that enables release of the stored lipid.",
-      },
-      {
-        type: "paragraph",
-        text: "Therefore, the core protection centers on:",
-      },
-      {
-        type: "list",
-        items: [
-          "Engineered lipid production",
-          "Intracellular storage",
-          "Temperature responsive activation",
-          "Controlled release",
-          "Functional food application",
-        ],
-      },
-      {
-        type: "paragraph",
-        text: "This integrated system is more central to MEYcell's competitive position than any individual component on its own. Future patent applications may expand beyond the core platform to protect improvements such as modified lipid profiles, optimized release, hydrogel formulations, and application specific uses.",
-      },
-    ],
-  },
-  {
     title: "Patents and Trade Secrets",
     blocks: [
       {
@@ -187,20 +156,23 @@ export const INTELLECTUAL_PROPERTY_REFERENCES: WikiReference[] = [
   {
     id: "ref32",
     title: "Patents plummet in alt proteins: Has innovation ground to a halt?",
-    source: "Food Navigator",
+    source: "FoodNavigator",
     year: "2025, November 19",
+    url: "https://www.foodnavigator.com/Article/2025/11/19/alternative-protein-patents-decline/",
   },
   {
     id: "ref33",
     title: "Technology",
     source: "Melt&Marble",
     year: "n.d.",
+    url: "https://www.meltandmarble.com/technology",
   },
   {
     id: "ref34",
-    title: "Our process",
+    title: "Our approach",
     source: "Mission Barns",
     year: "n.d.",
+    url: "https://missionbarns.com/process",
   },
   {
     id: "ref35",
@@ -208,6 +180,7 @@ export const INTELLECTUAL_PROPERTY_REFERENCES: WikiReference[] = [
     title:
       "Pre-market consultation for human food made with cultured pork fat cells",
     year: 2025,
+    url: "https://www.fda.gov/food/hfp-constituent-updates/fda-completes-pre-market-consultation-human-food-made-cultured-pork-fat-cells",
   },
   {
     id: "ref36",
@@ -215,11 +188,13 @@ export const INTELLECTUAL_PROPERTY_REFERENCES: WikiReference[] = [
     title:
       "Identifying inventions in the public domain: A guide for inventors and entrepreneurs",
     year: 2020,
+    url: "https://www.wipo.int/edocs/pubdocs/en/wipo_pub_1062.pdf",
   },
   {
     id: "ref37",
     authors: "United States Patent and Trademark Office.",
     title: "Provisional application for patent",
     year: "n.d.",
+    url: "https://www.uspto.gov/patents/basics/apply/provisional-application",
   },
 ];
