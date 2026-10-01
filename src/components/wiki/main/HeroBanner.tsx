@@ -9,7 +9,7 @@ import { MeyCellMark } from "@/components/wiki/main/MeyCellMark";
 // ambient motion costs no JavaScript. HotZone is the only client island.
 
 /** Logo width in px — the one knob for the mark's size. Height follows. */
-const MARK_WIDTH = 200;
+const MARK_WIDTH = 240;
 const MARK_WHITE = false;
 
 const EYEBROW = "MCMASTERU";
