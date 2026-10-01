@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+/*
+ * ============================================================================
+ * MEYcell color system — single source of truth.
+ * Change a value here and it propagates everywhere via Tailwind utilities.
+ *   raw palette (hex)  ->  semantic roles (@theme)  ->  utility tokens
+ * Do NOT hardcode colors in components; use the token utilities below.
+ * ============================================================================
+ */
+:root {
+  /* ---- Brand: teal ---------------------------------------------------- */
+  --teal: #00d4b4; /* primary accent */
+  --teal-dark: #00b89a;
+  --teal-darkest: #007a68;
+  --teal-rgb: 0 212 180; /* channels for translucent glow/border effects */
+  --ember: #ff8a4c; /* heat, the burst, "cooked" */
+  --ember-rgb: 255 138 76;
+
+  /* ---- Accent set (bounded — color carries meaning, not decoration) ----
+     sky:  environment, water, data/modelling
+     rose: animal welfare, the biological/living
+     gold: fat, lipids, yield
+     Use at the same tint recipes as teal: full for icon/stat, /30 borders,
+     /10 fills. Body text never takes an accent. */
+  /* The logo's own warm ink, sampled from the original MEYcell artwork. The
+     mark currently draws in --text-primary instead; kept so it can be put
+     back with one class. Not part of the text ramp. */
+  --cream: #fffbc1;
+
+  --sky: #5cb8ff;
+  --sky-rgb: 92 184 255;
+  --rose: #ff6b8a;
+  --rose-rgb: 255 107 138;
+  --gold: #ffc94d;
+  --gold-rgb: 255 201 77;
+
+  /* ---- Backgrounds & surfaces ---------------------------------------- */
+  --bg-page: #071a2e; /* page background */
+  --bg-raised: #0a2138; /* lifted section band — the "up" beat */
+  --bg-section: #060f1e; /* section banding */
+  --bg-card: #070e1c; /* card background */
+  --surface: #0c2540; /* raised card surface */
+  --bg-footer: #040b14; /* footer */
+  --surface-secondary: #0d2d4a; /* secondary surfaces */
+  --border: #0d2d4a; /* structural hairlines */
+  --on-brand: #04121f; /* text/icons on a teal fill */
+
+  /* ---- Text ramp (light → faint) ------------------------------------- */
+  --text-primary: #d8eef8; /* primary foreground */
+  --text-body: #9ac8e0; /* body / subtext */
+  --text-muted: #6ba8c4; /* muted text */
+  --text-dim: #5d8faa; /* dim labels */
+  --text-faint: #3d6a80; /* very dim */
+  --text-decorative: #2a4a5c; /* faint / decorative */
+}
+
+@theme inline {
+  /* Backgrounds & surfaces */
+  --color-background: var(--bg-page);
+  --color-section: var(--bg-section);
+  --color-raised: var(--bg-raised);
+  --color-card: var(--bg-card);
+  --color-surface: var(--surface);
+  --color-footer: var(--bg-footer);
+  --color-deep: var(--bg-footer); /* deepest section band — near-black */
+  --color-secondary: var(--surface-secondary);
+  --color-border: var(--border);
+
+  /* Brand */
+  --color-primary: var(--teal);
+  --color-primary-foreground: var(--on-brand);
+  --color-accent: var(--teal-dark);
+  --color-accent-foreground: var(--on-brand);
+  --color-brand: var(--teal);
+  --color-brand-dark: var(--teal-dark);
+  --color-brand-darkest: var(--teal-darkest);
+  --color-ember: var(--ember);
+  --color-cream: var(--cream);
+  --color-sky: var(--sky);
+  --color-rose: var(--rose);
+  --color-gold: var(--gold);
+
+  /* Text ramp */
+  --color-foreground: var(--text-primary);
+  --color-body: var(--text-body);
+  --color-muted-foreground: var(--text-muted);
+  --color-dim: var(--text-dim);
+  --color-faint: var(--text-faint);
+  --color-decorative: var(--text-decorative);
+
+  /* Fonts */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-geist-sans);
+
+  /* Where the header switches between the full link row and the hamburger.
+     Tailwind's md (768px) crowds eight links; lg (1024px) collapses too
+     early. Used as the `nav:` variant in Header.tsx — rem, like the stock
+     breakpoints, so Tailwind can order them. 53.125rem = 850px. */
+  --breakpoint-nav: 54.725rem;
+}
+
+body {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/*
+ * ============================================================================
+ * Hero banner — "thermal drift" ambient background.
+ *
+ * Only transform/opacity animate, so the browser hands these to the compositor:
+ * no JavaScript, no per-frame layout, and the browser throttles them when the
+ * tab is backgrounded. Keyframes live here; the component applies them with
+ * Tailwind `animate-[...]` utilities plus `motion-reduce:animate-none`.
+ *
+ * The three layers drift on deliberately co-prime durations (61s/79s/53s) so
+ * the composite never visibly repeats.
+ * ============================================================================
+ */
+@keyframes hero-drift-a {
+  0%,
+  100% {
+    transform: translate3d(-6%, -4%, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(6%, 5%, 0) scale(1.2);
+  }
+}
+
+@keyframes hero-drift-b {
+  0%,
+  100% {
+    transform: translate3d(5%, 6%, 0) scale(1.14);
+  }
+  50% {
+    transform: translate3d(-7%, -6%, 0) scale(1.02);
+  }
+}
+
+/* The temperature migration: the warm layer breathes in and out at the peak.
+   Kept faint — the cursor-driven HotZone owns the visible warm note. */
+@keyframes hero-ember {
+  0%,
+  100% {
+    opacity: 0.05;
+    transform: translate3d(3%, 5%, 0) scale(1);
+  }
+  45% {
+    opacity: 0.16;
+    transform: translate3d(-5%, -4%, 0) scale(1.18);
+  }
+}
+
+/* Film grain — kills banding across the large soft gradients on dark navy. */
+.hero-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Dot matrix — hard structure over the soft motion. */
+.hero-dots {
+  /* background-image: radial-gradient(
+    circle,
+    rgb(var(--teal-rgb) / 0.14) 1px,
+    transparent 1px
+  ); */
+  background-size: 22px 22px;
+}
+
+/* Free-roaming ambient hot zones. Independent of the cursor and dimmer than
+   it — these wander the panel on long, irregular paths so the field always has
+   some warmth in motion. Multi-stop paths (not a simple there-and-back) keep
+   them from reading as a pendulum. */
+@keyframes hero-roam-a {
+  0% {
+    transform: translate3d(6vw, 18vh, 0) scale(1);
+  }
+  25% {
+    transform: translate3d(58vw, 8vh, 0) scale(1.22);
+  }
+  50% {
+    transform: translate3d(74vw, 52vh, 0) scale(0.92);
+  }
+  75% {
+    transform: translate3d(28vw, 62vh, 0) scale(1.12);
+  }
+  100% {
+    transform: translate3d(6vw, 18vh, 0) scale(1);
+  }
+}
+
+@keyframes hero-roam-b {
+  0% {
+    transform: translate3d(72vw, 60vh, 0) scale(1.1);
+  }
+  30% {
+    transform: translate3d(34vw, 70vh, 0) scale(0.9);
+  }
+  55% {
+    transform: translate3d(12vw, 30vh, 0) scale(1.25);
+  }
+  80% {
+    transform: translate3d(60vw, 14vh, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(72vw, 60vh, 0) scale(1.1);
+  }
+}
+
+/* MEY Cell mark — the halftone field's radius wave.
+   Each disc is scaled about its own centre rather than having its SVG `r`
+   animated: `r` is not a compositable property, `transform` is.
+   Duration and per-disc delay are set inline by MeyCellMark so the wave
+   constants stay in mey-cell-mark.ts. */
+.mey-dot {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation-name: mey-pulse;
+  /* easeInOutSine — reproduces the source's cosine to well under a percent. */
+  animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+  animation-iteration-count: infinite;
+}
+
+@keyframes mey-pulse {
+  0%,
+  100% {
+    transform: scale(calc(1 + var(--mey-swing)));
+  }
+  50% {
+    transform: scale(calc(1 - var(--mey-swing)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mey-dot {
+    animation: none;
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch *)",
+      "Bash(git rev-list *)",
+      "Bash(awk '{print \"behind main: \"$1\" ahead of main: \"$2}')",
+      "Bash(sed -i '' '/^        eyebrow=\"Entrepreneurship\"$/d' src/components/wiki/entrepreneurship/EntrepreneurshipLanding.tsx)",
+      "Bash(sed -i '' 's|<Banner eyebrow=\"Entrepreneurship\" title=\"Entrepreneurship in Depth\">|<Banner title=\"Entrepreneurship in Depth\">|' src/components/wiki/entrepreneurship/EntrepreneurshipDetails.tsx)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s -o /tmp/g.gif -w '%{http_code} %{size_download} bytes' http://localhost:3000/mey_cell_wave.gif)",
+      "Bash(echo \"gif served OK: $\\(curl -s -o /tmp/g.gif -w '%{http_code} %{size_download} bytes' http://localhost:3000/mey_cell_wave.gif\\)\")",
+      "Bash(awk '{print \"  \"$9\"  \"$5}')",
+      "Read(//tmp/**)",
+      "Read(//private/tmp/**)",
+      "Bash(python3 -c \"import skimage, scipy; print\\('skimage', skimage.__version__\\)\")",
+      "Bash(python3 -c \"import matplotlib; print\\('mpl', matplotlib.__version__\\)\")",
+      "Bash(python3 -c \"import cv2; print\\('cv2',cv2.__version__\\)\")",
+      "Bash(python3 - /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad)",
+      "Bash(python3 /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/trace.py)",
+      "Bash(grep -E \"error|Error|✓ Compiled|Compiled successfully|○ /$\")",
+      "Bash(git check-ignore *)",
+      "Bash(echo \"exit=$?\")",
+      "WebFetch(domain:wiki.idec.io)",
+      "Bash(python3 -c \"import json;p=json.load\\(open\\('package.json'\\)\\);print\\(json.dumps\\(p.get\\('scripts'\\),indent=1\\)\\);print\\('gh-pages dep:', 'gh-pages' in {**p.get\\('dependencies',{}\\),**p.get\\('devDependencies',{}\\)}\\)\")",
+      "Bash(grep -rnoE \"\\(src|href|poster\\)=[{]?[\\\\\"'\\\\`]/[a-zA-Z_][^\\\\\"'\\\\`]*\\\\.\\(png|jpe?g|gif|webp|svg|mp4|webm|ico|pdf\\)\" src)",
+      "Bash(grep -rnoE \"[\\\\\"'\\\\`]/\\(team|banners|logo|videos?|images?|img\\)/[^\\\\\"'\\\\`]*\" src)",
+      "Bash(NEXT_PUBLIC_BASE_PATH=/mcmasteru-idec-2026-wiki pnpm build)",
+      "Bash(pnpm deploy:pages --dry-run --repo mcmasteru-idec-2026-wiki)"
+    ]
+  }
+}
