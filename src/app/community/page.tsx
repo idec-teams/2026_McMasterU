@@ -88,63 +88,59 @@ export default function CommunityPage() {
       </Banner>
 
       <WikiPage>
-        <WikiSection id="overview" title="Overview">
+        <WikiSection id="overview" title="Community Outreach: From Conversation To Cultivation">
           <p>
-            Cultivated meat is a subject that has taken the world by storm in
-            recent years. With the influx of food insecurity, the rising issue
-            of antibiotic resistance, and the rise of animal welfare rights,
-            cultivated food has entered the picture. Synbio’s project this year
-            focused on enhancing the flavour and taste of these products. While
-            many products exist, many of them lack the appeal to compete with
-            traditional meat. There are many aspects of this project that we
-            explored, including the history, socioeconomic considerations,
-            environmental concerns, community needs, and more.
+            Before science, MEYCell was formed with the intention of serving the community. To create a project that was both innovative and intentional. Community Outreach ensured MEYCell’s work remained ethical and socioeconomically responsible through extensive feedback loops that engaged conversation, feedback, and integration. 
           </p>
           <p>
-            Beginning with the history of cultivated meat, given that it is a
-            new topic, it is important to note that the agricultural industry
-            has been contributing negatively. It should also be noted that there
-            is a crossover with the medical industry, as both cultivated meat
-            and tissue engineering are similar in technicality. In the 1990s, a
-            Dutch researcher, Willem Van Eelen, used cell cultures to produce
-            meat, and in 202, Van Eelen used cell cultures to produce meat.
+Cultivated meat is a subject that has taken the world by storm in recent years. The influx of food insecurity, increased antibiotic resistance through traditional livestock farming, and unethical animal welfare practices, to name a few, has resulted in a rise of alternative meat products entering the market. Global meat consumption has risen exponentially following the global population rise, and many industries now seek to combat sustainability threats associated with farming traditional meat through sourcing alternative proteins. 
+
           </p>
 
           <p>
-            When it comes to socioeconomic considerations, there are many
-            factors to consider. Firstly, there is the rise of the animal rights
-            movement, with key groups like PETA (People for the Ethical
-            Treatment of Animals) advocating for better treatment of animals in
-            the agricultural and cosmetics industries, and overall lobbying for
-            the total and whole discarding of meat consumption. Additionally, as
-            we head into a recession, meat has become a more expensive item and
-            is no longer traditionally an affordable item. Coinciding with this,
-            in Western media recently, there has been a health lifestyle push,
-            notably putting an emphasis on protein intake, much of which comes
-            from supplements or meat. Currently, cultivated meat or alternative
-            meats may not provide comparable metrics in protein alongside taste.
+            Socioeconomically, there are many benefits to alternative protein products. Firstly, there is the rise of the animal rights movement, with key groups like PETA (People for the Ethical Treatment of Animals) advocating for better treatment of animals in the agricultural and cosmetics industries, and overall lobbying for the total and whole discarding of meat consumption. Additionally, as we head into a recession, meat has become a more expensive item and is no longer traditionally an affordable item. Coinciding with this recession, western media has continued glamorizing healthy lifestyles, notably putting an emphasis on protein intake coming from supplements or meat. Currently, cultivated and alternative meats do not provide comparable metrics in protein alongside taste.
+
           </p>
           <p>
-            Environmentally, when looking at the agricultural industry, there
-            are a lot of climate crises that are connected to the agricultural
-            industry. The amount of land and water that is used to raise animals
-            is significant. 16.5% of greenhouse emissions are from traditional
-            meat. The land that is currently used for traditional meat could be
-            reused for the deployment of renewable energy farms to combat our
-            ongoing climate crisis. Additionally, surplus land is important to
-            mediate other issues, including deforestation. This opens up the
-            opportunity for urban agriculture as well. Water and energy use are
-            something to note also. Lab-made meat could be a decrease of 82–96%
-            in water consumption, notably dependent on the sort of meat produced
-            (Oxford, 2019). Cultivated meat can have amazing carbon footprints,
-            being up to 92% less than beef, 44% less than pork, and around the
-            same as chicken (Sinke, 2021. In conclusion the project aims to look
-            at cultivated meat as a solution to the current crisis and building
-            on some of the gaps within cultivated meat.
+            From an environmental perspective, there are a lot of climate crises that are connected to the agricultural industry. The amount of land and water that is used to raise animals is significant. 16.5% of greenhouse emissions are from traditional meat. The land that is currently used for traditional meat could be reused for the deployment of renewable energy farms to combat our ongoing climate crisis. Additionally, surplus land is important to mediate other issues, including deforestation. This opens up the opportunity for urban agriculture as well. Water and energy use are something to note also. Lab-made meat could be a decrease of 82–96% in water consumption, notably dependent on the sort of meat produced (Oxford, 2019). Cultivated meat can have amazing carbon footprints, being up to 92% less than beef, 44% less than pork, and around the same as chicken  (Sinke, 2021).  
+          </p>
+          <p>
+            With a solid foundation of social considerations, MEYCell’s community outreach initiatives aimed to look at cultivated meat as a solution to the current crisis and build on some of the gaps within cultivated meat.
+          </p>
+
+          <h2 className="mb-4 text-xl font-medium text-foreground">The IRUS Framework</h2>
+          <p>
+            In 2024, the McMasterU team members developed a framework inspired by <b>problem-based learning</b> (PBL). Pioneered at McMaster University and now used worldwide, PBL encourages learning through an inquiry-based approach and facilitates open discussion between peers and experts. Honouring our community in our work, McMasterU approaches our projects with the same curiosity and collaboration celebrated on our very campus. 
+          </p>
+
+          <p>
+            IRUS allowed our team to navigate every angle of MEYCell in four stages –
+          </p>
+          <p>
+            <b>Inquire:</b> Identify aspects, questions, and decisions within our project that require external input. Who are we impacting? How are we impacting them? What can we do to help them?
+          </p>
+          <p>
+            <b>Reach Out:</b> Engage with relevant experts to gather perspectives, exchange ideas, and learn more about how our project can address real-world needs.
+          </p>
+          <p>
+            <b>Understand:</b> Explore how our project may fit into existing communities, systems, and structures, and consider the perspectives and needs of those affected.
+          </p>
+          <p>
+            <b>Synthesize:</b> Make changes to our project design based on expert and community feedback, adapting our research and approach to reflect diverse input. 
+          </p>
+          <img
+            src="/hp comms/ires.png"
+            alt="ires framework"
+            width={350}
+            height={300}
+            className="mx-auto block border border-border"
+          />
+          <p>
+            	This framework allowed for continuous learning and improvement of MEYCell throughout the project’s cycle, ensuring that community integration was not simply an afterthought, but an integral part of our purpose in investing in responsible science. 
           </p>
         </WikiSection>
 
-        <WikiSection id="stakeholders" title="Stakeholders">
+        <WikiSection id="stakeholders" title="INQUIRE: From Lab Bench to Dinner Table – Who Are We Feeding?">
           <div className="space-y-5">
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-body">
               [overview]
@@ -157,6 +153,8 @@ export default function CommunityPage() {
             </figure>
           </div>
         </WikiSection>
+
+        <WikiSection id="experts" title="REACH OUT: ___">
 
         <div id="academia" className="space-y-4">
           <h2 className="text-lg font-medium text-foreground">Academia</h2>
@@ -389,6 +387,7 @@ export default function CommunityPage() {
             />
           </div>
         </div>
+        </WikiSection>
 
         <WikiSection id="initiatives" title="Initiatives">
           <InitiativesCarousel
