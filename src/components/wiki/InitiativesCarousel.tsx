@@ -3,6 +3,7 @@
 // from embla carousel
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
+import { asset } from "@/lib/wiki/asset";
 
 export type Initiative = {
   id: string;
@@ -99,7 +100,7 @@ export function InitiativesCarousel({
                 >
                   <div className="border border-border bg-surface/30 p-2">
                     <img
-                      src={slide.src}
+                      src={asset(slide.src)}
                       alt={slide.initiative.title}
                       className="block h-[400px] w-auto object-cover"
                     />

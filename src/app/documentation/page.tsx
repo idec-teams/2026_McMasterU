@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Banner } from "@/components/wiki/Banner";
 import { WikiPage } from "@/components/wiki/WikiPage";
 import { WikiSection } from "@/components/wiki/WikiSection";
+import { asset } from "@/lib/wiki/asset";
 
 export const metadata = {
   title: "Documentation — MEYcell",
@@ -421,7 +422,7 @@ export default function DocumentationPage() {
           <h2 className="mb-4 text-xl font-medium text-foreground">Level 1</h2>
           <figure className="flex flex-col items-center gap-2">
             <Image
-              src="/documentation/rnat bgl2 plasmid.png"
+              src={asset("/documentation/rnat bgl2 plasmid.png")}
               alt="rnat plasmid map"
               width={500}
               height={400}
@@ -435,7 +436,7 @@ export default function DocumentationPage() {
           <h2 className="mb-4 text-xl font-medium text-foreground">Level 2</h2>
           <figure className="flex flex-col items-center gap-2">
             <Image
-              src="/documentation/pAN316a plasmid.png"
+              src={asset("/documentation/pAN316a plasmid.png")}
               alt="pAN316a plasmid map"
               width={500}
               height={400}
@@ -448,7 +449,7 @@ export default function DocumentationPage() {
 
           <figure className="flex flex-col items-center gap-2">
             <Image
-              src="/documentation/final construct.png"
+              src={asset("/documentation/final construct.png")}
               alt="Final Construct"
               width={700}
               height={400}

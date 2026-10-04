@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { asset } from "@/lib/wiki/asset";
 
 // Reusable page banner. Pass the structured bits (title / image) as props; put
 // any optional extra content (description, CTA, breadcrumb) in children. Leave
@@ -15,12 +16,15 @@ export function Banner({
   alt = "",
   title,
   variant = "default",
+  centered = false,
   children,
 }: {
   src?: string;
   alt?: string;
   title: string;
   variant?: "default" | "photo";
+  /** Center the title/children instead of the default left alignment — e.g. for a landing page whose other section headings are already centered. */
+  centered?: boolean;
   children?: ReactNode;
 }) {
   const photo = variant === "photo";
@@ -38,7 +42,7 @@ export function Banner({
     >
       {src ? (
         <Image
-          src={src}
+          src={asset(src)}
           alt={alt}
           fill
           priority
@@ -64,12 +68,16 @@ export function Banner({
       {/* Subtle brand tint so photos join the teal/navy palette. */}
       <div className="absolute inset-0 bg-primary/5" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 pt-28 pb-14">
+      <div
+        className={`relative mx-auto w-full max-w-7xl px-6 pt-28 pb-14 ${centered ? "text-center" : ""}`}
+      >
         <h1 className="font-display text-4xl leading-tight text-foreground md:text-6xl">
           {title}
         </h1>
         {children ? (
-          <div className="mt-4 max-w-2xl text-sm leading-relaxed text-body">
+          <div
+            className={`mt-4 max-w-2xl text-sm leading-relaxed text-body ${centered ? "mx-auto" : ""}`}
+          >
             {children}
           </div>
         ) : null}

@@ -32,7 +32,7 @@ export function HeroBanner() {
           {/* translate-y nudges the logo slightly below true center */}
           <h1 className="relative translate-y-4">
             {/* Two earlier marks, kept for easy swapping. Restore the matching
-                import if you bring one back.
+                import (and `asset` for the raster) if you bring one back.
 
                 1. Abstract placeholder cell:
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.58]">
@@ -42,7 +42,7 @@ export function HeroBanner() {
                 2. The original raster. `unoptimized` is required — next/image
                 otherwise collapses an animated gif/webp to a single frame:
             <Image
-              src="/logo/mey_cell_wave_white_soft.webp"
+              src={asset("/logo/mey_cell_wave_white_soft.webp")}
               alt=""
               width={500}
               height={491}

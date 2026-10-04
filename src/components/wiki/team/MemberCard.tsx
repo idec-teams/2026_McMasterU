@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { TrackPills } from "@/components/wiki/team/TrackPill";
+import { asset } from "@/lib/wiki/asset";
 import type { TeamMember } from "@/types/wiki";
 
 // One team member: photo, name, track pills, optional program/year/LinkedIn.
@@ -13,7 +14,7 @@ export function MemberCard({ member }: { member: TeamMember }) {
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-section">
         {photo ? (
           <Image
-            src={photo}
+            src={asset(photo)}
             alt={name}
             fill
             sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"

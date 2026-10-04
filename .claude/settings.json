@@ -19,7 +19,13 @@
       "Bash(python3 /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/trace.py)",
       "Bash(grep -E \"error|Error|✓ Compiled|Compiled successfully|○ /$\")",
       "Bash(git check-ignore *)",
-      "Bash(echo \"exit=$?\")"
+      "Bash(echo \"exit=$?\")",
+      "WebFetch(domain:wiki.idec.io)",
+      "Bash(python3 -c \"import json;p=json.load\\(open\\('package.json'\\)\\);print\\(json.dumps\\(p.get\\('scripts'\\),indent=1\\)\\);print\\('gh-pages dep:', 'gh-pages' in {**p.get\\('dependencies',{}\\),**p.get\\('devDependencies',{}\\)}\\)\")",
+      "Bash(grep -rnoE \"\\(src|href|poster\\)=[{]?[\\\\\"'\\\\`]/[a-zA-Z_][^\\\\\"'\\\\`]*\\\\.\\(png|jpe?g|gif|webp|svg|mp4|webm|ico|pdf\\)\" src)",
+      "Bash(grep -rnoE \"[\\\\\"'\\\\`]/\\(team|banners|logo|videos?|images?|img\\)/[^\\\\\"'\\\\`]*\" src)",
+      "Bash(NEXT_PUBLIC_BASE_PATH=/mcmasteru-idec-2026-wiki pnpm build)",
+      "Bash(pnpm deploy:pages --dry-run --repo mcmasteru-idec-2026-wiki)"
     ]
   }
 }

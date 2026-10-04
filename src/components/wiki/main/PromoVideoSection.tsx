@@ -1,3 +1,5 @@
+import { asset } from "@/lib/wiki/asset";
+
 // ───────────────────────────────────────────────────────────────────────────
 //  Promo video — this is the ONLY line you need to change.
 //  Point it at a file in /public (e.g. "/promo.mp4") or any hosted video URL.
@@ -21,8 +23,8 @@ export function PromoVideoSection() {
               className="h-full w-full object-cover"
               controls
               preload="metadata"
-              poster={VIDEO_POSTER || undefined}
-              src={VIDEO_SRC}
+              poster={VIDEO_POSTER ? asset(VIDEO_POSTER) : undefined}
+              src={asset(VIDEO_SRC)}
             >
               <track kind="captions" />
             </video>
