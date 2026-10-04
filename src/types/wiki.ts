@@ -109,10 +109,12 @@ export type WikiSectionProps = {
   title: string;
   /** Keep `title` as the section's id/TOC reference but don't render it visibly (e.g. a section with its own custom heading). */
   hideTitle?: boolean;
+  subsections?: { id: string; title: string }[];
   children?: ReactNode;
 };
 
 export type TocItem = {
   id: string;
   title: string;
+  children?: TocItem[];
 };

@@ -94,10 +94,10 @@ export default function CommunityPage() {
         >
           <p>
             Before science, MEYCell was formed with the intention of serving the
-            community. To create a project that was both innovative and
-            intentional. Community Outreach ensured MEYCell’s work remained
-            ethical and socioeconomically responsible through extensive feedback
-            loops that engaged conversation, feedback, and integration.
+            community. To create a project that was both <b>innovative</b> and{" "}
+            <b>intentional</b>. Community Outreach ensured MEYCell’s work
+            remained ethical and socioeconomically responsible through extensive
+            feedback loops that engaged conversation, feedback, and integration.
           </p>
           <p>
             Cultivated meat is a subject that has taken the world by storm in
@@ -120,7 +120,7 @@ export default function CommunityPage() {
             total and whole discarding of meat consumption. Additionally, as we
             head into a recession, meat has become a more expensive item and is
             no longer traditionally an affordable item. Coinciding with this
-            recession, western media has continued glamorizing healthy
+            recession, Western media has continued glamorizing healthy
             lifestyles, notably putting an emphasis on protein intake coming
             from supplements or meat. Currently, cultivated and alternative
             meats do not provide comparable metrics in protein alongside taste.
@@ -217,7 +217,14 @@ export default function CommunityPage() {
           </div>
         </WikiSection>
 
-        <WikiSection id="experts" title="REACH OUT: ___">
+        <WikiSection
+          id="experts"
+          title="REACH OUT: ___"
+          subsections={[
+            { id: "academia", title: "Academia" },
+            { id: "industry", title: "Industry" },
+          ]}
+        >
           <div id="academia" className="space-y-4">
             <h2 className="text-lg font-medium text-foreground">Academia</h2>
             <div className="space-y-4">
