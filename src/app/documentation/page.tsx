@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import { Banner } from "@/components/wiki/Banner";
 import { WikiPage } from "@/components/wiki/WikiPage";
 import { WikiSection } from "@/components/wiki/WikiSection";
@@ -78,7 +79,8 @@ export const parts = [
     title: "pCCW12",
     category: "Promoter",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "CACCCATGAACCACACGGTTAGTCCAAAAGGGGCAGTTCAGATTCCAGATGCGGGAATTAGCTTGCTGCCACCCTCACCTCACTAACGCTGCGGTGTGCGGATACTTCATGCTATTTATAGACGCGCGTGTCGGAATCAGCACGCGCAAGAACCAAATGGGAAAATCGGAATGGGTCCAGAACTGCTTTGAGTGCTGGCTATTGGCGTCTGATTTCCGTTTTGGGAATCCTTTGCCGCGCGCCCCTCTCAAAACTCCGCACAAGTCCCAGAAAGCGGGAAAGAAATAAAACGCCACCAAATAAAATAAAATAAAAGCCAATCCTCGAAGCGTGGGTGGTAGGCCCTGGATTATCCCGTACAAGTATTTCTCAGGAGTAAAAAAACCGTTTGTTTTGGAATTTCCCATTTCGCGGCCACCTACGCCGCTATCTTTGCAACAACTATCTGCGATAACTCAGCAAATTTTGCATATTCGTGTTGCAGTATTGCGATAATGGGAGTCTTACTTCCAACATAACGGCAGAAAGAAATGTGAGAAAATTTTGCATCCTTTGCCTCCGTTCAAGTATATAAAGTCGGCATGCTTGATAATCTTTCTTTCCATCCTACATTGTTCTAATTATTCTTATTCTCCTTTATTCTTTCCTAACATACCAAGAAATTAATCTTCTGTCATTCGCTTAAACACTATATCAATAA",
+    sequence:
+      "CACCCATGAACCACACGGTTAGTCCAAAAGGGGCAGTTCAGATTCCAGATGCGGGAATTAGCTTGCTGCCACCCTCACCTCACTAACGCTGCGGTGTGCGGATACTTCATGCTATTTATAGACGCGCGTGTCGGAATCAGCACGCGCAAGAACCAAATGGGAAAATCGGAATGGGTCCAGAACTGCTTTGAGTGCTGGCTATTGGCGTCTGATTTCCGTTTTGGGAATCCTTTGCCGCGCGCCCCTCTCAAAACTCCGCACAAGTCCCAGAAAGCGGGAAAGAAATAAAACGCCACCAAATAAAATAAAATAAAAGCCAATCCTCGAAGCGTGGGTGGTAGGCCCTGGATTATCCCGTACAAGTATTTCTCAGGAGTAAAAAAACCGTTTGTTTTGGAATTTCCCATTTCGCGGCCACCTACGCCGCTATCTTTGCAACAACTATCTGCGATAACTCAGCAAATTTTGCATATTCGTGTTGCAGTATTGCGATAATGGGAGTCTTACTTCCAACATAACGGCAGAAAGAAATGTGAGAAAATTTTGCATCCTTTGCCTCCGTTCAAGTATATAAAGTCGGCATGCTTGATAATCTTTCTTTCCATCCTACATTGTTCTAATTATTCTTATTCTCCTTTATTCTTTCCTAACATACCAAGAAATTAATCTTCTGTCATTCGCTTAAACACTATATCAATAA",
   },
 
   {
@@ -86,7 +88,8 @@ export const parts = [
     title: "tENO1",
     category: "Terminator",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "AGCTTTTGATTAAGCCTTCTAGTCCAAAAAACACGTTTTTTTGTCATTTATTTCATTTTCTTAGAATAGTTTAGTTTATTCATTTTATAGTCACGAATGTTTTATGATTCTATATAGGGTTGCAAACAAGCATTTTTCATTTTATGTTAAAACAATTTCAGGTTTACCTTTTATTCTGCTTGTGGTGACGCGTGTATCCGCCCGCTCTTTTGGTCACCCATGTAT",
+    sequence:
+      "AGCTTTTGATTAAGCCTTCTAGTCCAAAAAACACGTTTTTTTGTCATTTATTTCATTTTCTTAGAATAGTTTAGTTTATTCATTTTATAGTCACGAATGTTTTATGATTCTATATAGGGTTGCAAACAAGCATTTTTCATTTTATGTTAAAACAATTTCAGGTTTACCTTTTATTCTGCTTGTGGTGACGCGTGTATCCGCCCGCTCTTTTGGTCACCCATGTAT",
   },
 
   {
@@ -94,7 +97,8 @@ export const parts = [
     title: "pTDH3",
     category: "Promoter",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "TCATTATCAATACTCGCCATTTCAAAGAATACGTAAATAATTAATAGTAGTGATTTTCCTAACTTTATTTAGTCAAAAAATTAGCCTTTTAATTCTGCTGTAACCCGTACATGCCCAAAATAGGGGGCGGGTTACACAGAATATATAACATCGTAGGTGTCTGGGTGAACAGTTTATTCCTGGCATCCACTAAATATAATGGAGCCCGCTTTTTAAGCTGGCATCCAGAAAAAAAAAGAATCCCAGCACCAAAATATTGTTTTCTTCACCAACCATCAGTTCATAGGTCCATTCTCTTAGCGCAACTACAGAGAACAGGGGCACAAACAGGCAAAAAACGGGCACAACCTCAATGGAGTGATGCAACCTGCCTGGAGTAAATGATGACACAAGGCAATTGACCCACGCATGTATCTATCTCATTTTCTTACACCTTCTATTACCTTCTGCTCTCTCTGATTTGGAAAAAGCTGAAAAAAAAGGTTGAAACCAGTTCCCTGAAATTATTCCCCTACTTGACTAATAAGTATATAAAGACGGTAGGTATTGATTGTAATTCTGTAAATCTATTTCTTAAACTTCTTAAATTCTACTTTTATAGTTAGTCTTTTTTTTAGTTTTAAAACACCAGAACTTAGTTTCGA",
+    sequence:
+      "TCATTATCAATACTCGCCATTTCAAAGAATACGTAAATAATTAATAGTAGTGATTTTCCTAACTTTATTTAGTCAAAAAATTAGCCTTTTAATTCTGCTGTAACCCGTACATGCCCAAAATAGGGGGCGGGTTACACAGAATATATAACATCGTAGGTGTCTGGGTGAACAGTTTATTCCTGGCATCCACTAAATATAATGGAGCCCGCTTTTTAAGCTGGCATCCAGAAAAAAAAAGAATCCCAGCACCAAAATATTGTTTTCTTCACCAACCATCAGTTCATAGGTCCATTCTCTTAGCGCAACTACAGAGAACAGGGGCACAAACAGGCAAAAAACGGGCACAACCTCAATGGAGTGATGCAACCTGCCTGGAGTAAATGATGACACAAGGCAATTGACCCACGCATGTATCTATCTCATTTTCTTACACCTTCTATTACCTTCTGCTCTCTCTGATTTGGAAAAAGCTGAAAAAAAAGGTTGAAACCAGTTCCCTGAAATTATTCCCCTACTTGACTAATAAGTATATAAAGACGGTAGGTATTGATTGTAATTCTGTAAATCTATTTCTTAAACTTCTTAAATTCTACTTTTATAGTTAGTCTTTTTTTTAGTTTTAAAACACCAGAACTTAGTTTCGA",
   },
 
   {
@@ -102,7 +106,8 @@ export const parts = [
     title: "tDH1",
     category: "Terminator",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "ATAAAGCAATCTTGATGAGGATAATGATTTTTTTTTGAATATACATAAATACTACCGTTTTTCTGCTAGATTTTGTGATGACGTAAATAAGTACATATTACTTTTTAAGCCAAGACAAGATTAAGCATTAACTTTACCCTTTTCTTTCTAAGTTTCAATATTAGTTATCACTGTTTAAAAGTTATGGCGAGAACGTCGGCGGTTAAAATATATTACCCTGAACGA",
+    sequence:
+      "ATAAAGCAATCTTGATGAGGATAATGATTTTTTTTTGAATATACATAAATACTACCGTTTTTCTGCTAGATTTTGTGATGACGTAAATAAGTACATATTACTTTTTAAGCCAAGACAAGATTAAGCATTAACTTTACCCTTTTCTTTCTAAGTTTCAATATTAGTTATCACTGTTTAAAAGTTATGGCGAGAACGTCGGCGGTTAAAATATATTACCCTGAACGA",
   },
 
   {
@@ -110,7 +115,8 @@ export const parts = [
     title: "pRPL18B",
     category: "Promoter",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "AAGAGGATGTCCAATATTTTTTTTAAGGAATAAGGATACTTCAAGACTAGATTCCCCCCTGCATTCCCATCAGAACCGTAAACCTTGGCGCTTTCCTTGGGAAGTATTCAAGAAGTGCCTTGTCCGGTTTCTGTGGCTCACAAACCAGCGCGCCCGATATGGCTTTCTTTTCACTTATGAATGTACCAGTACGGGACAATTAGAACGCTCCTGTAACAATCTCTTTGCAAATGTGGGGTTACATTCTAACCATGTCACACTGCTGACGAAATTCAAAGTAAAAAAAAATGGGACCACGTCTTGAGAACGATAGATTTTCTTTATTTTACATTGAACAGTCGTTGTCTCAGCGCGCTTTATGTTTTCATTCATACTTCATATTATAAAATAACAAAAGAAGAATTTCATATTCACGCCCAAGAAATCAGGCTGCTTTCCAAATGCAATTGACACTTCATTAGCCATCACACAAAACTCTTTCTTGCTGGAGCTTCTTTTAAAAAAGACCTCAGTACACCAAACACGTTACCCGACCTCGTTATTTTACGACAACTATGATAAAATTCTGAAGAAAAAATAAAAAAATTTTCATACTTCTTGCTTTTATTTAAACCATTGAATGATTTCTTTTGAACAAAACTACCTGTTTCACCAAAGGAAATAGAAAGAAAAAATCAATTAGAAGAAAACAAAAAACAAA",
+    sequence:
+      "AAGAGGATGTCCAATATTTTTTTTAAGGAATAAGGATACTTCAAGACTAGATTCCCCCCTGCATTCCCATCAGAACCGTAAACCTTGGCGCTTTCCTTGGGAAGTATTCAAGAAGTGCCTTGTCCGGTTTCTGTGGCTCACAAACCAGCGCGCCCGATATGGCTTTCTTTTCACTTATGAATGTACCAGTACGGGACAATTAGAACGCTCCTGTAACAATCTCTTTGCAAATGTGGGGTTACATTCTAACCATGTCACACTGCTGACGAAATTCAAAGTAAAAAAAAATGGGACCACGTCTTGAGAACGATAGATTTTCTTTATTTTACATTGAACAGTCGTTGTCTCAGCGCGCTTTATGTTTTCATTCATACTTCATATTATAAAATAACAAAAGAAGAATTTCATATTCACGCCCAAGAAATCAGGCTGCTTTCCAAATGCAATTGACACTTCATTAGCCATCACACAAAACTCTTTCTTGCTGGAGCTTCTTTTAAAAAAGACCTCAGTACACCAAACACGTTACCCGACCTCGTTATTTTACGACAACTATGATAAAATTCTGAAGAAAAAATAAAAAAATTTTCATACTTCTTGCTTTTATTTAAACCATTGAATGATTTCTTTTGAACAAAACTACCTGTTTCACCAAAGGAAATAGAAAGAAAAAATCAATTAGAAGAAAACAAAAAACAAA",
   },
 
   {
@@ -118,7 +124,8 @@ export const parts = [
     title: "tENO2",
     category: "Terminator",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "AGTGCTTTTAACTAAGAATTATTAGTCTTTTCTGCTTATTTTTTCATCATAGTTTAGAACACTTTATATTAACGAATAGTTTATGAATCTATTTAGGTTTAAAAATTGATACAGTTTTATAAGTTACTTTTTCAAAGACTCGTGCTGTCTATTGCATAATGCACTGGAAGGGGAAAAAAAAGGTGCACACGCGTGGCTTTTTCTTGAATTTGCAGTTTGAAAAAT",
+    sequence:
+      "AGTGCTTTTAACTAAGAATTATTAGTCTTTTCTGCTTATTTTTTCATCATAGTTTAGAACACTTTATATTAACGAATAGTTTATGAATCTATTTAGGTTTAAAAATTGATACAGTTTTATAAGTTACTTTTTCAAAGACTCGTGCTGTCTATTGCATAATGCACTGGAAGGGGAAAAAAAAGGTGCACACGCGTGGCTTTTTCTTGAATTTGCAGTTTGAAAAAT",
   },
 
   {
@@ -126,7 +133,8 @@ export const parts = [
     title: "pSAC6",
     category: "Promoter",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "TTTGAGAATGACCTTCCACGAGCTAAATTGAAAGGGAAGAATTTATTAGTTGAACTCAAGAAAGAAGAGGATGACGTGGGAAATGGCATAGAATCCCTTACTAAATCGAACACTAAACTGAACTCCATGCTGGCGAACGAAGGTAAGATACACAAAGCTAGTTTCCAGAAAAGTGTAAAATTTAAACTACCTGATAATATAGTGACTGAAGAAACCGTGGAACTTAAAGAAATAAAGGACTTGCTACTACAAATGTTGAGATGACAGCGAGAGATTGAATCAAGATTATCCAATATCGAACTTCAACTCACGGAAATACCGAAACATAAGTAATCATATCCCTTCTCACATTTTTTACACAGGAAGTAAGCAAGTTATGTTATATTTCCGACACTATAATTAATTCTTAGCAGTTAAAGGTGCTTTGTCTATATTACATTTACATACAGCTTGAGTGATCCTGACCGGATATAGGGTCCTATTTTCTTACGTGAACGGCTTTTCTTCTTGTTCCCGATGGCCTTCATGTGAAAAAGCACTCCTCGGGAGGCGGAAAAATATCAAAAGTACGGGGCGAAGTTTATAATGAAGATTTATCGATATAAATTTTGGTTATTTCAGGAGAACAAGAAAGCTCTTTACACTAAAATTATCAGAGAAGAAGCTGATATATTAGCCCTAAGGAGTACACCAAAACACA",
+    sequence:
+      "TTTGAGAATGACCTTCCACGAGCTAAATTGAAAGGGAAGAATTTATTAGTTGAACTCAAGAAAGAAGAGGATGACGTGGGAAATGGCATAGAATCCCTTACTAAATCGAACACTAAACTGAACTCCATGCTGGCGAACGAAGGTAAGATACACAAAGCTAGTTTCCAGAAAAGTGTAAAATTTAAACTACCTGATAATATAGTGACTGAAGAAACCGTGGAACTTAAAGAAATAAAGGACTTGCTACTACAAATGTTGAGATGACAGCGAGAGATTGAATCAAGATTATCCAATATCGAACTTCAACTCACGGAAATACCGAAACATAAGTAATCATATCCCTTCTCACATTTTTTACACAGGAAGTAAGCAAGTTATGTTATATTTCCGACACTATAATTAATTCTTAGCAGTTAAAGGTGCTTTGTCTATATTACATTTACATACAGCTTGAGTGATCCTGACCGGATATAGGGTCCTATTTTCTTACGTGAACGGCTTTTCTTCTTGTTCCCGATGGCCTTCATGTGAAAAAGCACTCCTCGGGAGGCGGAAAAATATCAAAAGTACGGGGCGAAGTTTATAATGAAGATTTATCGATATAAATTTTGGTTATTTCAGGAGAACAAGAAAGCTCTTTACACTAAAATTATCAGAGAAGAAGCTGATATATTAGCCCTAAGGAGTACACCAAAACACA",
   },
 
   {
@@ -134,7 +142,8 @@ export const parts = [
     title: "tSSA1",
     category: "Terminator",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "GCCAATTGGTGCGGCAATTGATAATAACGAAAATGTCTTTTAATGATCTGGGTATAATGAGGAATTTTCCGAACGTTTTTACTTTATATATATATATACATGTAACATATATTCTATACGCTATAGAGAAAGGAAATTTTTCAATTAAAAAAAAATAGAGAAAGAGTTTCACTTCTTGATTATCGCTAACACTAATGGTTGAAGTACTGCTACTTTAATTTTAT",
+    sequence:
+      "GCCAATTGGTGCGGCAATTGATAATAACGAAAATGTCTTTTAATGATCTGGGTATAATGAGGAATTTTCCGAACGTTTTTACTTTATATATATATATACATGTAACATATATTCTATACGCTATAGAGAAAGGAAATTTTTCAATTAAAAAAAAATAGAGAAAGAGTTTCACTTCTTGATTATCGCTAACACTAATGGTTGAAGTACTGCTACTTTAATTTTAT",
   },
 ] as const;
 
@@ -142,172 +151,237 @@ export const protocols = [
   {
     id: "bacterial media preparation",
     title: "Solid LB Media",
-    description:
-      "Lysogeny broth, Luria-Bertani, medium is a common medium for growing bacteria, such as E. coli in liquid or on solid agar plates. This protocol is for 500 mL of LB media. Liquid LB broth is prepared by omitting the addition of agar.",
-    pdfUrl:
-      "https://drive.google.com/file/d/1h2QXrjaLsHs_T_iMlxWkv5DY6HmDkr_i/view?usp=drive_link",
+    description: (
+      <>
+        Lysogeny broth, Luria-Bertani, medium is a common medium for growing
+        bacteria, such as <i>E. coli</i> in liquid or on solid agar plates. This
+        protocol is for 500 mL of LB media. Liquid LB broth is prepared by
+        omitting the addition of agar.
+      </>
+    ),
+    pdfUrl: asset("/protocols/Solid LB Media Preparation.pdf"),
   },
-
   {
     id: "liquid ypd media preparation",
     title: "Liquid YPD Media",
     description:
-      "Liquid medium allows for rapid growth and easy measurement via OD, and YPD provides the nutrients necessary for auxotrophic strains to grow [7]. This protocol makes 1L of liquid yeast peptone dextrose medium (YPD) at 1% yeast extract, 2% peptone, and 2% dextrose concentration.",
-    pdfUrl:
-      "https://drive.google.com/file/d/1beYmB2Eo8dH0GvXuWddDosQ1Xai_6ZV5/view?usp=drive_link",
+      "Liquid medium allows for rapid growth and easy measurement via OD, and YPD provides the nutrients necessary for auxotrophic strains to grow. This protocol makes 1L of liquid yeast peptone dextrose medium (YPD) at 1% yeast extract, 2% peptone, and 2% dextrose concentration.",
+    pdfUrl: asset("/protocols/Liquid YPD Media Preparation.pdf"),
   },
-
   {
     id: "liquid sd media preparation",
     title: "Liquid SD Media",
-    description:
-      "Liquid medium will be used for the majority of the project, since it allows for rapid growth and easy measurement via OD. This media lacks uracil supplementation needed for untransformed auxotrophic BY4741 S. cerevisiae to survive. Makes 1L of  liquid synthetic defined / synthetic dextrose (SD) media.",
-    pdfUrl:
-      "https://drive.google.com/file/d/1SQpTKPf4LxsxSeZbb8f71lm2ldCCbqws/view?usp=drive_link",
+    description: (
+      <>
+        Liquid medium will be used for the majority of the project, since it
+        allows for rapid growth and easy measurement via OD. This media lacks
+        uracil supplementation needed for untransformed auxotrophic BY4741{" "}
+        <i>S. cerevisiae</i> to survive. Makes 1L of liquid synthetic defined /
+        synthetic dextrose (SD) media.
+      </>
+    ),
+    pdfUrl: asset("/protocols/Liquid SD Media Preparation.pdf"),
   },
-
   {
     id: "solid sd media preparation",
     title: "Solid SD Media",
     description:
       "Solid medium allows for the selection of individual colonies. This protocol makes about 20 plates from 500mL of liquid synthetic defined / synthetic dextrose (SD) media deficient in uracil.",
-    pdfUrl:
-      "https://drive.google.com/file/d/1T88fwgrm-K3WHZOYFJ_Ze5m8a5I43C5y/view?usp=drive_link",
+    pdfUrl: asset("/protocols/Solid SD Media Preparation.pdf"),
   },
-
   {
     id: "e coli culture",
-    title: "E. coli Culture",
-    description:
-      "This protocol describes the steps required for cultivation of Escherichia coli from frozen stock through growth on solid and liquid media. Protocols include isolation of single colonies, expansion in liquid culture, and using optical density as a growth metric. Proper aseptic technique and handling conditions are emphasized to maintain culture viability and prevent contamination. The resulting cultures can then be used for other experimental applications. Refer to Solid LB Media preparation to make plates and LB broth. Instructions for making glycerol stocks are also included.",
-    pdfUrl:
-      "https://drive.google.com/file/d/1DOOlHMRZc5ajqrkaL8DOp7h7Q8Q5uKE4/view?usp=drive_link",
+    title: (
+      <>
+        <i>E. coli</i> Culture
+      </>
+    ),
+    description: (
+      <>
+        This protocol describes the steps required for cultivation of{" "}
+        <i>Escherichia coli</i> from frozen stock through growth on solid and
+        liquid media. Protocols include isolation of single colonies, expansion
+        in liquid culture, and using optical density as a growth metric. Proper
+        aseptic technique and handling conditions are emphasized to maintain
+        culture viability and prevent contamination. The resulting cultures can
+        then be used for other experimental applications. Refer to Solid LB
+        Media preparation to make plates and LB broth. Instructions for making
+        glycerol stocks are also included.
+      </>
+    ),
+    pdfUrl: asset("/protocols/E. coli Culture.pdf"),
   },
-
   {
     id: "yeast culture",
-    title: "S. cerevisiae Culture",
-    description:
-      "This protocol outlines the general steps for preparing an S. cerevisiae culture for transformation or otherwise, measuring OD600 to create a growth curve, determining transformation conditions, in addition to creating glycerol stocks from the resulting cultures. This protocol also includes details for the culture of experimental media, though the instructions for the growth curve remain general.",
-    pdfUrl:
-      "https://drive.google.com/file/d/1pWjoXhwV2bkigoGjEv_PU-cT27J7iZgt/view?usp=drive_link",
+    title: (
+      <>
+        <i>S. cerevisiae</i> Culture
+      </>
+    ),
+    description: (
+      <>
+        This protocol outlines the general steps for preparing an{" "}
+        <i>S. cerevisiae</i> culture for transformation or otherwise, measuring
+        OD600 to create a growth curve, determining transformation conditions,
+        in addition to creating glycerol stocks from the resulting cultures.
+        This protocol also includes details for the culture of experimental
+        media, though the instructions for the growth curve remain general.
+      </>
+    ),
+    pdfUrl: asset("/protocols/S. cerevisiae Culture.pdf"),
   },
-
   {
     id: "e coli heat shock transformation",
-    title: "E. Coli Heat Shock Transformation",
-    description:
-      "Heat shock transformation is a common method used to introduce plasmid DNA into chemically competent E. coli cells. Competent cells are prepared to have permeable membranes that can take up DNA under specific conditions. During transformation, the plasmid DNA is mixed with competent cells and briefly exposed to a sudden increase in temperature (typically 42 °C). This heat shock creates a thermal imbalance across the cell membrane, driving the uptake of DNA into the cytoplasm. The cells are then allowed to recover in nutrient-rich media to express the antibiotic resistance gene carried by the plasmid before being plated on selective agar. ",
-    pdfUrl:
-      "https://drive.google.com/file/d/1tM5_SamalZEkuvp_4YdbHPH19UmjhWUY/view?usp=drive_link",
+    title: (
+      <>
+        <i>E. coli</i> Heat Shock Transformation
+      </>
+    ),
+    description: (
+      <>
+        Heat shock transformation is a common method used to introduce plasmid
+        DNA into chemically competent <i>E. coli</i> cells. Competent cells are
+        prepared to have permeable membranes that can take up DNA under specific
+        conditions. During transformation, the plasmid DNA is mixed with
+        competent cells and briefly exposed to a sudden increase in temperature
+        (typically 42 °C). This heat shock creates a thermal imbalance across
+        the cell membrane, driving the uptake of DNA into the cytoplasm. The
+        cells are then allowed to recover in nutrient-rich media to express the
+        antibiotic resistance gene carried by the plasmid before being plated on
+        selective agar.
+      </>
+    ),
+    pdfUrl: asset("/protocols/E. coli Heat Shock Transformation.pdf"),
   },
-
   {
     id: "lithium acetate transformation",
-    title: "Lithium Acetate Transformation of Saccharomyces cerevisiae",
-    description:
-      "This protocol describes the rapid transformation of Saccharomyces cerevisiae using the lithium acetate/single-stranded carrier DNA/polyethylene glycol (LiAc/SS-DNA/PEG) method. The goal is to introduce plasmid DNA into yeast cells and recover transformants on selective medium. In this method, yeast cells grown on a YPAD agar plate are mixed with lithium acetate, PEG 3350, boiled salmon sperm carrier DNA, and plasmid DNA, then incubated at 42ºC before plating. This rapid protocol is suitable when only a small number of transformants are required. ",
-    pdfUrl:
-      "https://drive.google.com/file/d/1qP4ebBLIO5lSIxeAYy1P9sGmmQgugHwx/view?usp=drive_link",
+    title: (
+      <>
+        Lithium Acetate Transformation of <i>Saccharomyces cerevisiae</i>
+      </>
+    ),
+    description: (
+      <>
+        This protocol describes the rapid transformation of{" "}
+        <i>Saccharomyces cerevisiae</i> using the lithium
+        acetate/single-stranded carrier DNA/polyethylene glycol
+        (LiAc/SS-DNA/PEG) method. The goal is to introduce plasmid DNA into
+        yeast cells and recover transformants on selective medium. In this
+        method, yeast cells grown on a YPAD agar plate are mixed with lithium
+        acetate, PEG 3350, boiled salmon sperm carrier DNA, and plasmid DNA,
+        then incubated at 42ºC before plating. This rapid protocol is suitable
+        when only a small number of transformants are required.
+      </>
+    ),
+    pdfUrl: asset("/protocols/Lithium Acetate Transformation Protocol.pdf"),
   },
-
   {
     id: "optical density monitoring",
     title: "Optical Density Monitoring",
-    description:
-      "This protocol describes the steps to preparing and monitoring a liquid culture of E. coli. In genetic engineering, bacterial chassis are critical players due to their well-explored methods of genetic manipulation (i.e. DNA transformation). By preparing and maintaining healthy E. coli cultures, this method supports the groundwork. ",
-    pdfUrl:
-      "https://drive.google.com/file/d/17FEnQ2K3TFSngojJaUV8tsy5EasUD6qv/view?usp=drive_link",
+    description: (
+      <>
+        This protocol describes the steps to preparing and monitoring a liquid
+        culture of <i>E. coli</i>. In genetic engineering, bacterial chassis are
+        critical players due to their well-explored methods of genetic
+        manipulation (i.e. DNA transformation). By preparing and maintaining
+        healthy <i>E. coli</i> cultures, this method supports the groundwork.
+      </>
+    ),
+    pdfUrl: asset("/protocols/Optical Density Monitoring.pdf"),
   },
-
   {
     id: "nile red staining",
     title: "Quantification of Neutral Lipids Using Nile Red Staining",
     description:
       "Nile Red, a lipophilic fluorescent dye, selectively stains neutral lipids, allowing lipid content to be assessed through fluorescence intensity. Using a 96 well assay, yeast cells are stained with Nile Red and fluorescence will be measured at excitation 485 nm and emission 535 nm. Yeast cells can also be imaged using fluorescence microscopy.",
-    pdfUrl:
-      "https://drive.google.com/file/d/1bMjLB9zm9DfORwRwBCBcBgIhULwvRyjb/view?usp=drive_link",
+    pdfUrl: asset("/protocols/Nile Red.pdf"),
   },
-
   {
     id: "rt-pcr",
     title: "One Step Reverse Transcription Polymerase Chain Reaction (RT-PCR)",
     description:
       "This procedure converts RNA into cDNA, which is then amplified using PCR to produce millions of copies of the target sequence.",
-    pdfUrl:
-      "https://drive.google.com/file/d/1lSmp1S5eUpgyupmMsPH_wXolnY_FxwrB/view?usp=drive_link",
+    pdfUrl: asset("/protocols/RT PCR.pdf"),
   },
-
   {
     id: "e coli miniprep",
-    title: "E. Coli Plasmid Miniprep Protocol using Centrifugation",
+    title: (
+      <>
+        <i>E. coli</i> Plasmid Miniprep Protocol using Centrifugation
+      </>
+    ),
     description:
       "This protocol utilizes the Monarch Plasmid DNA Kit (NEB #T1110) kit, which allows for a reliable and quick method to purify up to 20 μg of high quality plasmid DNA and allows for 50 preps. This kit uses standard steps such as cell resuspension, alkaline lysis, and neutralization, and also includes color indicators at certain stages to help easily monitor when each step is complete.",
-    pdfUrl:
-      "https://drive.google.com/file/d/1TMFgVnK_MbmYw9aP_zRb-JYrbGSqzYPd/view?usp=drive_link",
+    pdfUrl: asset("/protocols/E. coli Miniprep.pdf"),
   },
-
   {
     id: "zymolyase digestion",
     title: "Yeast Miniprep: Zymolyase Digestion",
-    description:
-      "Model organism Saccharomyces cerevisiae has a thick chitin cell wall, preventing simple extraction of the plasmid. This miniprep breaks down the Chitin walls, and extracts 2 µ-based plasmids (type of plasmid high in copy numbers), yielding approximately 0.01-0.3ng of plasmid per 1.5mL of overnight culture. The plasmid DNA is recovered in a TE buffer, and is able to be used in E.coli transformations, western blotting, PCR, etc. ",
-    pdfUrl:
-      "https://drive.google.com/file/d/130uiFHpa2yXoy4XjW3DdlGQ_tjnD2yZA/view?usp=drive_link",
+    description: (
+      <>
+        Model organism <i>Saccharomyces cerevisiae</i> has a thick chitin cell
+        wall, preventing simple extraction of the plasmid. This miniprep breaks
+        down the Chitin walls, and extracts 2 µ-based plasmids (type of plasmid
+        high in copy numbers), yielding approximately 0.01-0.3ng of plasmid per
+        1.5mL of overnight culture. The plasmid DNA is recovered in a TE buffer,
+        and is able to be used in <i>E. coli</i> transformations, western
+        blotting, PCR, etc.
+      </>
+    ),
+    pdfUrl: asset("/protocols/Yeast Miniprep_ Zymolase Digestion Protocol.pdf"),
   },
-
   {
     id: "autoclaving",
     title: "Autoclaving",
     description:
-      "Autoclaving uses saturated steam under pressure (typically 121 °C, 15 psi) to sterilize media, buffers, glassware, and biohazardous waste. This protocol covers routine sterilization of laboratory items in a gravity-displacement steam autoclave, including pre-cycle preparation, cycle selection, and safe unloading. ",
-    pdfUrl:
-      "https://drive.google.com/file/d/13OQse2CqK_182cpgvb6K4K_nZPKABGGm/view?usp=drive_link",
+      "Autoclaving uses saturated steam under pressure (typically 121 °C, 15 psi) to sterilize media, buffers, glassware, and biohazardous waste. This protocol covers routine sterilization of laboratory items in a gravity-displacement steam autoclave, including pre-cycle preparation, cycle selection, and safe unloading.",
+    pdfUrl: asset("/protocols/Autoclaving Protocol.pdf"),
   },
-
   {
     id: "gel electrophoresis",
     title: "Gel Electrophoresis",
     description:
       "This protocol outlines the proper setup and use of agarose gel electrophoresis to separate DNA fragments based on molecular weight under an electrical current. By running a DNA ladder alongside samples, the size of DNA fragments can be estimated and compared. A 1% agarose gel is used as a standard condition for effective separation. Gel electrophoresis is commonly applied to verify PCR products, confirm plasmid inserts, assess DNA digestion, and roughly estimate DNA concentration based on band intensity.",
-    pdfUrl:
-      "https://drive.google.com/file/d/1x5cbI13WhfrmEY3YzbcQ-c6LpHHVKaOt/view?usp=drive_link",
+    pdfUrl: asset("/protocols/Gel Electrophoresis.pdf"),
   },
-
   {
     id: "pcr",
     title: "PCR",
     description:
       "This protocol outlines the use of polymerase chain reaction (PCR) with Q5 high-fidelity polymerase and a thermocycler to amplify DNA. PCR is a fundamental technique in molecular cloning, enabling the exponential amplification of specific DNA sequences for downstream applications such as cloning and analysis. The use of Q5 polymerase ensures high accuracy and low error rates during DNA replication.",
-    pdfUrl:
-      "https://drive.google.com/file/d/1unGszfd7Fd6Fj84wGQTDaY0lKunbVlQm/view?usp=drive_link",
+    pdfUrl: asset("/protocols/PCR.pdf"),
   },
-
   {
     id: "golden gate",
     title: "YTK Golden Gate Assembly",
-    description:
-      "The YTK toolkit is a characterized collection of standardized genetic parts designed for modular, multi-part and hierarchical assembly of constructs for expression in S. cerevisiae. Promoter, coding sequence and terminator parts are assembled into transcription units through a L1 assembly reaction. Backbone used for this reaction may either be pYTK096, pWS064 and pWS065 (pre-assembled integration vectors targeting URA3, LEU2 and HO loci respectively) or within intermediary vectors. These intermediary vectors can be used for multi-cassette assembly via L2 assembly reaction.",
-    pdfUrl:
-      "https://drive.google.com/file/d/1syc3sUOAepYdG345HTRCLaUMc5Yln4Da/view?usp=drive_link",
+    description: (
+      <>
+        The YTK toolkit is a characterized collection of standardized genetic
+        parts designed for modular, multi-part and hierarchical assembly of
+        constructs for expression in <i>S. cerevisiae</i>. Promoter, coding
+        sequence and terminator parts are assembled into transcription units
+        through a L1 assembly reaction. Backbone used for this reaction may
+        either be pYTK096, pWS064 and pWS065 (pre-assembled integration vectors
+        targeting URA3, LEU2 and HO loci respectively) or within intermediary
+        vectors. These intermediary vectors can be used for multi-cassette
+        assembly via L2 assembly reaction.
+      </>
+    ),
+    pdfUrl: asset("/protocols/YTK Golden Gate Assembly.pdf"),
   },
-
   {
     id: "re digest and ligation",
     title: "Restriction Enzyme Digest and Ligation",
     description:
       "This protocol outlines the digestion and ligation of a DNA insert into a plasmid. It begins by cutting both the source DNA and the plasmid with the same restriction enzymes, generating complementary ends that allow the fragments to align. The insert is then joined to the plasmid through a ligation reaction, which is facilitated using T4 DNA Ligase.",
-    pdfUrl:
-      "https://drive.google.com/file/d/1V-AnhjY4KntD43zlFkTVVismR50QnWcI/view?usp=drive_link",
+    pdfUrl: asset("/protocols/Restriction Enzyme Digest and Ligation.pdf"),
   },
-
   {
     id: "ep-pcr",
     title: "Error Prone PCR (EP-PCR)",
     description:
       "Introduces random mutations to genes (or gene segment) of interest, creating a library of mutated DNA. Screening of this mutated DNA library can help determine whether random mutations at certain areas changed function (introduction of new function, deletion of function, or alteration of function) of the gene. This can also be used as an vitro technique to mimic natural mutation but with more control, and at a faster pace.",
-    pdfUrl:
-      "https://drive.google.com/file/d/1Y6x6EMCoEVmEY9QMHsVeEmMqgW9n71nH/view?usp=drive_link",
+    pdfUrl: asset("/protocols/Error Prone PCR (EP-PCR).pdf"),
   },
 ] as const;
 
@@ -366,8 +440,8 @@ function ProtocolCard({
   description,
   pdfUrl,
 }: {
-  title: string;
-  description: string;
+  title: ReactNode;
+  description: ReactNode;
   pdfUrl: string;
 }) {
   return (
@@ -399,12 +473,12 @@ export default function DocumentationPage() {
         <WikiSection id="parts" title="Parts">
           <div className="space-y-4">
             <p className="text-sm text-body">
-              All sequences obtained are native to S. cerevisiae with the
+              All sequences obtained are native to <i>S. cerevisiae</i> with the
               exceptions of the RNAt which was a novel concept but was optimized
               for the yeast. The genes were domesticated using a codon usage
-              table to optimize amino acid sequences that were the most used by
-              S. cerevisiae and remove internal restriction enzyme sites. This
-              way, the final protein coded by the yeast wasn’t changed but
+              table to optimize amino acid sequences that were the most used by{" "}
+              <i>S. cerevisiae</i> and remove internal restriction enzyme sites.
+              This way, the final protein coded by the yeast wasn’t changed but
               allowed to perform Golden Gate assemblies and other
               enzyme-dependent reactions. The CDS genes were ordered from Twist
               Biosciences as dsDNA with the enzyme recognition sites and
