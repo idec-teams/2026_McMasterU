@@ -77,7 +77,7 @@ export const parts = [
     title: "pCCW12",
     category: "Promoter",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "",
+    sequence: "CACCCATGAACCACACGGTTAGTCCAAAAGGGGCAGTTCAGATTCCAGATGCGGGAATTAGCTTGCTGCCACCCTCACCTCACTAACGCTGCGGTGTGCGGATACTTCATGCTATTTATAGACGCGCGTGTCGGAATCAGCACGCGCAAGAACCAAATGGGAAAATCGGAATGGGTCCAGAACTGCTTTGAGTGCTGGCTATTGGCGTCTGATTTCCGTTTTGGGAATCCTTTGCCGCGCGCCCCTCTCAAAACTCCGCACAAGTCCCAGAAAGCGGGAAAGAAATAAAACGCCACCAAATAAAATAAAATAAAAGCCAATCCTCGAAGCGTGGGTGGTAGGCCCTGGATTATCCCGTACAAGTATTTCTCAGGAGTAAAAAAACCGTTTGTTTTGGAATTTCCCATTTCGCGGCCACCTACGCCGCTATCTTTGCAACAACTATCTGCGATAACTCAGCAAATTTTGCATATTCGTGTTGCAGTATTGCGATAATGGGAGTCTTACTTCCAACATAACGGCAGAAAGAAATGTGAGAAAATTTTGCATCCTTTGCCTCCGTTCAAGTATATAAAGTCGGCATGCTTGATAATCTTTCTTTCCATCCTACATTGTTCTAATTATTCTTATTCTCCTTTATTCTTTCCTAACATACCAAGAAATTAATCTTCTGTCATTCGCTTAAACACTATATCAATAA",
   },
 
   {
@@ -85,7 +85,7 @@ export const parts = [
     title: "tENO1",
     category: "Terminator",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "",
+    sequence: "AGCTTTTGATTAAGCCTTCTAGTCCAAAAAACACGTTTTTTTGTCATTTATTTCATTTTCTTAGAATAGTTTAGTTTATTCATTTTATAGTCACGAATGTTTTATGATTCTATATAGGGTTGCAAACAAGCATTTTTCATTTTATGTTAAAACAATTTCAGGTTTACCTTTTATTCTGCTTGTGGTGACGCGTGTATCCGCCCGCTCTTTTGGTCACCCATGTAT",
   },
 
   {
@@ -93,7 +93,7 @@ export const parts = [
     title: "pTDH3",
     category: "Promoter",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "",
+    sequence: "TCATTATCAATACTCGCCATTTCAAAGAATACGTAAATAATTAATAGTAGTGATTTTCCTAACTTTATTTAGTCAAAAAATTAGCCTTTTAATTCTGCTGTAACCCGTACATGCCCAAAATAGGGGGCGGGTTACACAGAATATATAACATCGTAGGTGTCTGGGTGAACAGTTTATTCCTGGCATCCACTAAATATAATGGAGCCCGCTTTTTAAGCTGGCATCCAGAAAAAAAAAGAATCCCAGCACCAAAATATTGTTTTCTTCACCAACCATCAGTTCATAGGTCCATTCTCTTAGCGCAACTACAGAGAACAGGGGCACAAACAGGCAAAAAACGGGCACAACCTCAATGGAGTGATGCAACCTGCCTGGAGTAAATGATGACACAAGGCAATTGACCCACGCATGTATCTATCTCATTTTCTTACACCTTCTATTACCTTCTGCTCTCTCTGATTTGGAAAAAGCTGAAAAAAAAGGTTGAAACCAGTTCCCTGAAATTATTCCCCTACTTGACTAATAAGTATATAAAGACGGTAGGTATTGATTGTAATTCTGTAAATCTATTTCTTAAACTTCTTAAATTCTACTTTTATAGTTAGTCTTTTTTTTAGTTTTAAAACACCAGAACTTAGTTTCGA",
   },
 
   {
@@ -101,7 +101,7 @@ export const parts = [
     title: "tDH1",
     category: "Terminator",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "",
+    sequence: "ATAAAGCAATCTTGATGAGGATAATGATTTTTTTTTGAATATACATAAATACTACCGTTTTTCTGCTAGATTTTGTGATGACGTAAATAAGTACATATTACTTTTTAAGCCAAGACAAGATTAAGCATTAACTTTACCCTTTTCTTTCTAAGTTTCAATATTAGTTATCACTGTTTAAAAGTTATGGCGAGAACGTCGGCGGTTAAAATATATTACCCTGAACGA",
   },
 
   {
@@ -109,7 +109,7 @@ export const parts = [
     title: "pRPL18B",
     category: "Promoter",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "",
+    sequence: "AAGAGGATGTCCAATATTTTTTTTAAGGAATAAGGATACTTCAAGACTAGATTCCCCCCTGCATTCCCATCAGAACCGTAAACCTTGGCGCTTTCCTTGGGAAGTATTCAAGAAGTGCCTTGTCCGGTTTCTGTGGCTCACAAACCAGCGCGCCCGATATGGCTTTCTTTTCACTTATGAATGTACCAGTACGGGACAATTAGAACGCTCCTGTAACAATCTCTTTGCAAATGTGGGGTTACATTCTAACCATGTCACACTGCTGACGAAATTCAAAGTAAAAAAAAATGGGACCACGTCTTGAGAACGATAGATTTTCTTTATTTTACATTGAACAGTCGTTGTCTCAGCGCGCTTTATGTTTTCATTCATACTTCATATTATAAAATAACAAAAGAAGAATTTCATATTCACGCCCAAGAAATCAGGCTGCTTTCCAAATGCAATTGACACTTCATTAGCCATCACACAAAACTCTTTCTTGCTGGAGCTTCTTTTAAAAAAGACCTCAGTACACCAAACACGTTACCCGACCTCGTTATTTTACGACAACTATGATAAAATTCTGAAGAAAAAATAAAAAAATTTTCATACTTCTTGCTTTTATTTAAACCATTGAATGATTTCTTTTGAACAAAACTACCTGTTTCACCAAAGGAAATAGAAAGAAAAAATCAATTAGAAGAAAACAAAAAACAAA",
   },
 
   {
@@ -117,7 +117,7 @@ export const parts = [
     title: "tENO2",
     category: "Terminator",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "",
+    sequence: "AGTGCTTTTAACTAAGAATTATTAGTCTTTTCTGCTTATTTTTTCATCATAGTTTAGAACACTTTATATTAACGAATAGTTTATGAATCTATTTAGGTTTAAAAATTGATACAGTTTTATAAGTTACTTTTTCAAAGACTCGTGCTGTCTATTGCATAATGCACTGGAAGGGGAAAAAAAAGGTGCACACGCGTGGCTTTTTCTTGAATTTGCAGTTTGAAAAAT",
   },
 
   {
@@ -125,7 +125,7 @@ export const parts = [
     title: "pSAC6",
     category: "Promoter",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "",
+    sequence: "TTTGAGAATGACCTTCCACGAGCTAAATTGAAAGGGAAGAATTTATTAGTTGAACTCAAGAAAGAAGAGGATGACGTGGGAAATGGCATAGAATCCCTTACTAAATCGAACACTAAACTGAACTCCATGCTGGCGAACGAAGGTAAGATACACAAAGCTAGTTTCCAGAAAAGTGTAAAATTTAAACTACCTGATAATATAGTGACTGAAGAAACCGTGGAACTTAAAGAAATAAAGGACTTGCTACTACAAATGTTGAGATGACAGCGAGAGATTGAATCAAGATTATCCAATATCGAACTTCAACTCACGGAAATACCGAAACATAAGTAATCATATCCCTTCTCACATTTTTTACACAGGAAGTAAGCAAGTTATGTTATATTTCCGACACTATAATTAATTCTTAGCAGTTAAAGGTGCTTTGTCTATATTACATTTACATACAGCTTGAGTGATCCTGACCGGATATAGGGTCCTATTTTCTTACGTGAACGGCTTTTCTTCTTGTTCCCGATGGCCTTCATGTGAAAAAGCACTCCTCGGGAGGCGGAAAAATATCAAAAGTACGGGGCGAAGTTTATAATGAAGATTTATCGATATAAATTTTGGTTATTTCAGGAGAACAAGAAAGCTCTTTACACTAAAATTATCAGAGAAGAAGCTGATATATTAGCCCTAAGGAGTACACCAAAACACA",
   },
 
   {
@@ -133,7 +133,7 @@ export const parts = [
     title: "tSSA1",
     category: "Terminator",
     source: { label: "YTK, iGEM distribution kit" },
-    sequence: "",
+    sequence: "GCCAATTGGTGCGGCAATTGATAATAACGAAAATGTCTTTTAATGATCTGGGTATAATGAGGAATTTTCCGAACGTTTTTACTTTATATATATATATACATGTAACATATATTCTATACGCTATAGAGAAAGGAAATTTTTCAATTAAAAAAAAATAGAGAAAGAGTTTCACTTCTTGATTATCGCTAACACTAATGGTTGAAGTACTGCTACTTTAATTTTAT",
   },
 ] as const;
 
@@ -417,90 +417,8 @@ export default function DocumentationPage() {
         </WikiSection>
 
         <WikiSection id="constructs" title="Plasmid Constructs">
-          <p>
-            Plasmid construction and selection are essential to consider in the
-            design process of optimizing the lipid synthesis pathway of
-            Saccharomyces cerevisiae. When selecting a suitable plasmid, several
-            considerations were kept in mind, such as S. cerevisiae and E. coli
-            compatibility, copy number, and plasmid types.
-          </p>
-          <p>
-            To ensure our optimized pathway is compatible in both S. cerevisiae
-            and E. coli, we selected pRS shuttle vectors, which were
-            well-validated. The purpose of utilizing a shuttle vector was to
-            allow for replication between multiple host organisms. Additionally,
-            the origin of replication needed to be compatible with E. coli.
-            However, a more complex replication system within S. cerevisiae
-            needed to be considered, such as Autonomously Replicating Systems
-            (ARS) causing independent replication, and centromere (CEN)
-            sequences allowing for low-copy chromosome division. These factors
-            of yeast replication are species-dependent, and were taken into
-            consideration when selecting the plasmid.
-          </p>
-          <p>
-            Moreover, selectable marker sequences are needed to be compatible in
-            both host organisms, especially when working with both bacteria and
-            eukaryotes. For E. Coli, the ampicillin resistance gene was
-            incorporated into the plasmid. For auxotrophic selection within S.
-            cerevisiae, a URA3 marker was integrated into the plasmid construct.
-          </p>
-          <p>
-            To integrate our plasmid construct into the host organisms,
-            homologous recombination was initially considered. However, nuclear
-            genome integration was opted for instead to avoid potential
-            competition between multiple plasmids for the same gene inserts.
-            Ultimately, the centromeric pAN316a was selected due to its
-            stability in regards to transformation, as well as its relatively
-            inexpensive price. Although the pRS shuttle vectors were initially
-            what was in mind, the pAN316a was chosen as it was sourced locally
-            from a professor, contained similar characteristics to the pRS
-            series, and shared the same restriction enzyme orientation. Sharing
-            the same orientation, in this regard, was especially important as it
-            ensures the predicted direction of expression and further
-            verification steps for cloning.
-          </p>
-          <p>
-            Parts from the open yeast collection (OYC) are constructed into a
-            Level 1 transcription unit to be inserted into the plasmid vector.
-            This transcription unit features the genes specific to optimizing
-            the lipid synthesis pathway. However, all promoters sourced from the
-            OYC contained 5’ untranslated regions (UTRs), posing an issue when
-            later assembled alongside the RNAt, which contains an innate 5’ UTR
-            of its own. Having two 5’ UTRs would cause interference between
-            ribosomal binding sites, and risks improper translation efficiency.
-            To combat this problem, promoters were ordered lacking their
-            respective 5’ UTRs, such that the one of the RNAt remains the only
-            functioning ribosomal binding site (RBS).
-          </p>
-          <p>
-            Furthermore, the removal of the native 5’ UTRs of the OYC promoters
-            required the selection of a core promoter to maintain the necessary
-            host transcriptional machinery. This core promoter sequence,
-            condensed to 69 base pairs, optimized transcriptional activity while
-            avoiding downstream translational interferences by lacking a native
-            5’ UTR.
-          </p>
           <h2 className="mb-4 text-xl font-medium text-foreground">Level 0</h2>
-          <p>
-            The Level 0 parts consist of compatible sequences flanked by BsmBI
-            and digested to form a Level 1 transcription unit. These sequences
-            consist of the promoter, 5’ UTR, CDS, and 3’UTR/terminator.
-          </p>
           <h2 className="mb-4 text-xl font-medium text-foreground">Level 1</h2>
-          <p>
-            The Level 1 parts are joined together by flanking each end with BsaI
-            overhangs, then digesting to form a Level 2 transcription unit. The
-            Level 1 parts differ by their own unique promoter-terminator pair
-            and coding sequences (CDS). As suggested to us by Dr. Cinzia Klemm,
-            incorporating unique promoter-terminator pairs within each part
-            allows for the prevention of accidental homologous recombination.
-            Homologous recombination can occur between repetitive sequences in
-            the yeast, and risks unwanted deletions in the final construct. The
-            CDS of each part features ACC1, DGA1, OLE1, TPS1, and the RNAt
-            within the 5’ UTR of the BGL2. The RNAt is embedded within the 5’
-            UTR of the BGL2 to ensure its lysis-facilitating properties
-            selectively occur at RNAt-specific temperatures.
-          </p>
           <figure className="flex flex-col items-center gap-2">
             <Image
               src="/documentation/rnat bgl2 plasmid.png"
@@ -515,13 +433,6 @@ export default function DocumentationPage() {
             </figcaption>
           </figure>
           <h2 className="mb-4 text-xl font-medium text-foreground">Level 2</h2>
-          <p>
-            The Level 2 transcription unit is flanked by BsmBI sites and
-            integrated into the plasmid vector, pAN316a, through digestion and
-            ligation with EcoRI and SpeI enzymes. The final construct is
-            composed of the Level 1 transcription units for ACC1, DGA1, OLE1,
-            TPS1, and BGL2, with the RNAt in the 5' UTR of BGL2, as shown below.
-          </p>
           <figure className="flex flex-col items-center gap-2">
             <Image
               src="/documentation/pAN316a plasmid.png"
