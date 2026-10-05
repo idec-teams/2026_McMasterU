@@ -25,7 +25,21 @@
       "Bash(grep -rnoE \"\\(src|href|poster\\)=[{]?[\\\\\"'\\\\`]/[a-zA-Z_][^\\\\\"'\\\\`]*\\\\.\\(png|jpe?g|gif|webp|svg|mp4|webm|ico|pdf\\)\" src)",
       "Bash(grep -rnoE \"[\\\\\"'\\\\`]/\\(team|banners|logo|videos?|images?|img\\)/[^\\\\\"'\\\\`]*\" src)",
       "Bash(NEXT_PUBLIC_BASE_PATH=/mcmasteru-idec-2026-wiki pnpm build)",
-      "Bash(pnpm deploy:pages --dry-run --repo mcmasteru-idec-2026-wiki)"
+      "Bash(pnpm deploy:pages --dry-run --repo mcmasteru-idec-2026-wiki)",
+      "Bash(curl -s https://api.github.com/users/McMasterSynBio)",
+      "Bash(python3 -c \"import json,sys;d=json.load\\(sys.stdin\\);print\\('login:',d.get\\('login'\\),'| type:',d.get\\('type'\\),'| message:',d.get\\('message'\\)\\)\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://api.github.com/repos/McMasterSynBio/mcmasteru-idec-2026-wiki)",
+      "Bash(mdfind -name \"Wiki Writing Combined\")",
+      "Read(//Users/ozzy/Downloads/**)",
+      "Bash(python3 -c \"import fitz\")",
+      "Bash(python3 -c \"import pypdf;print\\('pypdf',pypdf.__version__\\)\")",
+      "Bash(rm -rf pdfimg)",
+      "Bash(mkdir pdfimg *)",
+      "Read(//Users/ozzy/Library/Caches/ms-playwright/**)",
+      "Bash(mdfind \"kMDItemCFBundleIdentifier == 'com.google.Chrome'\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/outreach/)",
+      "Bash(/private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/shot.sh http://localhost:3000/outreach/ /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/outreach_full.png 1440 11000)",
+      "WebFetch(domain:idec.io)"
     ]
   }
 }
