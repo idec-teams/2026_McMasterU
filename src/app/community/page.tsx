@@ -17,24 +17,39 @@ function DetailBlock({
   description,
   outcome,
   image,
+  image2,
+  video,
 }: {
   id: string;
   label: string;
   description: React.ReactNode;
   outcome: React.ReactNode;
   image: string;
+  image2?: string;
+  video?: string;
 }) {
   return (
     <div id={id} className="space-y-3 border border-border bg-card/80 p-4">
-      <div className="flex h-[280px] items-center justify-center">
+      <div className="flex h-[280px] items-center justify-center gap-4">
         {image ? (
-          <div className="inline-block border border-border bg-surface/30 p-2">
-            <img
-              src={asset(image)}
-              alt={label}
-              className="block h-[260px] w-auto object-cover object-top"
-            />
-          </div>
+          <>
+            <div className="inline-block border border-border bg-surface/30 p-2">
+              <img
+                src={asset(image)}
+                alt={label}
+                className="block h-[260px] w-auto object-cover object-top"
+              />
+            </div>
+            {image2 ? (
+              <div className="inline-block border border-border bg-surface/30 p-2">
+                <img
+                  src={image2}
+                  alt={`${label} meeting`}
+                  className="block h-[260px] w-auto object-cover object-top"
+                />
+              </div>
+            ) : null}
+          </>
         ) : (
           <span className="absolute bottom-4 left-4 text-sm text-body">
             [image]
@@ -44,16 +59,24 @@ function DetailBlock({
       <p className="text-sm font-medium uppercase tracking-[0.16em] text-body">
         {label}
       </p>
-      <div className="space-y-2 text-sm leading-relaxed text-body">
-        <div>
-          <span className="font-medium text-foreground">Inquire:</span>{" "}
-          {description}
-        </div>
-        <div>
-          <span className="font-medium text-foreground">Reach Out:</span>{" "}
-          {outcome}
-        </div>
+      <div className="space-y-3 text-sm leading-relaxed text-body">
+        {description}
+        {outcome}
       </div>
+      {video ? (
+        <div className="pt-8">
+          <div className="aspect-video w-full overflow-hidden border border-border bg-black">
+            <video
+              controls
+              preload="metadata"
+              className="h-full w-full object-contain"
+            >
+              <source src={video} type="video/mp4" />
+              Your browser doesn't support embedded video.
+            </video>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -206,13 +229,25 @@ export default function CommunityPage() {
           title="INQUIRE: From Lab Bench to Dinner Table – Who Are We Feeding?"
         >
           <div className="space-y-5">
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-body">
-              [overview]
+            <p>
+              As MEYCell was being characterized, the team brainstormed people
+              and groups who could be impacted by any aspect of the project. The
+              goal was to connect with as many experts, communities, industries,
+              and establishments as possible; this exercise gave us an
+              expectations baseline of our possibilities within the city of
+              Hamilton and the global sphere. From the very first iteration of
+              MEYCell, Community Outreach was integrated into the project’s
+              design to ensure every decision made behind the scenes was
+              intentional and good for those we aimed to serve.
             </p>
             <figure>
-              <div className="min-h-[180px] border border-border bg-card/80"></div>
+              <img
+                src="/hp comms/stakeholder analysis.png"
+                alt="Stakeholder analysis"
+                className="mx-auto block w-full border border-border"
+              />
               <figcaption className="mt-2 text-sm text-body">
-                Stakeholder analysis image
+                First draft of MEYCell’s Stakeholder map (March 2026).
               </figcaption>
             </figure>
           </div>
@@ -220,15 +255,176 @@ export default function CommunityPage() {
 
         <WikiSection
           id="experts"
-          title="REACH OUT: ___"
-          subsections={[
-            { id: "academia", title: "Academia" },
-            { id: "industry", title: "Industry" },
-          ]}
+          title="REACH OUT: Our Recipe For Collaboration"
         >
-          <div id="academia" className="space-y-4">
-            <h2 className="text-lg font-medium text-foreground">Academia</h2>
+          <div id="academia and industry" className="space-y-4">
             <div className="space-y-4">
+              <DetailBlock
+                id="james_vanderberg"
+                label="James VanderBerg"
+                description={
+                  <div className="space-y-3">
+                    <p>
+                      A central component of our project is understanding and
+                      incorporating the needs of those most affected by
+                      food-related challenges in Hamilton. In our region,
+                      community members’ livelihoods are affected by the rising
+                      costs of groceries, barriers to employment, and housing
+                      insecurity, all related to food affordability or access.
+                      To better understand these issues, we met with{" "}
+                      <b>
+                        James VanderBerg, the Fund Development Officer & Interim
+                        Executive Director of the Welcome Inn Community Centre
+                      </b>
+                      . In our meeting, we discussed community members’
+                      hesitations on plant-based meat alternatives, ways to
+                      support those most affected, and methods for improving the
+                      implementation process. Through this, we identified why
+                      community members may be reluctant to introduce
+                      plant-based meat alternatives into their diets and
+                      explored ways to reduce these concerns.
+                    </p>
+                  </div>
+                }
+                outcome={
+                  <div className="space-y-3">
+                    <p>
+                      Meeting with James gave us a clear picture of food-related
+                      challenges in our community. We learned that 47% of
+                      newcomers to Hamilton depend on the Welcome Inn foodbank.
+                      He described these challenges as a community-based problem
+                      and not limited to cultural, faith, or ethnic hesitancies.
+                      He added that many newcomers to Hamilton are vegetarian,
+                      and their food preferences are often not available at food
+                      banks, as many prioritize meat-based proteins. James
+                      discussed that this creates obstacles for food banks in
+                      managing the cost-effectiveness of supplies while staying
+                      attuned to community members' needs.
+                    </p>
+                    <p>
+                      The issues surrounding food affordability and insecurity
+                      are extensive and affect many community members. He
+                      described the key challenges around food affordability as
+                      being the cost of groceries and housing issues. Moreover,
+                      the costs of groceries are not comparable to what is
+                      earned through income. Recipients of the Ontario
+                      Disability Support Program (ODSP) also face barriers and
+                      cannot live comfortably.
+                    </p>
+                    <p>
+                      When asked who he thinks may have a harder time adjusting
+                      to plant-based meat alternatives, he said many community
+                      members may currently view it as ‘unnatural’ compared to
+                      common vegetarian diets which consist of beans and nuts.
+                      Hesitations may also stem from previous implementations of
+                      entry-level plant-based meat that were poorly packaged.
+                      They described it as being lower quality, and many were
+                      reluctant to adopt it because of their traditional diets.
+                      Additionally, poorly packaged meat created additional
+                      hesitations because consumers couldn't easily understand
+                      how to use a specific product or what the ingredients
+                      were.
+                    </p>
+                    <p>
+                      Our meeting with James gave us vast insight into the
+                      current food needs of our local communities, while
+                      confirming what kinds of hesitations and objections
+                      MEYCell may face in our local community. With this
+                      knowledge, we aimed to address these challenges with our
+                      team and find opportunities to communicate our project in
+                      feasible and educational ways around Hamilton, speaking
+                      with the community members who access the foodbank more
+                      personally.
+                    </p>
+                  </div>
+                }
+                image="/hp comms/james vanderberg.jpg"
+                image2="/hp comms/vanderberg call.png"
+              />
+              <DetailBlock
+                id="allison_penner"
+                label="Allison Penner"
+                description={
+                  <div className="space-y-3">
+                    <p>
+                      With significant climate issues associated with the
+                      agricultural sector, and current food sustainability
+                      issues in Canada, we wanted to learn how alternative
+                      proteins and the development of cultivated meat can not
+                      only address these challenges, but also complement
+                      existing systems such as the farming sector. With the rise
+                      of new food technology and fears of it dominating
+                      agricultural and farming practices, what approaches to
+                      scientific communication can be used to build trust and
+                      foster acceptance?
+                    </p>
+                  </div>
+                }
+                outcome={
+                  <div className="space-y-3">
+                    <p>
+                      We spoke with{" "}
+                      <b>
+                        Allison Penner, the Founder and Executive Director of
+                        Reimagine Agriculture
+                      </b>
+                      . Reimagine Agriculture is a Canadian charity-based
+                      organization, dedicated towards building sustainable food
+                      systems through advocating for food technology, such as
+                      cultivated meat, and supporting plant-based systems.
+                    </p>
+                    <p>
+                      Allison highlighted carbon emissions—a large contributing
+                      factor to the current challenges of agriculture and food
+                      sustainability—having significant potential to be reduced
+                      by the introduction of alternative proteins and cultivated
+                      meat. Moreover, she expressed that a substantial amount of
+                      land in Canada is dedicated towards agriculture. Extreme
+                      weather conditions inflicted by climate change, however,
+                      lead to a large issue for farmers; risking low crop yield.
+                    </p>
+                    <p>
+                      When it came to discussing agricultural “job transitions”,
+                      we inquired about how advancements in food technology
+                      could remain mutually beneficial with farmers. Allison
+                      noted that although Canada is not yet at the stage where
+                      cultivated meat technologies are capable of replacing
+                      livestock farming, it is already being employed in
+                      projects across the world alongside farms. Additionally,
+                      she mentioned how Canadian farms can be stretched thin due
+                      to Canada being a large food exporter—in this regard,
+                      cultivated meat technologies would be able to relieve the
+                      supply-demand gap seen in food systems.
+                    </p>
+                    <p>
+                      In addressing our concerns on influencing public
+                      perceptions of cultivated meat through appropriate
+                      scientific communication, our conversation with Allison
+                      sparked different ways to go about communicating the
+                      importance of cellular agriculture. Simplicity and jargon
+                      usage is essential to ensure the audience understands
+                      current limitations of traditional meat, and how our
+                      project aims to fill those gaps. Using analogies such as
+                      yeast “brewing beer” would serve as a familiar background
+                      to introduce our project, and introducing a concept such
+                      as fecal bacteria contamination raises awareness to one of
+                      the many negative aspects of traditional meat.
+                    </p>
+                    <p>
+                      Lastly, Allison emphasized using a more educational
+                      approach for raising awareness on alternative proteins.
+                      She recognized that although there will always be trends
+                      (such as hitting protein goals), resources such as the
+                      Canadian food guide and Harvard Healthy Eating Plate are
+                      ways to exemplify how high meat diets are not the standard
+                      of eating healthy.
+                    </p>
+                  </div>
+                }
+                image="/hp comms/allison penner.jpg"
+                video="/hp comms/______.mp4"
+              />
+
               <DetailBlock
                 id="dr_milburn"
                 label="Dr. Josh Milburn"
@@ -309,157 +505,7 @@ export default function CommunityPage() {
                 image="/hp comms/dr ruder.webp"
               />
             </div>
-          </div>
-
-          <div id="industry" className="mt-10 space-y-4">
-            <h2 className="text-lg font-medium text-foreground">Industry</h2>
-            <div className="space-y-4">
-              <DetailBlock
-                id="allison_penner"
-                label="Allison Penner"
-                description={
-                  <div className="space-y-3">
-                    <p>
-                      In what ways can alternative proteins and cultivated meat
-                      help address challenges faced by agriculture and food
-                      sustainability in Canada? How can the development of
-                      cultivated meat complement existing agricultural systems,
-                      such as farmers? What approaches to scientific
-                      communication can be used to build trust and foster
-                      acceptance?
-                    </p>
-                  </div>
-                }
-                outcome={
-                  <div className="space-y-3">
-                    <p>
-                      We spoke with Allison Penner, the Founder and Executive
-                      Director of Reimagine Agriculture. Reimagine Agriculture
-                      is a Canadian charity-based organization, dedicated
-                      towards building sustainable food systems through
-                      advocating for food technology, such as cultivated meat,
-                      and supporting plant-based systems.
-                    </p>
-                    <p>
-                      Allison highlighted carbon emissions—a large contributing
-                      factor to the current challenges of agriculture and food
-                      sustainability—having significant potential to be reduced
-                      by the introduction of alternative proteins and cultivated
-                      meat. Moreover, she expressed that a substantial amount of
-                      land in Canada is dedicated towards agriculture. Extreme
-                      weather conditions inflicted by climate change, however,
-                      lead to a large issue for farmers; risking low crop yield.
-                    </p>
-                    <p>
-                      When it came to discussing agricultural “job transitions”,
-                      we inquired about how advancements in food technology
-                      could remain mutually beneficial with farmers. Allison
-                      noted that although Canada is not yet at the stage where
-                      cultivated meat technologies are capable of replacing
-                      livestock farming, it is already being employed in
-                      projects across the world alongside farms. Additionally,
-                      she mentioned how Canadian farms can be stretched thin due
-                      to Canada being a large food exporter—in this regard,
-                      cultivated meat technologies would be able to relieve the
-                      supply-demand gap seen in food systems.
-                    </p>
-                    <p>
-                      Furthermore, one key concern we wanted to address was the
-                      role of scientific communication in influencing public
-                      perceptions of cultivated meat. Our conversation with
-                      Allison sparked different ways to go about communicating
-                      the importance of cellular agriculture. Simplicity and
-                      jargon usage is essential to ensure the audience
-                      understands current limitations of traditional meat, and
-                      how our project aims to fill those gaps. Using analogies
-                      such as yeast “brewing beer” would serve as a familiar
-                      background to introduce our project, and introducing a
-                      concept such as fecal bacteria contamination raises
-                      awareness to one of the many negative aspects of
-                      traditional meat.
-                    </p>
-                    <p>
-                      Lastly, Allison emphasized using a more educational
-                      approach for raising awareness. She recognized that
-                      although there will always be trends (such as hitting
-                      protein goals), resources such as the Canadian food guide
-                      and Harvard Healthy Eating Plate are ways to exemplify how
-                      high meat diets are not the standard of eating healthy.
-                    </p>
-                  </div>
-                }
-                image="/hp comms/allison penner.jpg"
-              />
-              <DetailBlock
-                id="james_vanderberg"
-                label="James VanderBerg"
-                description={
-                  <div className="space-y-3">
-                    <p>
-                      A central component of our project is understanding and
-                      incorporating the needs of those most affected by
-                      food-related challenges in Hamilton. In our region,
-                      community members’ livelihoods are affected by the rising
-                      costs of groceries, barriers to employment, and housing
-                      insecurity, all related to food affordability or access.
-                      To better understand these issues, we met with James
-                      VanderBerg, the Fund Development Officer & Interim
-                      Executive Director of the Welcome Inn Community Centre. In
-                      our meeting, we discussed community members’ hesitations
-                      on plant-based meat alternatives, ways to support those
-                      most affected, and methods for improving the
-                      implementation process. (not sure to include this: Through
-                      this, we identified why community members may be reluctant
-                      to introduce plant-based meat alternatives into their
-                      diets and explored ways to reduce these concerns.)
-                    </p>
-                  </div>
-                }
-                outcome={
-                  <div className="space-y-3">
-                    <p>
-                      Meeting with James VanderBerg gave us a clear picture of
-                      food-related challenges in our community, especially as
-                      47% of newcomers to Hamilton depend on this food bank. He
-                      described these challenges as a community-based problem
-                      and, while important, not limited to cultural, faith, or
-                      ethnic hesitancies. He added that many newcomers to
-                      Hamilton are vegetarian, and their food preferences are
-                      often not available at food banks, as many prioritize
-                      meat-based proteins. James discussed that this creates
-                      obstacles for food banks in managing the
-                      cost-effectiveness of supplies while staying attuned to
-                      community members' needs.
-                    </p>
-                    <p>
-                      The issues surrounding food affordability and insecurity
-                      are extensive and affect many community members. He
-                      described the key challenges around food affordability as
-                      the cost of groceries and housing issues. He added that
-                      the costs of groceries are not comparable to what is
-                      earned through income. In addition, he mentioned that
-                      recipients of the Ontario Disability Support Program
-                      (ODSP) also face barriers and do not have the ability to
-                      live comfortably.
-                    </p>
-                    <p>
-                      When asked who he thinks may have a harder time adjusting
-                      to plant-based meat alternatives, he said many community
-                      members may view them as ‘unnatural’ compared to their
-                      diets which consist of beans, nuts, etc. Hesitations may
-                      also stem from previous implementations of entry-level
-                      plant-based meat that were poorly packaged. They described
-                      it as being lower quality, and many were reluctant to
-                      adopt it because of their traditional diets. Additionally,
-                      poorly packaged meat created additional hesitations
-                      because consumers couldn't easily understand how to use a
-                      specific product or what the ingredients were.
-                    </p>
-                  </div>
-                }
-                image="/hp comms/james vanderberg.jpg"
-              />
-            </div>
+            <div className="space-y-4"></div>
           </div>
         </WikiSection>
 

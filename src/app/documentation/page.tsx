@@ -548,6 +548,42 @@ export default function DocumentationPage() {
             ))}
           </div>
         </WikiSection>
+
+        <WikiSection id="notebook" title="Lab Notebook">
+          <div className="space-y-4">
+            <iframe
+              src={asset("/documentation/Lab Notebook_compressed.pdf")}
+              title="Notebook"
+              className="h-[800px] w-full border border-border bg-card/80"
+            />
+            <a
+              href={asset("/documentation/Lab Notebook_compressed.pdf")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+            >
+              Open in new tab <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </WikiSection>
+
+        <WikiSection id="report" title="iDEC Report">
+          <div className="space-y-4">
+            <iframe
+              src={asset("/documentation/iDEC-Report-Main-Text.pdf")}
+              title="Report"
+              className="h-[800px] w-full border border-border bg-card/80"
+            />
+            <a
+              href={asset("/documentation/iDEC-Report-Main-Text.pdf")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+            >
+              Open in new tab <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </WikiSection>
       </WikiPage>
     </>
   );
