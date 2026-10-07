@@ -14,7 +14,7 @@ const FEATURES: Feature[] = [
 
 type CompanyColumn = {
   name: string;
-  /** MEYcell's own column — its title and icons render green to set it apart; everything else stays standard. */
+  /** MEYcell's own column — keeps the site's dark card with a green border/title/icons. Unset for the two competitor columns, which instead get a light-green card with dark blue text/icons. */
   highlight?: boolean;
   /** One value per FEATURES entry, same order. */
   values: string[];
@@ -63,24 +63,31 @@ const COMPANIES: CompanyColumn[] = [
 // scrollable flex row rather than a grid that stacks to 1-per-row on
 // narrow screens — the whole point is comparing the 3 companies at a
 // glance, which breaks once they're stacked full-width instead of
-// side-by-side. MEYcell's box border, title, and icons are green; its
-// label/value text stays the same standard color as the other two boxes.
-// The two competitor boxes deliberately have no hover treatment — unlike
-// most bordered boxes elsewhere on the site, these are reference points,
-// not interactive cards.
+// side-by-side. MEYcell's box keeps the site's usual dark card with a green
+// border/title/icons. The two competitor boxes instead get a light-green
+// fill (the same emerald used for MEYcell's green, just a light tint) with
+// a neutral border, and their text/icons use `text-card` — the exact navy
+// of MEYcell's own card background — for contrast, rather than an
+// unrelated blue. A deliberate exception to the site's otherwise dark
+// palette, same idea as MarketOpportunityCircles' TAM/SAM/SOM colors, so
+// these two read as distinct reference cards next to MEYcell's. They
+// deliberately have no hover treatment — unlike most bordered boxes
+// elsewhere on the site, these are reference points, not interactive cards.
 export function CompetitorComparisonCards() {
   return (
     <div className="flex gap-6 overflow-x-auto pb-2">
       {COMPANIES.map((company) => (
         <div
           key={company.name}
-          className={`min-w-[15rem] flex-1 border bg-card p-6 ${
-            company.highlight ? "border-emerald-400" : "border-border"
+          className={`min-w-[15rem] flex-1 border p-6 ${
+            company.highlight
+              ? "border-emerald-400 bg-card"
+              : "border-border bg-emerald-100"
           }`}
         >
           <h3
             className={`font-display text-lg mb-5 text-center ${
-              company.highlight ? "text-emerald-400" : "text-foreground"
+              company.highlight ? "text-emerald-400" : "text-card"
             }`}
           >
             {company.name}
@@ -93,20 +100,32 @@ export function CompetitorComparisonCards() {
                 <div key={feature.label} className="flex items-center gap-3">
                   <span
                     className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border ${
-                      company.highlight ? "border-emerald-400" : "border-border"
+                      company.highlight
+                        ? "border-emerald-400"
+                        : "border-card/40"
                     }`}
                   >
                     <Icon
                       className={`h-4 w-4 ${
-                        company.highlight ? "text-emerald-400" : "text-accent"
+                        company.highlight ? "text-emerald-400" : "text-card"
                       }`}
                     />
                   </span>
                   <div className="flex-1 text-center">
-                    <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                    <div
+                      className={`font-mono text-[10px] uppercase tracking-widest ${
+                        company.highlight
+                          ? "text-muted-foreground"
+                          : "text-card/70"
+                      }`}
+                    >
                       {feature.label}
                     </div>
-                    <div className="text-sm leading-snug text-body">
+                    <div
+                      className={`text-sm leading-snug ${
+                        company.highlight ? "text-body" : "text-card"
+                      }`}
+                    >
                       {company.values[index]}
                     </div>
                   </div>

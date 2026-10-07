@@ -82,31 +82,35 @@ function Column({ column }: { column: StatColumn }) {
   );
 }
 
-// A row of supporting columns (feature icons or quick stats) shown below a
-// section's main content — used by both The Problem's per-box highlight
-// rows (4 columns) and Market Opportunity's landing stats (3 columns).
-// Stacked with a horizontal divider between rows on mobile, flipping to a
-// single row with a vertical divider between columns from `sm:` up —
-// switching axis (rather than a wrapping grid) is what keeps `divide-*`
-// drawing a line only where columns actually meet, since a wrapping grid
-// would also draw a stray divider at the start of each wrapped row.
+// A row (or column) of supporting columns (feature icons or quick stats)
+// shown alongside a section's main content. With `direction="row"`
+// (default), it's stacked with a horizontal divider between rows on
+// mobile, flipping to a single row with a vertical divider between columns
+// from `sm:` up — switching axis (rather than a wrapping grid) is what
+// keeps `divide-*` drawing a line only where columns actually meet, since a
+// wrapping grid would also draw a stray divider at the start of each
+// wrapped row. With `direction="column"`, it stays a vertical stack with
+// horizontal dividers at every width (e.g. Business Model's stats sitting
+// beside its header/body instead of below it).
 //
 // `bordered` (default true) wraps the row in its own box, for use standing
-// alone (Market Opportunity's landing stats). Pass false when the row is
-// already inside another bordered box (The Problem's per-point box), so the
-// two don't nest into a box-within-a-box.
+// alone (Market Opportunity's landing stats). Pass false when it's already
+// inside another bordered box, or shouldn't have one at all (Business
+// Model's stats), so there's no box-within-a-box or unwanted box.
 export function StatColumns({
   columns,
   bordered = true,
+  direction = "row",
 }: {
   columns: StatColumn[];
   bordered?: boolean;
+  direction?: "row" | "column";
 }) {
   return (
     <div
-      className={`flex flex-col divide-y divide-border sm:flex-row sm:divide-x sm:divide-y-0 ${
-        bordered ? "border border-border bg-card" : ""
-      }`}
+      className={`flex flex-col divide-y divide-border ${
+        direction === "row" ? "sm:flex-row sm:divide-x sm:divide-y-0" : ""
+      } ${bordered ? "border border-border bg-card" : ""}`}
     >
       {columns.map((column) => (
         <Column key={column.label} column={column} />
