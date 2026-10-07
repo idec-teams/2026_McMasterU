@@ -62,7 +62,7 @@ const HSI_POSTERS = [
 export default function OutreachPage() {
   return (
     <>
-      <Banner title="Outreach">
+      <Banner title="Outreach" src="/banners/outreach.png">
         <p>
           How the MEYcell team brings synthetic biology to classrooms, events,
           and the wider public.

@@ -466,7 +466,7 @@ function ProtocolCard({
 export default function DocumentationPage() {
   return (
     <>
-      <Banner title="Documentation">
+      <Banner title="Documentation" src="/banners/documentation.png">
         <p>Our parts, constructs and lab notebook compiled together.</p>
       </Banner>
 
