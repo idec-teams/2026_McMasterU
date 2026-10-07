@@ -492,8 +492,25 @@ export default function DocumentationPage() {
         </WikiSection>
 
         <WikiSection id="constructs" title="Plasmid Constructs">
-          <h2 className="mb-4 text-xl font-medium text-foreground">Level 0</h2>
-          <h2 className="mb-4 text-xl font-medium text-foreground">Level 1</h2>
+          <h2 className="mb-4 text-xl font-medium text-foreground">
+            Level 0 Parts
+          </h2>
+          <figure className="w-full">
+            <Image
+              src={asset("/documentation/level 0.png")}
+              alt="Level 0 parts: ACC1**, DGA1, and BGL2 flanked by BsaI sites"
+              width={600}
+              height={300}
+              className="mx-auto block h-auto w-full max-w-[600px] border border-border"
+            />
+            <figcaption className="mx-auto mt-1 max-w-[600px] text-center text-[0.9rem] leading-normal">
+              Figure 1: Level 0 parts containing the coding sequences of ACC1**,
+              DGA1, and BGL2, each flanked by BsaI recognition sites.
+            </figcaption>
+          </figure>
+          <h2 className="mb-4 text-xl font-medium text-foreground">
+            Level 1 Parts
+          </h2>
           <figure className="flex flex-col items-center gap-2">
             <Image
               src={asset("/documentation/rnat bgl2 plasmid.png")}
@@ -502,12 +519,14 @@ export default function DocumentationPage() {
               height={400}
               className="border border-border"
             />
-            <figcaption className=" text-center text-sm text-body">
-              Figure 1: Level 1 transcription unit of BGL2 with the RNAt in the
+            <figcaption className="mx-auto mt-1 max-w-[750px] text-center text-[0.9rem] leading-normal">
+              Figure 2: Level 1 transcription unit of BGL2 with the RNAt in the
               5’ UTR.
             </figcaption>
           </figure>
-          <h2 className="mb-4 text-xl font-medium text-foreground">Level 2</h2>
+          <h2 className="mb-4 text-xl font-medium text-foreground">
+            Level 2 Parts
+          </h2>
           <figure className="flex flex-col items-center gap-2">
             <Image
               src={asset("/documentation/pAN316a plasmid.png")}
@@ -516,8 +535,8 @@ export default function DocumentationPage() {
               height={400}
               className="border border-border"
             />
-            <figcaption className="text-center text-sm text-body">
-              Figure 2: Level 2 acceptor - final plasmid backbone.
+            <figcaption className="mx-auto mt-1 max-w-[750px] text-center text-[0.9rem] leading-normal">
+              Figure 3: Level 2 acceptor - final plasmid backbone.
             </figcaption>
           </figure>
 
@@ -529,8 +548,8 @@ export default function DocumentationPage() {
               height={400}
               className="border border-border"
             />
-            <figcaption className="text-center text-sm text-body">
-              Figure 3: Final construct of lipid genes, RNAt, and their
+            <figcaption className="mx-auto mt-1 max-w-[750px] text-center text-[0.9rem] leading-normal">
+              Figure 4: Final construct of lipid genes, RNAt, and their
               promoters and terminators.
             </figcaption>
           </figure>
