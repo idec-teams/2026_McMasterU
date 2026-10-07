@@ -9,7 +9,7 @@ import { WikiPage } from "@/components/wiki/WikiPage";
 import { WikiSection } from "@/components/wiki/WikiSection";
 
 export const metadata = {
-  title: "Outreach — MEYcell",
+  title: "Outreach",
 };
 
 // Images live in /public/outreach. A <Photo> with no `src` renders a placeholder

@@ -2,7 +2,7 @@ import { ModelPage } from "@/components/wiki/engineering/ModelPage";
 import { content } from "./content";
 
 export const metadata = {
-  title: "ML1: ThermoRank — MEYcell",
+  title: "ML1 - ThermoRank",
 };
 
 export default function Ml1Page() {

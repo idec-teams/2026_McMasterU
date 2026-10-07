@@ -1,7 +1,7 @@
 import { EntrepreneurshipDetails } from "@/components/wiki/entrepreneurship/EntrepreneurshipDetails";
 
 export const metadata = {
-  title: "Entrepreneurship Full Report — MEYcell",
+  title: "Entrepreneurship Full Report",
 };
 
 export default function EntrepreneurshipDetailsPage() {

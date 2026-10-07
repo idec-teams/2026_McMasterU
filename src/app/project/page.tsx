@@ -7,7 +7,7 @@ import { asset } from "@/lib/wiki/asset";
 import { createCitations } from "@/lib/wiki/citations";
 
 export const metadata = {
-  title: "Project — MEYcell",
+  title: "Project",
 };
 
 // Example references — replace with real sources as the content is written.

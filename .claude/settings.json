@@ -74,7 +74,14 @@
       "Bash(python3 -c \"import pdfplumber\")",
       "Bash(grep -v \"^.*:.*//.*—.*$\")",
       "Bash(node fin.cjs)",
-      "Bash(file public/documentation*)"
+      "Bash(file public/documentation*)",
+      "Bash(node -e \"require\\('sharp'\\);console.log\\('sharp ok'\\)\")",
+      "Bash(magick identify *)",
+      "Bash(magick public/logo/mey_cell_wave_colored.gif -coalesce /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/f_%02d.png)",
+      "Bash(magick montage *)",
+      "Bash(magick /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/f_23.png -background none -gravity center -extent 500x500 -resize 512x512 -strip /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/icon.png)",
+      "Bash(magick /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/icon.png -resize 16x16 -scale 400% /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/icon16.png)",
+      "Bash(magick /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/icon.png -resize 32x32 -scale 300% /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/icon32.png)"
     ]
   }
 }

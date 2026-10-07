@@ -15,7 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MEYcell — McMaster IDEC 2026",
+  // Sub-pages set only their own name; the template appends the site name, so
+  // a page reads "Project: MEYcell by McMasterU (2026)".
+  title: {
+    default: "MEYcell by McMasterU 2026",
+    template: "%s: MEYcell by McMasterU 2026",
+  },
   description:
     "McMaster University IDEC 2026 project wiki: engineering yeast that bursts fat at cooking temperature.",
 };

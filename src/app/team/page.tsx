@@ -3,7 +3,7 @@ import { MemberGrid } from "@/components/wiki/team/MemberGrid";
 import { loadTeamMembers } from "@/lib/wiki/team";
 
 export const metadata = {
-  title: "Team — MEYcell",
+  title: "Team",
 };
 
 export default function TeamPage() {

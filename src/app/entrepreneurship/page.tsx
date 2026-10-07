@@ -1,7 +1,7 @@
 import { EntrepreneurshipLanding } from "@/components/wiki/entrepreneurship/EntrepreneurshipLanding";
 
 export const metadata = {
-  title: "Entrepreneurship — MEYcell",
+  title: "Entrepreneurship",
 };
 
 export default function EntrepreneurshipPage() {

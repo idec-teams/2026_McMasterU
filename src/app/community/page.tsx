@@ -8,7 +8,7 @@ import { asset } from "@/lib/wiki/asset";
 import { createCitations } from "@/lib/wiki/citations";
 
 export const metadata = {
-  title: "Community — MEYcell",
+  title: "Community",
 };
 
 function DetailBlock({

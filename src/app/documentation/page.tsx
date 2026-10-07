@@ -7,7 +7,7 @@ import { WikiSection } from "@/components/wiki/WikiSection";
 import { asset } from "@/lib/wiki/asset";
 
 export const metadata = {
-  title: "Documentation — MEYcell",
+  title: "Documentation",
 };
 
 export const parts = [
