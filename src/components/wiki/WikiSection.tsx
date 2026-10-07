@@ -2,6 +2,13 @@ import type { WikiSectionProps } from "@/types/wiki";
 
 // Base wiki section. `WikiPage` reads its `id`/`title` to build the table of
 // contents, and `scroll-mt` offsets the anchor jump past the fixed header.
+//
+// The title is capped at `max-w-3xl` (the same reading-column width
+// `WikiPage` already uses for body text when its TOC is shown) and
+// centered via `mx-auto`. On a TOC page that column is already this width,
+// so the cap is a no-op there; it only narrows things on a TOC-less page
+// (e.g. the Entrepreneurship landing page) where the content would
+// otherwise run the full page width.
 export function WikiSection({
   id,
   title,
@@ -15,7 +22,9 @@ export function WikiSection({
     >
       <h2
         className={
-          hideTitle ? "sr-only" : "font-display text-3xl text-foreground mb-5"
+          hideTitle
+            ? "sr-only"
+            : "font-display text-3xl text-foreground mb-5 max-w-3xl mx-auto"
         }
       >
         {title}

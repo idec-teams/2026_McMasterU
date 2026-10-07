@@ -20,6 +20,9 @@ export const NAV_LINKS: NavLink[] = [
   {
     label: "Entrepreneurship",
     href: "/entrepreneurship",
-    children: [{ label: "In Depth", href: "/entrepreneurship/details" }],
+    children: [
+      { label: "Summary", href: "/entrepreneurship" },
+      { label: "Full Report", href: "/entrepreneurship/details" },
+    ],
   },
 ];

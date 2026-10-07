@@ -1,8 +1,8 @@
 import {
-  ArrowDown,
   BarChart3,
   Box,
   Calendar,
+  ChevronDown,
   Droplet,
   Factory,
   FileText,
@@ -16,10 +16,11 @@ import {
 import { Banner } from "@/components/wiki/Banner";
 import { CompetitorComparisonCards } from "@/components/wiki/entrepreneurship/CompetitorComparisonCards";
 import { MarketOpportunityCircles } from "@/components/wiki/entrepreneurship/MarketOpportunityCircles";
+import { MilestoneTimeline } from "@/components/wiki/entrepreneurship/MilestoneTimeline";
 import {
-  type ProblemHighlight,
-  ProblemHighlights,
-} from "@/components/wiki/entrepreneurship/ProblemHighlights";
+  ProblemPanels,
+  type ProblemPanelsData,
+} from "@/components/wiki/entrepreneurship/ProblemPanels";
 import { RoadmapCarousel } from "@/components/wiki/entrepreneurship/RoadmapCarousel";
 import { StatColumns } from "@/components/wiki/entrepreneurship/StatColumns";
 import {
@@ -42,16 +43,13 @@ const COMPETITIVE_ADVANTAGE_SECTION_ID = "competitive-advantage";
 const ROADMAP_SECTION_ID = "commercialization-roadmap";
 const INTELLECTUAL_PROPERTY_SECTION_ID = "intellectual-property";
 
-// The Problem's 3-part teaser, rendered by ProblemHighlights as alternating
-// hook/body rows. Each hook highlights its key phrase in the accent color.
-const PROBLEM_HIGHLIGHTS: ProblemHighlight[] = [
-  {
-    title: (
-      <>
-        Consumers want <span className="text-accent">sustainable meat</span>
-        —but they won&apos;t compromise on taste.
-      </>
-    ),
+// The Problem's 3-part teaser, rendered by ProblemPanels. No boxes, no
+// green text highlighting — just the big centered statement, its body
+// directly below, and each panel's own supporting layout.
+const PROBLEM_PANELS: ProblemPanelsData = {
+  panel1: {
+    heading:
+      "Consumers want sustainable meat, but they won't compromise on taste.",
     body: "The alternative protein industry is growing rapidly as it seeks more sustainable food production methods. However, public adoption depends on delivering products that match conventional meat in taste, texture, and overall eating experience while remaining commercially scalable.",
     columns: [
       { icon: BarChart3, label: "Rapidly Growing Market" },
@@ -60,30 +58,22 @@ const PROBLEM_HIGHLIGHTS: ProblemHighlight[] = [
       { icon: Leaf, label: "Reduced Resource Consumption" },
     ],
   },
-  {
-    title: (
-      <>
-        The biggest obstacle isn&apos;t protein.{" "}
-        <span className="text-accent">It&apos;s fat.</span>
-      </>
-    ),
+  panel2: {
+    heading: "The biggest obstacle isn't protein. It's fat.",
     body: "Although today's plant-based meats can replicate protein structures, they still struggle to reproduce the unique sensory properties created by animal fat. Lipid composition determines juiciness, texture, and flavour release, which makes it one of the largest barriers to consumer adoption.",
-    columns: [
+    subheading: "Consumers care about:",
+    bubbles: [
       { icon: Soup, label: "Taste" },
       { icon: Layers, label: "Texture" },
       { icon: FlaskConical, label: "Aroma" },
       { icon: Droplet, label: "Mouthfeel" },
     ],
   },
-  {
-    title: (
-      <>
-        Innovation alone isn&apos;t enough.{" "}
-        <span className="text-accent">Manufacturing must scale.</span>
-      </>
-    ),
+  panel3: {
+    heading: "Innovation alone isn't enough. Manufacturing must scale.",
     body: "Commercial success requires infrastructure capable of manufacturing alternative proteins at competitive costs. Despite significant research investment and government support, large-scale production remains limited, slowing commercialization and delaying price parity with conventional meat.",
-    columns: [
+    subheading: "Canada has high scale-up potential:",
+    stats: [
       {
         label: "Commercial Facility Cost",
         countUpRange: { min: 15, max: 250, prefix: "$", suffix: "M" },
@@ -93,19 +83,14 @@ const PROBLEM_HIGHLIGHTS: ProblemHighlight[] = [
         countUp: { target: 36 },
       },
       { label: "Infrastructure Grants", countUp: { target: 16 } },
-      { label: "High Scale-Up Potential", value: "Canada" },
     ],
   },
-];
+};
 
 // The Market Opportunity section keeps "Market Opportunity" as its id/TOC
 // reference in code, but shows this instead as its on-page heading.
-const MARKET_OPPORTUNITY_DISPLAY_TITLE = (
-  <>
-    One breakthrough. A{" "}
-    <span className="text-emerald-400">trillion-dollar</span> opportunity.
-  </>
-);
+const MARKET_OPPORTUNITY_DISPLAY_TITLE =
+  "One breakthrough. A trillion-dollar opportunity.";
 const MARKET_OPPORTUNITY_INTRO =
   "Alternative proteins are entering a period of rapid commercialization, but widespread adoption still depends on delivering products consumers genuinely enjoy. By restoring the sensory experience of animal fat through a scalable fermentation platform, our technology addresses one of the industry's largest barriers while positioning itself within one of the fastest-growing sectors in food biotechnology.";
 const MARKET_OPPORTUNITY_STATS = [
@@ -123,15 +108,11 @@ const MARKET_OPPORTUNITY_STATS = [
   },
 ];
 
-// Business Model's own hook/body box, styled like a single (non-alternating)
-// entry from PROBLEM_HIGHLIGHTS — a header on the left highlighting its key
-// phrase in green, body text on the right, plus its own 3-stat row.
-const BUSINESS_MODEL_HEADER = (
-  <>
-    From fermentation to food manufacturers.{" "}
-    <span className="text-emerald-400">Built for scale.</span>
-  </>
-);
+// Business Model's intro: header + body stacked and centered on the left
+// half, its 3 stats stacked vertically on the right half — no box around
+// either half.
+const BUSINESS_MODEL_HEADER =
+  "From fermentation to food manufacturers. Built for scale.";
 const BUSINESS_MODEL_BODY =
   "MEYcell is designed as a business-to-business ingredient platform, supplying engineered yeast lipids to alternative meat manufacturers. By leveraging existing fermentation infrastructure, recurring supply agreements, and scalable production, the business model prioritizes long-term manufacturing efficiency over direct consumer sales.";
 const BUSINESS_MODEL_STATS = [
@@ -172,11 +153,7 @@ const REVENUE_STREAM_COLUMNS = [
 ];
 
 // Same treatment for Commercialization Roadmap.
-const ROADMAP_DISPLAY_TITLE = (
-  <>
-    From the Lab to the <span className="text-emerald-400">Market</span>
-  </>
-);
+const ROADMAP_DISPLAY_TITLE = "From the Lab to the Market";
 const ROADMAP_INTRO =
   "MEYcell's roadmap outlines the technical, regulatory, and manufacturing milestones required to transition from laboratory validation to commercial ingredient production through scalable fermentation and strategic industry partnerships.";
 
@@ -190,33 +167,25 @@ const TRL_HEADING = (
   </>
 );
 const TRL_STEPS: TRLStep[] = [
-  { label: "Proof-of-Concept (RNA Thermosensor)", filled: true },
-  { label: "Functional Validation (Lipid Release)", filled: true },
-  { label: "Lab-Scale Production", filled: false },
-  { label: "Pilot-Scale Production", filled: false },
-  { label: "Regulatory Submission", filled: false },
-  { label: "Commercial Deployment", filled: false },
+  { label: "Proof-of-Concept (RNA Thermosensor)", fill: "solid" },
+  { label: "Functional Validation (Lipid Release)", fill: "solid" },
+  { label: "Lab-Scale Production", fill: "pastel" },
+  { label: "Pilot-Scale Production", fill: "pastel" },
+  { label: "Regulatory Submission", fill: "empty" },
+  { label: "Commercial Deployment", fill: "empty" },
 ];
 
 // The Competitive Advantage section keeps "Competitive Advantage" as its
 // id/TOC reference in code, but shows this instead as its on-page heading.
-const COMPETITIVE_ADVANTAGE_DISPLAY_TITLE = (
-  <>
-    Different Technology.{" "}
-    <span className="text-emerald-400">Different Position.</span>
-  </>
-);
+const COMPETITIVE_ADVANTAGE_DISPLAY_TITLE =
+  "Different Technology. Different Position.";
 const COMPETITIVE_ADVANTAGE_INTRO =
   "Alternative protein companies pursue similar goals through fundamentally different technologies. While cultivated meat, plant-based products, and precision fermentation each address sustainability challenges, MEYcell combines precision fermentation with a controlled lipid-release platform designed to improve sensory performance while maintaining scalable manufacturing.";
 
 // The Intellectual Property section keeps "Intellectual Property" as its
 // id/TOC reference in code, but shows this instead as its on-page heading.
-const INTELLECTUAL_PROPERTY_DISPLAY_TITLE = (
-  <>
-    <span className="text-emerald-400">Protecting the platform</span> that
-    produces, stores, and releases the lipid.
-  </>
-);
+const INTELLECTUAL_PROPERTY_DISPLAY_TITLE =
+  "Protecting the platform that produces, stores, and releases the lipid.";
 const INTELLECTUAL_PROPERTY_INTRO =
   "The IP strategy combines patent protection for the core platform and for future applications, with trade secret protection for the process. MEYcell plans to begin with a U.S. provisional patent and expand the portfolio as the technology and its applications develop. A formal freedom-to-operate analysis remains a planned step before commercialization.";
 
@@ -234,9 +203,13 @@ export function EntrepreneurshipLanding() {
   return (
     <>
       <Banner title="MEYcell" src="/banners/entrepreneurship.png" centered>
-        <p>
-          The <span className="text-accent">fat</span> behind better meat.
-        </p>
+        <a
+          href={`#${ENTREPRENEURSHIP_SECTIONS[0].id}`}
+          className="inline-flex items-center gap-2 bg-primary px-6 py-3 font-mono text-xs uppercase tracking-widest text-primary-foreground transition-colors duration-200 hover:bg-accent"
+        >
+          Experience the Presentation
+          <ChevronDown className="h-3.5 w-3.5" />
+        </a>
       </Banner>
 
       <WikiPage showToc={false}>
@@ -254,17 +227,31 @@ export function EntrepreneurshipLanding() {
                     ? INTELLECTUAL_PROPERTY_DISPLAY_TITLE
                     : section.title;
 
+          // "The Problem" and "Business Model" drop their heading entirely
+          // (still rendered sr-only via hideTitle, so the id/anchor and
+          // accessibility tree are unaffected) — their own big centered
+          // statements already carry that role visually.
+          const hideTitle =
+            section.id === MARKET_NEED_SECTION_ID ||
+            section.id === BUSINESS_MODEL_SECTION_ID;
+
           return (
             <FadeSection key={section.id}>
-              <WikiSection id={section.id} title={displayTitle}>
+              <WikiSection
+                id={section.id}
+                title={displayTitle}
+                hideTitle={hideTitle}
+              >
                 {section.id === MARKET_NEED_SECTION_ID ? (
                   <>
-                    <ProblemHighlights points={PROBLEM_HIGHLIGHTS} />
+                    <ProblemPanels data={PROBLEM_PANELS} />
                     <ReadMoreLink href={readMoreHref} />
                   </>
                 ) : section.id === MARKET_OPPORTUNITY_SECTION_ID ? (
                   <>
-                    <p className="mb-10">{MARKET_OPPORTUNITY_INTRO}</p>
+                    <p className="mx-auto mb-10 max-w-3xl">
+                      {MARKET_OPPORTUNITY_INTRO}
+                    </p>
                     <div className="mb-10">
                       <MarketOpportunityCircles />
                     </div>
@@ -273,24 +260,23 @@ export function EntrepreneurshipLanding() {
                   </>
                 ) : section.id === BUSINESS_MODEL_SECTION_ID ? (
                   <>
-                    <div className="border border-border bg-card p-6 transition-colors duration-200 hover:border-accent md:p-8">
-                      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-12">
-                        <p className="font-display text-2xl leading-snug text-foreground md:order-1 md:self-center md:text-3xl">
+                    <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12">
+                      <div className="flex flex-col items-center gap-4 text-center">
+                        <p className="font-display text-2xl leading-snug text-foreground md:text-3xl">
                           {BUSINESS_MODEL_HEADER}
                         </p>
-                        <p className="text-sm leading-relaxed text-muted-foreground md:order-2 md:self-center">
+                        <p className="text-sm leading-relaxed text-muted-foreground">
                           {BUSINESS_MODEL_BODY}
                         </p>
                       </div>
-                      <div className="mt-8 border-t border-border pt-6">
-                        <StatColumns
-                          columns={BUSINESS_MODEL_STATS}
-                          bordered={false}
-                        />
-                      </div>
+                      <StatColumns
+                        columns={BUSINESS_MODEL_STATS}
+                        bordered={false}
+                        direction="column"
+                      />
                     </div>
 
-                    <div className="border border-border bg-card p-6 transition-colors duration-200 hover:border-accent md:p-8">
+                    <div className="border border-border bg-card p-6 md:p-8">
                       <h3 className="font-display text-lg text-foreground mb-3">
                         Revenue Streams
                       </h3>
@@ -304,16 +290,18 @@ export function EntrepreneurshipLanding() {
                   </>
                 ) : section.id === COMPETITIVE_ADVANTAGE_SECTION_ID ? (
                   <>
-                    <p>{COMPETITIVE_ADVANTAGE_INTRO}</p>
+                    <p className="mx-auto max-w-3xl">
+                      {COMPETITIVE_ADVANTAGE_INTRO}
+                    </p>
                     <CompetitorComparisonCards />
                     <ReadMoreLink href={readMoreHref} />
                   </>
                 ) : section.id === ROADMAP_SECTION_ID ? (
                   <>
-                    <p>{ROADMAP_INTRO}</p>
+                    <p className="mx-auto max-w-3xl">{ROADMAP_INTRO}</p>
                     <RoadmapCarousel />
 
-                    <div className="border border-border bg-card p-6 transition-colors duration-200 hover:border-accent md:p-8">
+                    <div>
                       <h3 className="font-display text-lg text-foreground mb-6">
                         {TRL_HEADING}
                       </h3>
@@ -324,24 +312,10 @@ export function EntrepreneurshipLanding() {
                   </>
                 ) : section.id === INTELLECTUAL_PROPERTY_SECTION_ID ? (
                   <>
-                    <p>{INTELLECTUAL_PROPERTY_INTRO}</p>
-                    <div className="flex flex-col items-center gap-2">
-                      {FILING_STRATEGY_STAGES.map((stage, index) => (
-                        <div
-                          key={stage}
-                          className="flex flex-col items-center gap-2"
-                        >
-                          {index > 0 ? (
-                            <ArrowDown className="h-4 w-4 text-muted-foreground" />
-                          ) : null}
-                          <div className="rounded-full border border-accent/40 bg-accent/10 px-5 py-2 text-center">
-                            <p className="text-sm font-semibold text-accent">
-                              {stage}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                    <p className="mx-auto max-w-3xl">
+                      {INTELLECTUAL_PROPERTY_INTRO}
+                    </p>
+                    <MilestoneTimeline milestones={FILING_STRATEGY_STAGES} />
                     <ReadMoreLink href={readMoreHref} />
                   </>
                 ) : null}
