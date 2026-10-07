@@ -1,4 +1,24 @@
+import Image from "next/image";
 import Link from "next/link";
+
+const SPONSORS = [
+  { name: "New Harvest", logo: "/sponsors/new harvest.png" },
+  { name: "McMaster Students Union", logo: "/sponsors/msu.png" },
+  { name: "McMaster Science Society", logo: "/sponsors/mss.png" },
+  { name: "iGEM", logo: "/sponsors/igem.png" },
+  { name: "GenScript", logo: "/sponsors/genscript.png" },
+  { name: "Twist Bioscience", logo: "/sponsors/twist.png" },
+  { name: "Cultivarium", logo: "/sponsors/cultivarium.png" },
+  { name: "ANSA Biotechnologies", logo: "/sponsors/ansa.png" },
+  { name: "DataCamp", logo: "/sponsors/datacamp.png" },
+  { name: "Allure", logo: "/sponsors/allure.png" },
+  { name: "Aquanova", logo: "/sponsors/aquanova.png" },
+  { name: "Biotech", logo: "/sponsors/biotech.png" },
+  { name: "Campus Store", logo: "/sponsors/campus store.png" },
+  { name: "Desjardins", logo: "/sponsors/desjardin.png" },
+  { name: "Tazo", logo: "/sponsors/tazo.png" },
+  { name: "Westdale", logo: "/sponsors/westdale.png" },
+];
 
 const FOOTER_PROJECT_LINKS = [
   "Project",
@@ -27,6 +47,24 @@ export function Footer() {
 
           <FooterLinks title="Project" items={FOOTER_PROJECT_LINKS} />
           <FooterLinks title="Team" items={FOOTER_TEAM_LINKS} />
+        </div>
+
+        <div className="border-t border-border pt-8 mb-8">
+          <ul className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+            {SPONSORS.map(({ name, logo }) => (
+              <li key={name}>
+                <div className="flex h-20 items-center justify-center rounded-xl bg-white px-3">
+                  <Image
+                    src={logo}
+                    alt={name}
+                    width={250}
+                    height={150}
+                    className="max-h-10 w-auto max-w-full object-contain"
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="border-t border-border pt-6 flex flex-col md:flex-row justify-between items-center gap-2">

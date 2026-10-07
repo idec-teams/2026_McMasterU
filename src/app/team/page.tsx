@@ -13,7 +13,7 @@ export default function TeamPage() {
 
   return (
     <>
-      <Banner title="Meet Our Team">
+      <Banner variant="photo" title="Meet Our Team" src="/team/Team photo.JPG">
         <p>Meet the McMaster IDEC 2026 team.</p>
       </Banner>
 

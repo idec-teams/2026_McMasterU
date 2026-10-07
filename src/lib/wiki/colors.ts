@@ -42,7 +42,7 @@ export const TRACK_COLORS: Record<string, TrackColor> = {
     bg: "bg-indigo-50",
     text: "text-indigo-700",
   },
-  "human-practices-community-outreach": {
+  "community-outreach": {
     border: "border-violet-400",
     bg: "bg-violet-50",
     text: "text-violet-700",

@@ -15,22 +15,29 @@ export function Banner({
   src,
   alt = "",
   title,
+  variant = "default",
   centered = false,
   children,
 }: {
   src?: string;
   alt?: string;
   title: string;
+  variant?: "default" | "photo";
   /** Center the title/children instead of the default left alignment — e.g. for a landing page whose other section headings are already centered. */
   centered?: boolean;
   children?: ReactNode;
 }) {
+  const photo = variant === "photo";
   return (
     <header
       className={`relative overflow-hidden border-b border-border bg-card ${
         // With an image, reserve a tall banner canvas and let text sit over it.
         // Without one, collapse to a compact header so there's no empty void.
-        src ? "flex min-h-[20rem] items-end md:min-h-[26rem]" : ""
+        src
+          ? photo
+            ? "flex min-h-[20rem] items-end md:min-h-[35rem]"
+            : "flex min-h-[20rem] items-end md:min-h-[26rem]"
+          : ""
       }`}
     >
       {src ? (
@@ -40,12 +47,24 @@ export function Banner({
           fill
           priority
           sizes="100vw"
-          className="object-cover grayscale-[0.35]"
+          className={
+            photo
+              ? "object-cover object-[75%_45%] scale-102 translate-x-[2%] grayscale-[0.3] brightness-90"
+              : "object-cover grayscale-[0.35]"
+          }
         />
       ) : null}
 
-      {/* Scrim: keeps text legible over any image, and gives the fallback depth. */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/30" />
+      {photo ? (
+        <>
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background/90 via-background/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/30 to-transparent" />
+        </>
+      ) : (
+        /* Scrim: keeps text legible over any image, and gives the fallback depth. */
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/30" />
+      )}
       {/* Subtle brand tint so photos join the teal/navy palette. */}
       <div className="absolute inset-0 bg-primary/5" />
 
