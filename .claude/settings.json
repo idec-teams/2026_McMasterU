@@ -73,7 +73,8 @@
       "Bash(node -e ' *)",
       "Bash(python3 -c \"import pdfplumber\")",
       "Bash(grep -v \"^.*:.*//.*—.*$\")",
-      "Bash(node fin.cjs)"
+      "Bash(node fin.cjs)",
+      "Bash(file public/documentation*)"
     ]
   }
 }

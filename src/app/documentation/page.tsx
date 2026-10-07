@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { PdfEmbed } from "@/components/ui/PdfEmbed";
 import { Banner } from "@/components/wiki/Banner";
 import { WikiPage } from "@/components/wiki/WikiPage";
 import { WikiSection } from "@/components/wiki/WikiSection";
@@ -570,10 +571,10 @@ export default function DocumentationPage() {
 
         <WikiSection id="notebook" title="Lab Notebook">
           <div className="space-y-4">
-            <iframe
+            <PdfEmbed
               src={asset("/documentation/Lab Notebook_compressed.pdf")}
               title="Notebook"
-              className="h-[800px] w-full border border-border bg-card/80"
+              note="PDF · 3.8 MB"
             />
             <a
               href={asset("/documentation/Lab Notebook_compressed.pdf")}
@@ -588,10 +589,10 @@ export default function DocumentationPage() {
 
         <WikiSection id="report" title="iDEC Report">
           <div className="space-y-4">
-            <iframe
+            <PdfEmbed
               src={asset("/documentation/iDEC-Report-Main-Text.pdf")}
               title="Report"
-              className="h-[800px] w-full border border-border bg-card/80"
+              note="PDF · 1.4 MB"
             />
             <a
               href={asset("/documentation/iDEC-Report-Main-Text.pdf")}
