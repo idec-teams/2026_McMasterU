@@ -688,12 +688,6 @@ export default function ProjectPage() {
           <h4 className="mt-4 text-lg text-foreground font-medium">
             Key Pathways
           </h4>
-          <p className="text-sm text-muted-foreground">
-            Describe the metabolic pathways targeted for triglyceride
-            accumulation (e.g., acetyl-CoA flux, fatty acid synthase regulation,
-            TAG assembly enzymes). Include pathway diagrams or references as
-            needed.
-          </p>
 
           <p>
             <em>S. cerevisiae</em> produces and stores triacylglycerols (TAGs)
@@ -1796,7 +1790,7 @@ export default function ProjectPage() {
           <figure className="my-10 flex flex-col items-center">
             <div className="w-full max-w-2xl">
               <Image
-                src={asset("/figures/FinalConstruct.png")}
+                src={asset("/figures/FinalConstruct1.png")}
                 alt="Final Construct"
                 width={800}
                 height={450}
