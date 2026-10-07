@@ -182,8 +182,7 @@ function gearPath(teeth: number): string {
   return d;
 }
 
-// biome-ignore lint/correctness/noUnusedVariables: kept for the commented-out
-// <Gears /> in the figure below; delete both together if they stay off.
+// biome-ignore lint/correctness/noUnusedVariables: paired with the commented-out <Gears /> below; delete both together if it stays off
 function Gears() {
   const biggest = Math.max(...TEETH);
   return (

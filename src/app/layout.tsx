@@ -30,7 +30,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       // Lets Next turn smooth scrolling off during route changes, so moving
-      // to a new page jumps to the top instead of gliding there.
+      // to a new page jumps to the top instead of gliding there
       data-scroll-behavior="smooth"
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">

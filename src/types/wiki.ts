@@ -1,27 +1,10 @@
 import type { ElementType, ReactNode } from "react";
 
-export type ColorKey = "sky" | "rose" | "gold";
-
-export type ProblemCardColors = {
-  border: string;
-  hover: string;
-  stat: string;
-  icon: string;
-};
-
 export type NavLink = {
   label: string;
   href: string;
   /** Sub-pages under this route. Rendered as a dropdown when present. */
   children?: { label: string; href: string }[];
-};
-
-export type Problem = {
-  title: string;
-  stat: string;
-  statLabel: string;
-  body: string;
-  color: ColorKey;
 };
 
 /** Per-step accent classes — literal strings so Tailwind can see them. */
@@ -39,26 +22,6 @@ export type Step = {
   icon: ElementType;
   body: string;
   tone: StepTone;
-};
-
-export type ScienceFact = {
-  icon: ElementType;
-  label: string;
-  value: string;
-  color: string;
-};
-
-export type SolutionStat = {
-  label: string;
-  value: string;
-  sub: string;
-};
-
-export type PathwayEntry = {
-  op: string;
-  name: string;
-  nameTone: "accent" | "danger" | "success";
-  comment: string;
 };
 
 export type TeamMember = {

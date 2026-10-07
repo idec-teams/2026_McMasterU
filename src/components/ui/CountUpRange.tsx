@@ -3,7 +3,7 @@
 import { useCountUpProgress } from "@/components/ui/useCountUpProgress";
 
 // Same count-up-on-scroll behaviour as CountUpStat, but for a range display
-// like "$20-$25B" — both ends animate together off one shared progress value.
+// like "$20-$25B". Both ends animate together off one shared progress value.
 export function CountUpRange({
   min,
   max,

@@ -7,8 +7,7 @@ export const metadata = {
 };
 
 export default function TeamPage() {
-  // Roster comes from public/team/_data.json — edit that file to add, remove,
-  // or reorder members. No code changes needed.
+  // Roster comes from public/team/_data.json. Edit the file to add/remove content
   const members = loadTeamMembers();
 
   return (

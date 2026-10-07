@@ -1,5 +1,3 @@
-// Cards hidden for now — restore this import with <ProblemGrid /> below.
-// import { ProblemGrid } from "@/components/wiki/ProblemGrid";
 import { PhotoSection } from "@/components/wiki/main/PhotoSection";
 
 // Compressed copy of /public/problem-background.png (1.9 MB -> 210 KB). The
@@ -24,29 +22,6 @@ export function ProblemSection() {
         rising faster than our planet or our livestock systems, can sustainably
         support.
       </p>
-
-      {/* Previous body copy and cards, kept for an easy restore:
-      <p className="mb-8 max-w-3xl text-base leading-relaxed text-body">
-        Demand for meat keeps climbing, and the system that supplies it is
-        already among the largest drivers of emissions, freshwater depletion
-        and land degradation. Alternative proteins exist to absorb that
-        demand. They haven&apos;t — for a reason that gets less attention than
-        it deserves.
-      </p>
-
-      <ProblemGrid />
-
-      <div className="max-w-3xl py-1">
-        <p className="text-base text-foreground leading-relaxed">
-          The fat content of real meat is not a luxury — it is the entire
-          sensory experience. Without intramuscular fat, alternative proteins
-          will never truly compete.{" "}
-          <span className="text-accent font-semibold">
-            MEYcell closes that gap.
-          </span>
-        </p>
-      </div>
-      */}
     </PhotoSection>
   );
 }

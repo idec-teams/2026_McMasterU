@@ -12,8 +12,7 @@ export const metadata = {
   title: "Outreach — MEYcell",
 };
 
-// Images live in /public/outreach. A <Photo> with no `src` renders a
-// "Photo coming soon" frame — drop a file in and add `src` to fill it.
+// Images live in /public/outreach. A <Photo> with no `src` renders a placeholder
 
 const PODCAST_GUESTS = [
   {

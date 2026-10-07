@@ -1,6 +1,5 @@
 import { AlternativesSection } from "@/components/wiki/main/AlternativesSection";
 import { BioreactorSection } from "@/components/wiki/main/BioreactorSection";
-import { CTASection } from "@/components/wiki/main/CTASection";
 import { DirectedEvolutionSection } from "@/components/wiki/main/DirectedEvolutionSection";
 import { HeroBanner } from "@/components/wiki/main/HeroBanner";
 import { ProblemSection } from "@/components/wiki/main/ProblemSection";
@@ -17,7 +16,6 @@ export default function HomePage() {
       <ProceduresSection />
       <DirectedEvolutionSection />
       <PromoVideoSection />
-      <CTASection />
     </>
   );
 }

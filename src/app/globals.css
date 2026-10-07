@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 /*
+AI-Generated CSS design system for MEYcell.
+*/
+
+/*
  * ============================================================================
  * MEYcell color system — single source of truth.
  * Change a value here and it propagates everywhere via Tailwind utilities.

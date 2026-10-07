@@ -33,26 +33,6 @@ export function HeroBanner() {
         <div className="relative flex flex-1 flex-col items-center justify-center gap-10 px-6 py-16">
           {/* translate-y nudges the logo slightly below true center */}
           <h1 className="relative translate-y-4">
-            {/* Two earlier marks, kept for easy swapping. Restore the matching
-                import (and `asset` for the raster) if you bring one back.
-
-                1. Abstract placeholder cell:
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.58]">
-              <CellViz />
-            </div>
-
-                2. The original raster. `unoptimized` is required — next/image
-                otherwise collapses an animated gif/webp to a single frame:
-            <Image
-              src={asset("/logo/mey_cell_wave_white_soft.webp")}
-              alt=""
-              width={500}
-              height={491}
-              unoptimized
-              priority
-              className="h-full w-full object-contain"
-            /> */}
-
             <MeyCellMark width={MARK_WIDTH} white={MARK_WHITE} />
           </h1>
 
@@ -66,16 +46,6 @@ export function HeroBanner() {
         </div>
 
         <div className="relative px-6 pb-10 text-center sm:px-10">
-          {/* The mark above sets "MEYcell" itself, so the plain type title is
-              retired. Restore this block if the logo ever shrinks back down:
-          <h1
-            className="font-display mb-6 font-bold leading-[0.92] tracking-tight"
-            style={{ fontSize: "clamp(2.75rem, 8vw, 6rem)" }}
-          >
-            <span className="text-foreground">MEY</span>
-            <span className="text-primary">cell</span>
-          </h1> */}
-
           <div className="h-px w-full bg-gradient-to-r from-transparent via-foreground/15 to-transparent" />
           {/* The tagline is absolutely centered on the panel so it stays on the
               true midline — the side labels have different widths, so a plain

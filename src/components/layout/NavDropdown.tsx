@@ -7,15 +7,12 @@ import type { NavLink } from "@/types/wiki";
 
 // Desktop nav item with sub-pages. The parent stays a real link (Engineering is
 // its own page), so the caret is a separate button rather than the whole item
-// being a toggle.
-//
-// The header is transparent and sits over banner imagery, so the panel carries
-// its own opaque-ish surface + blur + drop shadow. Without those it would be
-// unreadable over a photo.
+// being a toggle
 //
 // Hover and keyboard focus are handled in CSS (`group-hover` /
-// `group-focus-within`) so nothing runs on pointer movement; React state only
-// covers the click/tap toggle, which touch devices need.
+// `group-focus-within`) so nothing runs on pointer movement
+// 
+// React state only covers the click/tap toggle for the touch devices
 export function NavDropdown({ link }: { link: NavLink }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -61,8 +58,7 @@ export function NavDropdown({ link }: { link: NavLink }) {
         </button>
       </div>
 
-      {/* pt-2 is a hover bridge — it keeps the pointer inside the group while
-          it travels from the label down into the panel. */}
+      {/* pt-2 is a hover bridge, keeping the pointer inside the group whileit travels from the label down into the panel. */}
       <div
         className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 ${
           open ? "block" : "hidden group-hover:block group-focus-within:block"
