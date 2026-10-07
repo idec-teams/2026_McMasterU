@@ -1,3 +1,4 @@
+import { FlowCue } from "@/components/ui/SectionCue";
 import { asset } from "@/lib/wiki/asset";
 
 // ───────────────────────────────────────────────────────────────────────────
@@ -30,10 +31,12 @@ export function PromoVideoSection() {
             </video>
           ) : (
             <span className="absolute bottom-4 left-4 font-mono text-[10px] tracking-widest text-muted-foreground uppercase">
-              Video — coming soon
+              Video: coming soon
             </span>
           )}
         </div>
+
+        <FlowCue to="explore" />
       </div>
     </section>
   );

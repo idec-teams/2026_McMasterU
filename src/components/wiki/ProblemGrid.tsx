@@ -27,7 +27,7 @@ const PROBLEMS: Problem[] = [
 
 export function ProblemGrid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
       {PROBLEMS.map((problem) => (
         <ProblemCard key={problem.title} problem={problem} />
       ))}

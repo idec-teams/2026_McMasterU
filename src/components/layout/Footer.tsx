@@ -34,7 +34,7 @@ export function Footer() {
             © 2026 McMaster University IDEC Team. All rights reserved.
           </div>
           <div className="font-mono text-[10px] text-muted-foreground/35">
-            MEYcell — S. cerevisiae MEY-26 — IDEC Foundation
+            MEYcell · S. cerevisiae MEY-26 · IDEC Foundation
           </div>
         </div>
       </div>

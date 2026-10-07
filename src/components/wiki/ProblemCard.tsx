@@ -6,9 +6,9 @@ export function ProblemCard({ problem }: { problem: Problem }) {
 
   return (
     <div
-      className={`flex flex-col gap-4 border ${c.border} bg-surface p-8 transition-colors duration-200 ${c.hover}`}
+      className={`flex flex-col gap-2 border ${c.border} bg-surface p-5 transition-colors duration-200 ${c.hover}`}
     >
-      <div className={`font-display text-5xl font-bold leading-none ${c.stat}`}>
+      <div className={`font-display text-3xl font-bold leading-none ${c.stat}`}>
         {problem.stat}
       </div>
       <div className="font-mono text-xs tracking-widest uppercase text-muted-foreground">

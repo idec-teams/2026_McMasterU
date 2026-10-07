@@ -3,6 +3,7 @@
 import { Dna, Droplets, Flame, FlaskConical } from "lucide-react";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
+import { FlowCue } from "@/components/ui/SectionCue";
 import type { Step } from "@/types/wiki";
 
 // The four steps run a temperature ramp that mirrors the narrative:
@@ -13,7 +14,7 @@ const STEPS: Step[] = [
     num: "01",
     title: "Engineer the Yeast",
     icon: Dna,
-    body: "Saccharomyces cerevisiae is genetically modified to overexpress lipid biosynthesis pathways — including fatty acid synthase and diacylglycerol acyltransferase — enabling massive accumulation of intracellular triglycerides identical to animal fat.",
+    body: "Saccharomyces cerevisiae BY4741 is engineered to push carbon toward storage fat. A deregulated acetyl-CoA carboxylase (ACC1**) lifts the rate-limiting step, DGA1 drives the final acylation into triacylglycerol, and OLE1 shifts the product toward unsaturated fat. β-oxidation and the TAG lipases, the routes that compete for that carbon, are knocked out.",
     tone: {
       icon: "text-sky",
       label: "text-sky/60",
@@ -25,7 +26,7 @@ const STEPS: Step[] = [
     num: "02",
     title: "Accumulate Lipids",
     icon: Droplets,
-    body: "MEYcells proliferate in fed-batch bioreactors under carbon-rich conditions, packing their interiors with lipid droplets. Each cell becomes a microscopic reservoir of dense, flavorful fat — exceeding 60% lipid dry cell weight.",
+    body: "MEYcells grow under carbon-rich conditions, packing their interiors with lipid droplets until each cell is a microscopic reservoir of fat. Nile Red staining puts our β-oxidation knockout 31.2% above the parent strain, roughly 92 mg of neutral lipid per gram of dry cell weight.",
     tone: {
       icon: "text-primary",
       label: "text-primary/60",
@@ -37,7 +38,7 @@ const STEPS: Step[] = [
     num: "03",
     title: "Integrate with Protein",
     icon: FlaskConical,
-    body: "MEYcells are embedded into cultured muscle fiber scaffolds or plant-based protein matrices. Distributed throughout the product like natural marbling, they remain structurally intact during cold storage and transport.",
+    body: "MEYcells are embedded into cultured muscle fiber scaffolds or plant-based protein matrices. Distributed through the product like natural marbling, they have to survive the trip: overexpressed TPS1 builds up trehalose, which protects the cells through the freezing and dehydration of cold storage.",
     tone: {
       icon: "text-gold",
       label: "text-gold/60",
@@ -49,7 +50,7 @@ const STEPS: Step[] = [
     num: "04",
     title: "Cook, Burst, Devour",
     icon: Flame,
-    body: "At a precise thermal threshold engineered to match cooking temperatures, MEYcell membranes rupture and release their entire lipid payload into the surrounding protein. The result: a juicy, fatty, satisfying bite that is structurally indistinguishable from the real thing.",
+    body: "Heat unfolds the RNA thermometer, ribosomes reach BGL2, and the glucanase eats away at the cell wall until it can no longer hold the cell's internal pressure. The wall gives, and the droplets release into the surrounding protein: the marbling that alternative proteins have been missing.",
     tone: {
       icon: "text-ember",
       label: "text-ember/60",
@@ -59,9 +60,12 @@ const STEPS: Step[] = [
   },
 ];
 
+// overflow-x-clip: the rows slide in from 30px off to the side, and until they
+// animate in they'd otherwise widen the page and add a sideways scrollbar.
+// `clip`, unlike `hidden`, doesn't create a scroll container.
 export function ProceduresSection() {
   return (
-    <section id="procedures" className="pt-16 pb-28 bg-deep">
+    <section id="procedures" className="overflow-x-clip pt-16 pb-28 bg-deep">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20">
           <h2 className="font-display text-4xl lg:text-5xl text-foreground">
@@ -70,6 +74,8 @@ export function ProceduresSection() {
         </div>
 
         <StepList />
+
+        <FlowCue to="directed-evolution" />
       </div>
     </section>
   );
