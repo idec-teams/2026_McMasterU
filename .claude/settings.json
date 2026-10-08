@@ -132,7 +132,9 @@
       "Bash(awk '{printf \"poster: %.0f KB\\\\n\", $5/1024}')",
       "Bash(ffmpeg -y -loglevel error -i /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/promo-original.mp4 -c:v libx264 -preset slow -crf 25 -maxrate 3M -bufsize 6M -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart public/promo-video-final.mp4)",
       "Bash(awk '{printf \"compressed: %.1f MB\\\\n\", $5/1048576}')",
-      "Bash(ffprobe -v error -show_entries format=duration -show_entries stream=width,height -of default=nw=1 public/promo-video-final.mp4)"
+      "Bash(ffprobe -v error -show_entries format=duration -show_entries stream=width,height -of default=nw=1 public/promo-video-final.mp4)",
+      "Bash(awk '{printf \"working tree: %.1f MB\\\\n\", $5/1048576}')",
+      "Bash(awk '{printf \"poster regenerated: %.0f KB\\\\n\", $5/1024}')"
     ]
   }
 }
