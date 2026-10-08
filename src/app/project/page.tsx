@@ -1385,9 +1385,15 @@ export default function ProjectPage() {
           </h5>
 
           <p>
-            The Level 0 parts consist of compatible sequences flanked by BsmBI
-            and digested to form a Level 1 transcription unit. These sequences
-            consist of the promoter, 5’ UTR, CDS, and 3’UTR/terminator.
+            Level 0 plasmids were not constructed as separate plasmid constructs. Instead, 
+            the required Level 0 sequences were obtained as linear DNA sequences containing 
+            the appropriate Bsal flanking sites for Golden Gate Assembly. These linear sequences 
+            included the promoter, 5' UTR, CDS, and 3' UTR components required to assemble each 
+            transcription unit.
+          </p>
+
+          <p>
+            Additionally,  only the RNAt 5' UTRs were ordered from GenScript.
           </p>
 
           <h5 className="mt-4 text-medium text-foreground font-medium">
@@ -1395,41 +1401,10 @@ export default function ProjectPage() {
           </h5>
 
           <p>
-            The Level 1 parts are joined together by flanking each end with BsaI
-            overhangs, then digesting to form a Level 2 transcription unit. The
-            Level 1 parts differ by their own unique promoter-terminator pair
-            and coding sequences (CDS). As suggested to us by Dr. Cinzia Klemm,
-            incorporating unique promoter-terminator pairs within each part
-            allows for the prevention of accidental homologous recombination.
-            Homologous recombination can occur between repetitive sequences in
-            the yeast, and risks unwanted deletions in the final construct. The
-            CDS of each part features ACC1, DGA1, OLE1, TPS1, and the RNAt
-            within the 5’ UTR of the BGL2. The RNAt is embedded within the 5’
-            UTR of the BGL2 to ensure its lysis-facilitating properties
-            selectively occur at RNAt-specific temperatures.
-          </p>
-
-          <h5 className="mt-4 text-medium text-foreground font-medium">
-            Level 2 Parts
-          </h5>
-
-          <p>
-            The Level 2 transcription unit is flanked by BsmBI sites and
-            integrated into the plasmid vector, pAN316a, through digestion and
-            ligation with EcoRI and SpeI enzymes.
-          </p>
-
-          <p>
-            The final plasmid was constructed <em>in-silico</em> to confirm the
-            correct orientation of the Level 1 transcriptional units and to
-            prevent any incompatibilities before being done in lab and is shown
-            below.
-          </p>
-
-          <p>
-            The final construct is composed of the Level 1 transcription units
-            for ACC1, DGA1, OLE1, TPS1, and BGL2, with the RNAt in the 5' UTR of
-            BGL2, as shown below.
+            The linear Level 0 sequences were assembled using their Bsal flanking sites to generate 
+            the Level 1 transcription units. The assembled sequences were then digested and directly 
+            ligated into the pAN316a backbone using EcoRI and Spel. This produced the final RNAt-containing 
+            plasmid constructs for transformation and subsequent characterization.
           </p>
 
           <h5 className="mt-4 text-lg text-foreground font-medium">Genes</h5>
