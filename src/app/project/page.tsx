@@ -833,7 +833,7 @@ export default function ProjectPage() {
             β-oxidation, a pathway that degrades fatty acids to generate
             acetyl-CoA and energy <Cite id="wang2024" />. In{" "}
             <em> S. cerevisiae</em>, fatty acid transport and oxidation involve
-            proteins including Pxa1 and Pox1, while additional enzymes
+            proteins including PXA1 and POX1, while additional enzymes
             participate in fatty acid mobilization. Preventing this pathway
             reduces the consumption of newly synthesized fatty acids and allows
             more of them to remain available for storage as TAGs{" "}
@@ -842,8 +842,8 @@ export default function ProjectPage() {
 
           <p>
             TAGs stored in lipid droplets are also continuously regulated
-            through lipolysis <Cite id="lass2011" />. Lipases such as Tgl3,
-            Tgl4, and Tgl5 hydrolyze TAGs, releasing fatty acids that can be
+            through lipolysis <Cite id="lass2011" />. Lipases such as TGL3,
+            TGL4, and TGL5 hydrolyze TAGs, releasing fatty acids that can be
             reused or metabolized by the cell. Therefore, lipid accumulation
             reflects a balance between fatty acid synthesis, TAG formation, and
             TAG degradation. Limiting TAG mobilization can promote the retention
