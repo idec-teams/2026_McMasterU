@@ -134,7 +134,10 @@
       "Bash(awk '{printf \"compressed: %.1f MB\\\\n\", $5/1048576}')",
       "Bash(ffprobe -v error -show_entries format=duration -show_entries stream=width,height -of default=nw=1 public/promo-video-final.mp4)",
       "Bash(awk '{printf \"working tree: %.1f MB\\\\n\", $5/1048576}')",
-      "Bash(awk '{printf \"poster regenerated: %.0f KB\\\\n\", $5/1024}')"
+      "Bash(awk '{printf \"poster regenerated: %.0f KB\\\\n\", $5/1024}')",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }
