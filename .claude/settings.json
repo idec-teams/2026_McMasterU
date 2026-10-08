@@ -81,7 +81,14 @@
       "Bash(magick montage *)",
       "Bash(magick /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/f_23.png -background none -gravity center -extent 500x500 -resize 512x512 -strip /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/icon.png)",
       "Bash(magick /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/icon.png -resize 16x16 -scale 400% /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/icon16.png)",
-      "Bash(magick /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/icon.png -resize 32x32 -scale 300% /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/icon32.png)"
+      "Bash(magick /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/icon.png -resize 32x32 -scale 300% /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/icon32.png)",
+      "Bash(echo \"=== all public files ===\"; find public -type f | sort; echo; echo \"=== recent HEIC/PNG elsewhere ===\"; find ~/Desktop ~/Downloads -maxdepth 2 \\\\\\( -iname \"*.heic\" -o -iname \"*.png\" \\\\\\) -newermt \"2026-10-06\" 2>/dev/null | head -15)",
+      "Read(//Users/ozzy/Desktop/**)",
+      "Bash(magick ~/Downloads/hsi-photo1.HEIC -auto-orient -resize '1400x1400>' -quality 86 /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/p1.jpg)",
+      "Bash(magick ~/Downloads/hsi-photo2.PNG -auto-orient -resize '1400x1400>' -quality 86 /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/p2.jpg)",
+      "Bash(magick public/hsi-photo1.HEIC -auto-orient -resize 1600x1600\\\\> -quality 84 -strip public/outreach/hsi-wet-lab-workshop.jpg)",
+      "Bash(magick public/hsi-photo2.PNG -auto-orient -resize 1600x1600\\\\> -quality 84 -strip public/outreach/hsi-onboarding.jpg)",
+      "Bash(pkill -f \"http.server 4321\")"
     ]
   }
 }

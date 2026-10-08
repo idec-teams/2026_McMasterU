@@ -133,29 +133,19 @@ export default function OutreachPage() {
           <SubHeading>
             The application stage, and science equity and inclusion
           </SubHeading>
-          <MediaRow
-            media={
-              <Photo
-                aspect="landscape"
-                caption="Admission statistics and application workflow."
-              />
-            }
-          >
-            <p>
-              The SynBio HSI is open to eligible students entering grades 11 or
-              12 (ages 16–18). Applications opened in mid-March of 2026, with
-              student outreach ongoing throughout February–April. Applications
-              closed in early May, with online interviews scheduled for mid-May
-              2026.
-            </p>
-            <p>
-              This year, the McMaster SynBio HSI hit its record high of student
-              applications: we had 255 applications competing for a little over
-              25 spots in this internship. 30 applicants passed the initial
-              stage on to the interview stage, of whom 25 were selected for this
-              year's final cohort.
-            </p>
-          </MediaRow>
+          <p>
+            The SynBio HSI is open to eligible students entering grades 11 or 12
+            (ages 16–18). Applications opened in mid-March of 2026, with student
+            outreach ongoing throughout February–April. Applications closed in
+            early May, with online interviews scheduled for mid-May 2026.
+          </p>
+          <p>
+            This year, the McMaster SynBio HSI hit its record high of student
+            applications: we had 255 applications competing for a little over 25
+            spots in this internship. 30 applicants passed the initial stage on
+            to the interview stage, of whom 25 were selected for this year's
+            final cohort.
+          </p>
           <p>
             As part of our enduring commitment to science equity and inclusion
             in our local Hamilton-Wentworth community, and acknowledging the
@@ -195,13 +185,22 @@ export default function OutreachPage() {
             world of cellular agriculture that McMaster SynBio is diving into
             this year.
           </p>
-          <p>
-            This workshop began with opening remarks of the HSI by our Outreach
-            MC, Liam Serrano. Interns were introduced to the team, our mission,
-            history, and past projects. Following that, interns were introduced
-            to the fundamentals of synthetic biology, genetic engineering, and
-            the problems that synthetic biology can solve.
-          </p>
+          <MediaRow
+            media={
+              <Photo
+                src="/outreach/hsi-onboarding.jpg"
+                caption="Opening remarks: introducing the cohort to McMaster SynBio."
+              />
+            }
+          >
+            <p>
+              This workshop began with opening remarks of the HSI by our
+              Outreach MC, Liam Serrano. Interns were introduced to the team,
+              our mission, history, and past projects. Following that, interns
+              were introduced to the fundamentals of synthetic biology, genetic
+              engineering, and the problems that synthetic biology can solve.
+            </p>
+          </MediaRow>
           <p>
             Following group introductions and a formal introduction to the
             expectations of their project, students were invited to ask
@@ -239,11 +238,7 @@ export default function OutreachPage() {
             <li>Components of graphical abstracts, and their function</li>
             <li>Components of effective verbal scientific communication</li>
           </ul>
-          <MediaRow
-            media={
-              <Photo aspect="landscape" caption="SciComm workshop collage." />
-            }
-          >
+          <div className="space-y-4">
             <p>
               In light of the inquiry-based and problem-based learning
               objectives we aimed to follow throughout the SynBio HSI, students
@@ -256,7 +251,7 @@ export default function OutreachPage() {
               ensure students got exposure to BioRender being applied in various
               contexts.
             </p>
-          </MediaRow>
+          </div>
           <p>
             Through this workshop, students met three objectives: understand the
             role of science communication in an increasingly information-based
@@ -346,12 +341,14 @@ export default function OutreachPage() {
             Students were also taught proper biological sketching in the context
             of laboratory observations.
           </p>
-          <div className="grid gap-6 sm:grid-cols-2">
+          {/* Portrait shot, so it's held to a column width instead of
+              stretching across the section. */}
+          <div className="mx-auto w-full max-w-sm">
             <Photo
-              aspect="landscape"
-              caption="Serial dilutions and microscopy."
+              src="/outreach/hsi-wet-lab-workshop.jpg"
+              caption="Reviewing key terms (solute, solvent, concentration, serial dilution, CFUs) before the bench work began."
+              sizes="(min-width: 768px) 24rem, 100vw"
             />
-            <Photo aspect="landscape" caption="Our lab spaces in ETB." />
           </div>
           <p>
             In addition, students joined our wet lab lead Rachel Ou, as well as

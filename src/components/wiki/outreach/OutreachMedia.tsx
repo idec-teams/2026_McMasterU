@@ -1,4 +1,3 @@
-import { Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { asset } from "@/lib/wiki/asset";
@@ -16,14 +15,14 @@ const ASPECT: Record<Aspect, string> = {
   square: "aspect-square",
 };
 
-/** A framed photo with a caption. Leave `src` off for a placeholder. */
+/** A framed photo with a caption. */
 export function Photo({
   src,
   caption,
   aspect = "portrait",
   sizes = "(min-width: 768px) 18rem, 100vw",
 }: {
-  src?: string;
+  src: string;
   caption: string;
   aspect?: Aspect;
   sizes?: string;
@@ -34,22 +33,13 @@ export function Photo({
         <div
           className={`relative overflow-hidden bg-section ${ASPECT[aspect]}`}
         >
-          {src ? (
-            <Image
-              src={asset(src)}
-              alt={caption}
-              fill
-              sizes={sizes}
-              className="object-cover"
-            />
-          ) : (
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 border border-dashed border-border text-muted-foreground">
-              <ImageIcon className="h-6 w-6" aria-hidden="true" />
-              <span className="font-mono text-[10px] uppercase tracking-widest">
-                Photo coming soon
-              </span>
-            </div>
-          )}
+          <Image
+            src={asset(src)}
+            alt={caption}
+            fill
+            sizes={sizes}
+            className="object-cover"
+          />
         </div>
       </div>
       <figcaption className="mt-2 text-sm leading-snug text-muted-foreground">
