@@ -34,7 +34,10 @@ const NODES = [
   { label: "Acyl-CoA", hw: 37 },
   { label: "PA", hw: 10 },
   { label: "DAG", hw: 17 },
-  { label: "TAG droplets", hw: 50 },
+  // Named just "TAG": the lipid-droplet compartment is drawn around it.
+  // `hw` is padded well past the text width here so the arrows stop clear of
+  // the lipid-droplet circle drawn around this node.
+  { label: "TAG", hw: 42 },
   { label: "Lipid release", hw: 49 },
 ] as const;
 
@@ -268,7 +271,49 @@ export function PathwayDiagram() {
             >
               <path d="M0 0 L10 5 L0 10 z" className="fill-dim" />
             </marker>
+            {/* Same head in the accent colour, for the carbon the edits push
+                down the lipid route. */}
+            <marker
+              id="pw-arrow-flux"
+              viewBox="0 0 10 10"
+              refX="9"
+              refY="5"
+              markerWidth="6"
+              markerHeight="6"
+              orient="auto-start-reverse"
+            >
+              <path d="M0 0 L10 5 L0 10 z" className="fill-primary" />
+            </marker>
           </defs>
+
+          {/* Compartments. Drawn as hairlines rather than filled boxes so the
+              pathway still reads as one run. */}
+          <g className="stroke-dim/50" fill="none">
+            {/* Narrow enough that the DGA1 and BGL2 leaders clear it. */}
+            {/* cy is the optical middle of the cap-height text, not its
+                baseline, so the ring sits centred on "TAG". */}
+            <ellipse cx={X[6]} cy={SPINE_Y} rx={46} ry={30} />
+            {/* Sits clear below the knockout bar so neither hides the other. */}
+            <rect x={X[3] - 92} y={256} width={184} height={94} rx={10} />
+          </g>
+          <text
+            x={X[6]}
+            y={SPINE_Y + 42}
+            textAnchor="middle"
+            className="fill-dim"
+            style={{ fontSize: 12, letterSpacing: "0.08em" }}
+          >
+            lipid droplet
+          </text>
+          <text
+            x={X[3]}
+            y={368}
+            textAnchor="middle"
+            className="fill-dim"
+            style={{ fontSize: 12, letterSpacing: "0.08em" }}
+          >
+            peroxisome
+          </text>
 
           {NODES.map((node, i) => (
             <text
@@ -282,20 +327,26 @@ export function PathwayDiagram() {
               {node.label}
             </text>
           ))}
-          {NODES.slice(0, -1).map((node, i) => (
-            <line
-              key={node.label}
-              x1={arrowFrom(i)}
-              y1={SPINE_Y}
-              x2={arrowFrom(i) + ARROW}
-              y2={SPINE_Y}
-              className="stroke-dim"
-              strokeWidth={2.4}
-              // Glycolysis is many steps, so that one arrow is dashed.
-              strokeDasharray={i === 0 ? "7 5" : undefined}
-              markerEnd="url(#pw-arrow)"
-            />
-          ))}
+          {/* Downstream of the blocked branch the spine thickens and turns
+              accent: the carbon beta-oxidation would have burned stays in the
+              lipid route. */}
+          {NODES.slice(0, -1).map((node, i) => {
+            const flux = i >= 3;
+            return (
+              <line
+                key={node.label}
+                x1={arrowFrom(i)}
+                y1={SPINE_Y}
+                x2={arrowFrom(i) + ARROW}
+                y2={SPINE_Y}
+                className={flux ? "stroke-primary" : "stroke-dim"}
+                strokeWidth={flux ? 4 : 2.4}
+                // Glycolysis is many steps, so that one arrow is dashed.
+                strokeDasharray={i === 0 ? "7 5" : undefined}
+                markerEnd={`url(#pw-arrow${flux ? "-flux" : ""})`}
+              />
+            );
+          })}
 
           {BOOSTED.map((item) => (
             <Boosted
@@ -349,7 +400,7 @@ export function PathwayDiagram() {
           />
           <text
             x={X[3]}
-            y={274}
+            y={286}
             textAnchor="middle"
             className="fill-foreground"
             style={{ fontSize: 15 }}
@@ -358,7 +409,7 @@ export function PathwayDiagram() {
           </text>
           <text
             x={X[3]}
-            y={296}
+            y={308}
             textAnchor="middle"
             className="fill-rose"
             style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.03em" }}
@@ -367,7 +418,7 @@ export function PathwayDiagram() {
           </text>
           <text
             x={X[3]}
-            y={316}
+            y={328}
             textAnchor="middle"
             className="fill-muted-foreground"
             style={{ fontSize: 12, fontStyle: "italic" }}

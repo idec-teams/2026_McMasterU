@@ -165,10 +165,14 @@ export type WikiSectionProps = {
   title: ReactNode;
   /** Keep `title` as the section's id/TOC reference but don't render it visibly (e.g. a section with its own custom heading). */
   hideTitle?: boolean;
+  /** Nested headings, surfaced under this section in the table of contents. */
+  subsections?: { id: string; title: string }[];
   children?: ReactNode;
 };
 
 export type TocItem = {
   id: string;
+  /** Nested entries, rendered as an indented list under this one. */
+  children?: TocItem[];
   title: ReactNode;
 };
