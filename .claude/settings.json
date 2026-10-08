@@ -124,7 +124,8 @@
       "Bash(mv \"RNA Thermometer Optimization workflow.png\" \"rnat-optimization-workflow.png\")",
       "Bash(mv \"RNAt-mCherry screening _ Selection.png\" \"rnat-mcherry-screening.png\")",
       "Bash(mv \"Transformation into E.png\" \"transformation-workflow.png\")",
-      "Bash(mv \"EP-PCR.png\" \"eppcr-reaction-mix.png\")"
+      "Bash(mv \"EP-PCR.png\" \"eppcr-reaction-mix.png\")",
+      "Bash(pnpm deploy:pages --dry-run)"
     ]
   }
 }

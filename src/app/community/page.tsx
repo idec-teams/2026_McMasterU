@@ -71,7 +71,7 @@ function DetailBlock({
               preload="metadata"
               className="h-full w-full object-contain"
             >
-              <source src={video} type="video/mp4" />
+              <source src={asset(video)} type="video/mp4" />
               Your browser doesn't support embedded video.
             </video>
           </div>
@@ -235,7 +235,7 @@ export default function CommunityPage() {
             reflect diverse input.
           </p>
           <img
-            src="/hp comms/ires.png"
+            src={asset("/hp comms/ires.png")}
             alt="ires framework"
             width={350}
             height={300}
@@ -267,7 +267,7 @@ export default function CommunityPage() {
             </p>
             <figure>
               <img
-                src="/hp comms/stakeholder analysis.png"
+                src={asset("/hp comms/stakeholder analysis.png")}
                 alt="Stakeholder analysis"
                 className="mx-auto block w-full border border-border"
               />
@@ -856,7 +856,7 @@ export default function CommunityPage() {
             each impacted group means based on their relative positioning.
           </p>
           <img
-            src="/hp comms/surveys.png"
+            src={asset("/hp comms/surveys.png")}
             alt="surveys"
             width={600}
             height={300}
@@ -975,7 +975,7 @@ export default function CommunityPage() {
           </p>
           <br></br>
           <img
-            src="/hp comms/questions.png"
+            src={asset("/hp comms/questions.png")}
             alt="questions"
             width={500}
             height={300}

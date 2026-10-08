@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { asset } from "@/lib/wiki/asset";
 
 const SPONSORS = [
   { name: "New Harvest", logo: "/sponsors/new harvest.png" },
@@ -49,7 +50,7 @@ export function Footer() {
               <li key={name}>
                 <div className="flex h-20 items-center justify-center rounded-xl bg-white px-3">
                   <Image
-                    src={logo}
+                    src={asset(logo)}
                     alt={name}
                     width={250}
                     height={150}
