@@ -447,7 +447,7 @@ const { Cite, references } = createCitations([
   },
 
   {
-    id: "hemsely1989",
+    id: "hemsley1989",
     authors: "Hemsley et al.",
     title:
       "A simple method for site-directed mutagenesis using the polymerase chain reaction.",
@@ -501,6 +501,122 @@ const { Cite, references } = createCitations([
     source: "",
     year: "",
     url: "https://openbiofoundry.org/",
+  },
+  {
+    id: "ruiz2022",
+    authors: "Ruiz, N. et al.",
+    title:
+      "How Escherichia coli Became the Flagship Bacterium of Molecular Biology",
+    source: "Journal of Bacteriology",
+    year: 2022,
+    url: "https://doi.org/10.1128/jb.00230-22",
+  },
+  {
+    id: "tuttle2021",
+    authors: "Tuttle, A. R. et al.",
+    title: "Growth and Maintenance of Escherichia coli Laboratory Strains",
+    source: "Current Protocols",
+    year: 2021,
+    url: "https://doi.org/10.1002/cpz1.20",
+  },
+  {
+    id: "uofsc2024",
+    authors: "",
+    title: "E. coli Strains and the NIH Guidelines",
+    source: "University of South Carolina, Environmental Health and Safety",
+    year: "",
+    url: "https://sc.edu/about/offices_and_divisions/ehs/documents/biological_safety/e-coli-strains-nih-guidelines.pdf",
+  },
+  {
+    id: "valle2021",
+    authors: "Valle, A. et al.",
+    title:
+      "Escherichia coli, the workhorse cell factory for the production of chemicals",
+    source:
+      "Microbial Cell Factories Engineering for Production of Biomolecules",
+    year: 2021,
+    url: "https://doi.org/10.1016/B978-0-12-821477-0.00012-X",
+  },
+  {
+    id: "zhang2023",
+    authors: "Zhang, M. L. et al.",
+    title:
+      "Improving thermo-tolerance of Saccharomyces cerevisiae by precise regulation of the expression of small HSP",
+    source: "RSC Advances",
+    year: 2023,
+    url: "https://doi.org/10.1039/d3ra05216h",
+  },
+  {
+    id: "chen2016",
+    authors: "Chen, Y. et al.",
+    title:
+      "Self-replicating shuttle vectors based on pANS, a small endogenous plasmid of the unicellular cyanobacterium Synechococcus elongatus PCC 7942",
+    source: "Microbiology",
+    year: 2016,
+    url: "https://doi.org/10.1099/mic.0.000377",
+  },
+  {
+    id: "sikorski1989",
+    authors: "Sikorski, R. S. et al.",
+    title:
+      "A system of shuttle vectors and yeast host strains designed for efficient manipulation of DNA in Saccharomyces cerevisiae",
+    source: "Genetics",
+    year: 1989,
+    url: "https://doi.org/10.1093/genetics/122.1.19",
+  },
+  {
+    id: "albakri2018",
+    authors: "Albakri, M. B. et al.",
+    title:
+      "Polyglutamine toxicity assays highlight the advantages of mScarlet for imaging in Saccharomyces cerevisiae",
+    source: "F1000Research",
+    year: 2018,
+    url: "https://doi.org/10.12688/f1000research.15829.2",
+  },
+  {
+    id: "biorbyt",
+    authors: "Biorbyt",
+    title:
+      "mScarlet Fluorescent Protein: Bright Red Reporter for Live-Cell Imaging, Fusion Protein Studies and Advanced Biomedical Research",
+    source: "",
+    year: "",
+    url: "https://www.biorbyt.com/new-products/mscarlet-red-fluorescent-protein",
+  },
+  {
+    id: "gietz2002",
+    authors: "Gietz, R. D. et al.",
+    title:
+      "Transformation of yeast by lithium acetate/single-stranded carrier DNA/polyethylene glycol method",
+    source: "Methods in Enzymology",
+    year: 2002,
+    url: "https://doi.org/10.1016/s0076-6879(02)50957-5",
+  },
+  {
+    id: "dyer2002",
+    authors: "Dyer, J. M. et al.",
+    title:
+      "Metabolic engineering of Saccharomyces cerevisiae for production of novel lipid compounds",
+    source: "Applied Microbiology and Biotechnology",
+    year: 2002,
+    url: "https://doi.org/10.1007/s00253-002-0997-5",
+  },
+  {
+    id: "cardoso2020",
+    authors: "Cardoso, V. M. et al.",
+    title:
+      "Cost analysis based on bioreactor cultivation conditions: Production of a soluble recombinant protein using Escherichia coli BL21(DE3)",
+    source: "Biotechnology Reports",
+    year: 2020,
+    url: "https://doi.org/10.1016/j.btre.2020.e00441",
+  },
+  {
+    id: "vanhercke2011",
+    authors: "Vanhercke, T. et al.",
+    title:
+      "Mechanistic and structural insights into the regioselectivity of an acyl-CoA fatty acid desaturase via directed molecular evolution",
+    source: "Journal of Biological Chemistry",
+    year: 2011,
+    url: "https://doi.org/10.1074/jbc.M110.191098",
   },
 ]);
 
@@ -624,7 +740,7 @@ export default function ProjectPage() {
             <em>Saccharomyces cerevisiae</em> was chosen as the chassis for the
             project, as it is a well-characterized model organism with a fully
             sequenced genome, extensive experimental and computational data, and
-            an expansive synthetic biology toolkit <Cite id="fakas2016" />.
+            an expansive synthetic biology toolkit <Cite id="fakas2017" />.
             Although modular toolkits such as YaliBricks have been developed for{" "}
             <em>Y. lipolytica</em>, they remain limited in scope compared to the
             extensive library of promoters, plasmids, and other genome
@@ -833,7 +949,7 @@ export default function ProjectPage() {
             β-oxidation, a pathway that degrades fatty acids to generate
             acetyl-CoA and energy <Cite id="wang2024" />. In{" "}
             <em> S. cerevisiae</em>, fatty acid transport and oxidation involve
-            proteins including Pxa1 and Pox1, while additional enzymes
+            proteins including PXA1 and POX1, while additional enzymes
             participate in fatty acid mobilization. Preventing this pathway
             reduces the consumption of newly synthesized fatty acids and allows
             more of them to remain available for storage as TAGs{" "}
@@ -842,8 +958,8 @@ export default function ProjectPage() {
 
           <p>
             TAGs stored in lipid droplets are also continuously regulated
-            through lipolysis <Cite id="lass2011" />. Lipases such as Tgl3,
-            Tgl4, and Tgl5 hydrolyze TAGs, releasing fatty acids that can be
+            through lipolysis <Cite id="lass2011" />. Lipases such as TGL3,
+            TGL4, and TGL5 hydrolyze TAGs, releasing fatty acids that can be
             reused or metabolized by the cell. Therefore, lipid accumulation
             reflects a balance between fatty acid synthesis, TAG formation, and
             TAG degradation. Limiting TAG mobilization can promote the retention
@@ -1081,17 +1197,64 @@ export default function ProjectPage() {
         </WikiSection>
 
         <WikiSection id="mutagenesis" title="Mutagenesis Strategy">
+          <figure className="my-1 flex flex-col items-center">
+            <div className="w-full max-w-3xl">
+              <Image
+                src={asset("/figures/project-workflow.png")}
+                alt="Overall experimental workflow: RNAt selection, then final construct assembly and verification"
+                width={1200}
+                height={520}
+                className="rounded border"
+              />
+            </div>
+            <figcaption className="text-sm text-muted-foreground mt-2">
+              Figure 2 — Overall experimental workflow, from RNAt selection
+              through final construct assembly and verification.
+            </figcaption>
+          </figure>
+
+          <h5 className="mt-4 text-lg text-foreground font-medium">
+            Host Organism Selection
+          </h5>
+
+          <p>
+            <em>Escherichia coli</em> is a widely used organism in the field of
+            genetic engineering, and it is one of the most extensively
+            characterized model organisms in molecular biology, with a fully
+            sequenced genome and well-established protocols for genetic
+            manipulation <Cite id="ruiz2022" />. <em>E. coli</em> DH5α was
+            primarily used for plasmid propagation and recovery. Due to the
+            numerous transformations involved with bottom-up hierarchical
+            assembly <Cite id="lee2015" />, DH5α was selected due to its high
+            transformation efficiency among <em>E. coli</em> K-12 strains and
+            its commercial availability <Cite id="tuttle2021" />. Additionally,
+            laboratory strains of <em>E. coli</em>, such as DH5α, are
+            non-pathogenic, commercially available strains classified under
+            Biosafety Level 1 (BSL-1), indicating that it is considered safe for
+            use under standard laboratory conditions <Cite id="uofsc2024" />,
+            and it is often used in research and development for novel foods and
+            drugs <Cite id="valle2021" />.
+          </p>
+
+          <p>
+            <em>S. cerevisiae</em> BY4741 and the corresponding knockout
+            strains, PXA1 and POX1, were used to evaluate RNAt-regulated
+            transgene expression and the effects of metabolic engineering on
+            lipid production.
+          </p>
+
           <h5 className="mt-4 text-lg text-foreground font-medium">
             Culture and Preparation of Host Organisms
           </h5>
 
           <p>
             <em>Escherichia coli</em> DH5α cells and{" "}
-            <em>Saccharomyces cerevisiae</em> BY4741 cells were used as the
+            <em>Saccharomyces cerevisiae</em> BY4741 cells will be used as the
             bacterial cloning host and yeast chassis, respectively. Both
-            cultures were kept under their appropriate growth conditions for use
-            throughout the plasmid construction, transformation, and
-            characterization workflow.
+            cultures will be kept under their appropriate growth conditions for
+            use throughout the plasmid construction, transformation, and
+            characterization workflow, which is illustrated in their respective
+            culture protocols.
           </p>
 
           <p>
@@ -1105,14 +1268,40 @@ export default function ProjectPage() {
           </p>
 
           <p>
-            The required backbone plasmids were transformed into competent{" "}
+            The required backbone plasmids will be transformed into competent{" "}
             <em>E. coli</em> DH5α cells using heat-shock transformation.
-            Following transformation, plasmid-containing colonies were selected
-            and cultured. The resulting cultures were used to generate glycerol
-            stocks for preservation of the required backbone plasmids, while
-            plasmid DNA was isolated by miniprep for use in subsequent cloning
-            and assembly procedures.
+            Following transformation, plasmid-containing colonies will be
+            selected and cultured. The resulting cultures will be used to
+            generate glycerol stocks for preservation of the required backbone
+            plasmids, while plasmid DNA was isolated by miniprep for use in
+            subsequent cloning and assembly procedures.
           </p>
+
+          <p>
+            Custom genes were ordered in cloning vectors, and primers containing
+            the required overhangs would be designed and ordered for the PCR
+            amplification of the backbone vector and the DNA parts required for
+            Golden Gate assembly. The appropriate DNA parts will be PCR
+            amplified and prepared with the necessary overhangs to enable
+            assembly into level 1 transcription units.
+          </p>
+
+          <figure className="my-1 flex flex-col items-center">
+            <div className="w-full max-w-3xl">
+              <Image
+                src={asset("/figures/transformation-workflow.png")}
+                alt="Backbone vector transformed into E. coli DH5α, miniprepped, Golden Gate assembled, retransformed, then moved into S. cerevisiae BY4741"
+                width={1200}
+                height={300}
+                className="rounded border"
+              />
+            </div>
+            <figcaption className="text-sm text-muted-foreground mt-2">
+              Figure 3 — Cloning and assembly workflow, from the backbone vector
+              through <em>E. coli</em> DH5α propagation and Golden Gate assembly
+              to the final <em>S. cerevisiae</em> BY4741 chassis.
+            </figcaption>
+          </figure>
 
           <h5 className="mt-4 text-lg text-foreground font-medium">
             Plasmid Constructs
@@ -1231,9 +1420,10 @@ export default function ProjectPage() {
           </p>
 
           <p>
-            The final plasmid was constructed in silico to confirm the correct
-            orientation of the Level 1 transcriptional units and to prevent any
-            incompatibilities before being done in lab and is shown below.
+            The final plasmid was constructed <em>in-silico</em> to confirm the
+            correct orientation of the Level 1 transcriptional units and to
+            prevent any incompatibilities before being done in lab and is shown
+            below.
           </p>
 
           <p>
@@ -1294,7 +1484,7 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 2 — PCR Protocol.
+              Figure 4 — PCR Protocol.
             </figcaption>
           </figure>
 
@@ -1309,7 +1499,24 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 3 — Error Prone PCR Protocol.
+              Figure 5 — Error Prone PCR Protocol.
+            </figcaption>
+          </figure>
+
+          <figure className="my-10 flex flex-col items-center">
+            <div className="w-full max-w-xl">
+              <Image
+                src={asset("/figures/eppcr-reaction-mix.png")}
+                alt="Error-prone PCR reaction components: buffer, magnesium and manganese ions, dNTPs, DNA polymerase and primers, amplifying a DNA template into variants"
+                width={900}
+                height={620}
+                className="rounded border"
+              />
+            </div>
+            <figcaption className="text-sm text-muted-foreground mt-2">
+              Figure 6 — Error-prone PCR reaction composition. Mn²⁺ alongside
+              Mg²⁺ and a low-fidelity polymerase raise the per-cycle error rate,
+              amplifying one template into a library of variants.
             </figcaption>
           </figure>
 
@@ -1457,7 +1664,9 @@ export default function ProjectPage() {
           </p>
 
           <p>
-            Promoter strengths were determined and chosen based on the expression data from YTK, which uses common parts in both kits <Cite id = "lee2015" />.
+            Promoter strengths were determined and chosen based on the
+            expression data from YTK, which uses common parts in both kits{" "}
+            <Cite id="lee2015" />.
           </p>
 
           <p>
@@ -1478,7 +1687,7 @@ export default function ProjectPage() {
           <p>
             OLE1 and TPS1 were lower priority relative to the TAG production
             pathway and could be expressed at lower levels. We selected pRPL18B
-            for OLE1 and pSAC6 for TPS1, both weaker to medium-strength 
+            for OLE1 and pSAC6 for TPS1, both weaker to medium-strength
             promoters.
           </p>
 
@@ -1539,9 +1748,12 @@ export default function ProjectPage() {
             the 5′ UTR of the BGL2 coding sequence to regulate its
             temperature-dependent expression. At standard growth temperatures,
             the RNAt is designed to restrict translation, while a conformational
-            change at the intended cooking temperature (60°C) is expected to
-            permit BGL2 expression, promoting cell-wall degradation and
-            facilitating the release of accumulated lipids.
+            change at the setpoint temperature (40°C) is expected to permit BGL2
+            expression, promoting cell-wall degradation and facilitating the
+            release of accumulated lipids. The setpoint temperature was decided
+            to be at the upper limit of <em>S. cerevisiae</em> cell survival to
+            avoid accidental triggers of the RNAt system under normal growth
+            conditions <Cite id="zhang2023" />.
           </p>
 
           <p>
@@ -1557,6 +1769,25 @@ export default function ProjectPage() {
           </p>
 
           <figure className="my-1 flex flex-col items-center">
+            <div className="w-full max-w-3xl">
+              <Image
+                src={asset("/figures/rnat-optimization-workflow.png")}
+                alt="RNA thermometer optimization workflow from sequence design and error-prone PCR through Golden Gate assembly, lithium acetate transformation, fluorescence screening and Sanger sequencing"
+                width={1200}
+                height={660}
+                className="rounded border"
+              />
+            </div>
+            <figcaption className="text-sm text-muted-foreground mt-2">
+              Figure 7 — RNA thermometer optimization workflow, from sequence
+              design and error-prone PCR through assembly into
+              pAN316a-RNAt-mScarlet, transformation into <em>S. cerevisiae</em>{" "}
+              BY4741, fluorescence screening at the target temperature, and
+              Sanger sequencing of the best performing variant.
+            </figcaption>
+          </figure>
+
+          <figure className="my-1 flex flex-col items-center">
             <div className="w-full max-w-2xl">
               <Image
                 src={asset("/figures/RNAt1-3.png")}
@@ -1567,7 +1798,7 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 4 — Predicted MFE and Centroid plain structure of RNAt_1,
+              Figure 8 — Predicted MFE and Centroid plain structure of RNAt_1,
               RNAt_2, and RNAt_3 generated using RNAfold.
               <p className="mt-2">
                 The minimum free energy (MFE) structure (left) represents the
@@ -1582,51 +1813,83 @@ export default function ProjectPage() {
           </figure>
 
           <h5 className="mt-4 text-lg text-foreground font-medium">
-            Plasmid Assembly and Screening of the RNAt-GFP Reporter System
+            Plasmid Assembly and Screening of RNAt-mScarlet Reporter System
           </h5>
 
           <p>
-            Yeast transformation will be used at two stages: first for RNA
-            thermometer validation and then for functional lipid-production
-            testing. The generated RNAt variants were first assembled with a GFP
-            reporter using the MoClo Yeast Toolkit (YTK) Golden Gate assembly
-            system. The resulting RNAt-GFP plasmids were designed to place the
-            RNAt within the 5′ untranslated region upstream of the GFP coding
-            sequence. This allowed the effect of temperature-dependent RNAt
-            structural changes on downstream translation to be evaluated using
-            fluorescence as a measurable reporter.
+            The pAN316a-RNAt-mScarlet plasmid is to be prepared using Golden
+            Gate gate assembly and used to evaluate the efficacy of each
+            synthesized RNAt sequence. Several RNAt sequences were generated and
+            verified <em>in-silico</em>, and additional mutants would be
+            generated through error-prone PCR. The pAN316a shuttle vector will
+            be used for yeast transformation because it supports propagation in
+            both <em>E. coli</em> and <em>S. cerevisiae</em>{" "}
+            <Cite id="chen2016" />. Initially, the pRS416 shuttle vector was
+            planned to be used, since its use as a shuttle vector between{" "}
+            <em>E. coli</em> and <em>S. cerevisiae</em> was more widely
+            documented, however, we decided to use the pAN316a shuttle vector,
+            since it was more readily available to our lab and had the same
+            relevant features as the pRS416 shuttle vector. The URA3 marker
+            enables auxotrophic selection on uracil dropout synthetic medium,
+            avoiding antibiotic selection during the yeast expression stage{" "}
+            <Cite id="sikorski1989" />, which is preferable for a food-related
+            synthetic project because antibiotic-resistance marker genes raise
+            regulatory concerns in food biotechnology (U.S. FDA, 1992). Although
+            yeast homologous recombination may support future genomic
+            integration, the current workflow uses plasmid-based expression as a
+            proof-of-concept test.
           </p>
 
           <p>
-            The YTK-assembled RNAt-GFP reporter plasmids were transformed into
-            <em>S. cerevisiae</em> BY4741 via lithium acetate transformation and
-            plating on solid YPD. Transformants will be selected by auxotrophic
-            resistance and cultured at 30°C for optimal growth and recovery.
+            After obtaining pAN316a from the Nguyen Lab at the University of
+            Toronto, and mScarlet, the RNAt sequences, and all relevant primers,
+            promoters, and terminators from Genscript, the parts would be
+            digested and ligated accordingly to obtain the pAN316a-RNAt-mScarlet
+            plasmids, which would first be transformed into <em>E. coli</em>{" "}
+            DH5α to clone. The construct was designed to place the RNAt within
+            the 5′ untranslated region upstream of the mScarlet coding sequence.
+            This allowed the effect of temperature-dependent RNAt structural
+            changes on downstream translation to be evaluated using fluorescence
+            as a measurable reporter. After extracting the pAN316a-RNAt-mScarlet
+            plasmids through miniprep, they would be transformed into{" "}
+            <em>S. cerevisiae</em> BY4741 using the lithium acetate
+            transformation method. The pAN316a shuttle vector has the URA rescue
+            gene, and the <em>S. cerevisiae</em> BY4741 strain was chosen in
+            part due to its auxotrophic markers, being deficient in uracil,
+            leucine, histidine, and methionine. Plates lacking uracil were used
+            to select for successful transformants.
           </p>
 
           <p>
-            GTP Fluorescence will be used to confirm, quantify and select RNAt
-            sequences exhibiting the desired temperature-dependent expression
-            profile. Therefore, the transformants will then be cultured to the
-            experimental temperature for GFP-based RNAt screening at 40°C until
-            sufficient GFP expression is obtained. RNAt variants showing the
-            desired temperature-dependent expression were selected for further
-            characterization and incorporation into the final lipid-production
-            system.
+            After allowing the transformed <em>S. cerevisiae</em> BY4741 to
+            recover, liquid inoculations would be made and allowed to grow to OD
+            <sub>600</sub> of 0.1 <Cite id="albakri2018" />, where they would be
+            transferred to a 96 well plate and monitored at the target
+            temperature of 40°C, with fluorescence readings taken with 569 nm
+            excitation and 594 nm emission <Cite id="biorbyt" /> every 30 s for
+            the first 5 min, every min for the next 10 min, and every 3 min
+            thereafter for a total observation time of one to two hours. The
+            RNAt switch is expected to be fast since it occurs on the
+            transcriptional level, hence the relatively short observation time.
+            The sample exhibiting the strongest and fastest expression would be
+            selected for recovery, and if the sample had been mutagenized,
+            sequence verification.
           </p>
 
           <figure className="my-1 flex flex-col items-center">
             <div className="w-full max-w-2xl">
               <Image
-                src={asset("/figures/RNAtScreening1.png")}
-                alt="RNAt Screening"
+                src={asset("/figures/rnat-mcherry-screening.png")}
+                alt="RNAt-mCherry screening: transform into BY4741, isolate a colony, culture at 30 °C, induce at 40 °C, and record the induction curve"
                 width={800}
                 height={450}
                 className="rounded border"
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 5 — RNAt-GFP Screening / Selection
+              Figure 9 — RNAt-mCherry screening and selection, from
+              transformation into S. cerevisiae BY4741 through induction at 40
+              °C and the resulting fluorescence induction curve.
             </figcaption>
           </figure>
 
@@ -1635,36 +1898,34 @@ export default function ProjectPage() {
           </h5>
 
           <p>
-            The successful RNAt-GFP transformants were selected for plasmid
-            recovery and sequence verification. Yeast plasmids were isolated
-            from the selected transformants using a Zymolyase-based yeast
-            miniprep procedure. The recovered plasmids were subsequently
-            transformed into <em>E. coli</em> using heat-shock transformation
-            due to its well-characterized nature as well as its reliability, as
-            demonstrated by workflows that commonly utilize <em>E. coli</em>{" "}
-            {""}
-            transformants in their design <Cite id="rahimzadeh2016" />.
+            The successful pAN316a-RNAt-mScarlet transformants would be selected
+            for plasmid recovery and sequence verification, and plasmids would
+            be isolated from the selected transformants using a Zymolyase-based
+            yeast miniprep procedure. The recovered plasmids would be
+            subsequently transformed into <em>E. coli</em> using heat-shock
+            transformation for cloning <Cite id="rahimzadeh2016" />.
           </p>
 
           <p>
-            Plasmids were isolated from the resulting <em>E. coli</em> cultures
-            by miniprep and subjected to restriction enzyme digestion to
-            linearize the plasmids and facilitate isolation of the
-            RNAt-containing region. The RNAt insert was then amplified by PCR
-            and analyzed using agarose gel electrophoresis. DNA fragments
-            corresponding to the expected RNAt insert were identified and
+            Plasmids would then be isolated from the resulting <em>E. coli</em>{" "}
+            cultures using miniprep and subjected to restriction enzyme
+            digestion to linearize the plasmids and facilitate isolation of the
+            RNAt-containing region. The RNAt insert would then be amplified by
+            PCR and analyzed using agarose gel electrophoresis. DNA fragments
+            corresponding to the expected RNAt insert would be identified and
             excised from the gel, followed by gel purification.
           </p>
 
           <p>
-            A portion of the resulting inserts was subjected to Sanger
+            A portion of the resulting inserts will be subjected to Sanger
             sequencing to verify the nucleotide sequence of the selected RNAt
-            variants. Sequencing was used to confirm the mutations introduced
-            through error-prone PCR and to ensure that the RNAt sequences
-            selected based on GFP expression corresponded to the intended
-            constructs. RNAt variants with confirmed sequences and desirable
-            temperature-responsive expression profiles were selected for
-            incorporation into the final lipid-production construct.
+            variants. Sequencing will be used to confirm the mutations
+            introduced through error-prone PCR and to ensure that the RNAt
+            sequences selected based on fluorescence corresponded to the
+            intended constructs. RNAt variants with confirmed sequences and
+            desirable temperature-responsive expression profiles will be
+            selected for incorporation into the final lipid-production
+            construct.
           </p>
 
           <h5 className="mt-4 text-lg text-foreground font-medium">
@@ -1672,31 +1933,39 @@ export default function ProjectPage() {
           </h5>
 
           <p>
-            The RNAt-regulated lipid production plasmid was constructed using a
-            hierarchical Golden Gate assembly strategy. Level 0 DNA parts,
-            including promoters, 5′ UTRs, CDSs, and 3′ UTRs/terminators, were
-            assembled into Level 1 transcription units using BsmBI digestion and
-            ligation. The Level 1 transcription units were then ligated through
-            BsaI-generated overhangs, which flank each end, to form a Level 2
-            transcription unit.
+            The assembly of the final pAN316a-ACC1**-DGA1-OLE1-TPS1-RNAt-BLG2
+            plasmid, hereafter referred to as the RNAt-Regulated Lipid
+            Production Plasmid, would take place in a two-step hierarchical
+            Golden Gate assembly using parts from the Open Yeast Collection
+            (OYC). Promoters from the OYC were planned to be used, however, all
+            promoters sourced from the OYC contained 5′ untranslated regions
+            (UTRs), posing an issue when later assembled alongside the RNAt,
+            which contains an innate 5′ UTR of its own. Having two 5′ UTRs would
+            cause interference between ribosomal binding sites, and risks
+            improper translation efficiency. To combat this problem, promoters
+            were ordered lacking their respective 5′ UTRs, such that the one of
+            the RNAt remains the only functioning ribosomal binding site (RBS).
           </p>
 
           <p>
-            The coding sequences included ACC1, DGA1, OLE1, and TPS1, along with
-            the RNAt sequence within the 5′ UTR of BGL2. Promoter sequences were
-            designed without their native 5′ UTRs, which required the selection
-            of a core promoter to maintain the necessary host transcriptional
-            machinery.
+            The Level 1 transcriptional units (ACC1**, DGA1, OLE1, TPS1, and
+            BGL2 under the control of the RNAt, with their respective promoters
+            and terminators) would be obtained from Twist Bioscience and
+            assembled using BsmBI digestion and ligation. The Level 2
+            transcriptional unit would be assembled by joining the Level 1 parts
+            together by flanking each end with BsaI overhangs and digesting. The
+            Level 2 transcriptional unit would be flanked by the BsmBI sites and
+            integrated into the pAN316a vector using EcoRI and SpeI.
           </p>
 
           <p>
-            The assembled Level 2 construct was designed for integration into
-            the pAN316a plasmid vector through BsmBI digestion and ligation
-            using EcoRI and SpeI enzymes. The genes were optimized using a codon
-            usage table for <em>S. cerevisiae</em> and domesticated to remove
-            internal restriction sites required for Golden Gate assembly. The
-            final protein coded by the yeast was not changed, while allowing
-            Golden Gate assembly and other enzyme-dependent reactions.
+            Assembly would be done in the OYC-dropout-suGFP plasmid, since
+            successful transformants could be more easily identified through
+            their lack of fluorescence in <em>E. coli</em> DH5α colonies. All
+            assembled plasmids would be transformed into <em>E. coli</em> DH5α
+            for cloning, and subsequently extracted using miniprep. Restriction
+            enzyme digests and gel electrophoresis would be used as needed to
+            verify the identity of assembled plasmids.
           </p>
 
           <figure className="my-1 flex flex-col items-center">
@@ -1710,7 +1979,7 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 6 — RNAt Experimental Constructs.
+              Figure 10 — RNAt Experimental Constructs.
             </figcaption>
           </figure>
 
@@ -1727,7 +1996,8 @@ export default function ProjectPage() {
             breaking down its own fatty acid stores for energy, cultures of{" "}
             <em>S. cerevisiae</em> BY4741 POX1 knockout, BY4741 PXA1 knockout,
             and BY4741 POX1 and PXA1 double-knockout cells were established
-            using strains obtained from [insert].
+            using strains obtained from the Corey Lab at the University of
+            British Columbia.
           </p>
 
           <p>
@@ -1755,32 +2025,20 @@ export default function ProjectPage() {
           </p>
 
           <h5 className="mt-4 text-lg text-foreground font-medium">
-            Transformation of the RNAt-Lipid Constructs into Yeast
+            Transformation of the RNAt-Regulated Lipid Production Plasmid into
+            Yeast
           </h5>
 
           <p>
-            The assembled RNAt-Lipid plasmid was transformed into{" "}
-            <em>S. cerevisiae</em> {""}
-            BY4741, BY4741 POX1 knockout, BY4741 PXA1 knockout, and BY4741 POX1
-            and PXA1 knockout cells using lithium acetate transformation.
-            Following transformation, cells were recovered and cultured under
-            selective conditions to identify transformants containing the
-            assembled plasmid.
-          </p>
-
-          <p>
-            Transformants were selected using the appropriate auxotrophic
-            markers and cultured in various liquid synthetic defined (SD) media.
-            The SD media conditions included fatty acid supplementation to
-            assess how different carbon sources and fatty acid compositions
-            affected growth and lipid accumulation. Three experimental
-            conditions were evaluated: SD media supplemented with long-chain
-            fatty acids (0.1% oleic acid and 0.05% Tween 40), SD media
-            supplemented with short-chain fatty acids (0.1% total SCFAs in a
-            3:1:1 ratio of acetic, propionic, and butyric acid, with 0.05% Tween
-            40), and SD media containing a combination of long-chain and
-            short-chain fatty acids (0.05% oleic acid and 0.05% total SCFAs in a
-            3:1:1 ratio, with 0.05% Tween 40).
+            The assembled RNAt-Regulated Lipid Production Plasmid would be
+            transformed into <em>S. cerevisiae</em> BY4741, BY4741 POX1
+            knockout, BY4741 PXA1 knockout, and BY4741 POX1 and PXA1 knockout
+            cells using lithium acetate transformation. Lithium acetate was
+            chosen for its reliability and versatility <Cite id="gietz2002" />,
+            since the final RNAt-Regulated Lipid Production Plasmid would be
+            rather large due to its numerous genes. Following transformation,
+            cells would be recovered and cultured in uracil deficient media to
+            identify transformants containing the assembled plasmid.
           </p>
 
           <p>
@@ -1802,7 +2060,7 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 7 — RNAt Validation.
+              Figure 11 — RNAt Validation.
             </figcaption>
           </figure>
 
@@ -1817,29 +2075,35 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 8 — Final RNAt Construct.
+              Figure 12 — Final RNAt Construct.
             </figcaption>
           </figure>
 
           <h5 className="mt-4 text-lg text-foreground font-medium">
-            Next Steps: Evaluation of Lipid Production, Gene Expression, and
-            Growth
+            Evaluation of Lipid Production using Nile Red Neutral Lipid Staining
           </h5>
 
           <p>
-            The engineered yeast strains will be characterized to determine
+            The engineered yeast strains would be characterized to determine
             whether the combined metabolic modifications result in increased
             intracellular lipid and fatty acid accumulation. Lipid production
-            will be assessed using Nile Red staining, with lipid accumulation
+            would be assessed using Nile Red staining, with lipid accumulation
             quantified using a 96-well plate assay or visualized using
             fluorescence microscopy. Fluorescence measurements will be collected
             at an excitation wavelength of 485 nm and an emission wavelength of
             535 nm, using a top 50% mirror, appropriate gain settings, and
-            orbital shaking for 10 seconds prior to measurement [citation].
+            orbital shaking for 10 seconds prior to measurement. Nile Red is a
+            lipophilic fluorescent dye that selectively stains neutral lipids,
+            allowing lipid content to be assessed through fluorescence intensity{" "}
+            <Cite id="rostron_lawrence_2017" />.
           </p>
 
+          <h5 className="mt-4 text-lg text-foreground font-medium">
+            Evaluation of Gene Expression and Growth
+          </h5>
+
           <p>
-            Gene expression will be evaluated using reverse transcription PCR
+            Gene expression would be evaluated using reverse transcription PCR
             (RT-PCR) to assess expression of the introduced transgenes and
             determine whether the engineered genetic circuits are expressed as
             intended. These measurements will be analyzed alongside the lipid
@@ -1848,11 +2112,11 @@ export default function ProjectPage() {
           </p>
 
           <p>
-            Growth curves will be generated for the engineered strains under the
-            different liquid SD media conditions. Growth measurements will be
-            used to assess whether the genetic modifications or alternative
-            media conditions affect cellular growth and overall strain
-            performance. Together, these measurements will help determine
+            Growth curves would also be generated for the engineered strains
+            under the different liquid SD media conditions. Growth measurements
+            would be used to assess whether the genetic modifications or
+            alternative media conditions affect cellular growth and overall
+            strain performance. Together, these measurements will help determine
             whether increased lipid accumulation can be achieved without
             substantially compromising the growth characteristics of the
             engineered yeast.
@@ -1870,7 +2134,7 @@ export default function ProjectPage() {
             OYC-dropout-suGFP sequence that interfered with transformation,
             preventing the assembly of the final construct. Additional
             troubleshooting will be required to validate the proposed construct
-            in the lab, though in-silico results are promising.
+            in the lab, though <em>in-silico</em> results are promising.
           </p>
           <p>
             <em>S. cerevisiae</em> BY4741 and <em>S. cerevisiae</em> PXA1 cells
@@ -1938,7 +2202,7 @@ export default function ProjectPage() {
           </div>
 
           <p className="my-10 text-center">
-            Figure 6: <em> Corrected RFU</em> = <em>Sample RFU</em> -{" "}
+            Figure 13: <em> Corrected RFU</em> = <em>Sample RFU</em> -{" "}
             <em> Avg. Blank RFU</em>
           </p>
 
@@ -1946,7 +2210,7 @@ export default function ProjectPage() {
             <table className="w-full text-sm">
               <caption className="text-sm text-muted-foreground mb-2">
                 Table 2 — Calculated RFU of <em>S. cerevisiae</em> strains
-                BY4741 and PXA1 from Table 2 using the formula in Figure 6.
+                BY4741 and PXA1 from Table 2 using the formula in Figure 13.
               </caption>
               <thead className="text-xs uppercase text-muted-foreground">
                 <tr>
@@ -2034,10 +2298,10 @@ export default function ProjectPage() {
           </p>
 
           <p>
-            Given the successful in-silico validation of the RNAt structure, and
-            the time and resource constraints, the assembly of the pAN316a-RNAt
-            plasmid would be reattempted with larger DNA concentrations to try
-            to obtain a successful construct.
+            Given the successful <em>in-silico</em> validation of the RNAt
+            structure, and the time and resource constraints, the assembly of
+            the pAN316a-RNAt plasmid would be reattempted with larger DNA
+            concentrations to try to obtain a successful construct.
           </p>
 
           <h5 className="mt-4 text-lg text-foreground font-medium">
@@ -2081,7 +2345,7 @@ export default function ProjectPage() {
           <p>
             The protocol used for the preparation and reading of the Nile Red
             stained cells advised to measure the fluorescence immediately after
-            staining the cells <Cite id="rostron_lawrence2017" />, though other
+            staining the cells <Cite id="rostron_lawrence_2017" />, though other
             literature suggests waiting as long as half an hour to ensure
             fluorescence stabilization <Cite id="castrillon2021" />, or
             generating a fluorescence curve over a few minutes in order to
@@ -2103,6 +2367,27 @@ export default function ProjectPage() {
             important to ensure that conditions are optimized, so that the
             small-scale experimental results can be replicated at a larger
             scale.
+          </p>
+
+          <p>
+            Literature suggests that supplementing the growth media of{" "}
+            <em>S. cerevisiae</em> with fatty acids can both improve the overall
+            lipid content and lipid profile of the cells <Cite id="dyer2002" />.
+            Considering that medium prices are a core expense to any yeast
+            bioreactor <Cite id="cardoso2020" />, it could be worth exploring
+            the potential for cheap supplementation of growth media. Future
+            experiments could seek to culture the transformed oleaginous yeast
+            in SD media with fatty acid supplementation to assess how different
+            carbon sources and fatty acid compositions affected growth and lipid
+            accumulation. The initially proposed experiment had three
+            experimental conditions: SD media supplemented with long-chain fatty
+            acids (0.1% oleic acid and 0.05% Tween 40), SD media supplemented
+            with short-chain fatty acids (0.1% total SCFAs in a 3:1:1 ratio of
+            acetic, propionic, and butyric acid, with 0.05% Tween 40), and SD
+            media containing a combination of long-chain and short-chain fatty
+            acids (0.05% oleic acid and 0.05% total SCFAs in a 3:1:1 ratio, with
+            0.05% Tween 40). 1% Tergitol may be added to each medium to improve
+            emulsion of fatty acids <Cite id="vanhercke2011" />.
           </p>
 
           <p>

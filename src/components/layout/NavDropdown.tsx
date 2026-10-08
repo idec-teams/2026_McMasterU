@@ -11,7 +11,7 @@ import type { NavLink } from "@/types/wiki";
 //
 // Hover and keyboard focus are handled in CSS (`group-hover` /
 // `group-focus-within`) so nothing runs on pointer movement
-// 
+//
 // React state only covers the click/tap toggle for the touch devices
 export function NavDropdown({ link }: { link: NavLink }) {
   const [open, setOpen] = useState(false);

@@ -7,10 +7,6 @@ export const metadata = {
 
 export default function RNAtModelPage() {
   return (
-    <ModelPage
-      title="RNAt Model"
-      src="/banners/engineering.png"
-      content={content}
-    />
+    <ModelPage title="RNAt Model" src="/banners/rnat.jpg" content={content} />
   );
 }

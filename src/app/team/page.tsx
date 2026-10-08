@@ -12,7 +12,10 @@ export default function TeamPage() {
 
   return (
     <>
-      <Banner variant="photo" title="Meet Our Team" src="/team/Team photo.JPG">
+      {/* No group photo in /public/team yet, so the banner falls back to its
+          plain header. Drop the file in and restore
+          src="/team/Team photo.JPG" to bring the photo back. */}
+      <Banner variant="photo" title="Meet Our Team">
         <p>Meet the McMaster IDEC 2026 team.</p>
       </Banner>
 
