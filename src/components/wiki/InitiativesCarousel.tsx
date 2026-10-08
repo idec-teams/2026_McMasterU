@@ -2,14 +2,13 @@
 
 // from embla carousel
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback, useEffect, useState } from "react";
+import { type ReactNode, useCallback, useEffect, useState } from "react";
 import { asset } from "@/lib/wiki/asset";
 
 export type Initiative = {
   id: string;
   title: string;
-  description: string;
-  outcome: string;
+  description: ReactNode;
   images: string[];
 };
 
@@ -67,6 +66,10 @@ export function InitiativesCarousel({
 
   return (
     <div className="space-y-5">
+       <p className="mt-8 text-center text-[21px] font-bold  tracking-[0.16em] text-foreground sm:mt-12 sm:text-[21px]">
+        {" "}
+        {activeInitiative.title}
+      </p>
       <div className="flex items-center gap-2 sm:gap-3">
         {canScrollPrev ? (
           <button
@@ -142,19 +145,9 @@ export function InitiativesCarousel({
       </div>
 
       <div className="space-y-2 text-center">
-        <p className="text-sm font-medium uppercase tracking-[0.16em] text-body">
-          {activeInitiative.title}
-        </p>
-        <p className="mx-auto max-w-md text-sm leading-relaxed text-body">
-          <span className="font-medium text-foreground">Description:</span>{" "}
+        <div className="mx-auto max-w-3xl space-y-4 text-sm leading-relaxed text-body [&_p]:mb-4 [&_p:last-child]:mb-0">
           {activeInitiative.description}
-        </p>
-        {activeInitiative.outcome ? (
-          <p className="mx-auto max-w-md text-sm leading-relaxed text-body">
-            <span className="font-medium text-foreground">Outcome:</span>{" "}
-            {activeInitiative.outcome}
-          </p>
-        ) : null}
+        </div>
       </div>
     </div>
   );
