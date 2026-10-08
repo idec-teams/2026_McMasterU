@@ -1385,15 +1385,16 @@ export default function ProjectPage() {
           </h5>
 
           <p>
-            Level 0 plasmids were not constructed as separate plasmid constructs. Instead, 
-            the required Level 0 sequences were obtained as linear DNA sequences containing 
-            the appropriate Bsal flanking sites for Golden Gate Assembly. These linear sequences 
-            included the promoter, 5' UTR, CDS, and 3' UTR components required to assemble each 
-            transcription unit.
+            Level 0 plasmids were not constructed as separate plasmid
+            constructs. Instead, the required Level 0 sequences were obtained as
+            linear DNA sequences containing the appropriate Bsal flanking sites
+            for Golden Gate Assembly. These linear sequences included the
+            promoter, 5' UTR, CDS, and 3' UTR components required to assemble
+            each transcription unit.
           </p>
 
           <p>
-            Additionally,  only the RNAt 5' UTRs were ordered from GenScript.
+            Additionally, only the RNAt 5' UTRs were ordered from GenScript.
           </p>
 
           <h5 className="mt-4 text-medium text-foreground font-medium">
@@ -1401,10 +1402,12 @@ export default function ProjectPage() {
           </h5>
 
           <p>
-            The linear Level 0 sequences were assembled using their Bsal flanking sites to generate 
-            the Level 1 transcription units. The assembled sequences were then digested and directly 
-            ligated into the pAN316a backbone using EcoRI and Spel. This produced the final RNAt-containing 
-            plasmid constructs for transformation and subsequent characterization.
+            The linear Level 0 sequences were assembled using their Bsal
+            flanking sites to generate the Level 1 transcription units. The
+            assembled sequences were then digested and directly ligated into the
+            pAN316a backbone using EcoRI and Spel. This produced the final
+            RNAt-containing plasmid constructs for transformation and subsequent
+            characterization.
           </p>
 
           <h5 className="mt-4 text-lg text-foreground font-medium">Genes</h5>
@@ -1448,21 +1451,6 @@ export default function ProjectPage() {
             Golden Gate assemblies.
           </p>
 
-          <figure className="my-1 flex flex-col items-center">
-            <div className="w-full max-w-2xl">
-              <Image
-                src={asset("/figures/PCR.png")}
-                alt="PCR"
-                width={800}
-                height={450}
-                className="rounded border"
-              />
-            </div>
-            <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 4 — PCR Protocol.
-            </figcaption>
-          </figure>
-
           <figure className="my-10 flex flex-col items-center">
             <div className="w-full max-w-2xl">
               <Image
@@ -1474,7 +1462,7 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 5 — Error Prone PCR Protocol.
+              Figure 4 — Error Prone PCR Protocol.
             </figcaption>
           </figure>
 
@@ -1489,7 +1477,7 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 6 — Error-prone PCR reaction composition. Mn²⁺ alongside
+              Figure 5 — Error-prone PCR reaction composition. Mn²⁺ alongside
               Mg²⁺ and a low-fidelity polymerase raise the per-cycle error rate,
               amplifying one template into a library of variants.
             </figcaption>
@@ -1754,7 +1742,7 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 7 — RNA thermometer optimization workflow, from sequence
+              Figure 6 — RNA thermometer optimization workflow, from sequence
               design and error-prone PCR through assembly into
               pAN316a-RNAt-mScarlet, transformation into <em>S. cerevisiae</em>{" "}
               BY4741, fluorescence screening at the target temperature, and
@@ -1773,7 +1761,7 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 8 — Predicted MFE and Centroid plain structure of RNAt_1,
+              Figure 7 — Predicted MFE and Centroid plain structure of RNAt_1,
               RNAt_2, and RNAt_3 generated using RNAfold.
               <p className="mt-2">
                 The minimum free energy (MFE) structure (left) represents the
@@ -1854,15 +1842,15 @@ export default function ProjectPage() {
           <figure className="my-1 flex flex-col items-center">
             <div className="w-full max-w-2xl">
               <Image
-                src={asset("/figures/rnat-mcherry-screening.png")}
-                alt="RNAt-mCherry screening: transform into BY4741, isolate a colony, culture at 30 °C, induce at 40 °C, and record the induction curve"
+                src={asset("/figures/rnat-mscarlet-screening.png")}
+                alt="RNAt-mScarlet screening: transform into BY4741, isolate a colony, culture at 30 °C, induce at 40 °C, and record the induction curve"
                 width={800}
                 height={450}
                 className="rounded border"
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 9 — RNAt-mCherry screening and selection, from
+              Figure 8 — RNAt-mScarlet screening and selection, from
               transformation into S. cerevisiae BY4741 through induction at 40
               °C and the resulting fluorescence induction curve.
             </figcaption>
@@ -1954,7 +1942,7 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 10 — RNAt Experimental Constructs.
+              Figure 9 — RNAt Experimental Constructs.
             </figcaption>
           </figure>
 
@@ -2024,21 +2012,6 @@ export default function ProjectPage() {
             of lipid production, transgene expression, and growth.
           </p>
 
-          <figure className="my-1 flex flex-col items-center">
-            <div className="w-full max-w-2xl">
-              <Image
-                src={asset("/figures/RNAtValidation.png")}
-                alt="RNAt Validation"
-                width={800}
-                height={450}
-                className="rounded border"
-              />
-            </div>
-            <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 11 — RNAt Validation.
-            </figcaption>
-          </figure>
-
           <figure className="my-10 flex flex-col items-center">
             <div className="w-full max-w-2xl">
               <Image
@@ -2050,7 +2023,7 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 12 — Final RNAt Construct.
+              Figure 10 — Final RNAt Construct.
             </figcaption>
           </figure>
 
@@ -2177,7 +2150,7 @@ export default function ProjectPage() {
           </div>
 
           <p className="my-10 text-center">
-            Figure 13: <em> Corrected RFU</em> = <em>Sample RFU</em> -{" "}
+            Figure 11: <em> Corrected RFU</em> = <em>Sample RFU</em> -{" "}
             <em> Avg. Blank RFU</em>
           </p>
 
@@ -2185,7 +2158,7 @@ export default function ProjectPage() {
             <table className="w-full text-sm">
               <caption className="text-sm text-muted-foreground mb-2">
                 Table 2 — Calculated RFU of <em>S. cerevisiae</em> strains
-                BY4741 and PXA1 from Table 2 using the formula in Figure 13.
+                BY4741 and PXA1 from Table 2 using the formula in Figure 11.
               </caption>
               <thead className="text-xs uppercase text-muted-foreground">
                 <tr>
