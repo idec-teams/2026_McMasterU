@@ -21,7 +21,7 @@ const FOOTER_PROJECT_LINKS = [
   "Documentation",
   "Entrepreneurship",
 ];
-const FOOTER_TEAM_LINKS = ["Team", "Community"];
+const FOOTER_TEAM_LINKS = ["Team", "Community", "Outreach"];
 
 export function Footer() {
   return (
@@ -35,8 +35,7 @@ export function Footer() {
             </div>
             <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
               McMaster University IDEC 2026. Engineering yeast to solve the fat
-              problem in alternative protein — and put flavor back into
-              sustainable food.
+              problem in alternative protein.
             </p>
           </div>
 
