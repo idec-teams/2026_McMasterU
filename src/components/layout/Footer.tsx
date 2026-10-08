@@ -7,16 +7,10 @@ const SPONSORS = [
   { name: "McMaster Science Society", logo: "/sponsors/mss.png" },
   { name: "iGEM", logo: "/sponsors/igem.png" },
   { name: "GenScript", logo: "/sponsors/genscript.png" },
-  { name: "Twist Bioscience", logo: "/sponsors/twist.png" },
-  { name: "Cultivarium", logo: "/sponsors/cultivarium.png" },
   { name: "ANSA Biotechnologies", logo: "/sponsors/ansa.png" },
   { name: "DataCamp", logo: "/sponsors/datacamp.png" },
-  { name: "Allure", logo: "/sponsors/allure.png" },
-  { name: "Aquanova", logo: "/sponsors/aquanova.png" },
   { name: "Biotech", logo: "/sponsors/biotech.png" },
-  { name: "Campus Store", logo: "/sponsors/campus store.png" },
   { name: "Desjardins", logo: "/sponsors/desjardin.png" },
-  { name: "Tazo", logo: "/sponsors/tazo.png" },
   { name: "Westdale", logo: "/sponsors/westdale.png" },
 ];
 
