@@ -90,7 +90,20 @@
       "Bash(magick public/hsi-photo2.PNG -auto-orient -resize 1600x1600\\\\> -quality 84 -strip public/outreach/hsi-onboarding.jpg)",
       "Bash(pkill -f \"http.server 4321\")",
       "Bash(grep -n \"TAG\\\\\", hw\\\\|strokeDasharray=\\\\\"5 5\\\\\"\\\\|ellipse\\\\|<rect x={X\\\\[3\\\\]\\\\|carbon redirected\\\\|214 H\\\\|y={352}\\\\|y={236}\" src/components/wiki/main/PathwayDiagram.tsx)",
-      "Bash(echo \"tsc exit: $?\")"
+      "Bash(echo \"tsc exit: $?\")",
+      "Bash(rm -f /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/frames/*.png)",
+      "Bash(magick public/logo/mey_cell_wave_colored.gif -coalesce /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/frames/c_%02d.png)",
+      "Bash(timeout 240 ffmpeg -y -loglevel error -framerate 400/7 -i /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/flat/p_%03d.png -frames:v 96 -c:v libx264 -preset slow -crf 20 -pix_fmt yuv420p -movflags +faststart -an public/logo/mey_cell_wave_colored.mp4)",
+      "Bash(awk '{printf \"mp4: %.1f KB\\\\n\", $5/1024}')",
+      "Bash(ffprobe -v error -show_entries stream=nb_frames,width,height,r_frame_rate -show_entries format=duration -of default=nw=1 public/logo/mey_cell_wave_colored.mp4)",
+      "Bash(ffmpeg -y -loglevel error -framerate 400/7 -i /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/flat/p_%03d.png -frames:v 96 -c:v libx264 -preset slow -crf 20 -pix_fmt yuv420p -movflags +faststart -an public/logo/mey_cell_wave_colored.mp4)",
+      "Bash(ffmpeg -y -loglevel error -framerate 400/7 -i /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/alpha/a_%03d.png -frames:v 96 -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 34 -deadline good -cpu-used 4 -row-mt 1 -an public/logo/mey_cell_wave_colored.webm)",
+      "Bash(awk '{printf \"webm: %.1f KB\\\\n\", $5/1024}')",
+      "Bash(ffmpeg -y -loglevel error -framerate 400/7 -i /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/alpha/a_%03d.png -frames:v 96 -c:v libwebp_anim -lossless 0 -q:v 72 -loop 0 -an public/logo/mey_cell_wave_colored_smooth.webp)",
+      "Bash(awk '{printf \"%-45s %8.1f KB\\\\n\", $9, $5/1024}')",
+      "Bash(magick -dispose Background -delay 1.75 /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/alpha/a_*.png -loop 0 -define webp:lossless=false -quality 72 public/logo/mey_cell_wave_colored_smooth.webp)",
+      "Bash(awk '{printf \"smooth webp: %.1f KB\\\\n\", $5/1024}')",
+      "Bash(ffmpeg -y -loglevel error -i public/logo/mey_cell_wave_colored.mp4 /private/tmp/claude-501/-Users-ozzy-mcmasteru-idec-2026-wiki/5445d3d9-6ed7-4aba-85be-86a543cd5878/scratchpad/verify/v_%03d.png)"
     ]
   }
 }

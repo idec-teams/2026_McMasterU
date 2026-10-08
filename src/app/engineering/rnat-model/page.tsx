@@ -9,7 +9,7 @@ export default function RNAtModelPage() {
   return (
     <ModelPage
       title="RNAt Model"
-      src="/banners/engineering.png"
+      src="/banners/rnat.jpg"
       content={content}
     />
   );

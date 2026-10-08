@@ -9,7 +9,7 @@ export default function Ml1Page() {
   return (
     <ModelPage
       title="ML1 - ThermoRank"
-      src="/banners/engineering.png"
+      src="/banners/ml1.jpg"
       content={content}
     />
   );

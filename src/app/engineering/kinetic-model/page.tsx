@@ -9,7 +9,7 @@ export default function KineticModelPage() {
   return (
     <ModelPage
       title="TAG Synthesis Kinetic Model"
-      src="/banners/engineering.png"
+      src="/banners/kinetic.jpg"
       content={content}
     />
   );

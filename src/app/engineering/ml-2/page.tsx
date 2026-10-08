@@ -9,7 +9,7 @@ export default function Ml2Page() {
   return (
     <ModelPage
       title="ML2 - ThermoCast"
-      src="/banners/engineering.png"
+      src="/banners/ml2.jpg"
       content={content}
     />
   );
