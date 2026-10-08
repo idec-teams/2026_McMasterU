@@ -1420,9 +1420,10 @@ export default function ProjectPage() {
           </p>
 
           <p>
-            The final plasmid was constructed in silico to confirm the correct
-            orientation of the Level 1 transcriptional units and to prevent any
-            incompatibilities before being done in lab and is shown below.
+            The final plasmid was constructed <em>in-silico</em> to confirm the
+            correct orientation of the Level 1 transcriptional units and to
+            prevent any incompatibilities before being done in lab and is shown
+            below.
           </p>
 
           <p>
@@ -1817,25 +1818,26 @@ export default function ProjectPage() {
 
           <p>
             The pAN316a-RNAt-mScarlet plasmid is to be prepared using Golden
-            Gate assembly and used to evaluate the efficacy of each synthesized
-            RNAt sequence. Several RNAt sequences were generated and verified in
-            silico, and additional mutants would be generated through
-            error-prone PCR. The pAN316a shuttle vector will be used for yeast
-            transformation because it supports propagation in both{" "}
-            <em>E. coli</em> and <em>S. cerevisiae</em> <Cite id="chen2016" />.
-            Initially, the pRS416 shuttle vector was planned to be used, since
-            its use as a shuttle vector between <em>E. coli</em> and{" "}
-            <em>S. cerevisiae</em> was more widely documented, however, we
-            decided to use the pAN316a shuttle vector, since it was more readily
-            available to our lab and had the same relevant features as the
-            pRS416 shuttle vector. The URA3 marker enables auxotrophic selection
-            on uracil dropout synthetic medium, avoiding antibiotic selection
-            during the yeast expression stage <Cite id="sikorski1989" />, which
-            is preferable for a food-related synthetic project because
-            antibiotic-resistance marker genes raise regulatory concerns in food
-            biotechnology (U.S. FDA, 1992). Although yeast homologous
-            recombination may support future genomic integration, the current
-            workflow uses plasmid-based expression as a proof-of-concept test.
+            Gate gate assembly and used to evaluate the efficacy of each
+            synthesized RNAt sequence. Several RNAt sequences were generated and
+            verified <em>in-silico</em>, and additional mutants would be
+            generated through error-prone PCR. The pAN316a shuttle vector will
+            be used for yeast transformation because it supports propagation in
+            both <em>E. coli</em> and <em>S. cerevisiae</em>{" "}
+            <Cite id="chen2016" />. Initially, the pRS416 shuttle vector was
+            planned to be used, since its use as a shuttle vector between{" "}
+            <em>E. coli</em> and <em>S. cerevisiae</em> was more widely
+            documented, however, we decided to use the pAN316a shuttle vector,
+            since it was more readily available to our lab and had the same
+            relevant features as the pRS416 shuttle vector. The URA3 marker
+            enables auxotrophic selection on uracil dropout synthetic medium,
+            avoiding antibiotic selection during the yeast expression stage{" "}
+            <Cite id="sikorski1989" />, which is preferable for a food-related
+            synthetic project because antibiotic-resistance marker genes raise
+            regulatory concerns in food biotechnology (U.S. FDA, 1992). Although
+            yeast homologous recombination may support future genomic
+            integration, the current workflow uses plasmid-based expression as a
+            proof-of-concept test.
           </p>
 
           <p>
@@ -2132,7 +2134,7 @@ export default function ProjectPage() {
             OYC-dropout-suGFP sequence that interfered with transformation,
             preventing the assembly of the final construct. Additional
             troubleshooting will be required to validate the proposed construct
-            in the lab, though in-silico results are promising.
+            in the lab, though <em>in-silico</em> results are promising.
           </p>
           <p>
             <em>S. cerevisiae</em> BY4741 and <em>S. cerevisiae</em> PXA1 cells
@@ -2296,10 +2298,10 @@ export default function ProjectPage() {
           </p>
 
           <p>
-            Given the successful in-silico validation of the RNAt structure, and
-            the time and resource constraints, the assembly of the pAN316a-RNAt
-            plasmid would be reattempted with larger DNA concentrations to try
-            to obtain a successful construct.
+            Given the successful <em>in-silico</em> validation of the RNAt
+            structure, and the time and resource constraints, the assembly of
+            the pAN316a-RNAt plasmid would be reattempted with larger DNA
+            concentrations to try to obtain a successful construct.
           </p>
 
           <h5 className="mt-4 text-lg text-foreground font-medium">

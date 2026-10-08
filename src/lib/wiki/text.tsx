@@ -49,9 +49,13 @@ function mapStrings(nodes: NodeList, fn: (text: string) => NodeList): NodeList {
 
 // ---- Individual rules, each a NodeList -> NodeList pass ----
 
-// Species names that should always render in italics per standard
-// scientific-writing convention, wherever they appear in model page prose.
+// Terms that should always render in italics per standard scientific-writing
+// convention, wherever they appear in model page prose: species names, and
+// Latin phrases such as in-silico. Longer forms come first so the alternation
+// prefers them over a prefix.
 const ITALIC_TERMS = [
+  "In-silico",
+  "in-silico",
   "Saccharomyces cerevisiae",
   "S. cerevisiae",
   "Rattus norvegicus",

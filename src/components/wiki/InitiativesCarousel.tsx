@@ -66,7 +66,7 @@ export function InitiativesCarousel({
 
   return (
     <div className="space-y-5">
-       <p className="mt-8 text-center text-[21px] font-bold  tracking-[0.16em] text-foreground sm:mt-12 sm:text-[21px]">
+      <p className="mt-8 text-center text-[21px] font-bold  tracking-[0.16em] text-foreground sm:mt-12 sm:text-[21px]">
         {" "}
         {activeInitiative.title}
       </p>
