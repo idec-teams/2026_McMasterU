@@ -2,7 +2,7 @@ import { ModelPage } from "@/components/wiki/engineering/ModelPage";
 import { content } from "./content";
 
 export const metadata = {
-  title: "Kinetic Model — MEYcell",
+  title: "Kinetic Model",
 };
 
 export default function KineticModelPage() {

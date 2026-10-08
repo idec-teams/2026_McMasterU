@@ -15,7 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MEYcell — McMaster IDEC 2026",
+  // Sub-pages set only their own name; the template appends the site name, so
+  // a page reads "Project: MEYcell by McMasterU (2026)".
+  title: {
+    default: "MEYcell by McMasterU 2026",
+    template: "%s: MEYcell by McMasterU 2026",
+  },
   description:
     "McMaster University IDEC 2026 project wiki: engineering yeast that bursts fat at cooking temperature.",
 };
@@ -29,11 +34,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      // Lets Next turn smooth scrolling off during route changes, so moving
+      // to a new page jumps to the top instead of gliding there
+      data-scroll-behavior="smooth"
     >
-      <body
-        className="min-h-full flex flex-col bg-background text-foreground font-sans"
-        style={{ scrollBehavior: "smooth" }}
-      >
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -13,14 +13,15 @@ export function WikiTOC({ items }: { items: TocItem[] }) {
 
   useEffect(() => {
     if (items.length === 0) return;
+    const flat = items.flatMap((item) => [item, ...(item.children ?? [])]);
 
     let frame = 0;
     const update = () => {
       frame = 0;
       // The active section is the last one whose top has scrolled past the
       // offset line — robust for both short and long sections.
-      let current = items[0].id;
-      for (const item of items) {
+      let current = flat[0].id;
+      for (const item of flat) {
         const el = document.getElementById(item.id);
         if (el && el.getBoundingClientRect().top - ACTIVE_OFFSET <= 0) {
           current = item.id;
@@ -52,6 +53,7 @@ export function WikiTOC({ items }: { items: TocItem[] }) {
         </div>
         <ul className="flex flex-col border-l border-border">
           {items.map((item) => {
+            const childActive = item.children?.some((c) => c.id === activeId);
             const active = item.id === activeId;
             return (
               <li key={item.id}>
@@ -60,11 +62,34 @@ export function WikiTOC({ items }: { items: TocItem[] }) {
                   className={`-ml-px block border-l pl-4 py-1 font-mono text-[11px] tracking-wide transition-colors ${
                     active
                       ? "border-primary text-primary"
-                      : "border-transparent text-muted-foreground hover:text-foreground"
+                      : childActive
+                        ? "border-transparent text-foreground"
+                        : "border-transparent text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {item.title}
                 </a>
+                {item.children && item.children.length > 0 ? (
+                  <ul className="flex flex-col">
+                    {item.children.map((child) => {
+                      const childIsActive = child.id === activeId;
+                      return (
+                        <li key={child.id}>
+                          <a
+                            href={`#${child.id}`}
+                            className={`-ml-px block border-l pl-8 py-1 font-mono text-[11px] tracking-wide transition-colors ${
+                              childIsActive
+                                ? "border-primary text-primary"
+                                : "border-transparent text-muted-foreground hover:text-foreground"
+                            }`}
+                          >
+                            {child.title}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                ) : null}
               </li>
             );
           })}

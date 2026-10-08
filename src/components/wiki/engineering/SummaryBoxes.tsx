@@ -7,10 +7,7 @@ export function SummaryBoxes({ points }: { points: SummaryPoint[] }) {
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
       {points.map((point) => (
-        <div
-          key={point.title}
-          className="border border-border bg-card p-6 transition-colors duration-200 hover:border-accent"
-        >
+        <div key={point.title} className="border border-border bg-card p-6">
           <h3 className="font-display text-base text-foreground mb-2">
             {point.title}
           </h3>

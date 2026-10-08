@@ -1,5 +1,6 @@
 import { Banner } from "@/components/wiki/Banner";
 import { ModelFigure } from "@/components/wiki/engineering/ModelFigure";
+import { ModelFigureGrid } from "@/components/wiki/engineering/ModelFigureGrid";
 import { ModelTable } from "@/components/wiki/engineering/ModelTable";
 import { SummaryBoxes } from "@/components/wiki/engineering/SummaryBoxes";
 import { Paragraphs } from "@/components/wiki/Paragraphs";
@@ -49,6 +50,15 @@ export function ModelBlocks({
                 src={block.src}
                 width={block.width}
                 height={block.height}
+              />
+            );
+          case "figure-grid":
+            return (
+              <ModelFigureGrid
+                // biome-ignore lint/suspicious/noArrayIndexKey: static block list, order never changes
+                key={index}
+                caption={block.caption}
+                panels={block.panels}
               />
             );
           case "table":
@@ -125,7 +135,7 @@ export function ModelPage({
             subsection.title ? (
               <div
                 key={subsection.title}
-                className="border-l-2 border-primary/30 pl-5 transition-colors duration-200 hover:border-accent space-y-4"
+                className="border-l-2 border-primary/30 pl-5 space-y-4"
               >
                 <h3 className="font-display text-lg text-foreground mb-3">
                   {subsection.title}

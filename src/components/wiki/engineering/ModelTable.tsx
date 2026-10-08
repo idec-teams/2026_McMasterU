@@ -44,7 +44,11 @@ export function ModelTable({
                   <td
                     // biome-ignore lint/suspicious/noArrayIndexKey: cells are positional and never reordered
                     key={cellIndex}
-                    className="px-4 py-3 align-top text-body"
+                    className={
+                      cellIndex === 0
+                        ? "px-4 py-3 align-top font-semibold text-foreground"
+                        : "px-4 py-3 align-top text-body"
+                    }
                   >
                     {renderModelText(cell, references)}
                   </td>

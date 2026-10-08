@@ -1,12 +1,14 @@
+import { ScrollCue } from "@/components/ui/ScrollCue";
 import { HotZone } from "@/components/wiki/main/HotZone";
 import { MeyCellMark } from "@/components/wiki/main/MeyCellMark";
 
 // Inset hero panel with a slow "thermal drift" background: three soft gradient
 // layers that drift on co-prime cycles while a faint warm layer breathes at the
-// peak — a nod to the 72 °C burst threshold.
+// peak — a nod to the heat that triggers lipid release.
 //
 // Pure CSS (keyframes in globals.css), so this stays a server component and the
-// ambient motion costs no JavaScript. HotZone is the only client island.
+// ambient motion costs no JavaScript. The client islands are HotZone (cursor
+// glow) and ScrollLink, inside ScrollCue (the eased "Discover our project" scroll).
 
 /** Logo width in px — the one knob for the mark's size. Height follows. */
 const MARK_WIDTH = 240;
@@ -21,51 +23,29 @@ export function HeroBanner() {
     <section id="home">
       <div
         data-hero-panel
-        className="relative flex min-h-[92vh] flex-col overflow-hidden"
+        className="relative flex min-h-svh flex-col overflow-hidden"
       >
         <ThermalDrift />
 
         {/* The mark owns the flexible middle and carries the title itself; size
             it with MARK_WIDTH above. The meta row stays anchored at the bottom,
             so the gap between them grows with the viewport. */}
-        <div className="relative flex flex-1 items-center justify-center px-6 py-16">
+        <div className="relative flex flex-1 flex-col items-center justify-center gap-10 px-6 py-16">
           {/* translate-y nudges the logo slightly below true center */}
           <h1 className="relative translate-y-4">
-            {/* Two earlier marks, kept for easy swapping. Restore the matching
-                import (and `asset` for the raster) if you bring one back.
-
-                1. Abstract placeholder cell:
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.58]">
-              <CellViz />
-            </div>
-
-                2. The original raster. `unoptimized` is required — next/image
-                otherwise collapses an animated gif/webp to a single frame:
-            <Image
-              src={asset("/logo/mey_cell_wave_white_soft.webp")}
-              alt=""
-              width={500}
-              height={491}
-              unoptimized
-              priority
-              className="h-full w-full object-contain"
-            /> */}
-
             <MeyCellMark width={MARK_WIDTH} white={MARK_WHITE} />
           </h1>
+
+          {/* Glides to the next section with an eased scroll; falls back to a
+              plain in-page jump without JavaScript or with reduced motion. */}
+          <ScrollCue
+            to="problem"
+            label="Start discovering"
+            className="translate-y-4"
+          />
         </div>
 
         <div className="relative px-6 pb-10 text-center sm:px-10">
-          {/* The mark above sets "MEYcell" itself, so the plain type title is
-              retired. Restore this block if the logo ever shrinks back down:
-          <h1
-            className="font-display mb-6 font-bold leading-[0.92] tracking-tight"
-            style={{ fontSize: "clamp(2.75rem, 8vw, 6rem)" }}
-          >
-            <span className="text-foreground">MEY</span>
-            <span className="text-primary">cell</span>
-          </h1> */}
-
           <div className="h-px w-full bg-gradient-to-r from-transparent via-foreground/15 to-transparent" />
           {/* The tagline is absolutely centered on the panel so it stays on the
               true midline — the side labels have different widths, so a plain

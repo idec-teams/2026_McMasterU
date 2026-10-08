@@ -2,7 +2,7 @@ import { Banner } from "@/components/wiki/Banner";
 import { WidgetGrid } from "@/components/wiki/engineering/WidgetGrid";
 
 export const metadata = {
-  title: "Engineering — MEYcell",
+  title: "Engineering",
 };
 
 export default function EngineeringPage() {

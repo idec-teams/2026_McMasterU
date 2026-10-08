@@ -35,7 +35,11 @@ export function WikiPage({
   // appears in the sidebar automatically; nothing to keep in sync by hand.
   const items: TocItem[] = Children.toArray(children)
     .filter(isSectionElement)
-    .map((el) => ({ id: el.props.id, title: el.props.title }));
+    .map((el) => ({
+      id: el.props.id,
+      title: el.props.title,
+      children: el.props.subsections,
+    }));
 
   return (
     <div className="pt-16 pb-28">

@@ -2,7 +2,7 @@ import { ModelPage } from "@/components/wiki/engineering/ModelPage";
 import { content } from "./content";
 
 export const metadata = {
-  title: "ML2: ThermoCast — MEYcell",
+  title: "ML2 - ThermoCast",
 };
 
 export default function Ml2Page() {

@@ -53,12 +53,7 @@ export function EntrepreneurshipDetails({
 }) {
   return (
     <>
-      <Banner title={title} src={src}>
-        <p>
-          The full business case behind MEYcell — market need, business model,
-          competitive position, and commercialization plan.
-        </p>
-      </Banner>
+      <Banner title={title} src={src} />
 
       <WikiPage>
         {ENTREPRENEURSHIP_SECTIONS.map((section) => (

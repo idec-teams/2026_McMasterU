@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 /*
+AI-Generated CSS design system for MEYcell.
+*/
+
+/*
  * ============================================================================
  * MEYcell color system — single source of truth.
  * Change a value here and it propagates everywhere via Tailwind utilities.
@@ -101,10 +105,24 @@
   --breakpoint-nav: 54.725rem;
 }
 
+/* Smooth in-page jumps (the hero's "Discover our project", the wiki TOC).
+   Skipped for reduced motion. Next disables it during route changes because
+   of data-scroll-behavior on <html> in layout.tsx. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   background: var(--bg-page);
   color: var(--text-primary);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  /* The page never lays out narrower than this; smaller windows scroll
+     sideways instead. Set by the Proposed Engineering diagram, which scales
+     with the page: at 820px its smallest labels are about 7px, and below that
+     they stop being readable. */
+  min-width: 820px;
 }
 
 /*
@@ -235,6 +253,31 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .mey-dot {
+    animation: none;
+  }
+}
+
+/* Gears behind the pathway figure. Rotation only, so the browser keeps it on
+   the compositor; duration and direction are set per gear by PathwayDiagram.
+   Each gear path is drawn centred on its own origin, so rotating about the
+   local origin (not the bounding box, which is lopsided for odd tooth
+   counts) keeps the teeth meshed instead of wobbling. */
+.mey-gear {
+  transform-box: view-box;
+  transform-origin: 0 0;
+  animation-name: mey-gear-spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes mey-gear-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mey-gear {
     animation: none;
   }
 }

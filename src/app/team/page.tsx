@@ -3,17 +3,16 @@ import { MemberGrid } from "@/components/wiki/team/MemberGrid";
 import { loadTeamMembers } from "@/lib/wiki/team";
 
 export const metadata = {
-  title: "Team — MEYcell",
+  title: "Team",
 };
 
 export default function TeamPage() {
-  // Roster comes from public/team/_data.json — edit that file to add, remove,
-  // or reorder members. No code changes needed.
+  // Roster comes from public/team/_data.json. Edit the file to add/remove content
   const members = loadTeamMembers();
 
   return (
     <>
-      <Banner title="Meet Our Team">
+      <Banner variant="photo" title="Meet Our Team" src="/team/Team photo.JPG">
         <p>Meet the McMaster IDEC 2026 team.</p>
       </Banner>
 

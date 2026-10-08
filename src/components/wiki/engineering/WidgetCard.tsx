@@ -12,7 +12,7 @@ export function WidgetCard({ widget }: { widget: EngineeringWidget }) {
   return (
     <Link
       href={href}
-      className="group relative flex aspect-[4/3] items-end overflow-hidden border border-border bg-section transition-colors duration-200 hover:border-primary/40"
+      className="group relative flex aspect-[4/3] items-end overflow-hidden border border-border bg-section"
     >
       {image ? (
         <Image

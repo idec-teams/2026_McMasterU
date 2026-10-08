@@ -7,7 +7,7 @@ import { asset } from "@/lib/wiki/asset";
 import { createCitations } from "@/lib/wiki/citations";
 
 export const metadata = {
-  title: "Project — MEYcell",
+  title: "Project",
 };
 
 // Example references — replace with real sources as the content is written.
@@ -688,12 +688,6 @@ export default function ProjectPage() {
           <h4 className="mt-4 text-lg text-foreground font-medium">
             Key Pathways
           </h4>
-          <p className="text-sm text-muted-foreground">
-            Describe the metabolic pathways targeted for triglyceride
-            accumulation (e.g., acetyl-CoA flux, fatty acid synthase regulation,
-            TAG assembly enzymes). Include pathway diagrams or references as
-            needed.
-          </p>
 
           <p>
             <em>S. cerevisiae</em> produces and stores triacylglycerols (TAGs)
@@ -760,6 +754,21 @@ export default function ProjectPage() {
             genes so that TAGs remained locked within lipid droplets rather than
             being mobilized and depleting over time.
           </p>
+
+          <figure className="my-1 flex flex-col items-center">
+            <div className="w-full max-w-2xl">
+              <Image
+                src={asset("/figures/Pathway.png")}
+                alt="Pathway"
+                width={800}
+                height={450}
+                className="rounded border"
+              />
+            </div>
+            <figcaption className="text-sm text-muted-foreground mt-2">
+              Figure 1 — <em>S. cerevisiae</em> Lipid Metabolism Pathway
+            </figcaption>
+          </figure>
 
           <h4 className="mt-4 text-lg text-foreground font-medium">
             Key Mechanisms
@@ -1233,9 +1242,7 @@ export default function ProjectPage() {
             BGL2, as shown below.
           </p>
 
-          <h5 className="mt-4 text-medium text-foreground font-medium">
-            Genes
-          </h5>
+          <h5 className="mt-4 text-lg text-foreground font-medium">Genes</h5>
 
           <p>
             The genes were domesticated using a codon usage table to optimize
@@ -1287,7 +1294,7 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 1 — PCR Protocol.
+              Figure 2 — PCR Protocol.
             </figcaption>
           </figure>
 
@@ -1302,7 +1309,7 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 2 — Error Prone PCR Protocol.
+              Figure 3 — Error Prone PCR Protocol.
             </figcaption>
           </figure>
 
@@ -1450,9 +1457,13 @@ export default function ProjectPage() {
           </p>
 
           <p>
+            Promoter strengths were determined and chosen based on the expression data from YTK, which uses common parts in both kits <Cite id = "lee2015" />.
+          </p>
+
+          <p>
             DGA1 needed to be expressed at high levels, since any free fatty
             acids have to be channeled into TAGs quickly to avoid toxic
-            accumulation. For this reason, we chose [fill in] as a promoter for
+            accumulation. For this reason, we chose pTHD3 as a promoter for
             DGA1, as it is a strong constitutive promoter.
           </p>
 
@@ -1460,14 +1471,15 @@ export default function ProjectPage() {
             On the other hand, ACC1** only needed moderate expression. Strong
             expression would burden yeast metabolism by pushing the entire
             acetyl-CoA supply toward lipid synthesis at the expense of other
-            cellular processes. We therefore selected ___, a medium strength
-            promoter, for ACC1**.
+            cellular processes. We therefore selected pCCW12, a strong promoter,
+            for ACC1**.
           </p>
 
           <p>
             OLE1 and TPS1 were lower priority relative to the TAG production
-            pathway and could be expressed at lower levels. We selected __ for
-            OLE1 and __ for TPS1, both weaker to medium-strength promoters.
+            pathway and could be expressed at lower levels. We selected pRPL18B
+            for OLE1 and pSAC6 for TPS1, both weaker to medium-strength 
+            promoters.
           </p>
 
           <p>
@@ -1544,6 +1556,31 @@ export default function ProjectPage() {
             expression in response to temperature.
           </p>
 
+          <figure className="my-1 flex flex-col items-center">
+            <div className="w-full max-w-2xl">
+              <Image
+                src={asset("/figures/RNAt1-3.png")}
+                alt="RNAts 1-3"
+                width={800}
+                height={450}
+                className="rounded border"
+              />
+            </div>
+            <figcaption className="text-sm text-muted-foreground mt-2">
+              Figure 4 — Predicted MFE and Centroid plain structure of RNAt_1,
+              RNAt_2, and RNAt_3 generated using RNAfold.
+              <p className="mt-2">
+                The minimum free energy (MFE) structure (left) represents the
+                RNA conformation with the lowest ΔG, while the Centroid plain
+                structures (right) represent the structure that is most
+                representative of all possible RNA secondary structures based on
+                their base pairing probabilities. The ΔG calculated for the MFE
+                structures of RNAt_1, RNAt_2, and RNAt_3 are -4.90 kcal/mol,
+                -0.20 kcal/mol, and -1.40 kcal/mol respectively.
+              </p>
+            </figcaption>
+          </figure>
+
           <h5 className="mt-4 text-lg text-foreground font-medium">
             Plasmid Assembly and Screening of the RNAt-GFP Reporter System
           </h5>
@@ -1577,6 +1614,21 @@ export default function ProjectPage() {
             characterization and incorporation into the final lipid-production
             system.
           </p>
+
+          <figure className="my-1 flex flex-col items-center">
+            <div className="w-full max-w-2xl">
+              <Image
+                src={asset("/figures/RNAtScreening1.png")}
+                alt="RNAt Screening"
+                width={800}
+                height={450}
+                className="rounded border"
+              />
+            </div>
+            <figcaption className="text-sm text-muted-foreground mt-2">
+              Figure 5 — RNAt-GFP Screening / Selection
+            </figcaption>
+          </figure>
 
           <h5 className="mt-4 text-lg text-foreground font-medium">
             Recovery and Sequence Verification of Selected RNAt Variants
@@ -1650,7 +1702,7 @@ export default function ProjectPage() {
           <figure className="my-1 flex flex-col items-center">
             <div className="w-full max-w-2xl">
               <Image
-                src={asset("/figures/RNAtExperimentalConstructs.png")}
+                src={asset("/figures/RNAtExperimentalConstruct1-2.png")}
                 alt="RNAt Constructs"
                 width={800}
                 height={450}
@@ -1658,7 +1710,7 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 3 — RNAt Experimental Constructs.
+              Figure 6 — RNAt Experimental Constructs.
             </figcaption>
           </figure>
 
@@ -1750,14 +1802,14 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 4 — RNAt Validation.
+              Figure 7 — RNAt Validation.
             </figcaption>
           </figure>
 
           <figure className="my-10 flex flex-col items-center">
             <div className="w-full max-w-2xl">
               <Image
-                src={asset("/figures/FinalConstruct.png")}
+                src={asset("/figures/FinalConstruct-1.png")}
                 alt="Final Construct"
                 width={800}
                 height={450}
@@ -1765,7 +1817,7 @@ export default function ProjectPage() {
               />
             </div>
             <figcaption className="text-sm text-muted-foreground mt-2">
-              Figure 5 — Final RNAt Construct.
+              Figure 8 — Final RNAt Construct.
             </figcaption>
           </figure>
 
