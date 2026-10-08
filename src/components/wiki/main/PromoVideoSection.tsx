@@ -4,9 +4,9 @@ import { asset } from "@/lib/wiki/asset";
 //  Promo video — this is the ONLY line you need to change.
 //  Point it at a file in /public (e.g. "/promo.mp4") or any hosted video URL.
 //  Leave it as "" to show the placeholder frame.
-const VIDEO_SRC = "";
+const VIDEO_SRC = "/promo-video-final.mp4";
 //  Optional poster frame shown before playback (also served from /public).
-const VIDEO_POSTER = "";
+const VIDEO_POSTER = "/promo-poster.jpg";
 // ───────────────────────────────────────────────────────────────────────────
 
 export function PromoVideoSection() {
